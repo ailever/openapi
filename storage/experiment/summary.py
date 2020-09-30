@@ -9,6 +9,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from torch import optim
+import pandas_datareader.data as web
 
 Obj = type('Obj', (), {})
 def load():
@@ -22,15 +23,18 @@ def load():
     options.info.id = 'ailever'
     options.info.path = '.Log'
     options.training.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    options.training.epochs = 10
+    options.training.epochs = 1000
     options.training.saving_period = 1
-    options.training.batch = 100
-    options.dataset.split_rate = 0.8
+    options.training.batch = 10
+    options.dataset.split_rate = 0.9
 
     return options
 
 options = load()
-if not os.path.isdir(options.info.path) : os.mkdir(options.info.path)
+print(f"[AILEVER] The device {options.training.device} is selected!")
+if not os.path.isdir(options.info.path):
+    os.mkdir(options.info.path)
+    print(f"[AILEVER] The folder {options.info.path} is created!")
 
 #%%
 def scaler(x, confidence_level=1):
@@ -42,10 +46,9 @@ class AileverDataset(Dataset):
     def __init__(self, options, split_type):
         self.mode = split_type
 
-        rv = np.random.RandomState(2000)
-        error = rv.normal(0, 1, 30000)
-        index = np.arange(0,30000)
-        series = np.sin(index) + error
+        df = web.DataReader('005380', 'naver', start='2018-06-29', end='2020-09-29')
+        index = pd.to_numeric(pd.to_datetime(df.index)).values
+        series = df['Low'].values
         df = pd.DataFrame({'index':index , 'series':series})
         data = df.values.astype(np.float64)
 
