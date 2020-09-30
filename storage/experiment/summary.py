@@ -18,14 +18,17 @@ def load():
     parser.add_argument('--dataset', type=Obj, default=Obj())
     parser.add_argument('--model', type=Obj, default=Obj())
     parser.add_argument('--training', type=Obj, default=Obj())
+    parser.add_argument('--alert', type=Obj, default=Obj())
 
     options = parser.parse_args()
     options.info.id = 'ailever'
     options.info.path = '.Log'
     options.training.device = 'cuda' if torch.cuda.is_available() else 'cpu'
     options.training.epochs = 1000
-    options.training.saving_period = 1
+    options.training.saving_period = 50
     options.training.batch = 10
+    options.alert.batch_idx_period = 5
+    options.alert.epoch_period = 5
     options.dataset.split_rate = 0.9
 
     return options
@@ -84,14 +87,14 @@ class AileverDataset(Dataset):
 
     def __getitem__(self, idx):
         if self.mode == 'train':
-            x_item = torch.from_numpy(self.train_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.train_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.train_dataset.x).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.train_dataset.y).type(torch.FloatTensor).to(options.training.device)
         elif self.mode == 'validation':
-            x_item = torch.from_numpy(self.validation_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.validation_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.validation_dataset.x).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.validation_dataset.y).type(torch.FloatTensor).to(options.training.device)
         elif self.mode == 'test':
-            x_item = torch.from_numpy(self.test_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.test_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.test_dataset.x).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.test_dataset.y).type(torch.FloatTensor).to(options.training.device)
         return x_item, y_item
 
 
@@ -131,8 +134,8 @@ optimizer = optim.Adam(model.parameters(), lr=1e-1, weight_decay=1e-7)
 
 for epoch in range(options.training.epochs):
     # Training
-    losses = []
     model.train()
+    losses = []
     for batch_idx, (x_train, y_train) in enumerate(dataset.loader.train):
         x_train = x_train
         y_train = y_train
@@ -148,15 +151,16 @@ for epoch in range(options.training.epochs):
         # backward
         optimizer.zero_grad()
         cost.backward()
+        losses.append(cost)
         optimizer.step()
 
-        if batch_idx % 100 == 0:
+        if batch_idx % options.alert.batch_idx_period == 0:
             print(f'[TRAINING][Epoch:{epoch + 1}/{options.training.epochs}][Batch Index:{batch_idx + 1}/{len(dataset.loader.train)}] : Loss = {cost}')
 
-        losses.append(cost)
 
-    print(f'[TRAINING][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-    #print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+    if batch_idx % options.alert.batch_idx_period == 0:
+        print(f'[TRAINING][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
+        print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
     if epoch % options.training.saving_period == 0:
         torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
@@ -173,14 +177,15 @@ for epoch in range(options.training.epochs):
             # forward
             hypothesis = model(x_train)
             cost = criterion(hypothesis, y_train)
+            losses.append(cost)
 
             if batch_idx % 100 == 0:
                 print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}][Batch Index:{batch_idx + 1}/{len(dataset.loader.validation)}] : Loss = {cost}')
 
-            losses.append(cost)
 
-        print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-        #print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+        if batch_idx % options.alert.batch_idx_period == 0:
+            print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
+            print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
 torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
 print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
