@@ -179,13 +179,11 @@ for epoch in range(options.training.epochs):
             cost = criterion(hypothesis, y_train)
             losses.append(cost)
 
-            if batch_idx % 100 == 0:
+            if batch_idx % options.alert.batch_idx_period == 0:
                 print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}][Batch Index:{batch_idx + 1}/{len(dataset.loader.validation)}] : Loss = {cost}')
 
-
-        if batch_idx % options.alert.batch_idx_period == 0:
-            print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-            print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+        #print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
+        #print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
 torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
 print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
