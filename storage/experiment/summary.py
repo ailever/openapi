@@ -84,14 +84,14 @@ class AileverDataset(Dataset):
 
     def __getitem__(self, idx):
         if self.mode == 'train':
-            x_item = torch.from_numpy(self.train_dataset.x).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.train_dataset.y).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.train_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.train_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
         elif self.mode == 'validation':
-            x_item = torch.from_numpy(self.validation_dataset.x).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.validation_dataset.y).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.validation_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.validation_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
         elif self.mode == 'test':
-            x_item = torch.from_numpy(self.test_dataset.x).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.test_dataset.y).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.test_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.test_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
         return x_item, y_item
 
 
