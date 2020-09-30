@@ -17,13 +17,14 @@ def load():
     parser.add_argument('--dataset', type=Obj, default=Obj())
     parser.add_argument('--model', type=Obj, default=Obj())
     parser.add_argument('--training', type=Obj, default=Obj())
-    options = parser.parse_args()
 
+    options = parser.parse_args()
     options.info.id = 'ailever'
     options.info.path = '.Log'
     options.training.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    options.training.epochs = 1
-    options.training.batch = 10
+    options.training.epochs = 10
+    options.training.saving_period = 1
+    options.training.batch = 100
     options.dataset.split_rate = 0.8
 
     return options
@@ -42,8 +43,8 @@ class AileverDataset(Dataset):
         self.mode = split_type
 
         rv = np.random.RandomState(2000)
-        error = rv.normal(0, 1, 300)
-        index = np.arange(0,300)
+        error = rv.normal(0, 1, 30000)
+        index = np.arange(0,30000)
         series = np.sin(index) + error
         df = pd.DataFrame({'index':index , 'series':series})
         data = df.values.astype(np.float64)
@@ -132,13 +133,13 @@ for epoch in range(options.training.epochs):
     for batch_idx, (x_train, y_train) in enumerate(dataset.loader.train):
         x_train = x_train
         y_train = y_train
-        if batch_idx == 0 :
+        if epoch ==0 and batch_idx == 0 :
             print(f"[TRAINING] x_train : {x_train.size()}")
             print(f"[TRAINING] y_train : {y_train.size()}")
 
         # forward
         hypothesis = model(x_train)
-        if batch_idx == 0 : print(f"[TRAINING] hypothesis : {hypothesis.size()}")
+        if epoch == 0 and batch_idx == 0 : print(f"[TRAINING] hypothesis : {hypothesis.size()}")
         cost = criterion(hypothesis, y_train)
 
         # backward
@@ -152,9 +153,9 @@ for epoch in range(options.training.epochs):
         losses.append(cost)
 
     print(f'[TRAINING][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-    print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+    #print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
-    if epoch % 20 == 0:
+    if epoch % options.training.saving_period == 0:
         torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
         print(f"[AILEVER][Epoch:{epoch + 1}/{options.training.epochs}] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
 
@@ -176,7 +177,7 @@ for epoch in range(options.training.epochs):
             losses.append(cost)
 
         print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-        print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+        #print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
 torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
 print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
