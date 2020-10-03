@@ -10,6 +10,7 @@ from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from torch import optim
 import pandas_datareader.data as web
+import FinanceDataReader as fdr
 
 Obj = type('Obj', (), {})
 def load():
@@ -49,7 +50,8 @@ class AileverDataset(Dataset):
     def __init__(self, options, split_type):
         self.mode = split_type
 
-        df = web.DataReader('005380', 'naver', start='2018-06-29', end='2020-09-29')
+        #df = web.DataReader('005380', 'naver', start='2018-06-29', end='2020-09-29')
+        df = fdr.DataReader('005380', 2020)
         index = pd.to_numeric(pd.to_datetime(df.index)).values
         series = df['Low'].values
         df = pd.DataFrame({'index':index , 'series':series})
