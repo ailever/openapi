@@ -26,13 +26,17 @@ def load():
     options.info.id = 'ailever'
     options.info.path = '.Log'
     options.training.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    options.training.epochs = 1000
     options.training.saving_period = 50
-    options.training.batch = 10
+    options.training.batch = 100
+    options.training.epochs = 1000
     options.training.on = True
     options.alert.options_info = True
     options.alert.dataset_info = True
-    options.alert.batch_idx_period = 5
+    options.alert.training_batch = False
+    options.alert.training_epoch = True
+    options.alert.validation_batch = False
+    options.alert.validation_epoch = True
+    options.alert.batch_period = 20
     options.alert.epoch_period = 5
     options.dataset.split_rate = 0.9
 
@@ -45,12 +49,16 @@ if options.alert.options_info:
     print(f"[TRAINING] Device : {options.training.device}")
     print(f"[TRAINING] Saving Period : {options.training.saving_period}")
     print(f"[TRAINING] Saving Path : {options.info.path}")
-    print(f"[TRAINING] Epochs : {options.training.epochs}")
     print(f"[TRAINING] Batch : {options.training.batch}")
+    print(f"[TRAINING] Epochs : {options.training.epochs}")
     print(f"[ALERT] options_info : {options.alert.options_info}")
     print(f"[ALERT] dataset_info : {options.alert.dataset_info}")
+    print(f"[ALERT] training_batch : {options.alert.training_batch}")
+    print(f"[ALERT] training_epoch : {options.alert.training_epoch}")
+    print(f"[ALERT] validation_batch : {options.alert.validation_batch}")
+    print(f"[ALERT] validation_epoch : {options.alert.validation_epoch}")
     print(f"[ALERT] epoch_period : {options.alert.epoch_period}")
-    print(f"[ALERT] batch_idx_period : {options.alert.batch_idx_period}")
+    print(f"[ALERT] batch_period : {options.alert.batch_period}")
 
 if not os.path.isdir(options.info.path):
     os.mkdir(options.info.path)
@@ -186,16 +194,16 @@ if options.training.on:
             # backward
             optimizer.zero_grad()
             cost.backward()
-            losses.append(cost)
             optimizer.step()
+            losses.append(cost)
 
-            if batch_idx % options.alert.batch_idx_period == 0:
+            if options.alert.training_batch and (batch_idx+1) % options.alert.batch_period == 0:
                 print(f'[TRAINING][Epoch:{epoch + 1}/{options.training.epochs}][Batch Index:{batch_idx + 1}/{len(dataset.loader.train)}] : Loss = {cost}')
 
 
-        if batch_idx % options.alert.batch_idx_period == 0:
+        if options.alert.training_epoch and (epoch+1) % options.alert.epoch_period == 0:
             print(f'[TRAINING][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-            print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+            print(f'  - Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
         if epoch % options.training.saving_period == 0:
             torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
@@ -214,11 +222,12 @@ if options.training.on:
                 cost = criterion(hypothesis, y_train)
                 losses.append(cost)
 
-                if batch_idx % options.alert.batch_idx_period == 0:
+                if options.alert.validation_batch and (batch_idx+1) % options.alert.batch_period == 0:
                     print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}][Batch Index:{batch_idx + 1}/{len(dataset.loader.validation)}] : Loss = {cost}')
 
-            #print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-            #print(f'- Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+            if options.alert.validation_epoch and (epoch+1) % options.alert.epoch_period == 0:
+                print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
+                print(f'  - Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
 torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
 print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
