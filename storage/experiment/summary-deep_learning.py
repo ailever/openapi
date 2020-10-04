@@ -175,8 +175,13 @@ if options.alert.model_info:
     time.sleep(delay)
 
 if os.path.isfile(options.info.path+'/'+options.info.id+'.pth'):
-    model.load_state_dict(torch.load(options.info.path+'/'+options.info.id+'.pth'))
-    print(f"\n[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully loaded!")
+    try:
+        model.load_state_dict(torch.load(options.info.path+'/'+options.info.id+'.pth'))
+        print(f"\n[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully loaded!")
+    except RuntimeError:
+        os.remove(options.info.path+'/'+options.info.id+'.pth')
+        print(f"\n[AILEVER] The previous file {options.info.path+'/'+options.info.id+'.pth'} is successfully removed!")
+        
 
 
 model = model.to(options.training.device)
