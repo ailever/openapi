@@ -154,7 +154,7 @@ dataset.loader.train = DataLoader(dataset.train, batch_size=options.training.bat
 dataset.loader.validation = DataLoader(dataset.validation, batch_size=options.training.batch, shuffle=False, drop_last=True)
 dataset.loader.test = DataLoader(dataset.test, batch_size=options.training.batch, shuffle=False, drop_last=True)
 if options.alert.dataset_info:
-    print(f'\n{"DATASET INFORMATION":-^100}')
+    print(f'\n*{"DATASET INFORMATION":-^100}*')
     print(f"[DATASET][ALL] Dataset all x : {dataset.train.dataset.x.shape}")
     print(f"[DATASET][ALL] Dataset all y : {dataset.train.dataset.y.shape}")
     print(f"[DATASET][ALL] Dataset split rate : {options.dataset.split_rate}")
@@ -173,7 +173,7 @@ if options.alert.dataset_info:
 
 model = AileverModel(options)
 if options.alert.model_info:
-    print(f'\n{"MODEL INFORMATION":-^100}')
+    print(f'\n*{"MODEL INFORMATION":-^100}*')
     summary(model, next(iter(dataset.train))[0].size())
 
     delay = 5
@@ -199,7 +199,7 @@ criterion = nn.MSELoss().to(options.training.device)
 optimizer = optim.Adam(model.parameters(), lr=1e-1, weight_decay=1e-7)
 
 if options.training.on:
-    print(f'\n{"TRAINING ARTIFICIAL NUERAL NETWORK":-^100}')
+    print(f'\n*{"TRAINING ARTIFICIAL NUERAL NETWORK":-^100}*')
     for epoch in range(options.training.epochs):
         # Training
         model.train()
@@ -259,7 +259,7 @@ print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is suc
 
 
 if options.evaluation.on:
-    print(f'\n{"EVALUATION":-^100}')
+    print(f'\n*{"EVALUATION":-^100}*')
     with torch.no_grad():
         model.eval()
         period = []
@@ -271,16 +271,16 @@ if options.evaluation.on:
 
             # forward
             hypothesis = model(x_train)
-            predictions.append(hypothesis.data)
-            ground_truths.append(y_train)
+            predictions.append(hypothesis.data.cpu())
+            ground_truths.append(y_train.cpu())
         
         index = dataset.test.dataset.index.squeeze()
         predictions = torch.stack(predictions).numpy().squeeze()
         ground_truths = torch.stack(ground_truths).numpy().squeeze()
         predictions = pd.DataFrame({'index':index, 'prediction':predictions, 'ground_truth':ground_truths})
         predictions = predictions.set_index('index')
-        predictions.to_csv(options.info.id+'_'+options.info.output)
+        predictions.to_csv(options.info.output)
         
         print(predictions.describe())
-        print(f"[AILEVER] The file {options.info.id+'_'+options.info.output} is successfully saved!")
+        print(f"[AILEVER] The file {options.info.output} is successfully saved!")
         
