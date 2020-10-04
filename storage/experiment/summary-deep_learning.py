@@ -160,6 +160,10 @@ if options.alert.dataset_info:
     print(f"[DATASET][LEARNING] Dataset-loader train y info : {next(iter(dataset.loader.train))[1].size()}")
     print(f"[DATASET][LEARNING] Dataset-loader validation x info : {next(iter(dataset.loader.validation))[0].size()}")
     print(f"[DATASET][LEARNING] Dataset-loader validation y info : {next(iter(dataset.loader.validation))[1].size()}")
+    print(f'* X[:10]')
+    print(dataset.train.dataset.x[:10])
+    print(f'* Y[:10]')
+    print(dataset.train.dataset.y[:10])
 
 model = AileverModel(options)
 if options.alert.model_info:
