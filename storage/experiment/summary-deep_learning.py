@@ -195,7 +195,10 @@ if options.training.on:
 
             # forward
             hypothesis = model(x_train)
-            if epoch == 0 and batch_idx == 0 : print(f"[TRAINING] hypothesis : {hypothesis.size()}")
+            if epoch == 0 and batch_idx == 0 :
+                print(f"[TRAINING] [1] x_train : {x_train.size()}")
+                print(f"[TRAINING] [2] hypothesis : {hypothesis.size()}")
+                print(f"[TRAINING] [3] y_train : {y_train.size()}")
             cost = criterion(hypothesis, y_train)
 
             # backward
