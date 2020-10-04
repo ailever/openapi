@@ -21,16 +21,19 @@ def load():
     parser.add_argument('--dataset', type=Obj, default=Obj())
     parser.add_argument('--model', type=Obj, default=Obj())
     parser.add_argument('--training', type=Obj, default=Obj())
+    parser.add_argument('--evaluation', type=Obj, default=Obj())
     parser.add_argument('--alert', type=Obj, default=Obj())
 
     options = parser.parse_args()
     options.info.id = 'ailever'
     options.info.path = '.Log'
+    options.info.output = 'prediction.csv'
     options.training.device = 'cuda' if torch.cuda.is_available() else 'cpu'
     options.training.saving_period = 50
     options.training.batch = 100
-    options.training.epochs = 1000
+    options.training.epochs = 10
     options.training.on = True
+    options.evaluation.on = True
     options.alert.options_info = True
     options.alert.dataset_info = True
     options.alert.model_info = True
@@ -90,6 +93,7 @@ class AileverDataset(Dataset):
         spliter = int(options.dataset.split_rate*len(data))
 
         self.dataset = Obj()
+        self.dataset.index = data[:, 0:1]
         self.dataset.x = data[:, 0:2]
         self.dataset.y = data[:, 1:2]
 
@@ -144,9 +148,11 @@ class AileverModel(nn.Module):
 dataset = Obj()
 dataset.train = AileverDataset(options, split_type='train')
 dataset.validation = AileverDataset(options, split_type='validation')
+dataset.test = AileverDataset(options, split_type='test')
 dataset.loader = Obj()
 dataset.loader.train = DataLoader(dataset.train, batch_size=options.training.batch, shuffle=False, drop_last=True)
 dataset.loader.validation = DataLoader(dataset.validation, batch_size=options.training.batch, shuffle=False, drop_last=True)
+dataset.loader.test = DataLoader(dataset.test, batch_size=options.training.batch, shuffle=False, drop_last=True)
 if options.alert.dataset_info:
     print(f'\n{"DATASET INFORMATION":-^100}')
     print(f"[DATASET][ALL] Dataset all x : {dataset.train.dataset.x.shape}")
@@ -251,3 +257,30 @@ if options.training.on:
 torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
 print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
 
+
+if options.evaluation.on:
+    print(f'\n{"EVALUATION":-^100}')
+    with torch.no_grad():
+        model.eval()
+        period = []
+        predictions = []
+        ground_truths = []
+        for idx, (x_train, y_train) in enumerate(dataset.test):
+            x_train = x_train
+            y_train = y_train
+
+            # forward
+            hypothesis = model(x_train)
+            predictions.append(hypothesis.data)
+            ground_truths.append(y_train)
+        
+        index = dataset.test.dataset.index.squeeze()
+        predictions = torch.stack(predictions).numpy().squeeze()
+        ground_truths = torch.stack(ground_truths).numpy().squeeze()
+        predictions = pd.DataFrame({'index':index, 'prediction':predictions, 'ground_truth':ground_truths})
+        predictions = predictions.set_index('index')
+        predictions.to_csv(options.info.id+'_'+options.info.output)
+        
+        print(predictions.describe())
+        print(f"[AILEVER] The file {options.info.id+'_'+options.info.output} is successfully saved!")
+        
