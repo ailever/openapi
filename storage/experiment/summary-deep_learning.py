@@ -10,6 +10,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from torch import optim
+from torchsummary import summary
 import pandas_datareader.data as web
 import FinanceDataReader as fdr
 
@@ -32,10 +33,11 @@ def load():
     options.training.on = True
     options.alert.options_info = True
     options.alert.dataset_info = True
+    options.alert.model_info = True
     options.alert.training_batch = False
     options.alert.training_epoch = True
     options.alert.validation_batch = False
-    options.alert.validation_epoch = True
+    options.alert.validation_epoch = False
     options.alert.batch_period = 20
     options.alert.epoch_period = 5
     options.dataset.split_rate = 0.9
@@ -44,7 +46,7 @@ def load():
 
 options = load()
 if options.alert.options_info:
-    print(f'{"TRAINING ENVIRONMENT INFORMATION":-^100}')
+    print(f'\n{"TRAINING ENVIRONMENT INFORMATION":-^100}')
     print(f"[ID] ID : {options.info.id}")
     print(f"[TRAINING] Device : {options.training.device}")
     print(f"[TRAINING] Saving Period : {options.training.saving_period}")
@@ -62,7 +64,7 @@ if options.alert.options_info:
 
 if not os.path.isdir(options.info.path):
     os.mkdir(options.info.path)
-    print(f"[AILEVER] The folder {options.info.path} is created!")
+    print(f"\n[AILEVER] The folder {options.info.path} is created!")
 
 #%%
 def scaler(x, confidence_level=1):
@@ -158,19 +160,24 @@ if options.alert.dataset_info:
     print(f"[DATASET][LEARNING] Dataset-loader train y info : {next(iter(dataset.loader.train))[1].size()}")
     print(f"[DATASET][LEARNING] Dataset-loader validation x info : {next(iter(dataset.loader.validation))[0].size()}")
     print(f"[DATASET][LEARNING] Dataset-loader validation y info : {next(iter(dataset.loader.validation))[1].size()}")
-    
+
+model = AileverModel(options)
+if options.alert.model_info:
+    print(f'\n{"MODEL INFORMATION":-^100}')
+    summary(model, next(iter(dataset.train))[0].size())
+
     delay = 5
     if options.training.on:
         print(f"\n[AILEVER] Artificial neural network will start to learn about your dataset after {delay} sec.")
     else:
         print(f"\n[AILEVER] Training is not progressed. If you want to train, set options.training.on to True in load().")
-    print(f"[AILEVER] Check your dataset information.\n")
+    print(f"[AILEVER] Check your dataset and model information.\n")
     time.sleep(delay)
 
-model = AileverModel(options)
 if os.path.isfile(options.info.path+'/'+options.info.id+'.pth'):
     model.load_state_dict(torch.load(options.info.path+'/'+options.info.id+'.pth'))
-    print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully loaded!")
+    print(f"\n[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully loaded!")
+
 
 model = model.to(options.training.device)
 criterion = nn.MSELoss().to(options.training.device)
