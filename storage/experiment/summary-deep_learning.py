@@ -169,6 +169,7 @@ criterion = nn.MSELoss().to(options.training.device)
 optimizer = optim.Adam(model.parameters(), lr=1e-1, weight_decay=1e-7)
 
 if options.training.on:
+    print(f'\n{"TRAINING ARTIFICIAL NUERAL NETWORK":-^100}')
     for epoch in range(options.training.epochs):
         # Training
         model.train()
