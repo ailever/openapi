@@ -33,7 +33,7 @@ def load():
     options.training.batch = 100
     options.training.epochs = 10
     options.training.on = True
-    options.evaluation.on = True
+    options.evaluation.on = False
     options.alert.options_info = True
     options.alert.dataset_info = True
     options.alert.model_info = True
@@ -44,6 +44,8 @@ def load():
     options.alert.batch_period = 20
     options.alert.epoch_period = 5
     options.dataset.split_rate = 0.9
+    options.dataset.sequence = 100       # length
+    options.dataset.prediction = 5       # rate
 
     return options
 
@@ -78,6 +80,8 @@ def scaler(x, confidence_level=1):
 class AileverDataset(Dataset):
     def __init__(self, options, split_type=None):
         self.mode = split_type
+        self.sequence = options.dataset.sequence
+        self.prediction = options.dataset.prediction
 
         #df = web.DataReader('005380', 'naver', start='2018-06-29', end='2020-09-29')
         df = fdr.DataReader('005380', 2020)
@@ -113,36 +117,38 @@ class AileverDataset(Dataset):
         if self.mode == None:
             return len(self.dataset.y)
         elif self.mode == 'train':
-            return len(self.train_dataset.y)
+            return len(self.train_dataset.y) - self.sequence
         elif self.mode == 'validation':
-            return len(self.validation_dataset.y)
+            return len(self.validation_dataset.y) - self.sequence
         elif self.mode == 'test':
-            return len(self.test_dataset.y)
+            return len(self.test_dataset.y) - self.sequence
 
     def __getitem__(self, idx):
         if self.mode == None:
             x_item = torch.from_numpy(self.dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
             y_item = torch.from_numpy(self.dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
         elif self.mode == 'train':
-            x_item = torch.from_numpy(self.train_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.train_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.train_dataset.x[idx : idx+self.sequence-self.prediction]).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.train_dataset.y[idx+self.sequence-self.prediction : idx+self.sequence]).type(torch.FloatTensor).to(options.training.device)
         elif self.mode == 'validation':
-            x_item = torch.from_numpy(self.validation_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.validation_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.validation_dataset.x[idx : idx+self.sequence-self.prediction]).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.validation_dataset.y[idx+self.sequence-self.prediction : idx+self.sequence]).type(torch.FloatTensor).to(options.training.device)
         elif self.mode == 'test':
-            x_item = torch.from_numpy(self.test_dataset.x[idx]).type(torch.FloatTensor).to(options.training.device)
-            y_item = torch.from_numpy(self.test_dataset.y[idx]).type(torch.FloatTensor).to(options.training.device)
+            x_item = torch.from_numpy(self.test_dataset.x[idx : idx+self.sequence-self.prediction]).type(torch.FloatTensor).to(options.training.device)
+            y_item = torch.from_numpy(self.test_dataset.y[idx+self.sequence-self.prediction : idx+self.sequence]).type(torch.FloatTensor).to(options.training.device)
         return x_item, y_item
  
 
 class AileverModel(nn.Module):
     def __init__(self, options):
         super(AileverModel, self).__init__()
-        self.linear = nn.Linear(2, 1)
+        self.lstm = nn.LSTM(2, options.dataset.sequence, 3, batch_first=True)
+        self.linear = nn.Linear(options.dataset.sequence, options.dataset.prediction)
 
     def forward(self, x):
-        x = F.relu(self.linear(x))
-        return x
+        x, (h, c) = self.lstm(x)
+        p = self.linear(h[-1])
+        return p
 
 #%%
 dataset = Obj()
@@ -206,7 +212,7 @@ if options.training.on:
         losses = []
         for batch_idx, (x_train, y_train) in enumerate(dataset.loader.train):
             x_train = x_train
-            y_train = y_train
+            y_train = y_train.squeeze()
 
             # forward
             hypothesis = model(x_train)
@@ -240,7 +246,7 @@ if options.training.on:
             losses = []
             for batch_idx, (x_train, y_train) in enumerate(dataset.loader.validation):
                 x_train = x_train
-                y_train = y_train
+                y_train = y_train.squeeze()
 
                 # forward
                 hypothesis = model(x_train)
@@ -267,7 +273,7 @@ if options.evaluation.on:
         ground_truths = []
         for idx, (x_train, y_train) in enumerate(dataset.test):
             x_train = x_train
-            y_train = y_train
+            y_train = y_train.squeeze()
 
             # forward
             hypothesis = model(x_train)
