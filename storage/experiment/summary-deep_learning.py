@@ -31,7 +31,7 @@ def load():
     options.training.device = 'cuda' if torch.cuda.is_available() else 'cpu'
     options.training.saving_period = 50
     options.training.batch = 100
-    options.training.epochs = 10
+    options.training.epochs = 1
     options.training.on = True
     options.evaluation.on = False
     options.alert.options_info = True
@@ -178,6 +178,7 @@ if options.alert.dataset_info:
     print(dataset.train.dataset.y[:10])
 
 model = AileverModel(options)
+optimizer = optim.Adam(model.parameters(), lr=1e-1, weight_decay=1e-7)
 if options.alert.model_info:
     print(f'\n*{"MODEL INFORMATION":-^100}*')
     summary(model, next(iter(dataset.train))[0].size())
@@ -192,7 +193,9 @@ if options.alert.model_info:
 
 if os.path.isfile(options.info.path+'/'+options.info.id+'.pth'):
     try:
-        model.load_state_dict(torch.load(options.info.path+'/'+options.info.id+'.pth'))
+        checkpoint = torch.load(options.info.path+'/'+options.info.id+'.pth')
+        model.load_state_dict(checkpoint['model_state_dict'])
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         print(f"\n[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully loaded!")
     except RuntimeError:
         os.remove(options.info.path+'/'+options.info.id+'.pth')
@@ -202,8 +205,6 @@ if os.path.isfile(options.info.path+'/'+options.info.id+'.pth'):
 
 model = model.to(options.training.device)
 criterion = nn.MSELoss().to(options.training.device)
-optimizer = optim.Adam(model.parameters(), lr=1e-1, weight_decay=1e-7)
-
 if options.training.on:
     print(f'\n*{"TRAINING ARTIFICIAL NUERAL NETWORK":-^100}*')
     for epoch in range(options.training.epochs):
@@ -237,7 +238,8 @@ if options.training.on:
             print(f'  - Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
         if epoch % options.training.saving_period == 0:
-            torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
+            torch.save({'model_state_dict': model.state_dict(),
+                        'optimizer_state_dict': optimizer.state_dict()}, options.info.path+'/'+options.info.id+'.pth')
             print(f"[AILEVER][Epoch:{epoch + 1}/{options.training.epochs}] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
 
         # Validation
@@ -260,7 +262,9 @@ if options.training.on:
                 print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
                 print(f'  - Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
-torch.save(model.state_dict(), options.info.path+'/'+options.info.id+'.pth')
+torch.save({'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict()}, options.info.path+'/'+options.info.id+'.pth')
+
 print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
 
 
