@@ -21,6 +21,7 @@ def load():
     parser.add_argument('--dataset', type=Obj, default=Obj())
     parser.add_argument('--model', type=Obj, default=Obj())
     parser.add_argument('--training', type=Obj, default=Obj())
+    parser.add_argument('--validation', type=Obj, default=Obj())
     parser.add_argument('--evaluation', type=Obj, default=Obj())
     parser.add_argument('--alert', type=Obj, default=Obj())
 
@@ -33,14 +34,15 @@ def load():
     options.training.batch = 100
     options.training.epochs = 1
     options.training.on = True
+    options.validation.on = True
     options.evaluation.on = False
     options.alert.options_info = True
     options.alert.dataset_info = True
     options.alert.model_info = True
     options.alert.training_batch = False
     options.alert.training_epoch = True
-    options.alert.validation_batch = False
-    options.alert.validation_epoch = False
+    options.alert.validation_batch = True
+    options.alert.validation_epoch = True
     options.alert.batch_period = 20
     options.alert.epoch_period = 5
     options.dataset.split_rate = 0.9
@@ -243,24 +245,25 @@ if options.training.on:
             print(f"[AILEVER][Epoch:{epoch + 1}/{options.training.epochs}] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
 
         # Validation
-        with torch.no_grad():
-            model.eval()
-            losses = []
-            for batch_idx, (x_train, y_train) in enumerate(dataset.loader.validation):
-                x_train = x_train
-                y_train = y_train.squeeze()
+        if options.training.on:
+            with torch.no_grad():
+                model.eval()
+                losses = []
+                for batch_idx, (x_train, y_train) in enumerate(dataset.loader.validation):
+                    x_train = x_train
+                    y_train = y_train.squeeze()
 
-                # forward
-                hypothesis = model(x_train)
-                cost = criterion(hypothesis, y_train)
-                losses.append(cost)
+                    # forward
+                    hypothesis = model(x_train)
+                    cost = criterion(hypothesis, y_train)
+                    losses.append(cost)
 
-                if options.alert.validation_batch and (batch_idx+1) % options.alert.batch_period == 0:
-                    print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}][Batch Index:{batch_idx + 1}/{len(dataset.loader.validation)}] : Loss = {cost}')
+                    if options.alert.validation_batch and (batch_idx+1) % options.alert.batch_period == 0:
+                        print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}][Batch Index:{batch_idx + 1}/{len(dataset.loader.validation)}] : Loss = {cost}')
 
-            if options.alert.validation_epoch and (epoch+1) % options.alert.epoch_period == 0:
-                print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
-                print(f'  - Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
+                if options.alert.validation_epoch and (epoch+1) % options.alert.epoch_period == 0:
+                    print(f'[VALIDATION][Epoch:{epoch + 1}/{options.training.epochs}] : Loss = {torch.Tensor(losses).mean()}')
+                    print(f'  - Prediction/True : {hypothesis[0].data}/{y_train[0].data}')
 
 torch.save({'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict()}, options.info.path+'/'+options.info.id+'.pth')
