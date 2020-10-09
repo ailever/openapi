@@ -180,7 +180,9 @@ if options.alert.dataset_info:
     print(dataset.train.dataset.y[:10])
 
 model = AileverModel(options)
+model = model.to(options.training.device)
 optimizer = optim.Adam(model.parameters(), lr=1e-1, weight_decay=1e-7)
+criterion = nn.MSELoss().to(options.training.device)
 if options.alert.model_info:
     print(f'\n*{"MODEL INFORMATION":-^100}*')
     summary(model, next(iter(dataset.train))[0].size())
@@ -204,9 +206,6 @@ if os.path.isfile(options.info.path+'/'+options.info.id+'.pth'):
         print(f"\n[AILEVER] The previous file {options.info.path+'/'+options.info.id+'.pth'} is successfully removed!")
         
 
-
-model = model.to(options.training.device)
-criterion = nn.MSELoss().to(options.training.device)
 if options.training.on:
     print(f'\n*{"TRAINING ARTIFICIAL NUERAL NETWORK":-^100}*')
     for epoch in range(options.training.epochs):
@@ -269,7 +268,6 @@ torch.save({'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict()}, options.info.path+'/'+options.info.id+'.pth')
 
 print(f"[AILEVER] The file {options.info.path+'/'+options.info.id+'.pth'} is successfully saved!")
-
 
 if options.evaluation.on:
     print(f'\n*{"EVALUATION":-^100}*')
