@@ -55,6 +55,9 @@ options = load()
 if options.alert.options_info:
     print(f'\n{"TRAINING ENVIRONMENT INFORMATION":-^100}')
     print(f"[ID] ID : {options.info.id}")
+    print(f"[TRAINING] Training On/Off : {options.training.on}")
+    print(f"[TRAINING] Validation On/Off : {options.validation.on}")
+    print(f"[TRAINING] Evaluation On/Off : {options.evaluation.on}")
     print(f"[TRAINING] Device : {options.training.device}")
     print(f"[TRAINING] Saving Period : {options.training.saving_period}")
     print(f"[TRAINING] Saving Path : {options.info.path}")
@@ -68,6 +71,8 @@ if options.alert.options_info:
     print(f"[ALERT] validation_epoch : {options.alert.validation_epoch}")
     print(f"[ALERT] epoch_period : {options.alert.epoch_period}")
     print(f"[ALERT] batch_period : {options.alert.batch_period}")
+    delay = 5
+    time.sleep(delay)
 
 if not os.path.isdir(options.info.path):
     os.mkdir(options.info.path)
@@ -176,6 +181,9 @@ if options.alert.dataset_info:
     print(f"[DATASET][ALL] Dataset all x : {dataset.train.dataset.x.shape}")
     print(f"[DATASET][ALL] Dataset all y : {dataset.train.dataset.y.shape}")
     print(f"[DATASET][ALL] Dataset split rate : {options.dataset.split_rate}")
+    print(f"[DATASET][ALL] Dataset batch size : {options.training.batch}")
+    print(f"[DATASET][ALL] Dataset sequence length : {options.dataset.sequence}")
+    print(f"[DATASET][ALL] Dataset prediction length : {options.dataset.prediction}")
     print(f"[DATASET][LEARNING] Dataset train x info : {next(iter(dataset.train))[0].size()}")
     print(f"[DATASET][LEARNING] Dataset train y info : {next(iter(dataset.train))[1].size()}")
     print(f"[DATASET][LEARNING] Dataset validation x info : {next(iter(dataset.validation))[0].size()}")
