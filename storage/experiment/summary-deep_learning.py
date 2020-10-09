@@ -152,6 +152,16 @@ class AileverModel(nn.Module):
         p = self.linear(h[-1])
         return p
 
+
+class AileverCriterion(nn.Module):
+    def __init__(self, options):
+        super(AileverCriterion, self).__init__()
+        self.mse = nn.MSELoss()
+
+    def forward(self, hypothesis, target):
+        cost = self.mse(hypothesis, target)
+        return cost
+
 #%%
 dataset = Obj()
 dataset.train = AileverDataset(options, split_type='train')
@@ -179,10 +189,9 @@ if options.alert.dataset_info:
     print(f'* Example, Y[:10]')
     print(dataset.train.dataset.y[:10])
 
-model = AileverModel(options)
-model = model.to(options.training.device)
+model = AileverModel(options).to(options.training.device)
+criterion = AileverCriterion(options).to(options.training.device)
 optimizer = optim.Adam(model.parameters(), lr=1e-1, weight_decay=1e-7)
-criterion = nn.MSELoss().to(options.training.device)
 if options.alert.model_info:
     print(f'\n*{"MODEL INFORMATION":-^100}*')
     summary(model, next(iter(dataset.train))[0].size())
