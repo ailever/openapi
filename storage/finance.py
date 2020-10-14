@@ -26,10 +26,12 @@ with open('stock-items.txt', 'w') as f:
 
 #%%
 def datareader(name, period=0, verbose=True):
-    if verbose:
-        pprint(stock[stock.index == name].to_dict())
+    if verbose : pprint(stock[stock.index == name].to_dict())
     code = str(stock[stock.index == name].Symbol.values.squeeze())
-    stock_price = fdr.DataReader(code)['Close'][-period:]
+
+    if isinstance(period, str) : stock_price = fdr.DataReader(code, start=period)['Close']
+    else : stock_price = fdr.DataReader(code)['Close'][-period:]
+
     x = stock_price.index.values
     y = stock_price.values
     return x, y
@@ -41,10 +43,11 @@ def visualization(names, period=0, verbose=True):
         plt.plot(x, y, label=f'{name}')
     plt.grid(True)
     plt.legend()
+    plt.tight_layout()
     plt.show()
 
-stock_names = ['SK하이닉스', '삼성전자', 'NH투자증권', 'CJ', 'GV']
-visualization(names=stock_names, period=100, verbose=None)
+stock_names = ['SK하이닉스', '삼성전자', 'LG화학', 'LG디스플레이']
+visualization(names=stock_names, period='2010-01-01', verbose=None)
 
 #%%
 x, y = datareader(name='삼성전자')
