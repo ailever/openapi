@@ -46,17 +46,18 @@ def visualization(names, period=0, verbose=True):
     plt.tight_layout()
     plt.show()
 
-stock_names = ['SK하이닉스', '삼성전자', 'LG화학', 'LG디스플레이']
-visualization(names=stock_names, period='2010-01-01', verbose=None)
+stock_names = ['SK하이닉스', '삼성전자', 'LG화학', 'LG디스플레이', '현대차']
+visualization(names=stock_names, period='2020-01-01', verbose=None)
 
 #%%
-x, y = datareader(name='삼성전자')
+stock_name = '삼성전자'
+x, y = datareader(name=stock_name, period='2020-01-01')
 price = pd.Series(data=y, index=x)
 price.describe()
 
 #%%
 tsa = TSA()
-Trend, Seasonal, Resid = tsa.analyze(TS=price, freq=10, lags=10)
+Trend, Seasonal, Resid = tsa.analyze(TS=price, freq=30, lags=10)
 
 trend = Trend.dropna()
 seasonal = Seasonal.dropna()
