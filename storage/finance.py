@@ -1,13 +1,14 @@
 #%%
+from pprint import pprint
 from ailever.forecast import TSA
 import statsmodels.tsa.api as smt
 import statsmodels.api as sm
 import FinanceDataReader as fdr
 import matplotlib.pyplot as plt
-from pprint import pprint
+import matplotlib.font_manager as fm
 import pandas as pd
-import numpy as np
 
+plt.rcParams["font.family"] = 'NanumBarunGothic'
 #%%
 markets = ['NASDAQ', 'NYSE', 'AMEX', 'SSE', 'SZSE', 'HKEX', 'TSE', 'HOSE',
            'KRX', 'KOSPI', 'KOSDAQ', 'KONEX',
@@ -17,22 +18,36 @@ markets = ['NASDAQ', 'NYSE', 'AMEX', 'SSE', 'SZSE', 'HKEX', 'TSE', 'HOSE',
 
 stock = fdr.StockListing('KRX').set_index('Name')
 
+stock_items = ''
+for item in stock.index:
+    stock_items += str(item) + '\n'
+with open('stock-items.txt', 'w') as f:
+    f.write(stock_items)
+
 #%%
-def datareader(name, period):
-    pprint(stock[stock.index == name].to_dict())
+def datareader(name, period=0, verbose=True):
+    if verbose:
+        pprint(stock[stock.index == name].to_dict())
     code = str(stock[stock.index == name].Symbol.values.squeeze())
     stock_price = fdr.DataReader(code)['Close'][-period:]
     x = stock_price.index.values
     y = stock_price.values
     return x, y
 
-stock_name = 'SK하이닉스'
-x, y = datareader(name=stock_name, period=100)
-plt.scatter(x,y, c='r', marker='*')
-plt.plot(x,y)
-plt.grid()
-plt.show()
+def visualization(names, period=0, verbose=True):
+    for name in names:
+        x, y = datareader(name=name, period=period, verbose=verbose)
+        plt.scatter(x, y, marker='*')
+        plt.plot(x, y, label=f'{name}')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
+stock_names = ['SK하이닉스', '삼성전자', 'NH투자증권', 'CJ', 'GV']
+visualization(names=stock_names, period=100, verbose=None)
+
+#%%
+x, y = datareader(name='삼성전자')
 price = pd.Series(data=y, index=x)
 price.describe()
 
