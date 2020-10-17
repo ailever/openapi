@@ -1,10 +1,10 @@
 # Ailever Open Source
 
-## stat-
+## [stat]
 
-## ml-
+## [ml]
 
-## language-
+## [language]
 
-## vision-
+## [vision]
 
