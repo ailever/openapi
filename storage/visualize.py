@@ -272,6 +272,11 @@ class Visualization:
         layout = (2,1)
         ax00 = plt.subplot2grid(layout, (0,0))
 
+        for name in self.stock_names:
+            x, y = self.datareader(name=name, start=start, end=end, verbose=verbose)
+            ax00.scatter(x, y, marker='*')
+            ax00.plot(x, y, label=f'{name}')
+
         plt.tight_layout()
         if save : plt.savefig('analysis04.png')
         plt.show()
@@ -283,6 +288,11 @@ class Visualization:
         fig = plt.figure()
         layout = (2,1)
         ax00 = plt.subplot2grid(layout, (0,0))
+
+        for name in self.stock_names:
+            x, y = self.datareader(name=name, start=start, end=end, verbose=verbose)
+            ax00.scatter(x, y, marker='*')
+            ax00.plot(x, y, label=f'{name}')
 
         plt.tight_layout()
         if save : plt.savefig('analysis05.png')
