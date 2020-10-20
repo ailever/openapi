@@ -1,4 +1,3 @@
-
 #%%
 from pprint import pprint
 from ailever.forecast import TSA
@@ -31,7 +30,8 @@ class Visualization:
         x = stock_price.index.values
         y = stock_price.values
         return x, y
-    
+
+    # [present]   
     def scenario01(self, start='2020-01-01', end='2020-10-01', verbose=True, save=None):
         if not end: end = np.datetime64('today')
 
@@ -87,7 +87,7 @@ class Visualization:
         if save : plt.savefig('analysis01.png')
         plt.show()
 
-    # past
+    # [past]
     def scenario02(self, start='2020-01-01', end='2020-10-01', verbose=True, save=None):
         if not end: end = np.datetime64('today')
         time_range = np.arange(start, end, dtype='datetime64[D]')
@@ -162,7 +162,7 @@ class Visualization:
         plt.show()
 
 
-    # future
+    # [future]
     def scenario03(self, start='2020-01-01', end='2020-10-01', verbose=True, save=None):
         if not end: end = np.datetime64('today')
         time_range = np.arange(start, end, dtype='datetime64[D]')
@@ -264,26 +264,101 @@ class Visualization:
         if save : plt.savefig('analysis03.png')
         plt.show()
 
+    # [decompose]
     def scenario04(self, start='2020-01-01', end='2020-10-01', verbose=True, save=None):
         if not end: end = np.datetime64('today')
         self.config['scenario04'] = dict()
+        self.config['scenario04']['freq'] = 20
 
-        fig = plt.figure()
-        layout = (2,1)
+        fig = plt.figure(figsize=(20,18))
+        layout = (4,1)
         ax00 = plt.subplot2grid(layout, (0,0))
+        ax01 = plt.subplot2grid(layout, (1,0))
+        ax02 = plt.subplot2grid(layout, (2,0))
+        ax03 = plt.subplot2grid(layout, (3,0))
 
         for name in self.stock_names:
             x, y = self.datareader(name=name, start=start, end=end, verbose=verbose)
-            ax00.scatter(x, y, marker='*')
-            ax00.plot(x, y, label=f'{name}')
+            result = smt.seasonal_decompose(y, model='additive', freq=self.config['scenario04']['freq'])
+            ax00.scatter(x, result.observed, marker='*')
+            ax00.plot(x, result.observed, label=f'{name}')
+            ax01.scatter(x, result.trend, marker='*')
+            ax01.plot(x, result.trend, label=f'{name}')
+            ax02.scatter(x, result.seasonal, marker='*')
+            ax02.plot(x, result.seasonal, label=f'{name}')
+            ax03.scatter(x, result.resid, marker='*')
+            ax03.plot(x, result.resid, label=f'{name}')
 
+        ax00.grid(True)
+        ax01.grid(True)
+        ax02.grid(True)
+        ax03.grid(True)
+        ax00.legend()
+        ax01.legend()
+        ax02.legend()
+        ax03.legend()
         plt.tight_layout()
         if save : plt.savefig('analysis04.png')
         plt.show()
 
+    # [trend]
     def scenario05(self, start='2020-01-01', end='2020-10-01', verbose=True, save=None):
         if not end: end = np.datetime64('today')
         self.config['scenario05'] = dict()
+        self.config['scenario05']['freq'] = 20
+        for name in self.stock_names:
+            self.config['scenario05'][f'{name}'] = self.datareader(name=name, start=start, end=end, verbose=verbose)
+
+        fig = plt.figure(figsize=(20,18))
+        layout = (4,1)
+        ax00 = plt.subplot2grid(layout, (0,0))
+        ax01 = plt.subplot2grid(layout, (1,0))
+        ax02 = plt.subplot2grid(layout, (2,0))
+        ax03 = plt.subplot2grid(layout, (3,0))
+
+        for name in self.stock_names:
+            x, y = self.config['scenario05'][f'{name}']
+            ax00.scatter(x, y, marker='*')
+            ax00.plot(x, y, label=f'{name}')
+
+            y = (y - y.mean())/y.std()
+            ax02.scatter(x, y, marker='*')
+            ax02.plot(x, y, label=f'{name}')
+
+
+            x, y = self.config['scenario05'][f'{name}']
+            trend = smt.seasonal_decompose(y, model='additive', freq=self.config['scenario05']['freq']).trend
+            ndiff = int(np.isnan(trend).sum()/2)
+            x = x[ndiff:-ndiff]
+            y = trend[~np.isnan(trend)]
+
+            ax01.scatter(x, y, marker='*')
+            ax01.plot(x, y, label=f'{name}')
+
+            y = (y - y.mean())/y.std()
+            ax03.scatter(x, y, marker='*')
+            ax03.plot(x, y, label=f'{name}')
+
+        ax00.grid(True)
+        ax01.grid(True)
+        ax02.grid(True)
+        ax03.grid(True)
+        ax00.legend()
+        ax01.legend()
+        ax02.legend()
+        ax03.legend()
+        ax00.set_title('[Observed]')
+        ax01.set_title('[Trend]')
+        ax02.set_title('[Normalized observed]')
+        ax03.set_title('[Normalized trend]')
+        ax01.axhline(0, c='black', ls='--')
+        plt.tight_layout()
+        if save : plt.savefig('analysis05.png')
+        plt.show()
+
+    def scenario06(self, start='2020-01-01', end='2020-10-01', verbose=True, save=None):
+        if not end: end = np.datetime64('today')
+        self.config['scenario06'] = dict()
 
         fig = plt.figure()
         layout = (2,1)
@@ -295,11 +370,15 @@ class Visualization:
             ax00.plot(x, y, label=f'{name}')
 
         plt.tight_layout()
-        if save : plt.savefig('analysis05.png')
+        if save : plt.savefig('analysis06.png')
         plt.show()
+
 
 plotting_board = Visualization(additional_stocks=[], ratio=0.5)
 #plotting_board.scenario01(start='2019-01-01', end=None, verbose=None, save=None)
 #plotting_board.scenario02(start='2019-01-01', end=None, verbose=None, save=None)
 #plotting_board.scenario03(start='2020-04-01', end=None, verbose=None, save=None)
-plotting_board.scenario04()
+#plotting_board.scenario04(start='2020-04-01', end=None, verbose=None, save=None)
+#plotting_board.scenario05(start='2020-04-01', end=None, verbose=None, save=None)
+plotting_board.scenario06(start='2020-04-01', end=None, verbose=None, save=None)
+
