@@ -16,7 +16,7 @@ p, d, q = 2, 1, 2
 model = smt.ARIMA(train, order=(p,d,q)).fit(trend='c')
 
 _, axes = plt.subplots(1,1, figsize=(12,5))
-model.plot_predict(start=d, end=100, ax=axes)
+model.plot_predict(start=d, end=100-1, ax=axes)
 values = model.forecast(30)[0]
 low_bound = model.forecast(30)[2][:,0]
 high_bound = model.forecast(30)[2][:,1]
