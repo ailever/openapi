@@ -17,10 +17,7 @@ driver.find_elements_by_css_selector("[CSS SELECTOR]")[0].click(); time.sleep(3)
 driver.find_elements_by_css_selector("[CSS SELECTOR]")[0].click(); time.sleep(3)
 
 bs = BeautifulSoup(driver.page_source, 'html.parser')
-selected_list = bs.select('[CSS SELECTOR]')
-for v in selected_list:
-    v.select('[CSS SELECTOR]')
-    v.select('[CSS SELECTOR]')
-    v.select('[CSS SELECTOR]')
+bs.select('[CSS SELECTOR]')
+bs.find_all('[CSS SELECTOR]')
 
 driver.quit()
