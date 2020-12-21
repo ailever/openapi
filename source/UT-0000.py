@@ -11,6 +11,7 @@ driver = webdriver.Chrome("chromedriver.exe", options=options)
 driver.implicitly_wait(5)
 driver.get("[URL]")
 driver.maximize_window()
+# https://www.w3schools.com/cssref/css_selectors.asp
 driver.find_elements_by_css_selector("[CSS SELECTOR]")[0].click(); time.sleep(3)
 driver.find_elements_by_css_selector("[CSS SELECTOR]")[0].click(); time.sleep(3)
 driver.find_elements_by_css_selector("[CSS SELECTOR]")[0].click(); time.sleep(3)
