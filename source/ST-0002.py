@@ -67,7 +67,7 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1)):
     e_term = sympy.Matrix([e_coeff]) * sympy.Matrix(e__) # right-side
     
     Time_Series = Y - Y_term[0] + e_term[0]
-    Time_Series = sympy.collect(Time_Series, Y)
+    Time_Series = sympy.collect(Time_Series, Y).simplify()
     return Time_Series
 
 SARIMAEquation((1,1,2), (2,0,1,4))
