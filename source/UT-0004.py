@@ -1,3 +1,4 @@
+#%%
 # Libraries
 #from dash.dependencies import Input, Output, State
 #import plotly.express as px
@@ -45,7 +46,7 @@ Describe your project.
 # Code
 fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
 fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
-
+fig.show()
 
 
 
