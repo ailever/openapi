@@ -142,6 +142,10 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
             print(f't-{i} : {A_coeff_e} > {round(N_coeff_e, 5)}')
             final_coeffs[1].append(N_coeff_e)
 
+    print('\n* Convergence Factor')
+    print('Y :', sympy.tensorcontraction(sympy.Array(final_coeffs[0]).applyfunc(lambda x: x**2), (0,)))
+    print('e :', sympy.tensorcontraction(sympy.Array(final_coeffs[1]).applyfunc(lambda x: x**2), (0,)))        
+            
     #Time_Series['Y_t']
     """
     Y_t = (~)*Y_t-1 + ... + 1*e_t + (~)*e_t-1 + ...
