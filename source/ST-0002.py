@@ -139,6 +139,11 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
             final_coeffs[1].append(N_coeff_e)
 
     #Time_Series['Y_t']
+    """
+    Y_t = (~)*Y_t-1 + ... + 1*e_t + (~)*e_t-1 + ...
+    final_coeffs[0] : coeff[Y_t-1, Y_t-2, ...]
+    final_coeffs[1] : coeff[e_t-1, e_t-2, ...]
+    """
     return final_coeffs
 
 trendAR=[]; trendMA=[]
