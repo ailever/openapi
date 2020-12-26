@@ -92,7 +92,8 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
         Time_Series['Y_t'] = sympy.collect(Time_Series['Y_t'], Y_[f't-{i}']).simplify()
     for i in range(1, int(q+Q*m)+1):
         Time_Series['Y_t'] = sympy.collect(Time_Series['Y_t'], e_[f't-{i}']).simplify()
-    sympy.pprint(Time_Series['Y_t'])
+    print('* Time Series Equation(Analytic Form)')
+    sympy.pprint(Time_Series['Y_t']); print()
 
     Time_Series['Analytic_Coeff_of_Y'] = Time_Series['Y_t(i,j)'].subs(J, 0).all_coeffs()[::-1]
     Time_Series['Analytic_Coeff_of_e'] = Time_Series['Y_t(i,j)'].subs(I, 0).all_coeffs()[::-1]
@@ -107,11 +108,13 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
         Time_Series['Numeric_Coeff_of_e'] = Time_Series['Numeric_Coeff_of_e'].subs(theta, Nt)
     for i, (Theta, NT) in enumerate(zip(list(S_theta.values())[1:], seasonMA)):
         Time_Series['Numeric_Coeff_of_e'] = Time_Series['Numeric_Coeff_of_e'].subs(Theta, NT)
+    print('* Time Series Equation(Numeric Form)')
+    sympy.pprint((Time_Series['Numeric_Coeff_of_Y'] + Time_Series['Numeric_Coeff_of_e']).subs(I, 1).subs(J, 1))
     Time_Series['Numeric_Coeff_of_Y'] = sympy.Poly(Time_Series['Numeric_Coeff_of_Y'], I).all_coeffs()[::-1]
     Time_Series['Numeric_Coeff_of_e'] = sympy.Poly(Time_Series['Numeric_Coeff_of_e'], J).all_coeffs()[::-1]
 
     final_coeffs = [[], []]
-    print('\n* [Y params]')
+    print('\n* Y params')
     print(f'- TAR({trendparams[0]}) phi : {trendAR}')
     print(f'- TMA({trendparams[2]}) theta : {trendMA}')
     for i, (A_coeff_Y, N_coeff_Y) in enumerate(zip(Time_Series['Analytic_Coeff_of_Y'], Time_Series['Numeric_Coeff_of_Y'])):
@@ -123,7 +126,7 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
             print(f't-{i} : {A_coeff_Y} > {round(N_coeff_Y, 5)}')
             final_coeffs[0].append(N_coeff_Y)
 
-    print('\n* [e params]')
+    print('\n* e params')
     print(f'- SAR({seasonalparams[0]}) Phi : {seasonAR}')
     print(f'- SMA({seasonalparams[2]}) Theta : {seasonMA}')
     for i, (A_coeff_e, N_coeff_e) in enumerate(zip(Time_Series['Analytic_Coeff_of_e'], Time_Series['Numeric_Coeff_of_e'])):
