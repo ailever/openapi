@@ -1,7 +1,7 @@
 import sympy
 import numpy as np
 import matplotlib.pyplot as plt
-import statsmodels.api as sm
+import statsmodels.tsa.api as smt
 
 def SARIMACorrelation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), trendAR=None, trendMA=None, seasonAR=None, seasonMA=None):
     p, d, q = trendparams
@@ -149,30 +149,30 @@ def SARIMACorrelation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1),
     ar_params = np.array(final_coeffs[0])
     ma_params = np.array(final_coeffs[1])
     ar, ma = np.r_[1, -ar_params], np.r_[1, ma_params]
-    y = sm.tsa.ArmaProcess(ar, ma).generate_sample(300, burnin=50)
+    y = smt.ArmaProcess(ar, ma).generate_sample(300, burnin=50)
 
     axes[0].plot(y, 'o-')
     axes[0].grid(True)
 
-    axes[1].stem(sm.tsa.ArmaProcess(ar, ma).acf(lags=40))
+    axes[1].stem(smt.ArmaProcess(ar, ma).acf(lags=40))
     axes[1].set_xlim(-1, 41)
     axes[1].set_ylim(-1.1, 1.1)
     axes[1].set_title("Theoretical autocorrelation function of an SARIMA process")
     axes[1].grid(True)
 
-    axes[2].stem(sm.tsa.ArmaProcess(ar, ma).pacf(lags=40))
+    axes[2].stem(smt.ArmaProcess(ar, ma).pacf(lags=40))
     axes[2].set_xlim(-1, 41)
     axes[2].set_ylim(-1.1, 1.1)
     axes[2].set_title("Theoretical partial autocorrelation function of an SARIMA process")
     axes[2].grid(True)
 
-    sm.graphics.tsa.plot_acf(y, lags=40, ax=axes[3])
+    smt.graphics.plot_acf(y, lags=40, ax=axes[3])
     axes[3].set_xlim(-1, 41)
     axes[3].set_ylim(-1.1, 1.1)
     axes[3].set_title("Experimental autocorrelation function of an SARIMA process")
     axes[3].grid(True)
 
-    sm.graphics.tsa.plot_pacf(y, lags=40, ax=axes[4])
+    smt.graphics.plot_pacf(y, lags=40, ax=axes[4])
     axes[4].set_xlim(-1, 41)
     axes[4].set_ylim(-1.1, 1.1)
     axes[4].set_title("Experimental partial autocorrelation function of an SARIMA process")
@@ -181,6 +181,6 @@ def SARIMACorrelation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1),
     plt.tight_layout()
     plt.show()
 
-trendAR=[0.3, 0.3]; trendMA=[]
+trendAR=[0.3]; trendMA=[]
 seasonAR=[]; seasonMA=[]
-SARIMACorrelation((2,0,0), (0,0,0,4), trendAR=trendAR, trendMA=trendMA, seasonAR=seasonAR, seasonMA=seasonMA)
+SARIMACorrelation((1,0,0), (0,0,0,12), trendAR=trendAR, trendMA=trendMA, seasonAR=seasonAR, seasonMA=seasonMA)
