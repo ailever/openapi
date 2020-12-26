@@ -3,6 +3,7 @@ import sympy
 def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), trendAR=None, trendMA=None, seasonAR=None, seasonMA=None):
     p, d, q = trendparams
     P, D, Q, m = seasonalparams
+    print(f'SARIMA({p},{d},{q})({P},{D},{Q},{m})')
 
     assert type(p) is int, 'Input parameter "p" is not an integer type.'
     assert type(d) is int, 'Input parameter "d" is not an integer type.'
