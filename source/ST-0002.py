@@ -13,13 +13,13 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
     assert type(m) is int, 'Input parameter "m" is not an integer type.'
 
     if trendAR : assert len(trendAR) == p, f'The len(trendAR) must be {p}. Reset the parameters.'
-    else : trendAR = [0.01]*p
+    else : trendAR = [0]*p
     if trendMA : assert len(trendMA) == q, f'The len(trendMA) must be {q}. Reset the parameters.'
-    else : trendMA = [0.01]*q
+    else : trendMA = [0]*q
     if seasonAR : assert len(seasonAR) == P, f'The len(seasonAR) must be {P}. Reset the parameters.'
-    else : seasonAR = [0.01]*P
+    else : seasonAR = [0]*P
     if seasonMA : assert len(seasonMA) == Q, f'The len(seasonMA) must be {Q}. Reset the parameters.'
-    else : seasonMA = [0.01]*Q
+    else : seasonMA = [0]*Q
 
 
     Y_order = p + P*m + d + D*m
