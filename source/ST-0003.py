@@ -146,8 +146,11 @@ def SARIMACorrelation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1),
             final_coeffs[1].append(N_coeff_e)
 
     print('\n* Convergence Factor')
-    print('Y :', sympy.tensorcontraction(sympy.Array(final_coeffs[0]).applyfunc(lambda x: x**2), (0,)))
-    print('e :', sympy.tensorcontraction(sympy.Array(final_coeffs[1]).applyfunc(lambda x: x**2), (0,)))
+    try:
+        print('Y :', sympy.tensorcontraction(sympy.Array(final_coeffs[0]).applyfunc(lambda x: x**2), (0,)))
+        print('e :', sympy.tensorcontraction(sympy.Array(final_coeffs[1]).applyfunc(lambda x: x**2), (0,)))
+    except:
+        pass
     
     _, axes = plt.subplots(5,1, figsize=(12, 15))
     ar_params = np.array(final_coeffs[0])
