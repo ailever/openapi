@@ -65,7 +65,7 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
         L_byT_theta.append([T_Lag**q_]) # L_byT_theta = [[L**0], [L**1], ..., [L**q]]
     for Q_ in range(0, Q+1):
         S_theta[Q_] = sympy.symbols(f'Theta_{Q_}')
-        S_thetas.append(S_theta[Q_])    # S_thetas    = [S_theta[0], S_theta[1], ..., S_theta[Q]]
+        S_thetas.append(S_theta[Q_])    # S_thetas    = [T_theta[0], T_theta[1], ..., T_theta[Q]]
         L_byS_theta.append([S_Lag**Q_]) # L_byS_theta = [[(L**m)**0], [(L**m)**1], ..., [(L**m)**Q]]
 
     T_phi_Lag = sympy.Matrix([T_phis]) * sympy.Matrix(L_byT_phi)
@@ -92,10 +92,10 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
         Time_Series['Y_t'] = sympy.collect(Time_Series['Y_t'], Y_[f't-{i}']).simplify()
     for i in range(1, int(q+Q*m)+1):
         Time_Series['Y_t'] = sympy.collect(Time_Series['Y_t'], e_[f't-{i}']).simplify()
+    sympy.pprint(Time_Series['Y_t'])
 
     Time_Series['Analytic_Coeff_of_Y'] = Time_Series['Y_t(i,j)'].subs(J, 0).all_coeffs()[::-1]
     Time_Series['Analytic_Coeff_of_e'] = Time_Series['Y_t(i,j)'].subs(I, 0).all_coeffs()[::-1]
-
 
     Time_Series['Numeric_Coeff_of_Y'] = Time_Series['Y_t(i,j)'].subs(J, 0) - e_['t']
     Time_Series['Numeric_Coeff_of_e'] = Time_Series['Y_t(i,j)'].subs(I, 0)
@@ -110,8 +110,8 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
     Time_Series['Numeric_Coeff_of_Y'] = sympy.Poly(Time_Series['Numeric_Coeff_of_Y'], I).all_coeffs()[::-1]
     Time_Series['Numeric_Coeff_of_e'] = sympy.Poly(Time_Series['Numeric_Coeff_of_e'], J).all_coeffs()[::-1]
 
-    final_coeffs = {'Y':[], 'e':[]}
-    print('* [Y params]')
+    final_coeffs = [[], []]
+    print('\n* [Y params]')
     print(f'- TAR({trendparams[0]}) phi : {trendAR}')
     print(f'- TMA({trendparams[2]}) theta : {trendMA}')
     for i, (A_coeff_Y, N_coeff_Y) in enumerate(zip(Time_Series['Analytic_Coeff_of_Y'], Time_Series['Numeric_Coeff_of_Y'])):
@@ -121,7 +121,7 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
             A_coeff_Y = A_coeff_Y.subs(Y_[f"t-{i}"], 1)
             N_coeff_Y = N_coeff_Y.subs(Y_[f"t-{i}"], 1)
             print(f't-{i} : {A_coeff_Y} > {round(N_coeff_Y, 5)}')
-            final_coeffs['Y'].append(N_coeff_Y)
+            final_coeffs[0].append(N_coeff_Y)
 
     print('\n* [e params]')
     print(f'- SAR({seasonalparams[0]}) Phi : {seasonAR}')
@@ -136,11 +136,11 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
             A_coeff_e = A_coeff_e.subs(e_[f"t-{i}"], 1)
             N_coeff_e = N_coeff_e.subs(e_[f"t-{i}"], 1)
             print(f't-{i} : {A_coeff_e} > {round(N_coeff_e, 5)}')
-            final_coeffs['e'].append(N_coeff_e)
+            final_coeffs[1].append(N_coeff_e)
 
-    return Time_Series['Y_t'], final_coeffs
+    #Time_Series['Y_t']
+    return final_coeffs
 
 trendAR=[]; trendMA=[]
 seasonAR=[]; seasonMA=[]
-sarima = SARIMAEquation((1,1,2), (2,0,1,4), trendAR=trendAR, trendMA=trendMA, seasonAR=seasonAR, seasonMA=seasonMA)
-sarima[0]   #time_series_coeffs = sarima[1]
+SARIMAEquation((1,1,2), (2,0,1,4), trendAR=trendAR, trendMA=trendMA, seasonAR=seasonAR, seasonMA=seasonMA)
