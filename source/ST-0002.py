@@ -65,7 +65,7 @@ def SARIMAEquation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1), tr
         L_byT_theta.append([T_Lag**q_]) # L_byT_theta = [[L**0], [L**1], ..., [L**q]]
     for Q_ in range(0, Q+1):
         S_theta[Q_] = sympy.symbols(f'Theta_{Q_}')
-        S_thetas.append(S_theta[Q_])    # S_thetas    = [T_theta[0], T_theta[1], ..., T_theta[Q]]
+        S_thetas.append(S_theta[Q_])    # S_thetas    = [S_theta[0], S_theta[1], ..., S_theta[Q]]
         L_byS_theta.append([S_Lag**Q_]) # L_byS_theta = [[(L**m)**0], [(L**m)**1], ..., [(L**m)**Q]]
 
     T_phi_Lag = sympy.Matrix([T_phis]) * sympy.Matrix(L_byT_phi)
