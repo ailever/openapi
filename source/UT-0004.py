@@ -5,6 +5,7 @@
 #import numpy as np
 #import pandas as pd
 #import matplotlib.pyplot as plt
+#from PIL.ImageGrab import grabclipboard
 #import sympy
 #import dolfin
 #from scipy import interpolate
