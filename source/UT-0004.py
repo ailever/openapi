@@ -41,6 +41,8 @@ project_title = 'PROJECT TITLE'
 fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
 fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
 
+
+#%%
 # Description
 description = """
 Describe your project.
@@ -50,15 +52,23 @@ Describe your project.
 """
 
 
-
-
+#%%
+# Python Objects > Dash Objects
+O = {}
+O['0,0'] = dcc.Graph(figure=fig)
+O['0,1'] = dcc.Markdown(description)
+O['1,0'] = None
+O['1,1'] = None
 
 # Layout
 contents = {}; contents['page'] = {}; page_layouts = {}
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 main = html.Div([html.H2(html.A(project_title, href="/")), html.H6('Promulgate values for a better tomorrow'), html.Br()])
-contents['page']['tab'] = [dcc.Graph(figure=fig), dcc.Markdown(description)]
+contents['page']['tab'] = [
+    dbc.Row([dbc.Col(O['0,0'], width=6), dbc.Col(O['0,1'], width=6)]),
+    dbc.Row([dbc.Col(O['1,0'], width=6), dbc.Col(O['1,1'], width=6)]),
+]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="AILEVER", disabled=True)])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
-    app.run_server(host="127.0.0.1", port='8050', debug=True)
+    app.run_server(host="127.0.0.1", port='8050', debug=True) 
