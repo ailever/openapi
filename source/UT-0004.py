@@ -68,7 +68,9 @@ contents['page']['tab'] = [
     dbc.Row([dbc.Col(O['0,0'], width=6), dbc.Col(O['0,1'], width=6)]),
     dbc.Row([dbc.Col(O['1,0'], width=6), dbc.Col(O['1,1'], width=6)]),
 ]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="AILEVER", disabled=True)])
+page_layouts['page'] = dbc.Tabs([
+    dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="AILEVER", disabled=True),
+])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host="127.0.0.1", port='8050', debug=True) 
