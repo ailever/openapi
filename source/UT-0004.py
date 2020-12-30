@@ -35,23 +35,19 @@ from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
 # Project Details
-project_title = 'PROJECT'
+project_title = 'PROJECT TITLE'
+
+# Figure
+fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
+fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
+
+# Description
 description = """
 Describe your project.
 - content1
 - content2
 - content3
 """
-
-# Code
-fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
-fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
-fig.show()
-
-
-
-
-
 
 
 
@@ -60,8 +56,9 @@ fig.show()
 # Layout
 contents = {}; contents['page'] = {}; page_layouts = {}
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
-contents['page']['tab'] = [html.H2(project_title), dcc.Graph(figure=fig), dcc.Markdown(description)]
+main = html.Div([html.H2(html.A(project_title, href="/")), html.H6('Promulgate values for a better tomorrow'), html.Br()])
+contents['page']['tab'] = [dcc.Graph(figure=fig), dcc.Markdown(description)]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="AILEVER", disabled=True)])
-app.layout = page_layouts['page']
+app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host="127.0.0.1", port='8050', debug=True)
