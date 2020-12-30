@@ -1,11 +1,11 @@
 #%%
 # Libraries
+#from PIL.ImageGrab import grabclipboard
 #from dash.dependencies import Input, Output, State
 #import plotly.express as px
 #import numpy as np
 #import pandas as pd
 #import matplotlib.pyplot as plt
-#from PIL.ImageGrab import grabclipboard
 #import sympy
 #import dolfin
 #from scipy import interpolate
