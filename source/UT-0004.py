@@ -35,8 +35,15 @@ import dash_bootstrap_components as dbc
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
+# Visdom server
+#!python -m visdom.sever
+#from visdom import Visdom
+#vis = Visdom(server='http://localhost', port=8097, env='main')
+#vis.close(env='main')
+
 # Project Details
 project_title = 'PROJECT TITLE'
+
 
 # Figure
 fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
@@ -64,7 +71,13 @@ O['T,1,1'] = None
 # Layout
 contents = {}; contents['page'] = {}; page_layouts = {}
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
-main = html.Div([html.H2(html.A(project_title, href="/")), html.H6('Promulgate values for a better tomorrow'), html.Br()])
+main = html.Div([html.H2(html.A(project_title, href="/")),
+                 html.H6('Promulgate values for a better tomorrow'),
+                 dcc.Markdown("""
+                 - [visdom](http://localhost:8097)
+                 - [ailever](https://github.com/ailever/ailever/wiki)
+                 """),
+                 html.Br()])
 contents['page']['tab'] = [
     dbc.Row([dbc.Col(O['T,0,0'], width=6), dbc.Col(O['T,0,1'], width=6)]),
     dbc.Row([dbc.Col(O['T,1,0'], width=6), dbc.Col(O['T,1,1'], width=6)]),
