@@ -10,7 +10,7 @@ from dash.dependencies import Input, Output, State
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 config = {}
-config['visdom-server'] = 'http://localhost'
+config['visdom-server'] = 'http://' + '127.0.0.1'
 config['visdom-port'] = '8097'
 config['dash-server'] = '127.0.0.1'
 config['dash-port'] = '8050'
