@@ -14,7 +14,7 @@ config['visdom-server'] = 'http://' + '127.0.0.1'
 config['visdom-port'] = '8097'
 config['dash-server'] = '127.0.0.1'
 config['dash-port'] = '8050'
-vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever
+vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 ################################## CONFIG ##################################
