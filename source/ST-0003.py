@@ -145,7 +145,7 @@ def SARIMACorrelation(trendparams:tuple=(0,0,0), seasonalparams:tuple=(0,0,0,1),
             print(f't-{i} : {A_coeff_e} > {round(N_coeff_e, 5)}')
             final_coeffs[1].append(N_coeff_e)
 
-    print('\n* Convergence Factor')
+    print('\n* Quasi-Convergence Factor')
     try:
         print('Y :', sympy.tensorcontraction(sympy.Array(final_coeffs[0]).applyfunc(lambda x: x**2), (0,)))
         print('e :', sympy.tensorcontraction(sympy.Array(final_coeffs[1]).applyfunc(lambda x: x**2), (0,)))
