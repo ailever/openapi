@@ -29,6 +29,7 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 
 
 
+
 # O[T,0,0] : Figure
 fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
 fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
@@ -40,6 +41,12 @@ description2 = "Description"
 description3 = "Description"
 
 
+
+
+
+################################## CODEBLOCK ##################################
+#%%
+################################## REALTIME ##################################
 # Real-Time Analysis
 @app.callback(
     Output("visdom-server", "children"),
@@ -52,11 +59,7 @@ def real_time_analysis(click):
         time_series[t] = time_series[t-1] + noise
         vis.line(X=torch.tensor([t]), Y=torch.tensor([time_series[t]]), win=window, update='append')
     return 'Real-Time Analysis is over.'
-
-
-
-
-################################## CODEBLOCK ##################################
+################################## REALTIME ##################################
 #%%
 ################################## DASHBOARD ##################################
 O = {}
