@@ -12,6 +12,8 @@ import plotly.graph_objs as go
 config = {}
 config['visdom-server'] = 'http://' + '127.0.0.1'
 config['visdom-port'] = '8097'
+config['R-server'] = 'http://' + '127.0.0.1'
+config['R-port'] = '8787'
 config['dash-server'] = '127.0.0.1'
 config['dash-port'] = '8050'
 vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
