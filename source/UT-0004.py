@@ -1,3 +1,4 @@
+#%%
 ################################## CONFIG ##################################
 import dash
 import dash_html_components as html
@@ -10,8 +11,8 @@ config['dash-server'] = '127.0.0.1'
 config['dash-port'] = '8050'
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 ################################## CONFIG ##################################
+#%%
 ################################## CODEBLOCK ##################################
-
 
 
 
@@ -31,6 +32,7 @@ description3 = "Description"
 
 
 ################################## CODEBLOCK ##################################
+#%%
 ################################## DASHBOARD ##################################
 O = {}
 O['T,_,_'] = None
