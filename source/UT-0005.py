@@ -79,7 +79,7 @@ page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page'][
 main = html.Div([html.H2(html.A('PROJECT TITLE', href="/")),
                  html.H6('Promulgate values for a better tomorrow'),
                  html.Div([dbc.Button("Ailever", color="secondary", href='https://github.com/ailever/ailever/wiki'),
-                           dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port'])]),
+                           dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                            dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                  html.P(id='visdom-server'),
                  html.Br()])
