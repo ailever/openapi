@@ -7,6 +7,8 @@ import dash_bootstrap_components as dbc
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 config = {}
+config['R-server'] = 'http://' + '127.0.0.1'
+config['R-port'] = '8787'
 config['dash-server'] = '127.0.0.1'
 config['dash-port'] = '8050'
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -53,7 +55,8 @@ contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
 main = html.Div([html.H2(html.A('PROJECT TITLE', href="/")),
                  html.H6('Promulgate values for a better tomorrow'),
-                 html.Div([dbc.Button("Ailever", color="secondary", href='https://github.com/ailever/ailever/wiki')]),
+                 html.Div([dbc.Button("Ailever", color="secondary", href='https://github.com/ailever/ailever/wiki'),
+                           dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port'])]),
                  html.Br()])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
