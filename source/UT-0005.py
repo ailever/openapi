@@ -10,6 +10,8 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
+# rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
+# python -m visdom.server -p 8097 --hostname 127.0.0.1
 config = {}
 config['visdom-server'] = 'http://' + '127.0.0.1'
 config['visdom-port'] = '8097'
