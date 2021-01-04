@@ -6,6 +6,7 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
+# rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
 config = {}
 config['R-server'] = 'http://' + '127.0.0.1'
 config['R-port'] = '8787'
