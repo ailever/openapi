@@ -1,3 +1,4 @@
+#%%
 ################################## CONFIG ##################################
 import torch
 import torch.nn as nn
@@ -18,6 +19,7 @@ vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='ma
 vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 ################################## CONFIG ##################################
+#%%
 ################################## CODEBLOCK ##################################
 
 
@@ -51,6 +53,7 @@ def real_time_analysis(click):
 
 
 ################################## CODEBLOCK ##################################
+#%%
 ################################## DASHBOARD ##################################
 O = {}
 O['T,_,_'] = None
