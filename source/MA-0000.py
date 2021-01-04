@@ -79,7 +79,7 @@ contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
-main = html.Div([html.H2(html.A('PROJECT TITLE', href="/")),
+main = html.Div([html.H2(html.A('ARIMA', href="/")),
                  html.H6('Promulgate values for a better tomorrow'),
                  html.Div([dbc.Button("Ailever", color="secondary", href='https://github.com/ailever/ailever/wiki'),
                            dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
