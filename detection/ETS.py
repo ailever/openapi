@@ -1,5 +1,15 @@
 #%%
 ################################## CONFIG ##################################
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--vs', type=str, default='127.0.0.1', help='visdom server')
+parser.add_argument('--vp', type=str, default='8097', help='visdom port')
+parser.add_argument('--rs', type=str, default='127.0.0.1', help='Rstudio server')
+parser.add_argument('--rp', type=str, default='8787', help='Rstudio port')
+parser.add_argument('--ds', type=str, default='127.0.0.1', help='dash server')
+parser.add_argument('--dp', type=str, default='8050', help='dash port')
+args = parser.parse_args()
+
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -10,12 +20,12 @@ import plotly.graph_objs as go
 # rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
 config = {}
-config['visdom-server'] = 'http://' + '127.0.0.1'
-config['visdom-port'] = '8097'
-config['R-server'] = 'http://' + '127.0.0.1'
-config['R-port'] = '8787'
-config['dash-server'] = '127.0.0.1'
-config['dash-port'] = '8050'
+config['visdom-server'] = 'http://' + args.vs
+config['visdom-port'] = args.vp
+config['R-server'] = 'http://' + args.rs
+config['R-port'] = args.rp
+config['dash-server'] = args.ds
+config['dash-port'] = args.dp
 #import torch
 #import torch.nn as nn
 #from visdom import Visdom
