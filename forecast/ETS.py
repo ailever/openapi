@@ -15,8 +15,6 @@ import dash_html_components as html
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
-from plotly.subplots import make_subplots
-import plotly.graph_objs as go
 # rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
 config = {}
@@ -35,9 +33,8 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CONFIG ##################################
 #%%
 ################################## CODEBLOCK ##################################
-
-
-
+from plotly.subplots import make_subplots
+import plotly.graph_objs as go
 
 
 # O[T,0,0] : Figure
