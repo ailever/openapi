@@ -2,6 +2,10 @@
 
 [ailever-wiki](https://github.com/ailever/ailever/wiki)
 ```python
+from ailever.analysis import dashboard
+dashboard()
+```
+```python
 from ailever.detection import dashboard
 dashboard()
 ```
