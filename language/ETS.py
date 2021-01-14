@@ -71,8 +71,8 @@ contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
-main = dbc.Jumbotron([html.H2('Ailever : language/ETS'),
-                      html.H6('Promulgate values for a better tomorrow'), html.Hr(),
+main = dbc.Jumbotron([html.H2('language/ETS'),
+                      html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Home", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button("GitHub", color="secondary", href='https://github.com/ailever/ailever/tree/master/ailever/language'),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/language'),
