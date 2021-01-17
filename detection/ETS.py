@@ -54,6 +54,11 @@ description3 = "Description"
 ################################## CODEBLOCK ##################################
 #%%
 ################################## DASHBOARD ##################################
+T = {}
+T['T,0,0'] = ''
+T['T,0,1'] = ''
+T['T,1,0'] = ''
+T['T,1,1'] = ''
 O = {}
 O['T,_,_'] = None
 O['T,0,0'] = dcc.Graph(figure=fig)
@@ -61,10 +66,10 @@ O['T,0,1'] = dcc.Markdown(description1)
 O['T,1,0'] = dcc.Markdown(description2)
 O['T,1,1'] = dcc.Markdown(description3)
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
-C['T,0,0'] = [dbc.Card([dbc.CardHeader('T,0,0'), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader('T,0,1'), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
-C['T,1,0'] = [dbc.Card([dbc.CardHeader('T,1,0'), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
-C['T,1,1'] = [dbc.Card([dbc.CardHeader('T,1,1'), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
+C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
+C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
+C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
+C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
