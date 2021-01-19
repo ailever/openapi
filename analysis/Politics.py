@@ -92,6 +92,10 @@ main = dbc.Jumbotron([html.H2('analysis/Politics'),
                                 dbc.Button("Docs", color="secondary", href='https://ailever.readthedocs.io/en/latest/detection/index.html'),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
+                      html.Div([dbc.Button('Time Line 1', color='dark', href="https://en.wikipedia.org/wiki/2021"),
+                                dbc.Button('Time Line 2', color='dark', href="https://ko.wikipedia.org/wiki/2021%EB%85%84"),
+                                dbc.Button('Time Line 3', color='dark', href="https://namu.wiki/w/2021%EB%85%84"),
+                                ]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
