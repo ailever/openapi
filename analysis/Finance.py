@@ -120,7 +120,8 @@ main = dbc.Jumbotron([html.H2('analysis/Finance'),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                       html.Div([dbc.Button("Investopedia", color="dark", href="https://www.investopedia.com/"),
-                                dbc.Button("Investing", color="dark", href="https://www.investing.com/")]),
+                                dbc.Button("Investing", color="dark", href="https://www.investing.com/"),
+                                dbc.Button("Economist", color="dark", href="https://www.economist.com/")]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
