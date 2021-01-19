@@ -73,7 +73,7 @@ KR['T1,T2,2,0'] = html.Embed(src='https://www1.president.go.kr/about/organizatio
 KR['T1,T2,3,0'] = html.Embed(src='https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83', style={'width':'100%', 'height':'700px'})
 KR['T1,T2,4,0'] = html.Embed(src='http://www.fsc.go.kr/fsc040101', style={'width':'100%', 'height':'700px'})
 
-# O[T1,T2,0,0] : Korea/Assembly
+# O[T1,T2,0,0] : Korea/Parties
 KR['T1,T3,0,0'] = html.Div([dbc.Button('더불어민주당', color='dark', href="https://theminjoo.kr/introduce/location"),
                             dbc.Button('국민의힘', color='dark', href="http://www.peoplepowerparty.kr/renewal/about/organization.do"),
                             dbc.Button('국민의당', color='dark', href="http://peopleparty.kr/"),
@@ -107,7 +107,7 @@ T['T1,T2,1,0'] = 'Korea'
 T['T1,T2,2,0'] = '청와대'
 T['T1,T2,3,0'] = '감사원'
 T['T1,T2,4,0'] = '금융위원회'
-T['T1,T3,0,0'] = 'Assembly'
+T['T1,T3,0,0'] = 'Parties'
 T['T1,T3,1,0'] = '더불어민주당'
 T['T1,T3,2,0'] = '국민의힘'
 T['T2,0,0'] = 'Press'
@@ -182,7 +182,7 @@ contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T2,0,0'], width=12)]), html.Br()
                             html.Br()]
 contents['page']['tab1']['tab'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Press", disabled=False),
                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Administration", disabled=False),
-                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Assembly", disabled=False),
+                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Parties", disabled=False),
                                             ])
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab'])), label="Korea", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="United States", disabled=False),])
