@@ -182,7 +182,7 @@ contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T2,0,0'], width=12)]), html.Br()
                             html.Br()]
 contents['page']['tab1']['tab'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Press", disabled=False),
                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Administration", disabled=False),
-                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Parties", disabled=False),
+                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Assembly", disabled=False),
                                             ])
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab'])), label="Korea", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="United States", disabled=False),])
@@ -198,6 +198,8 @@ main = dbc.Jumbotron([html.H2('analysis/Politics'),
                       html.Div([dbc.Button('Time Line 1', color='dark', href="https://en.wikipedia.org/wiki/2021"),
                                 dbc.Button('Time Line 2', color='dark', href="https://ko.wikipedia.org/wiki/2021%EB%85%84"),
                                 dbc.Button('Time Line 3', color='dark', href="https://namu.wiki/w/2021%EB%85%84"),
+                                dbc.Button('Kakao Map', color='dark', href="https://map.kakao.com/"),
+                                dbc.Button('Google Map', color='dark', href="https://www.google.co.kr/maps/"),
                                 ]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
