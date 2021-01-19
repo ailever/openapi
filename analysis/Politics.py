@@ -76,6 +76,7 @@ KR['T1,T2,4,0'] = html.Embed(src='http://www.fsc.go.kr/fsc040101', style={'width
 # O[T1,T2,0,0] : Korea/Assembly
 KR['T1,T3,0,0'] = html.Div([dbc.Button('더불어민주당', color='dark', href="https://theminjoo.kr/introduce/location"),
                             dbc.Button('국민의힘', color='dark', href="http://www.peoplepowerparty.kr/renewal/about/organization.do"),
+                            dbc.Button('국민의당', color='dark', href="http://peopleparty.kr/"),
                             ])
 KR['T1,T3,1,0'] = html.Embed(src='https://theminjoo.kr/introduce/location', style={'width':'100%', 'height':'700px'})
 KR['T1,T3,2,0'] = html.Embed(src='http://www.peoplepowerparty.kr/renewal/about/organization.do', style={'width':'100%', 'height':'700px'})
