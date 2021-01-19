@@ -66,12 +66,19 @@ KR['T1,T1,10,0'] = html.Embed(src='http://www.munhwa.com/', style={'width':'100%
 
 # O[T1,T2,0,0] : Korea/Adminstration
 KR['T1,T2,0,0'] = html.Div([dbc.Button('korea', color='dark', href="https://www1.president.go.kr/about/government-organization"),
-                            dbc.Button('청와대', color='dark', href="https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83"),
-                            dbc.Button('감사원', color='dark', href="http://www.fsc.go.kr/fsc040101")])
+                            dbc.Button('정부인사', color='dark', href="https://namu.wiki/w/%EB%AC%B8%EC%9E%AC%EC%9D%B8%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC"),
+                            dbc.Button('청와대', color='dark', href="https://www1.president.go.kr/about/organization"),
+                            dbc.Button('감사원', color='dark', href="https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83"),
+                            dbc.Button('금융위원회', color='dark', href="http://www.fsc.go.kr/fsc040101"),
+                            dbc.Button('기획재정부', color='dark', href="https://www.moef.go.kr/mi/orgnzt/org.do;jsessionid=9pLke3Kf4H9EZ0mVnLFi0Llt.node30?bbsId=MOSFBBS_000000000097&menuNo=9040100"),
+                            dbc.Button('국세청', color='dark', href="https://nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6740&cntntsId=8140"),
+                            ])
 KR['T1,T2,1,0'] = html.Embed(src='https://www1.president.go.kr/about/government-organization', style={'width':'100%', 'height':'700px'})
 KR['T1,T2,2,0'] = html.Embed(src='https://www1.president.go.kr/about/organization', style={'width':'100%', 'height':'700px'})
 KR['T1,T2,3,0'] = html.Embed(src='https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83', style={'width':'100%', 'height':'700px'})
 KR['T1,T2,4,0'] = html.Embed(src='http://www.fsc.go.kr/fsc040101', style={'width':'100%', 'height':'700px'})
+KR['T1,T2,5,0'] = html.Embed(src='https://www.moef.go.kr/mi/orgnzt/org.do;jsessionid=9pLke3Kf4H9EZ0mVnLFi0Llt.node30?bbsId=MOSFBBS_000000000097&menuNo=9040100', style={'width':'100%', 'height':'700px'})
+KR['T1,T2,6,0'] = html.Embed(src='https://nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6740&cntntsId=8140', style={'width':'100%', 'height':'700px'})
 
 # O[T1,T2,0,0] : Korea/Parties
 KR['T1,T3,0,0'] = html.Div([dbc.Button('더불어민주당', color='dark', href="https://theminjoo.kr/introduce/location"),
@@ -107,6 +114,8 @@ T['T1,T2,1,0'] = 'Korea'
 T['T1,T2,2,0'] = '청와대'
 T['T1,T2,3,0'] = '감사원'
 T['T1,T2,4,0'] = '금융위원회'
+T['T1,T2,5,0'] = '기획재정부'
+T['T1,T2,6,0'] = '국세청'
 T['T1,T3,0,0'] = 'Parties'
 T['T1,T3,1,0'] = '더불어민주당'
 T['T1,T3,2,0'] = '국민의힘'
@@ -129,6 +138,8 @@ O['T1,T2,1,0'] = KR['T1,T2,1,0']
 O['T1,T2,2,0'] = KR['T1,T2,2,0']
 O['T1,T2,3,0'] = KR['T1,T2,3,0']
 O['T1,T2,4,0'] = KR['T1,T2,4,0']
+O['T1,T2,5,0'] = KR['T1,T2,5,0']
+O['T1,T2,6,0'] = KR['T1,T2,6,0']
 O['T1,T3,0,0'] = KR['T1,T3,0,0']
 O['T1,T3,1,0'] = KR['T1,T3,1,0']
 O['T1,T3,2,0'] = KR['T1,T3,2,0']
@@ -150,6 +161,8 @@ C['T1,T2,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T2,1,0']), dbc.CardBody(O['T1,T
 C['T1,T2,2,0'] = [dbc.Card([dbc.CardHeader(T['T1,T2,2,0']), dbc.CardBody(O['T1,T2,2,0'])], color='light', inverse=False, outline=True)]
 C['T1,T2,3,0'] = [dbc.Card([dbc.CardHeader(T['T1,T2,3,0']), dbc.CardBody(O['T1,T2,3,0'])], color='light', inverse=False, outline=True)]
 C['T1,T2,4,0'] = [dbc.Card([dbc.CardHeader(T['T1,T2,4,0']), dbc.CardBody(O['T1,T2,4,0'])], color='light', inverse=False, outline=True)]
+C['T1,T2,5,0'] = [dbc.Card([dbc.CardHeader(T['T1,T2,5,0']), dbc.CardBody(O['T1,T2,5,0'])], color='light', inverse=False, outline=True)]
+C['T1,T2,6,0'] = [dbc.Card([dbc.CardHeader(T['T1,T2,6,0']), dbc.CardBody(O['T1,T2,6,0'])], color='light', inverse=False, outline=True)]
 C['T1,T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T3,0,0']), dbc.CardBody(O['T1,T3,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T3,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T3,1,0']), dbc.CardBody(O['T1,T3,1,0'])], color='light', inverse=False, outline=True)]
 C['T1,T3,2,0'] = [dbc.Card([dbc.CardHeader(T['T1,T3,2,0']), dbc.CardBody(O['T1,T3,2,0'])], color='light', inverse=False, outline=True)]
@@ -173,6 +186,8 @@ contents['page']['tab1']['tab2'] = [dbc.Row([dbc.Col(C['T1,T2,0,0'], width=12)])
                                     dbc.Row([dbc.Col(C['T1,T2,2,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T2,3,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T2,4,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T2,5,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T2,6,0'], width=12)]), html.Br(),
                                     html.Br()]
 contents['page']['tab1']['tab3'] = [dbc.Row([dbc.Col(C['T1,T3,0,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T3,1,0'], width=12)]), html.Br(),
