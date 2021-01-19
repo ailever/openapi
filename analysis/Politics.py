@@ -37,8 +37,20 @@ from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
 
-# O[T,0,0] : Figure
-# O[T,0,1] : Description
+# O[T,0,0] : Korea
+KR = html.Div([dbc.Button('Naver', color='dark', href="https://news.naver.com/"),
+               dbc.Button('서울신문', color='dark', href="http://www.seoul.co.kr/"),
+               dbc.Button('조선일보', color='dark', href="https://www.chosun.com/"),
+               dbc.Button('동아일보', color='dark', href="https://www.donga.com/"),
+               dbc.Button('경향신문', color='dark', href="http://www.khan.co.kr/"),
+               dbc.Button('한국일보', color='dark', href="https://www.hankookilbo.com/"),
+               dbc.Button('중앙일보', color='dark', href="https://joongang.joins.com/"),
+               dbc.Button('한겨례', color='dark', href="http://www.hani.co.kr/"),
+               dbc.Button('국민일보', color='dark', href="http://www.kmib.co.kr/news/index.asp"),
+               dbc.Button('세계일보', color='dark', href="http://www.segye.com/"),
+               dbc.Button('문화일보', color='dark', href="http://www.munhwa.com/")])
+# O[T,0,1] : United States
+US = html.Div([])
 # O[T,1,0] : Description
 # O[T,1,1] : Description
 
@@ -50,14 +62,14 @@ import plotly.graph_objs as go
 #%%
 ################################## DASHBOARD ##################################
 T = {}
-T['T,0,0'] = ''
-T['T,0,1'] = ''
+T['T,0,0'] = 'Korea'
+T['T,0,1'] = 'United States'
 T['T,1,0'] = ''
 T['T,1,1'] = ''
 O = {}
 O['T,_,_'] = None
-O['T,0,0'] = dcc.Markdown(T['T,0,0'])
-O['T,0,1'] = dcc.Markdown(T['T,0,1'])
+O['T,0,0'] = KR
+O['T,0,1'] = US
 O['T,1,0'] = dcc.Markdown(T['T,1,0'])
 O['T,1,1'] = dcc.Markdown(T['T,1,1'])
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
@@ -80,7 +92,6 @@ main = dbc.Jumbotron([html.H2('analysis/Politics'),
                                 dbc.Button("Docs", color="secondary", href='https://ailever.readthedocs.io/en/latest/detection/index.html'),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
-                      html.Div([dbc.Button('Naver', color='dark', href="https://news.naver.com/")]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
