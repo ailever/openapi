@@ -50,7 +50,7 @@ KR = html.Div([dbc.Button('Naver', color='dark', href="https://news.naver.com/")
                dbc.Button('세계일보', color='dark', href="http://www.segye.com/"),
                dbc.Button('문화일보', color='dark', href="http://www.munhwa.com/")])
 # O[T,0,1] : United States
-US = html.Div([])
+US = html.Div([html.Embed(src='https://news.naver.com/', style={'width':'100%', 'height':'100%'})])
 # O[T,1,0] : Description
 # O[T,1,1] : Description
 
@@ -63,24 +63,18 @@ US = html.Div([])
 ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = 'Korea'
-T['T,0,1'] = 'United States'
-T['T,1,0'] = ''
-T['T,1,1'] = ''
+T['T,1,0'] = 'United States'
 O = {}
 O['T,_,_'] = None
 O['T,0,0'] = KR
-O['T,0,1'] = US
-O['T,1,0'] = dcc.Markdown(T['T,1,0'])
-O['T,1,1'] = dcc.Markdown(T['T,1,1'])
+O['T,1,0'] = US
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
 C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
-C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
+contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
+                           dbc.Row([dbc.Col(C['T,1,0'], width=12)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
 main = dbc.Jumbotron([html.H2('analysis/Politics'),
