@@ -34,21 +34,33 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 #%%
 ################################## CODEBLOCK ##################################
 from plotly.subplots import make_subplots
+import plotly.express as px
 import plotly.graph_objs as go
-
+import pandas as pd
 
 # O[T,0,0] : Figure
-fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
-fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
+fig1 = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
+fig1.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
 # O[T,0,1] : Description
-description1 = "Description"
+
+data = {}
+data["latitude"] = [37.586786]
+data["longitude"] = [126.974736]
+data["landmark"] = ['cheongwhdae']
+data["city"] = ['seoul']
+
+df = pd.DataFrame(data)
+#df.to_csv('file.csv')
+#df = pd.read_csv("https://raw.githubusercontent.com/ailever/openapi/master/analysis/file.csv")
+fig2 = px.scatter_mapbox(df, lat="latitude", lon="longitude", hover_name="landmark", hover_data=["city"],
+                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+fig2.update_layout(mapbox_style="open-street-map")
+fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
 # O[T,1,0] : Description
 description2 = "Description"
 # O[T,1,1] : Description
 description3 = "Description"
-
-
-
 
 
 ################################## CODEBLOCK ##################################
@@ -61,8 +73,8 @@ T['T,1,0'] = ''
 T['T,1,1'] = ''
 O = {}
 O['T,_,_'] = None
-O['T,0,0'] = dcc.Graph(figure=fig)
-O['T,0,1'] = dcc.Markdown(description1)
+O['T,0,0'] = dcc.Graph(figure=fig1)
+O['T,0,1'] = dcc.Graph(figure=fig2)
 O['T,1,0'] = dcc.Markdown(description2)
 O['T,1,1'] = dcc.Markdown(description3)
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
