@@ -84,6 +84,8 @@ main = dbc.Jumbotron([html.H2('forecast/ETS'),
                                 dbc.Button("Wiki", color="secondary", href='https://github.com/ailever/ailever/wiki'),
                                 dbc.Button("Docs", color="secondary", href='https://ailever.readthedocs.io/en/latest/forecast/index.html'),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/forecast'),
+                                dbc.Button("Google Trend", color="secondary", href="https://trends.google.com/trends/explore"),
+                                dbc.Button("DataLab", color="secondary", href="https://datalab.naver.com/"),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                       html.P(id='visdom-server')])
