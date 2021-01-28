@@ -45,6 +45,9 @@ data = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)', "�
         [37.563184116699055, 126.97959495769867, '한국은행(Bok, Bank of Korea)', '서울(Seoul)', '중구 북창동'],
         [37.51911603308306, 126.92754466951683, '금융투자협회(KOFIA, Korea Financial Investment Association)', '서울(Seoul)', '영등포구 의사당대로'],
         [37.52301011750094, 126.92795401181027, '전국경제인연합회(The Federation of Korean Industries)', '서울(Seoul)', '영등포구 여의도동'],
+        [37.51047697000619, 127.06099061184375, '한국무협협회(KITA, Korea International Trade Association)', '서울(Seoul)', '강남구 삼성1동'],
+        [37.52830693340214, 126.92255203882621, '중소기업중앙회(Korea Federation of SMEs)', '서울(Seoul)', '영등포구 여의도동'],
+        [37.548006902013455, 126.94109689835375, '한국경영자총협회(Korea Enterprises Federation)', '서울(Seoul)', '마포구 대흥동'],
         [37.575084756569005, 126.97518044068164, '금융위원회(FSC, Financial Services Commission)', '서울(Seoul)', '종로구'],
         [37.52575687234709, 126.92104460890528, '금융감독원(FSS, Financial Supervisory Service)', '서울(Seoul)', '영등포구 여의도동'],
         [37.50792709581974, 127.03907666284147, '금융결제원(KFTC, Korea Financial Telecommunications)', '서울(Seoul)', '강남구 역삼동'],
@@ -66,7 +69,7 @@ Map = px.scatter_mapbox(df, lat="latitude", lon="longitude",
                         hover_name="landmark",
                         hover_data=["city", "districts"],
                         color_discrete_sequence=["fuchsia"],
-                        zoom=15,
+                        zoom=12,
                         height=700)
 Map.update_layout(mapbox_style="open-street-map")
 Map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
