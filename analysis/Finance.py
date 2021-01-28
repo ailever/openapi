@@ -41,12 +41,21 @@ import pandas as pd
 import numpy as np
 
 # O[T,0,0] : Map
-data = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)', "종로구"],
-        [37.563184116699055, 126.97959495769867, '한국은행(Bok, Bank of Korea)', '서울(Seoul)', '중구'],
+data = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)', "종로구 세종로"],
+        [37.563184116699055, 126.97959495769867, '한국은행(Bok, Bank of Korea)', '서울(Seoul)', '중구 북창동'],
+        [37.51911603308306, 126.92754466951683, '금융투자협회(KOFIA, Korea Financial Investment Association)', '서울(Seoul)', '영등포구 의사당대로'],
+        [37.52301011750094, 126.92795401181027, '전국경제인연합회(The Federation of Korean Industries)', '서울(Seoul)', '영등포구 여의도동'],
         [37.575084756569005, 126.97518044068164, '금융위원회(FSC, Financial Services Commission)', '서울(Seoul)', '종로구'],
-        [37.52575687234709, 126.92104460890528, '금융감독원(FSS, Financial Supervisory Service)', '서울(Seoul)', '영등포구 여의도'],
+        [37.52575687234709, 126.92104460890528, '금융감독원(FSS, Financial Supervisory Service)', '서울(Seoul)', '영등포구 여의도동'],
         [37.50792709581974, 127.03907666284147, '금융결제원(KFTC, Korea Financial Telecommunications)', '서울(Seoul)', '강남구 역삼동'],
         [37.56863623872196, 126.98072144068145, '예금보험공사(KDIC, Korea Deposit Insurance Corporation)', '서울(Seoul)', '중구 청계천'],
+        [37.52299321954385, 126.92820920395349, '한국거래소(KRX, Korea Exchange)', '서울(Seoul)', '영등포구 여의도동'],
+        [37.57442767966258, 126.97994133813648, '서울지방국세청(Seoul National Tax Service)', '서울(Seoul)', '종로구 수송동'],
+        [37.56650510474183, 126.98650968300878, 'IBK기업은행(Industrial Bank of Korea)', '서울(Seoul)', '중구 을지로'],
+        [37.52817756116918, 126.9211435188903, '한국산업은행(Korea Development Bank)', '서울(Seoul)', '영등포구 여의도동'],
+        [37.56756126904132, 126.97790426369977, '서민금융진흥원(Korea INclusive Finance Agency)', '서울(Seoul)', '중구 명동 세종대로'],
+        [37.329024241677914, 127.12361975602158, '금융보안원(Financial Security Institute)', '용인(Youngin)', '수지구'],
+        [37.56087546167136, 126.97387594068131, '대한상공회의소', '서울(Seoul)', '중구 소공동 세종대로'],
         ]
 df = pd.DataFrame(data)
 df.columns = ["latitude", "longitude", "landmark", "city", "districts"] 
@@ -57,7 +66,7 @@ Map = px.scatter_mapbox(df, lat="latitude", lon="longitude",
                         hover_name="landmark",
                         hover_data=["city", "districts"],
                         color_discrete_sequence=["fuchsia"],
-                        zoom=10,
+                        zoom=15,
                         height=700)
 Map.update_layout(mapbox_style="open-street-map")
 Map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
