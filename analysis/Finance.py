@@ -30,7 +30,6 @@ config['dash-port'] = args.dp
 from plotly.subplots import make_subplots
 import plotly.express as px
 import plotly.graph_objs as go
-import pandas as pd
 
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
@@ -38,20 +37,28 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CONFIG ##################################
 #%%
 ################################## CODEBLOCK ##################################
-
+import pandas as pd
+import numpy as np
 
 # O[T,0,0] : Map
-data = {}
-data["latitude"] = [37.586786]
-data["longitude"] = [126.974736]
-data["landmark"] = ['cheongwhdae']
-data["city"] = ['seoul']
-
+data = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)', "종로구"],
+        [37.563184116699055, 126.97959495769867, '한국은행(Bok, Bank of Korea)', '서울(Seoul)', '중구'],
+        [37.575084756569005, 126.97518044068164, '금융위원회(FSC, Financial Services Commission)', '서울(Seoul)', '종로구'],
+        [37.52575687234709, 126.92104460890528, '금융감독원(FSS, Financial Supervisory Service)', '서울(Seoul)', '영등포구 여의도'],
+        [37.50792709581974, 127.03907666284147, '금융결제원(KFTC, Korea Financial Telecommunications)', '서울(Seoul)', '강남구 역삼동'],
+        [37.56863623872196, 126.98072144068145, '예금보험공사(KDIC, Korea Deposit Insurance Corporation)', '서울(Seoul)', '중구 청계천'],
+        ]
 df = pd.DataFrame(data)
+df.columns = ["latitude", "longitude", "landmark", "city", "districts"] 
+
 #df.to_csv('file.csv')
 #df = pd.read_csv("https://raw.githubusercontent.com/ailever/openapi/master/analysis/file.csv")
-Map = px.scatter_mapbox(df, lat="latitude", lon="longitude", hover_name="landmark", hover_data=["city"],
-                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+Map = px.scatter_mapbox(df, lat="latitude", lon="longitude",
+                        hover_name="landmark",
+                        hover_data=["city", "districts"],
+                        color_discrete_sequence=["fuchsia"],
+                        zoom=10,
+                        height=700)
 Map.update_layout(mapbox_style="open-street-map")
 Map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
@@ -95,7 +102,6 @@ JS = """
 ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = 'Map'
-T['T,0,1'] = 'KCG'
 T['T,1,0'] = 'PDT Partners'
 T['T,1,1'] = 'Citadel'
 T['T,2,0'] = 'Two Sigma'
@@ -105,7 +111,6 @@ T['T,3,1'] = 'Jane Street'
 O = {}
 O['T,_,_'] = None
 O['T,0,0'] = dcc.Graph(figure=Map)
-O['T,0,1'] = dcc.Markdown(KCG)
 O['T,1,0'] = dcc.Markdown(PDT)
 O['T,1,1'] = dcc.Markdown(Cit)
 O['T,2,0'] = dcc.Markdown(TS)
@@ -114,7 +119,6 @@ O['T,3,0'] = dcc.Markdown(HRT)
 O['T,3,1'] = dcc.Markdown(JS)
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
 C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
 C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
 C['T,2,0'] = [dbc.Card([dbc.CardHeader(T['T,2,0']), dbc.CardBody(O['T,2,0'])], color='light', inverse=False, outline=True)]
@@ -123,15 +127,12 @@ C['T,3,0'] = [dbc.Card([dbc.CardHeader(T['T,3,0']), dbc.CardBody(O['T,3,0'])], c
 C['T,3,1'] = [dbc.Card([dbc.CardHeader(T['T,3,1']), dbc.CardBody(O['T,3,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
+contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,3,0'], width=6), dbc.Col(C['T,3,1'], width=6)]), html.Br(),
                            html.Br()]
-contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,3,0'], width=6), dbc.Col(C['T,3,1'], width=6)]), html.Br(),
+contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Korea", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="USA", disabled=False),
