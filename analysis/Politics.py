@@ -111,9 +111,23 @@ KR['T1,T6,0,0'] = html.Div([dbc.Button('22/대선', color='dark', href="https://
                             dbc.Button('21/재보선', color='dark', href="https://namu.wiki/w/2021%EB%85%84%20%EC%9E%AC%EB%B3%B4%EA%B6%90%EC%84%A0%EA%B1%B0"),
                             ])
 
+# O[T1,T7] : Korea/Figures
+KR['T1,T7,0,0'] = dcc.Markdown("""
+
+""")
+
+
 # O[T2,0,0] : United States
 US = Component()
-US.main = html.Div([])
+US['T2,T1,0,0'] = html.Div([])
+US['T2,T2,0,0'] = html.Div([])
+US['T2,T3,0,0'] = html.Div([])
+US['T2,T4,0,0'] = html.Div([])
+US['T2,T5,0,0'] = html.Div([])
+US['T2,T6,0,0'] = html.Div([])
+US['T2,T7,0,0'] = dcc.Markdown("""
+
+""")
 
 
 
@@ -146,7 +160,14 @@ T['T1,T4,0,0'] = 'Assembly'
 T['T1,T4,1,0'] = '기획재정위원회'
 T['T1,T5,0,0'] = 'Judiciary'
 T['T1,T6,0,0'] = 'Elections'
-T['T2,0,0'] = 'Press'
+T['T1,T7,0,0'] = 'Figures'
+T['T2,T1,0,0'] = 'Press'
+T['T2,T2,0,0'] = 'Administration'
+T['T2,T3,0,0'] = 'Parties'
+T['T2,T4,0,0'] = 'Assembly'
+T['T2,T5,0,0'] = 'Judiciary'
+T['T2,T6,0,0'] = 'Elections'
+T['T2,T7,0,0'] = 'Figures'
 O = {}
 O['T,_,_'] = None
 O['T1,T1,0,0'] = KR['T1,T1,0,0']
@@ -174,7 +195,14 @@ O['T1,T4,0,0'] = KR['T1,T4,0,0']
 O['T1,T4,1,0'] = KR['T1,T4,1,0']
 O['T1,T5,0,0'] = KR['T1,T5,0,0']
 O['T1,T6,0,0'] = KR['T1,T6,0,0']
-O['T2,0,0'] = US.main
+O['T1,T7,0,0'] = KR['T1,T7,0,0']
+O['T2,T1,0,0'] = US['T2,T1,0,0']
+O['T2,T2,0,0'] = US['T2,T2,0,0']
+O['T2,T3,0,0'] = US['T2,T3,0,0']
+O['T2,T4,0,0'] = US['T2,T4,0,0']
+O['T2,T5,0,0'] = US['T2,T5,0,0']
+O['T2,T6,0,0'] = US['T2,T6,0,0']
+O['T2,T7,0,0'] = US['T2,T7,0,0']
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T1,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,0,0']), dbc.CardBody(O['T1,T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,1,0']), dbc.CardBody(O['T1,T1,1,0'])], color='light', inverse=False, outline=True)]
@@ -201,9 +229,17 @@ C['T1,T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T4,0,0']), dbc.CardBody(O['T1,T
 C['T1,T4,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T4,1,0']), dbc.CardBody(O['T1,T4,1,0'])], color='light', inverse=False, outline=True)]
 C['T1,T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T5,0,0']), dbc.CardBody(O['T1,T5,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T6,0,0']), dbc.CardBody(O['T1,T6,0,0'])], color='light', inverse=False, outline=True)]
-C['T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,0,0']), dbc.CardBody(O['T2,0,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,0,0']), dbc.CardBody(O['T1,T7,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,0,0']), dbc.CardBody(O['T2,T1,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T2,0,0']), dbc.CardBody(O['T2,T2,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T3,0,0']), dbc.CardBody(O['T2,T3,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T4,0,0']), dbc.CardBody(O['T2,T4,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T5,0,0']), dbc.CardBody(O['T2,T5,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T6,0,0']), dbc.CardBody(O['T2,T6,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T7,0,0']), dbc.CardBody(O['T2,T7,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
-contents = {}; contents['page'] = {}; contents['page']['tab1'] = {}; page_layouts = {}
+contents = {}; contents['page'] = {}; page_layouts = {}
+contents['page']['tab1'] = {}
 contents['page']['tab1']['tab1'] = [dbc.Row([dbc.Col(C['T1,T1,0,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T1,1,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T1,2,0'], width=12)]), html.Br(),
@@ -235,17 +271,41 @@ contents['page']['tab1']['tab5'] = [dbc.Row([dbc.Col(C['T1,T5,0,0'], width=12)])
                                     html.Br()]
 contents['page']['tab1']['tab6'] = [dbc.Row([dbc.Col(C['T1,T6,0,0'], width=12)]), html.Br(),
                                     html.Br()]
-contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T2,0,0'], width=12)]), html.Br(),
+contents['page']['tab1']['tab7'] = [dbc.Row([dbc.Col(C['T1,T7,0,0'], width=12)]), html.Br(),
+                                    html.Br()]
+contents['page']['tab2'] = {}
+contents['page']['tab2']['tab1'] = [dbc.Row([dbc.Col(C['T2,T1,0,0'], width=12)]), html.Br(),
                             html.Br()]
-contents['page']['tab1']['tab'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Press", disabled=False),
-                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Administration", disabled=False),
-                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Parties", disabled=False),
-                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab4'])), label="Assembly", disabled=False),
-                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab5'])), label="Judiciary", disabled=False),
-                                            dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab6'])), label="Elections", disabled=False),
-                                            ])
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab'])), label="Korea", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="United States", disabled=False),])
+contents['page']['tab2']['tab2'] = [dbc.Row([dbc.Col(C['T2,T2,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab2']['tab3'] = [dbc.Row([dbc.Col(C['T2,T3,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab2']['tab4'] = [dbc.Row([dbc.Col(C['T2,T4,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab2']['tab5'] = [dbc.Row([dbc.Col(C['T2,T5,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab2']['tab6'] = [dbc.Row([dbc.Col(C['T2,T6,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab2']['tab7'] = [dbc.Row([dbc.Col(C['T2,T7,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Press", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Administration", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Parties", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab4'])), label="Assembly", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab5'])), label="Judiciary", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab6'])), label="Elections", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab7'])), label="Figures", disabled=False),
+                                             ])
+contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab1'])), label="Press", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab2'])), label="Administration", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab3'])), label="Parties", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab4'])), label="Assembly", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab5'])), label="Judiciary", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab6'])), label="Elections", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab7'])), label="Figures", disabled=False),
+                                             ])
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tabs'])), label="Korea", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tabs'])), label="United States", disabled=False),])
 main = dbc.Jumbotron([html.H2('analysis/Politics'),
                       html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Home", color="secondary", href='https://ailever.github.io/'),
@@ -255,8 +315,8 @@ main = dbc.Jumbotron([html.H2('analysis/Politics'),
                                 dbc.Button("Docs", color="secondary", href='https://ailever.readthedocs.io/en/latest/detection/index.html'),
                                 dbc.Button("Google Trend", color="secondary", href="https://trends.google.com/trends/explore"),
                                 dbc.Button("DataLab", color="secondary", href="https://datalab.naver.com/"),
-                                dbc.Button('Kakao Map', color='dark', href="https://map.kakao.com/"),
-                                dbc.Button('Google Map', color='dark', href="https://www.google.co.kr/maps/"),
+                                dbc.Button('Kakao Map', color='secondary', href="https://map.kakao.com/"),
+                                dbc.Button('Google Map', color='secondary', href="https://www.google.co.kr/maps/"),
                                 dbc.Button("Plotly", color="secondary", href="https://plotly.com/python/"),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
