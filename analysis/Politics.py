@@ -116,6 +116,7 @@ KR['T1,T7,0,0'] = dcc.Markdown("""
 - 이재명, 노무현, 문재인, 이낙연, 박주민, 정세균,  
 - 유승민, 이명박, 원희룡, 정진석, 홍준표, 황교안, 박근혜
 """)
+KR['T1,T7,1,0'] = html.Embed(src='https://news.naver.com/', style={'width':'100%', 'height':'700px'})
 
 
 # O[T2,0,0] : United States
@@ -162,6 +163,7 @@ T['T1,T4,1,0'] = '기획재정위원회'
 T['T1,T5,0,0'] = 'Judiciary'
 T['T1,T6,0,0'] = 'Elections'
 T['T1,T7,0,0'] = 'Figures'
+T['T1,T7,1,0'] = 'News'
 T['T2,T1,0,0'] = 'Press'
 T['T2,T2,0,0'] = 'Administration'
 T['T2,T3,0,0'] = 'Parties'
@@ -169,6 +171,7 @@ T['T2,T4,0,0'] = 'Assembly'
 T['T2,T5,0,0'] = 'Judiciary'
 T['T2,T6,0,0'] = 'Elections'
 T['T2,T7,0,0'] = 'Figures'
+T['T2,T7,1,0'] = 'News'
 O = {}
 O['T,_,_'] = None
 O['T1,T1,0,0'] = KR['T1,T1,0,0']
@@ -197,6 +200,7 @@ O['T1,T4,1,0'] = KR['T1,T4,1,0']
 O['T1,T5,0,0'] = KR['T1,T5,0,0']
 O['T1,T6,0,0'] = KR['T1,T6,0,0']
 O['T1,T7,0,0'] = KR['T1,T7,0,0']
+O['T1,T7,1,0'] = KR['T1,T7,1,0']
 O['T2,T1,0,0'] = US['T2,T1,0,0']
 O['T2,T2,0,0'] = US['T2,T2,0,0']
 O['T2,T3,0,0'] = US['T2,T3,0,0']
@@ -231,6 +235,7 @@ C['T1,T4,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T4,1,0']), dbc.CardBody(O['T1,T
 C['T1,T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T5,0,0']), dbc.CardBody(O['T1,T5,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T6,0,0']), dbc.CardBody(O['T1,T6,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,0,0']), dbc.CardBody(O['T1,T7,0,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,1,0']), dbc.CardBody(O['T1,T7,1,0'])], color='light', inverse=False, outline=True)]
 C['T2,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,0,0']), dbc.CardBody(O['T2,T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T2,0,0']), dbc.CardBody(O['T2,T2,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T3,0,0']), dbc.CardBody(O['T2,T3,0,0'])], color='light', inverse=False, outline=True)]
@@ -273,6 +278,7 @@ contents['page']['tab1']['tab5'] = [dbc.Row([dbc.Col(C['T1,T5,0,0'], width=12)])
 contents['page']['tab1']['tab6'] = [dbc.Row([dbc.Col(C['T1,T6,0,0'], width=12)]), html.Br(),
                                     html.Br()]
 contents['page']['tab1']['tab7'] = [dbc.Row([dbc.Col(C['T1,T7,0,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,1,0'], width=12)]), html.Br(),
                                     html.Br()]
 contents['page']['tab2'] = {}
 contents['page']['tab2']['tab1'] = [dbc.Row([dbc.Col(C['T2,T1,0,0'], width=12)]), html.Br(),
