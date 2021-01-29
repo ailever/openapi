@@ -113,7 +113,8 @@ KR['T1,T6,0,0'] = html.Div([dbc.Button('22/대선', color='dark', href="https://
 
 # O[T1,T7] : Korea/Figures
 KR['T1,T7,0,0'] = dcc.Markdown("""
-
+- 이재명, 노무현, 문재인, 이낙연, 박주민, 정세균,  
+- 유승민, 이명박, 원희룡, 정진석, 홍준표, 황교안, 박근혜
 """)
 
 
