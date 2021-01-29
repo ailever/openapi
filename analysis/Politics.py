@@ -82,7 +82,9 @@ KR['T1,T2,5,0'] = html.Embed(src='https://www.moef.go.kr/mi/orgnzt/org.do;jsessi
 KR['T1,T2,6,0'] = html.Embed(src='https://nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6740&cntntsId=8140', style={'width':'100%', 'height':'700px'})
 
 # O[T1,T3] : Korea/Parties
-KR['T1,T3,0,0'] = html.Div([dbc.Button('더불어민주당', color='dark', href="https://theminjoo.kr/introduce/location"),
+KR['T1,T3,0,0'] = html.Div([dbc.Button('정당 목록', color="dark", href="https://namu.wiki/w/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD/%EC%A0%95%EB%8B%B9/%EB%AA%A9%EB%A1%9D"), 
+                            dbc.Button('정당 계보', color="dark", href="http://web.archive.org/web/20191128112759/http://museum.nec.go.kr/vote/voteKorea2.do"),
+                            dbc.Button('더불어민주당', color='dark', href="https://theminjoo.kr/introduce/location"),
                             dbc.Button('더불어민주당/인사', color='dark', href="https://namu.wiki/w/%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9/%EC%A7%80%EB%8F%84%EB%B6%80"),
                             dbc.Button('국민의힘', color='dark', href="http://www.peoplepowerparty.kr/renewal/about/organization.do"),
                             dbc.Button('국민의당', color='dark', href="http://peopleparty.kr/"),
@@ -105,7 +107,8 @@ KR['T1,T5,0,0'] = html.Div([dbc.Button('법령센터', color='dark', href="https
                             ])
 
 # O[T1,T6] : Korea/Elections
-KR['T1,T6,0,0'] = html.Div([dbc.Button('22/대선', color='dark', href="https://namu.wiki/w/%EC%A0%9C20%EB%8C%80%20%EB%8C%80%ED%86%B5%EB%A0%B9%20%EC%84%A0%EA%B1%B0"),
+KR['T1,T6,0,0'] = html.Div([dbc.Button('중앙선거관리위원회', color='dark', href="https://nec.go.kr/site/nec/main.do"),
+                            dbc.Button('22/대선', color='dark', href="https://namu.wiki/w/%EC%A0%9C20%EB%8C%80%20%EB%8C%80%ED%86%B5%EB%A0%B9%20%EC%84%A0%EA%B1%B0"),
                             dbc.Button('24/총선', color='dark', href="https://namu.wiki/w/%EC%A0%9C22%EB%8C%80%20%EA%B5%AD%ED%9A%8C%EC%9D%98%EC%9B%90%20%EC%84%A0%EA%B1%B0"),
                             dbc.Button('22/지선', color='dark', href="https://namu.wiki/w/%EC%A0%9C8%ED%9A%8C%20%EC%A0%84%EA%B5%AD%EB%8F%99%EC%8B%9C%EC%A7%80%EB%B0%A9%EC%84%A0%EA%B1%B0"),
                             dbc.Button('21/재보선', color='dark', href="https://namu.wiki/w/2021%EB%85%84%20%EC%9E%AC%EB%B3%B4%EA%B6%90%EC%84%A0%EA%B1%B0"),
