@@ -33,22 +33,24 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CONFIG ##################################
 #%%
 ################################## CODEBLOCK ##################################
+
+
+"""
 from ailever.forecast.STOCK import krx, Ailf_KR
+from ailever.utils import korean
+korean()
 
-"""
 Df = krx.kospi('2018-01-01')
-ailf = Ailf_KR(Df, filter_period=300, criterion=1.5, V=None)
-ailf.KRXIndexReport(ailf.index[0])
-ailf.KRXStockReport(ailf.index[0])
-ailf.KRXStockForecast(ailf.index[0])
-ailf.KRXStockDecompose(ailf.index[0])
+ailf = Ailf_KR(Df, filter_period=100, regressor_criterion=0.5, seasonal_criterion=0.1, V=None)
+ailf.KRXStockReport(ailf.index[0], long_period=100, short_period=20, download=False)
+ailf.KRXStockDecompose(ailf.index[0], long_period=200, short_period=20, resid_transform=True, scb=[0.2,0.8], download=False)
+ailf.KRXIndexReport(ailf.index[0], long_period=100, short_period=20, download=False)
+ailf.KRXStockForecast(ailf.index[0], long_period=200, short_period=20, download=False)
 """
 
-
-#%%
+"""
 from ailever.forecast import TSA, sarima
 
-"""
 proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
                       seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
 tsa = TSA(proc.samples)
