@@ -40,6 +40,13 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 import pandas as pd
 import numpy as np
 
+# O[T,-1,0] : Korean Financial Organization
+KFO = html.Div([dbc.Button("Bank of Korea", color="dark", href="http://www.bok.or.kr/portal/main/main.do"),
+                dbc.Button("Financial Service Commision", color="dark", href="http://www.fsc.go.kr/index"),
+                dbc.Button("Financial Supervisory Service", color="dark", href="http://www.fss.or.kr/fss/kr/main.html"),
+                ])
+                                
+
 # O[T,0,0] : Map
 data = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)', "종로구 세종로"],
         [37.563184116699055, 126.97959495769867, '한국은행(BOk, Bank of Korea)', '서울(Seoul)', '중구 북창동'],
@@ -152,6 +159,7 @@ JS = """
 #%%
 ################################## DASHBOARD ##################################
 T = {}
+T['T,-1,0'] = 'Korean Financial Organization(KFO)'
 T['T,0,0'] = 'Map'
 T['T,1,0'] = '대한상공회의소(KCCI)'
 T['T,1,1'] = '전국경제인연합회(FKI)'
@@ -163,6 +171,7 @@ T['T,4,0'] = '소상공인연합회(KFME)'
 T['T,4,1'] = '전국은행연합회(KFB)'
 O = {}
 O['T,_,_'] = None
+O['T,-1,0'] = KFO
 O['T,0,0'] = dcc.Graph(figure=Map)
 O['T,1,0'] = KCCI
 O['T,1,1'] = FKI
@@ -173,6 +182,7 @@ O['T,3,1'] = FOMEK
 O['T,4,0'] = KFME
 O['T,4,1'] = KFB
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
+C['T,-1,0'] = [dbc.Card([dbc.CardHeader(T['T,-1,0']), dbc.CardBody(O['T,-1,0'])], color='light', inverse=False, outline=True)]
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
 C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
 C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
@@ -184,7 +194,8 @@ C['T,4,0'] = [dbc.Card([dbc.CardHeader(T['T,4,0']), dbc.CardBody(O['T,4,0'])], c
 C['T,4,1'] = [dbc.Card([dbc.CardHeader(T['T,4,1']), dbc.CardBody(O['T,4,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
+contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T,-1,0'], width=12)]), html.Br(),
+                            dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
                             dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                             dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                             dbc.Row([dbc.Col(C['T,3,0'], width=6), dbc.Col(C['T,3,1'], width=6)]), html.Br(),
