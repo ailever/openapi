@@ -55,7 +55,7 @@ KR['T1,T1,-1,0'] = html.Div([dbc.Button("Bank of Korea", color="dark", href="htt
 # O[T1,T1,0,0] : Map
 KR.places = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)', "종로구 세종로"],
              [37.563184116699055, 126.97959495769867, '한국은행(BOk, Bank of Korea)', '서울(Seoul)', '중구 북창동'],
-             [37.51911603308306, 126.92754466951683, '금융투자협회(KOFIA, Korea Financial Investment Association)', '서울(Seoul)', '영등포구 의사당대로'],
+             [37.51911603308306, 126.92754466951683, '금융투자협회(KOFIA, Korea Financial Investment Association), 자본시장연구원(Korea Capital Market Institue)', '서울(Seoul)', '영등포구 의사당대로'],
              [37.56087546167136, 126.97387594068131, '대한상공회의소(KCCI, Korea Chamber of Commerce and Industry)', '서울(Seoul)', '중구 소공동 세종대로'],
              [37.52301011750094, 126.92795401181027, '전국경제인연합회(FKI, The Federation of Korean Industries)', '서울(Seoul)', '영등포구 여의도동'],
              [37.51047697000619, 127.06099061184375, '한국무협협회(KITA, Korea International Trade Association)', '서울(Seoul)', '강남구 삼성1동'],
@@ -127,7 +127,19 @@ KR['T1,T1,4,1'] = html.Div([dbc.Button("KFB", color="dark", href="https://www.kf
                             ])
 
 # O[T1,T2,0,0] : Corporate finance
-KR['T1,T2,0,0'] = html.Div([])
+KR['T1,T2,0,0'] = html.Div([dbc.Button("NH투자증권", color="dark", href="https://www.nhqv.com/"),
+                            dbc.Button("한국투자증권", color="dark", href="https://www.truefriend.com/bankis/main.jsp"),
+                            dcc.Markdown("""
+## 2020 Best Firms
+
+NH투자증권, 한국투자증권, 삼성증권, 신한금융투자, KB증권, 미래에셋대우, 메리츠종합금융증권 , 하나금융투자, 키움증권,
+씨티그룹글로벌마켓증권, 유화증권, 교보증권, 한화투자증권, 메릴린치인터내셔날엘엘씨증권 서울지점, 유안타증권, 모간스탠리인터내셔날증권회사서울지점,
+ING증권 서울지점, 제이피모간증권회사서울지점, 현대차증권, 크레디트스위스증권서울지점, 신영증권, 도이치증권, BNK투자증권, 대신증권,
+미즈호증권아시아리미티드 서울지점, 노무라금융투자, 크레디 아그리콜 아시아증권 서울지점, 한국 에스지증권 ,  카카오페이증권, 골드만삭스증권회사서울지점,
+UBS증권리미티드서울지점, 부국증권, 흥국증권, 이베스트투자증권, DB금융투자, CGS-CIMB증권 한국지점, 하이투자증권, SK증권, IBK투자증권, 한양증권,
+맥쿼리증권, 한국스탠다드차타드증권, KTB 투자증권, 리딩투자증권, CLSA코리아증권, 다이와증권캐피탈마켓코리아, 초상증권(한국), 상상인증권,
+비엔피파리바증권, 코리아에셋투자증권, KIDB채권중개, KR투자증권, 케이프투자증권, DS투자증권, 홍콩상하이증권서울지점, 유진투자증권
+""")])
 
 
 US = Component()
