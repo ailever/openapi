@@ -135,7 +135,8 @@ US = Component()
 US['T2,T1,0,0'] = html.Div([dbc.Button('Cable News Network(CNN)', color='dark', href="https://edition.cnn.com/"),
                             ])
 US['T2,T1,1,0'] = html.Embed(src='https://edition.cnn.com/', style={'width':'100%', 'height':'700px'})
-US['T2,T2,0,0'] = html.Div([])
+US['T2,T2,0,0'] = html.Div([dbc.Button('The white house', color='dark', href="https://www.whitehouse.gov/"),
+                            ])
 US['T2,T3,0,0'] = html.Div([])
 US['T2,T4,0,0'] = html.Div([])
 US['T2,T5,0,0'] = html.Div([])
