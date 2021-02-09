@@ -47,6 +47,8 @@ KR = Component()
 KR['T1,T1,-1,0'] = html.Div([dbc.Button("Bank of Korea", color="dark", href="http://www.bok.or.kr/portal/main/main.do"),
                              dbc.Button("Financial Service Commision", color="dark", href="http://www.fsc.go.kr/index"),
                              dbc.Button("Financial Supervisory Service", color="dark", href="http://www.fss.or.kr/fss/kr/main.html"),
+                             dbc.Button("Korea Finance Consumer Federation", color="dark", href="http://kfco.org/index.asp"),
+                             dbc.Button("Korea Capital Market Institue", color="dark", href="https://www.kcmi.re.kr/"),
                              ])
                                 
 
@@ -71,6 +73,7 @@ KR.places = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)'
              [37.56650510474183, 126.98650968300878, 'IBK기업은행(Industrial Bank of Korea)', '서울(Seoul)', '중구 을지로'],
              [37.52817756116918, 126.9211435188903, '한국산업은행(Korea Development Bank)', '서울(Seoul)', '영등포구 여의도동'],
              [37.56756126904132, 126.97790426369977, '서민금융진흥원(Korea INclusive Finance Agency)', '서울(Seoul)', '중구 명동 세종대로'],
+             [37.57461475785703, 126.97359235602721, '금융소비자연맹(Korea Finance Consumer Federation)', '서울(Seoul)', '종로구 사직동'],
              [37.329024241677914, 127.12361975602158, '금융보안원(Financial Security Institute)', '용인(Youngin)', '수지구'],
              ]
 KR.places = pd.DataFrame(KR.places)
