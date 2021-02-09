@@ -33,31 +33,29 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CONFIG ##################################
 #%%
 ################################## CODEBLOCK ##################################
-from ailever.forecast import TSA, sarima
+from ailever.forecast.STOCK import krx, Ailf_KR
 
-#proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
-#                      seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
-#tsa = TSA(proc.samples)
-#tsa.STL(model='ARIMA')
-#tsa.ETS(steps=10, error='add', trend='add', seasonal='add', seasonal_periods=20)
-#tsa.SARIMAX(steps=10, order=(2,1,0), seasonal_order=(0,1,0,20))
+"""
+Df = krx.kospi('2018-01-01')
+ailf = Ailf_KR(Df, filter_period=300, criterion=1.5, V=None)
+ailf.KRXIndexReport(ailf.index[0])
+ailf.KRXStockReport(ailf.index[0])
+ailf.KRXStockForecast(ailf.index[0])
+ailf.KRXStockDecompose(ailf.index[0])
+"""
+
 
 #%%
-from plotly.subplots import make_subplots
-import plotly.graph_objs as go
+from ailever.forecast import TSA, sarima
 
-# O[T,0,0] : Figure
-fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
-fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
-# O[T,0,1] : Description
-description1 = "Description"
-# O[T,1,0] : Description
-description2 = "Description"
-# O[T,1,1] : Description
-description3 = "Description"
-
-
-
+"""
+proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
+                      seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
+tsa = TSA(proc.samples)
+tsa.STL(model='ARIMA')
+tsa.ETS(steps=10, error='add', trend='add', seasonal='add', seasonal_periods=20)
+tsa.SARIMAX(steps=10, order=(2,1,0), seasonal_order=(0,1,0,20))
+"""
 
 
 ################################## CODEBLOCK ##################################
@@ -70,10 +68,10 @@ T['T,1,0'] = ''
 T['T,1,1'] = ''
 O = {}
 O['T,_,_'] = None
-O['T,0,0'] = dcc.Graph(figure=fig)
-O['T,0,1'] = dcc.Markdown(description1)
-O['T,1,0'] = dcc.Markdown(description2)
-O['T,1,1'] = dcc.Markdown(description3)
+O['T,0,0'] = dcc.Markdown('')
+O['T,0,1'] = dcc.Markdown('')
+O['T,1,0'] = dcc.Markdown('')
+O['T,1,1'] = dcc.Markdown('')
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
 C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
