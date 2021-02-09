@@ -35,11 +35,12 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CODEBLOCK ##################################
 from ailever.forecast import TSA, sarima
 
-proc = sarima.Process()
+proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
+                      seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
 #tsa = TSA(proc.samples)
 #tsa.STL(model='ARIMA')
-#tsa.ETS(steps=10)
-#tsa.SARIMAX(steps=10)
+#tsa.ETS(steps=10, error='add', trend='add', seasonal='add', seasonal_periods=20)
+#tsa.SARIMAX(steps=10, order=(2,1,0), seasonal_order=(0,1,0,20))
 
 #%%
 from plotly.subplots import make_subplots
