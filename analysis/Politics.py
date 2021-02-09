@@ -132,7 +132,9 @@ KR['T1,T7,1,0'] = html.Embed(src='https://news.naver.com/', style={'width':'100%
 
 # O[T2,0,0] : United States
 US = Component()
-US['T2,T1,0,0'] = html.Div([])
+US['T2,T1,0,0'] = html.Div([dbc.Button('Cable News Network(CNN)', color='dark', href="https://edition.cnn.com/"),
+                            ])
+US['T2,T1,1,0'] = html.Embed(src='https://edition.cnn.com/', style={'width':'100%', 'height':'700px'})
 US['T2,T2,0,0'] = html.Div([])
 US['T2,T3,0,0'] = html.Div([])
 US['T2,T4,0,0'] = html.Div([])
@@ -148,6 +150,7 @@ US['T2,T7,0,0'] = dcc.Markdown("""
 #%%
 ################################## DASHBOARD ##################################
 T = {}
+# KOREA Titles 
 T['T1,T1,0,0'] = 'Press'
 T['T1,T1,1,0'] = 'Naver'
 T['T1,T1,2,0'] = '서울신문'
@@ -175,7 +178,9 @@ T['T1,T5,0,0'] = 'Judiciary'
 T['T1,T6,0,0'] = 'Elections'
 T['T1,T7,0,0'] = 'Figures'
 T['T1,T7,1,0'] = 'News'
+# USA Titles
 T['T2,T1,0,0'] = 'Press'
+T['T2,T1,1,0'] = 'Cable News Network(CNN)'
 T['T2,T2,0,0'] = 'Administration'
 T['T2,T3,0,0'] = 'Parties'
 T['T2,T4,0,0'] = 'Assembly'
@@ -185,6 +190,7 @@ T['T2,T7,0,0'] = 'Figures'
 T['T2,T7,1,0'] = 'News'
 O = {}
 O['T,_,_'] = None
+# KOREA Objects
 O['T1,T1,0,0'] = KR['T1,T1,0,0']
 O['T1,T1,1,0'] = KR['T1,T1,1,0']
 O['T1,T1,2,0'] = KR['T1,T1,2,0']
@@ -212,7 +218,9 @@ O['T1,T5,0,0'] = KR['T1,T5,0,0']
 O['T1,T6,0,0'] = KR['T1,T6,0,0']
 O['T1,T7,0,0'] = KR['T1,T7,0,0']
 O['T1,T7,1,0'] = KR['T1,T7,1,0']
+# USA Objects
 O['T2,T1,0,0'] = US['T2,T1,0,0']
+O['T2,T1,1,0'] = US['T2,T1,1,0']
 O['T2,T2,0,0'] = US['T2,T2,0,0']
 O['T2,T3,0,0'] = US['T2,T3,0,0']
 O['T2,T4,0,0'] = US['T2,T4,0,0']
@@ -220,6 +228,7 @@ O['T2,T5,0,0'] = US['T2,T5,0,0']
 O['T2,T6,0,0'] = US['T2,T6,0,0']
 O['T2,T7,0,0'] = US['T2,T7,0,0']
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
+# KOREA
 C['T1,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,0,0']), dbc.CardBody(O['T1,T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,1,0']), dbc.CardBody(O['T1,T1,1,0'])], color='light', inverse=False, outline=True)]
 C['T1,T1,2,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,2,0']), dbc.CardBody(O['T1,T1,2,0'])], color='light', inverse=False, outline=True)]
@@ -247,7 +256,9 @@ C['T1,T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T5,0,0']), dbc.CardBody(O['T1,T
 C['T1,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T6,0,0']), dbc.CardBody(O['T1,T6,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,0,0']), dbc.CardBody(O['T1,T7,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T7,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,1,0']), dbc.CardBody(O['T1,T7,1,0'])], color='light', inverse=False, outline=True)]
+# USA
 C['T2,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,0,0']), dbc.CardBody(O['T2,T1,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,1,0']), dbc.CardBody(O['T2,T1,1,0'])], color='light', inverse=False, outline=True)]
 C['T2,T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T2,0,0']), dbc.CardBody(O['T2,T2,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T3,0,0']), dbc.CardBody(O['T2,T3,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T4,0,0']), dbc.CardBody(O['T2,T4,0,0'])], color='light', inverse=False, outline=True)]
@@ -256,6 +267,7 @@ C['T2,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T6,0,0']), dbc.CardBody(O['T2,T
 C['T2,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T7,0,0']), dbc.CardBody(O['T2,T7,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
+# KOREA Tabs
 contents['page']['tab1'] = {}
 contents['page']['tab1']['tab1'] = [dbc.Row([dbc.Col(C['T1,T1,0,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T1,1,0'], width=12)]), html.Br(),
@@ -291,9 +303,11 @@ contents['page']['tab1']['tab6'] = [dbc.Row([dbc.Col(C['T1,T6,0,0'], width=12)])
 contents['page']['tab1']['tab7'] = [dbc.Row([dbc.Col(C['T1,T7,0,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T7,1,0'], width=12)]), html.Br(),
                                     html.Br()]
+# USA Tabs                                   
 contents['page']['tab2'] = {}
 contents['page']['tab2']['tab1'] = [dbc.Row([dbc.Col(C['T2,T1,0,0'], width=12)]), html.Br(),
-                            html.Br()]
+                                    dbc.Row([dbc.Col(C['T2,T1,1,0'], width=12)]), html.Br(),
+                                    html.Br()]
 contents['page']['tab2']['tab2'] = [dbc.Row([dbc.Col(C['T2,T2,0,0'], width=12)]), html.Br(),
                             html.Br()]
 contents['page']['tab2']['tab3'] = [dbc.Row([dbc.Col(C['T2,T3,0,0'], width=12)]), html.Br(),
@@ -306,6 +320,7 @@ contents['page']['tab2']['tab6'] = [dbc.Row([dbc.Col(C['T2,T6,0,0'], width=12)])
                             html.Br()]
 contents['page']['tab2']['tab7'] = [dbc.Row([dbc.Col(C['T2,T7,0,0'], width=12)]), html.Br(),
                             html.Br()]
+# TAB1 : KOREA
 contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Press", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Administration", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Parties", disabled=False),
@@ -314,6 +329,7 @@ contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(conte
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab6'])), label="Elections", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab7'])), label="Figures", disabled=False),
                                              ])
+# TAB2 : USA
 contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab1'])), label="Press", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab2'])), label="Administration", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab3'])), label="Parties", disabled=False),
