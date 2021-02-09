@@ -35,8 +35,8 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CODEBLOCK ##################################
 from ailever.forecast import TSA, sarima
 
-proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
-                      seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
+#proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
+#                      seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
 #tsa = TSA(proc.samples)
 #tsa.STL(model='ARIMA')
 #tsa.ETS(steps=10, error='add', trend='add', seasonal='add', seasonal_periods=20)
