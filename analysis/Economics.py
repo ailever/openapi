@@ -142,6 +142,10 @@ UBS증권리미티드서울지점, 부국증권, 흥국증권, 이베스트투�
 비엔피파리바증권, 코리아에셋투자증권, KIDB채권중개, KR투자증권, 케이프투자증권, DS투자증권, 홍콩상하이증권서울지점, 유진투자증권
 """)])
 
+# O[T1,T3,0,0] : Industry
+KR['T1,T3,0,0'] = html.Div([])
+
+
 
 US = Component()
 # O[T2,T1,-1,0] : USA Financial Organization
@@ -177,6 +181,8 @@ US['T2,T1,0,0'] = dcc.Graph(figure=Map_usa)
 # O[T2,T2,0,0] : Corporate finance
 US['T2,T2,0,0'] = html.Div([])
 
+# O[T2,T3,0,0] : Industry
+US['T2,T3,0,0'] = html.Div([])
 
 
 TR = """
@@ -226,10 +232,12 @@ T['T1,T1,3,1'] = '한국중견기업연합회(FOMEK)'
 T['T1,T1,4,0'] = '소상공인연합회(KFME)'
 T['T1,T1,4,1'] = '전국은행연합회(KFB)'
 T['T1,T2,0,0'] = 'Corporate Finance'
+T['T1,T3,0,0'] = 'Industry'
 # USA Titles 
 T['T2,T1,-1,0'] = 'USA Financial Organization(UFO)'
 T['T2,T1,0,0'] = 'Map'
 T['T2,T2,0,0'] = 'Corporate Finance'
+T['T2,T3,0,0'] = 'Industry'
 
 O = {}
 O['T,T,_,_'] = None
@@ -245,10 +253,12 @@ O['T1,T1,3,1'] = KR['T1,T1,3,1']
 O['T1,T1,4,0'] = KR['T1,T1,4,0']
 O['T1,T1,4,1'] = KR['T1,T1,4,1']
 O['T1,T2,0,0'] = KR['T1,T2,0,0']
+O['T1,T3,0,0'] = KR['T1,T3,0,0']
 # USA Objects
 O['T2,T1,-1,0'] = US['T2,T1,-1,0']
 O['T2,T1,0,0'] = US['T2,T1,0,0']
 O['T2,T2,0,0'] = US['T2,T2,0,0']
+O['T2,T3,0,0'] = US['T2,T3,0,0']
 
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 # KOREA Components
@@ -263,10 +273,12 @@ C['T1,T1,3,1'] = [dbc.Card([dbc.CardHeader(T['T1,T1,3,1']), dbc.CardBody(O['T1,T
 C['T1,T1,4,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,4,0']), dbc.CardBody(O['T1,T1,4,0'])], color='light', inverse=False, outline=True)]
 C['T1,T1,4,1'] = [dbc.Card([dbc.CardHeader(T['T1,T1,4,1']), dbc.CardBody(O['T1,T1,4,1'])], color='light', inverse=False, outline=True)]
 C['T1,T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T2,0,0']), dbc.CardBody(O['T1,T2,0,0'])], color='light', inverse=False, outline=True)]
+C['T1,T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T3,0,0']), dbc.CardBody(O['T1,T3,0,0'])], color='light', inverse=False, outline=True)]
 # USA Components
 C['T2,T1,-1,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,-1,0']), dbc.CardBody(O['T2,T1,-1,0'])], color='light', inverse=False, outline=True)]
 C['T2,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,0,0']), dbc.CardBody(O['T2,T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T2,0,0']), dbc.CardBody(O['T2,T2,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T3,0,0']), dbc.CardBody(O['T2,T3,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 # KOREA Tabs
@@ -280,6 +292,8 @@ contents['page']['tab1']['tab1'] = [dbc.Row([dbc.Col(C['T1,T1,-1,0'], width=12)]
                                     html.Br()]
 contents['page']['tab1']['tab2'] = [dbc.Row([dbc.Col(C['T1,T2,0,0'], width=12)]), html.Br(),
                                     ]
+contents['page']['tab1']['tab3'] = [dbc.Row([dbc.Col(C['T1,T3,0,0'], width=12)]), html.Br(),
+                                    ]
 # USA Tabs
 contents['page']['tab2'] = {}
 contents['page']['tab2']['tab1'] = [dbc.Row([dbc.Col(C['T2,T1,-1,0'], width=12)]), html.Br(),
@@ -287,14 +301,18 @@ contents['page']['tab2']['tab1'] = [dbc.Row([dbc.Col(C['T2,T1,-1,0'], width=12)]
                                     html.Br()]
 contents['page']['tab2']['tab2'] = [dbc.Row([dbc.Col(C['T2,T2,0,0'], width=12)]), html.Br(),
                                     ]
+contents['page']['tab2']['tab3'] = [dbc.Row([dbc.Col(C['T2,T3,0,0'], width=12)]), html.Br(),
+                                    ]
 
 # TAB1 : KOREA
 contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Main", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Corporate Finance", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab3'])), label="Industry", disabled=False),
                                              ])
 # TAB2 : USA
 contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab1'])), label="Main", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab2'])), label="Corporate Finance", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab3'])), label="Industry", disabled=False),
                                              ])
 
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tabs'])), label="Korea", disabled=False),
