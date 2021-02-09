@@ -33,9 +33,17 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CONFIG ##################################
 #%%
 ################################## CODEBLOCK ##################################
+from ailever.forecast import TSA, sarima
+
+proc = sarima.Process()
+#tsa = TSA(proc.samples)
+#tsa.STL(model='ARIMA')
+#tsa.ETS(steps=10)
+#tsa.SARIMAX(steps=10)
+
+#%%
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
-
 
 # O[T,0,0] : Figure
 fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
