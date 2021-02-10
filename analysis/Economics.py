@@ -42,6 +42,7 @@ import numpy as np
 
 Component = type('Component', (dict,), {})
 
+
 KR = Component()
 # O[T1,T1,-1,0] : Korean Financial Organization
 KR['T1,T1,-1,0'] = html.Div([dbc.Button("Bank of Korea", color="dark", href="http://www.bok.or.kr/portal/main/main.do"),
@@ -355,7 +356,11 @@ main = dbc.Jumbotron([html.H2('analysis/Economics'),
                                 dbc.Button("Tokyo Stock Exchange(TSE)", color="danger", href="https://www.jpx.co.jp/english/"),
                                 ]),
                       html.P(id='visdom-server')])
-app.layout = html.Div([main, page_layouts['page']])
+
+SUBMAIN = Component()
+SUBMAIN['0,0'] = dcc.Markdown()
+sub_main = html.Div([dbc.Row(dbc.Col(SUBMAIN['0,0']))])
+app.layout = html.Div([main, sub_main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## DASHBOARD ##################################
