@@ -158,6 +158,7 @@ US['T2,T1,-1,0'] = html.Div([dbc.Button("United States Federal Reserve System", 
 - [List of private-equity firms](https://en.wikipedia.org/wiki/List_of_private-equity_firms)
 - [List of venture capital firms](https://en.wikipedia.org/wiki/List_of_venture_capital_firms)
 - [List of financial institutions that invest in infrastructure](https://en.wikipedia.org/wiki/List_of_financial_institutions_that_invest_in_infrastructure)
+- [List of stock exchanges](https://en.wikipedia.org/wiki/List_of_stock_exchanges)
 """)])
 
 # O[T2,T1,0,0] : Map
@@ -344,6 +345,14 @@ main = dbc.Jumbotron([html.H2('analysis/Economics'),
                                 dbc.Button("Economist", color="dark", href="https://www.economist.com/"),
                                 dbc.Button("Bloomberg", color="dark", href="https://www.bloomberg.com/"),
                                 dbc.Button("The Wall Street Journal", color='dark', href="https://www.wsj.com/"),
+                                ]),
+                      html.Div([dbc.Button("Korea Exchange(KRX)", color="danger", href="http://www.krx.co.kr/main/main.jsp"),
+                                dbc.Button("New York Stock Exchange(NYSE, AMEX)", color="danger", href="https://www.nyse.com/index"),
+                                dbc.Button("New York Stock Exchange(NASDAQ)", color="danger", href="https://www.nasdaq.com/"),
+                                dbc.Button("Shanghai Stock Exchange(SSE)", color="danger", href="http://english.sse.com.cn/"),
+                                dbc.Button("Shenzhen Stock Exchange(SZSE)", color="danger", href="http://www.szse.cn/English/index.html"),
+                                dbc.Button("Hong Kong Exchanges and Clearing(HKEX)", color="danger", href="http://www.szse.cn/English/index.html"),
+                                dbc.Button("Tokyo Stock Exchange(TSE)", color="danger", href="https://www.jpx.co.jp/english/"),
                                 ]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
