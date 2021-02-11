@@ -66,9 +66,11 @@ KR['T1,T1,10,0'] = html.Embed(src='http://www.munhwa.com/', style={'width':'100%
 
 # O[T1,T2] : Korea/Adminstration
 KR['T1,T2,0,0'] = html.Div([dbc.Button('korea', color='dark', href="https://www1.president.go.kr/about/government-organization"),
-                            dbc.Button('정부인사', color='dark', href="https://namu.wiki/w/%EB%AC%B8%EC%9E%AC%EC%9D%B8%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC"),
                             dbc.Button('청와대', color='dark', href="https://www1.president.go.kr/about/organization"),
                             dbc.Button('국무회의', color='dark', href="https://www1.president.go.kr/c/blue-house-stories"),
+                            dbc.Button('정부인사', color='dark', href="https://namu.wiki/w/%EB%AC%B8%EC%9E%AC%EC%9D%B8%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC"),
+                            dbc.Button('법무부', color='dark', href="https://www.moj.go.kr/moj/index.do"),
+                            dbc.Button('검찰청', color='dark', href="https://www.spo.go.kr/site/spo/main.do"),
                             dbc.Button('감사원', color='dark', href="https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83"),
                             dbc.Button('금융위원회', color='dark', href="http://www.fsc.go.kr/fsc040101"),
                             dbc.Button('기획재정부', color='dark', href="https://www.moef.go.kr/mi/orgnzt/org.do;jsessionid=9pLke3Kf4H9EZ0mVnLFi0Llt.node30?bbsId=MOSFBBS_000000000097&menuNo=9040100"),
@@ -106,7 +108,8 @@ KR['T1,T4,1,0'] = html.Embed(src='https://finance.na.go.kr:444/finance/statute/s
 KR['T1,T5,0,0'] = html.Div([dbc.Button('법령센터', color='dark', href="https://www.law.go.kr/LSW/main.html"),
                             dbc.Button('Supreme Court of Korea', color='dark', href="https://www.scourt.go.kr/supreme/supreme.jsp"),
                             ])
-KR['T1,T5,1,0'] = html.Div([])
+KR['T1,T5,1,0'] = html.Div([dbc.Button('Kim & Chang', color='dark', href="https://www.kimchang.com/ko/main.kc"),
+                            ])
 
 # O[T1,T6] : Korea/Elections
 KR['T1,T6,0,0'] = html.Div([dbc.Button('중앙선거관리위원회', color='dark', href="https://nec.go.kr/site/nec/main.do"),
