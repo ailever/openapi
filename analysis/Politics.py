@@ -69,6 +69,7 @@ KR['T1,T2,0,0'] = html.Div([dbc.Button('korea', color='dark', href="https://www1
                             dbc.Button('청와대', color='dark', href="https://www1.president.go.kr/about/organization"),
                             dbc.Button('국무회의', color='dark', href="https://www1.president.go.kr/c/blue-house-stories"),
                             dbc.Button('정부인사', color='dark', href="https://namu.wiki/w/%EB%AC%B8%EC%9E%AC%EC%9D%B8%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC"),
+                            dbc.Button('법제처', color='dark', href="https://www.moleg.go.kr/"),
                             dbc.Button('법무부', color='dark', href="https://www.moj.go.kr/moj/index.do"),
                             dbc.Button('검찰청', color='dark', href="https://www.spo.go.kr/site/spo/main.do"),
                             dbc.Button('감사원', color='dark', href="https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83"),
