@@ -114,8 +114,45 @@ KR['T1,T6,0,0'] = html.Div([dbc.Button('중앙선거관리위원회', color='dar
                             dbc.Button('21/재보선', color='dark', href="https://namu.wiki/w/2021%EB%85%84%20%EC%9E%AC%EB%B3%B4%EA%B6%90%EC%84%A0%EA%B1%B0"),
                             ])
 
-# O[T1,T7] : Korea/Figures
-KR['T1,T7,0,0'] = dcc.Markdown("""
+# O[T1,T7] : Korea/Local Goverment
+KR['T1,T7,0,0'] = html.Div([dbc.Button('Seoul', color='dark', href="https://www.seoul.go.kr/main/index.jsp"),
+                            dbc.Button('Busan', color='dark', href="https://www.busan.go.kr/open/index.jsp"),
+                            dbc.Button('Daegu', color='dark', href="http://www.daegu.go.kr/intro.jsp"),
+                            dbc.Button('Incheon', color='dark', href="https://www.incheon.go.kr/index"),
+                            dbc.Button('Gwangju', color='dark', href="https://www.gwangju.go.kr/intro/index.html"),
+                            dbc.Button('Daejeon', color='dark', href="https://www.daejeon.go.kr/index.do"),
+                            dbc.Button('Ulsan', color='dark', href="https://www.ulsan.go.kr/u/rep/main.ulsan"),
+                            dbc.Button('Sejong', color='dark', href="https://www.sejong.go.kr/index.jsp"),
+                            dbc.Button('Gyeonggi', color='dark', href="https://www.gg.go.kr/"),
+                            dbc.Button('Gangwon', color='dark', href="http://www.provin.gangwon.kr/gw/portal"),
+                            dbc.Button('Chungcheonbuk', color='dark', href="https://www.chungbuk.go.kr/intro/index.html"),
+                            dbc.Button('Chungcheonnam', color='dark', href="http://www.chungnam.go.kr/main.do"),
+                            dbc.Button('Jeollabuk', color='dark', href="https://www.jeonbuk.go.kr/index.jeonbuk"),
+                            dbc.Button('Jeollanam', color='dark', href="https://www.jeonnam.go.kr/main.do"),
+                            dbc.Button('Gyeongsangbuk', color='dark', href="https://www.gb.go.kr/Main/index.html"),
+                            dbc.Button('Gyeongsangnam', color='dark', href="https://www.gyeongnam.go.kr/index.gyeong"),
+                            dbc.Button('Jeju', color='dark', href="https://www.jeju.go.kr/index.htm"),
+                            ])
+KR['T1,T7,1,0'] = html.Div([])
+KR['T1,T7,2,0'] = html.Div([])
+KR['T1,T7,3,0'] = html.Div([])
+KR['T1,T7,4,0'] = html.Div([])
+KR['T1,T7,5,0'] = html.Div([])
+KR['T1,T7,6,0'] = html.Div([])
+KR['T1,T7,7,0'] = html.Div([])
+KR['T1,T7,8,0'] = html.Div([])
+KR['T1,T7,9,0'] = html.Div([])
+KR['T1,T7,10,0'] = html.Div([])
+KR['T1,T7,11,0'] = html.Div([])
+KR['T1,T7,12,0'] = html.Div([])
+KR['T1,T7,13,0'] = html.Div([])
+KR['T1,T7,14,0'] = html.Div([])
+KR['T1,T7,15,0'] = html.Div([])
+KR['T1,T7,16,0'] = html.Div([])
+KR['T1,T7,17,0'] = html.Div([])
+
+# O[T1,T8] : Korea/Figures
+KR['T1,T8,0,0'] = dcc.Markdown("""
 - 노무현(46), 정세균(50), 이낙연(52), 문재인(53), 이재명(64), 박주민(74),   
   - 정성호, 김영진, 김병욱, 이규민, 김경수, 김태년, 윤호중, 전해철, 
   추미애, 임종석, 우상호, 이인영, 김민석, 홍익표, 노웅래, 김부겸, 
@@ -127,7 +164,7 @@ KR['T1,T7,0,0'] = dcc.Markdown("""
   곽상도, 추경호, 정점식, 김도읍, 서병수, 김태흠, 박대출, 이헌승, 하태경, 조경태, 조해진,
 - 안철수(62), 정동영, 박지원, 천정배, 박주선, 주승용, 손학규
 """)
-KR['T1,T7,1,0'] = html.Embed(src='https://news.naver.com/', style={'width':'100%', 'height':'700px'})
+KR['T1,T8,1,0'] = html.Embed(src='https://news.naver.com/', style={'width':'100%', 'height':'700px'})
 
 
 # O[T2,0,0] : United States
@@ -141,7 +178,8 @@ US['T2,T3,0,0'] = html.Div([])
 US['T2,T4,0,0'] = html.Div([])
 US['T2,T5,0,0'] = html.Div([])
 US['T2,T6,0,0'] = html.Div([])
-US['T2,T7,0,0'] = dcc.Markdown("""
+US['T2,T7,0,0'] = html.Div([])
+US['T2,T8,0,0'] = dcc.Markdown("""
 
 """)
 
@@ -177,8 +215,26 @@ T['T1,T4,0,0'] = 'Assembly'
 T['T1,T4,1,0'] = '기획재정위원회'
 T['T1,T5,0,0'] = 'Judiciary'
 T['T1,T6,0,0'] = 'Elections'
-T['T1,T7,0,0'] = 'Figures'
-T['T1,T7,1,0'] = 'News'
+T['T1,T7,0,0'] = 'Local Governments'
+T['T1,T7,1,0'] = 'Seoul Metropolitan Government'
+T['T1,T7,2,0'] = 'Busan Metropolitan City'
+T['T1,T7,3,0'] = 'Daegu Metropolitan City'
+T['T1,T7,4,0'] = 'Incheon Metropolitan City'
+T['T1,T7,5,0'] = 'Gwangju Metropolitan City'
+T['T1,T7,6,0'] = 'Daejeon Metropolitan City'
+T['T1,T7,7,0'] = 'Ulsan Metropolitan City'
+T['T1,T7,8,0'] = 'Sejong Special Self-Governing City'
+T['T1,T7,9,0'] = 'Gyeonggi-do'
+T['T1,T7,10,0'] = 'Gangwon-do'
+T['T1,T7,11,0'] = 'Chungcheongbuk-do'
+T['T1,T7,12,0'] = 'Chungcheongnam-do'
+T['T1,T7,13,0'] = 'Jeollabuk-do'
+T['T1,T7,14,0'] = 'Jeollanam-do'
+T['T1,T7,15,0'] = 'Gyeongsangbuk-do'
+T['T1,T7,16,0'] = 'Gyeongsangnam-do'
+T['T1,T7,17,0'] = 'Jeju Special Self-Governing Province'
+T['T1,T8,0,0'] = 'Figures'
+T['T1,T8,1,0'] = 'News'
 # USA Titles
 T['T2,T1,0,0'] = 'Press'
 T['T2,T1,1,0'] = 'Cable News Network(CNN)'
@@ -187,8 +243,9 @@ T['T2,T3,0,0'] = 'Parties'
 T['T2,T4,0,0'] = 'Assembly'
 T['T2,T5,0,0'] = 'Judiciary'
 T['T2,T6,0,0'] = 'Elections'
-T['T2,T7,0,0'] = 'Figures'
-T['T2,T7,1,0'] = 'News'
+T['T2,T7,0,0'] = 'Local Governments'
+T['T2,T8,0,0'] = 'Figures'
+T['T2,T8,1,0'] = 'News'
 O = {}
 O['T,_,_'] = None
 # KOREA Objects
@@ -219,6 +276,24 @@ O['T1,T5,0,0'] = KR['T1,T5,0,0']
 O['T1,T6,0,0'] = KR['T1,T6,0,0']
 O['T1,T7,0,0'] = KR['T1,T7,0,0']
 O['T1,T7,1,0'] = KR['T1,T7,1,0']
+O['T1,T7,2,0'] = KR['T1,T7,2,0']
+O['T1,T7,3,0'] = KR['T1,T7,3,0']
+O['T1,T7,4,0'] = KR['T1,T7,4,0']
+O['T1,T7,5,0'] = KR['T1,T7,5,0']
+O['T1,T7,6,0'] = KR['T1,T7,6,0']
+O['T1,T7,7,0'] = KR['T1,T7,7,0']
+O['T1,T7,8,0'] = KR['T1,T7,8,0']
+O['T1,T7,9,0'] = KR['T1,T7,9,0']
+O['T1,T7,10,0'] = KR['T1,T7,10,0']
+O['T1,T7,11,0'] = KR['T1,T7,11,0']
+O['T1,T7,12,0'] = KR['T1,T7,12,0']
+O['T1,T7,13,0'] = KR['T1,T7,13,0']
+O['T1,T7,14,0'] = KR['T1,T7,14,0']
+O['T1,T7,15,0'] = KR['T1,T7,15,0']
+O['T1,T7,16,0'] = KR['T1,T7,16,0']
+O['T1,T7,17,0'] = KR['T1,T7,17,0']
+O['T1,T8,0,0'] = KR['T1,T8,0,0']
+O['T1,T8,1,0'] = KR['T1,T8,1,0']
 # USA Objects
 O['T2,T1,0,0'] = US['T2,T1,0,0']
 O['T2,T1,1,0'] = US['T2,T1,1,0']
@@ -228,6 +303,7 @@ O['T2,T4,0,0'] = US['T2,T4,0,0']
 O['T2,T5,0,0'] = US['T2,T5,0,0']
 O['T2,T6,0,0'] = US['T2,T6,0,0']
 O['T2,T7,0,0'] = US['T2,T7,0,0']
+O['T2,T8,0,0'] = US['T2,T8,0,0']
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 # KOREA
 C['T1,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,0,0']), dbc.CardBody(O['T1,T1,0,0'])], color='light', inverse=False, outline=True)]
@@ -257,6 +333,24 @@ C['T1,T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T5,0,0']), dbc.CardBody(O['T1,T
 C['T1,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T6,0,0']), dbc.CardBody(O['T1,T6,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,0,0']), dbc.CardBody(O['T1,T7,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,T7,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,1,0']), dbc.CardBody(O['T1,T7,1,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,2,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,2,0']), dbc.CardBody(O['T1,T7,2,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,3,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,3,0']), dbc.CardBody(O['T1,T7,3,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,4,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,4,0']), dbc.CardBody(O['T1,T7,4,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,5,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,5,0']), dbc.CardBody(O['T1,T7,5,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,6,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,6,0']), dbc.CardBody(O['T1,T7,6,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,7,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,7,0']), dbc.CardBody(O['T1,T7,7,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,8,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,8,0']), dbc.CardBody(O['T1,T7,8,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,9,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,9,0']), dbc.CardBody(O['T1,T7,9,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,10,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,10,0']), dbc.CardBody(O['T1,T7,10,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,11,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,11,0']), dbc.CardBody(O['T1,T7,11,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,12,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,12,0']), dbc.CardBody(O['T1,T7,12,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,13,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,13,0']), dbc.CardBody(O['T1,T7,13,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,14,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,14,0']), dbc.CardBody(O['T1,T7,14,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,15,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,15,0']), dbc.CardBody(O['T1,T7,15,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,16,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,16,0']), dbc.CardBody(O['T1,T7,16,0'])], color='light', inverse=False, outline=True)]
+C['T1,T7,17,0'] = [dbc.Card([dbc.CardHeader(T['T1,T7,17,0']), dbc.CardBody(O['T1,T7,17,0'])], color='light', inverse=False, outline=True)]
+C['T1,T8,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T8,0,0']), dbc.CardBody(O['T1,T8,0,0'])], color='light', inverse=False, outline=True)]
+C['T1,T8,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,T8,1,0']), dbc.CardBody(O['T1,T8,1,0'])], color='light', inverse=False, outline=True)]
 # USA
 C['T2,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,0,0']), dbc.CardBody(O['T2,T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T2,T1,1,0']), dbc.CardBody(O['T2,T1,1,0'])], color='light', inverse=False, outline=True)]
@@ -266,6 +360,7 @@ C['T2,T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T4,0,0']), dbc.CardBody(O['T2,T
 C['T2,T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T5,0,0']), dbc.CardBody(O['T2,T5,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T6,0,0']), dbc.CardBody(O['T2,T6,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T7,0,0']), dbc.CardBody(O['T2,T7,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,T8,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T8,0,0']), dbc.CardBody(O['T2,T8,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 # KOREA Tabs
@@ -303,6 +398,25 @@ contents['page']['tab1']['tab6'] = [dbc.Row([dbc.Col(C['T1,T6,0,0'], width=12)])
                                     html.Br()]
 contents['page']['tab1']['tab7'] = [dbc.Row([dbc.Col(C['T1,T7,0,0'], width=12)]), html.Br(),
                                     dbc.Row([dbc.Col(C['T1,T7,1,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,2,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,3,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,4,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,5,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,6,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,7,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,8,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,9,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,10,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,11,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,12,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,13,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,14,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,15,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,16,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T7,17,0'], width=12)]), html.Br(),
+                                    html.Br()]
+contents['page']['tab1']['tab8'] = [dbc.Row([dbc.Col(C['T1,T8,0,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T1,T8,1,0'], width=12)]), html.Br(),
                                     html.Br()]
 # USA Tabs                                   
 contents['page']['tab2'] = {}
@@ -321,6 +435,8 @@ contents['page']['tab2']['tab6'] = [dbc.Row([dbc.Col(C['T2,T6,0,0'], width=12)])
                             html.Br()]
 contents['page']['tab2']['tab7'] = [dbc.Row([dbc.Col(C['T2,T7,0,0'], width=12)]), html.Br(),
                             html.Br()]
+contents['page']['tab2']['tab8'] = [dbc.Row([dbc.Col(C['T2,T8,0,0'], width=12)]), html.Br(),
+                            html.Br()]
 # TAB1 : KOREA
 contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Press", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Administration", disabled=False),
@@ -328,7 +444,8 @@ contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(conte
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab4'])), label="Assembly", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab5'])), label="Judiciary", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab6'])), label="Elections", disabled=False),
-                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab7'])), label="Figures", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab7'])), label="Local Governments", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab8'])), label="Figures", disabled=False),
                                              ])
 # TAB2 : USA
 contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab1'])), label="Press", disabled=False),
@@ -337,7 +454,8 @@ contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(conte
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab4'])), label="Assembly", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab5'])), label="Judiciary", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab6'])), label="Elections", disabled=False),
-                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab7'])), label="Figures", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab7'])), label="Local Governments", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab8'])), label="Figures", disabled=False),
                                              ])
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tabs'])), label="Korea", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tabs'])), label="United States", disabled=False),])
