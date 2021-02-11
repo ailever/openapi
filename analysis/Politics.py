@@ -73,6 +73,7 @@ KR['T1,T2,0,0'] = html.Div([dbc.Button('korea', color='dark', href="https://www1
                             dbc.Button('검찰청', color='dark', href="https://www.spo.go.kr/site/spo/main.do"),
                             dbc.Button('감사원', color='dark', href="https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83"),
                             dbc.Button('금융위원회', color='dark', href="http://www.fsc.go.kr/fsc040101"),
+                            dbc.Button('금융감독원', color='dark', href="http://www.fss.or.kr/fss/kr/main.html"),
                             dbc.Button('기획재정부', color='dark', href="https://www.moef.go.kr/mi/orgnzt/org.do;jsessionid=9pLke3Kf4H9EZ0mVnLFi0Llt.node30?bbsId=MOSFBBS_000000000097&menuNo=9040100"),
                             dbc.Button('국세청', color='dark', href="https://nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6740&cntntsId=8140"),
                             ])
