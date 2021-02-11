@@ -217,7 +217,7 @@ T['T1,T3,2,0'] = '국민의힘'
 T['T1,T4,0,0'] = 'Assembly'
 T['T1,T4,1,0'] = '기획재정위원회'
 T['T1,T5,0,0'] = 'Judiciary'
-T['T1,T5,1,0'] = 'Law firms'
+T['T1,T5,1,0'] = 'Law Firms'
 T['T1,T6,0,0'] = 'Elections'
 T['T1,T7,0,0'] = 'Local Governments'
 T['T1,T7,1,0'] = 'Seoul Metropolitan Government'
@@ -440,7 +440,7 @@ contents['page']['tab2']['tab3'] = [dbc.Row([dbc.Col(C['T2,T3,0,0'], width=12)])
 contents['page']['tab2']['tab4'] = [dbc.Row([dbc.Col(C['T2,T4,0,0'], width=12)]), html.Br(),
                                     html.Br()]
 contents['page']['tab2']['tab5'] = [dbc.Row([dbc.Col(C['T2,T5,0,0'], width=12)]), html.Br(),
-                                    dbc.Row([dbc.Col(C['T2,T5,0,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T2,T5,1,0'], width=12)]), html.Br(),
                                     html.Br()]
 contents['page']['tab2']['tab6'] = [dbc.Row([dbc.Col(C['T2,T6,0,0'], width=12)]), html.Br(),
                                     html.Br()]
