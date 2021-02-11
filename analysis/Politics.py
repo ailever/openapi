@@ -182,7 +182,10 @@ US['T2,T2,0,0'] = html.Div([dbc.Button('The white house', color='dark', href="ht
 US['T2,T3,0,0'] = html.Div([])
 US['T2,T4,0,0'] = html.Div([])
 US['T2,T5,0,0'] = html.Div([])
-US['T2,T5,1,0'] = html.Div([])
+US['T2,T5,1,0'] = dcc.Markdown("""
+- [List of largest law firms by revenue](https://en.wikipedia.org/wiki/List_of_largest_law_firms_by_revenue)
+- [List of largest law firms by profits per partner](https://en.wikipedia.org/wiki/List_of_largest_law_firms_by_profits_per_partner)
+""")
 US['T2,T6,0,0'] = html.Div([])
 US['T2,T7,0,0'] = html.Div([])
 US['T2,T8,0,0'] = dcc.Markdown("""
