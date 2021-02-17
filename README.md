@@ -23,6 +23,13 @@ dashboard()
 ```
 ```python
 from ailever.utils import source
+
+source('AIL-F-0000')
+source('AIL-M-0000')
+source('AIL-A-0000')
+source('AIL-C-0000')
+source('AIL-D-0000')
+source('AIL-L-0000')
 source('SI-0000')
 source('FI-0000')
 source('AI-0000')
