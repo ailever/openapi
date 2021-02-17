@@ -1,8 +1,5 @@
 #%%
 ################################## CONFIG ##################################
-import torch
-import torch.nn as nn
-from visdom import Visdom
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -10,6 +7,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
+from visdom import Visdom
 # rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
 config = {}
@@ -25,7 +23,12 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## CONFIG ##################################
 #%%
 ################################## CODEBLOCK ##################################
-
+from IPython import display
+from ipywidgets import interact
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
+import torch.nn as nn
 
 
 
@@ -39,7 +42,7 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
     Input("real-time", "n_clicks"))
 def real_time_analysis(click):
     window = vis.line(Y=torch.Tensor(1).zero_(), opts=dict(title='TITLE'))
-    white_noise = torch.Tensor(500).normal_()
+    white_noise = torch.Tensor(30).normal_()
     time_series = torch.zeros_like(white_noise)
     for t, noise in enumerate(white_noise):
         time_series[t] = time_series[t-1] + noise
