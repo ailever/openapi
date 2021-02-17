@@ -1,4 +1,15 @@
 #%%
+################################## CODEBLOCK ##################################
+from IPython import display
+from ipywidgets import interact
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
+import torch.nn as nn
+
+
+################################## CODEBLOCK ##################################
+#%%
 ################################## CONFIG ##################################
 import dash
 import dash_html_components as html
@@ -21,20 +32,6 @@ vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='ma
 vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 ################################## CONFIG ##################################
-#%%
-################################## CODEBLOCK ##################################
-from IPython import display
-from ipywidgets import interact
-import matplotlib.pyplot as plt
-import numpy as np
-import torch
-import torch.nn as nn
-
-
-
-
-################################## CODEBLOCK ##################################
-#%%
 ################################## REALTIME ##################################
 # Real-Time Analysis
 @app.callback(
@@ -49,7 +46,6 @@ def real_time_analysis(click):
         vis.line(X=torch.tensor([t]), Y=torch.tensor([time_series[t]]), win=window, update='append')
     return 'Real-Time Analysis is over.'
 ################################## REALTIME ##################################
-#%%
 ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = 'Title00'
