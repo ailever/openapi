@@ -196,6 +196,9 @@ US['T2,T8,0,0'] = dcc.Markdown("""
 """)
 
 
+# O[T3,T1,0,0] : International
+IO = Component()
+IO['T3,T1,0,0'] = html.Div([])
 
 ################################## CODEBLOCK ##################################
 #%%
@@ -260,6 +263,9 @@ T['T2,T6,0,0'] = 'Elections'
 T['T2,T7,0,0'] = 'Local Governments'
 T['T2,T8,0,0'] = 'Figures'
 T['T2,T8,1,0'] = 'News'
+# International Titles
+T['T3,T1,0,0'] = 'Organization'
+
 O = {}
 O['T,_,_'] = None
 # KOREA Objects
@@ -320,6 +326,9 @@ O['T2,T5,1,0'] = US['T2,T5,1,0']
 O['T2,T6,0,0'] = US['T2,T6,0,0']
 O['T2,T7,0,0'] = US['T2,T7,0,0']
 O['T2,T8,0,0'] = US['T2,T8,0,0']
+# International Objects
+O['T3,T1,0,0'] = IO['T3,T1,0,0']
+
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 # KOREA
 C['T1,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,T1,0,0']), dbc.CardBody(O['T1,T1,0,0'])], color='light', inverse=False, outline=True)]
@@ -379,6 +388,8 @@ C['T2,T5,1,0'] = [dbc.Card([dbc.CardHeader(T['T2,T5,1,0']), dbc.CardBody(O['T2,T
 C['T2,T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T6,0,0']), dbc.CardBody(O['T2,T6,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T7,0,0']), dbc.CardBody(O['T2,T7,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T8,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T8,0,0']), dbc.CardBody(O['T2,T8,0,0'])], color='light', inverse=False, outline=True)]
+# International 
+C['T3,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T3,T1,0,0']), dbc.CardBody(O['T3,T1,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 # KOREA Tabs
@@ -457,6 +468,11 @@ contents['page']['tab2']['tab7'] = [dbc.Row([dbc.Col(C['T2,T7,0,0'], width=12)])
                                     html.Br()]
 contents['page']['tab2']['tab8'] = [dbc.Row([dbc.Col(C['T2,T8,0,0'], width=12)]), html.Br(),
                                     html.Br()]
+# International Tabs                                   
+contents['page']['tab3'] = {}
+contents['page']['tab3']['tab1'] = [dbc.Row([dbc.Col(C['T3,T1,0,0'], width=12)]), html.Br(),
+                                    html.Br()]
+
 # TAB1 : KOREA
 contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Press", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Administration", disabled=False),
@@ -477,8 +493,13 @@ contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(conte
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab7'])), label="Local Governments", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab8'])), label="Figures", disabled=False),
                                              ])
+# TAB3 : International                                    
+contents['page']['tab3']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3']['tab1'])), label="Organization", disabled=False),
+                                             ])
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tabs'])), label="Korea", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tabs'])), label="United States", disabled=False),])
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tabs'])), label="United States", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3']['tabs'])), label="International", disabled=False),
+                                 ])
 main = dbc.Jumbotron([html.H2('analysis/Politics'),
                       html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Home", color="secondary", href='https://ailever.github.io/'),
