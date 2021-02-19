@@ -228,6 +228,7 @@ IO['T3,T3,0,0'] = dcc.Markdown("""
 ## International Organization related technologies
 
 - [International Organization for Standardization, ISO](https://www.iso.org/home.html)
+- [Consumer Technology Association](https://www.cta.tech/) | [Consumer Electronics Show](https://ces.tech/)
 
 """)
 
