@@ -201,36 +201,30 @@ US['T2,T9,0,0'] = html.Div([])
 US['T2,T10,0,0'] = html.Div([])
 
 
+IO = Component()
+# O[T3,T1,-1,0] : International Financial Organization
+IO['T3,T1,-1,0'] = html.Div([])
 
-TR = """
-[Home](https://www.tower-research.com/)
-"""
-KCG = """
-"""
+# O[T3,T1,0,0] : Map
+IO.places = [[48.91925760940532, 7.528769975684935, 'Bank for International Settlements(BIS)', 'Swiss', "4002 Basel, Swiss"],
+             ]
+IO.places = pd.DataFrame(IO.places)
+IO.places.columns = ["latitude", "longitude", "landmark", "city", "districts"] 
 
-# O[T,1,0] : PDT Partners
-PDT = """
-"""
+#df.to_csv('file.csv')
+#df = pd.read_csv("https://raw.githubusercontent.com/ailever/openapi/master/analysis/file.csv")
+Map_io = px.scatter_mapbox(IO.places, lat="latitude", lon="longitude",
+                              hover_name="landmark",
+                              hover_data=["city", "districts"],
+                              color_discrete_sequence=["fuchsia"],
+                              zoom=4,
+                              height=700)
+Map_io.update_layout(mapbox_style="open-street-map")
+Map_io.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+IO['T3,T1,0,0'] = dcc.Graph(figure=Map_io)
+IO['T3,T2,0,0'] = html.Div([])
+IO['T3,T3,0,0'] = html.Div([])
 
-# O[T,1,1] : Citadel
-Cit = """
-"""
-
-# O[T,2,0] : Two Sigma
-TS = """
-"""
-
-# O[T,2,1] : IMC
-IMC = """
-"""
-
-# O[T,3,0] : Hudson River Trading
-HRT = """
-"""
-
-# O[T,3,1] : Jane Street
-JS = """
-"""
 
 
 ################################## CODEBLOCK ##################################
@@ -258,7 +252,6 @@ T['T1,T8,0,0'] = 'Consumer Related'
 T['T1,T9,0,0'] = 'Materials'
 T['T1,T10,0,0'] = 'Energy'
 
-
 # USA Titles 
 T['T2,T1,-1,0'] = 'USA Financial Organization(UFO)'
 T['T2,T1,0,0'] = 'Map'
@@ -271,6 +264,12 @@ T['T2,T7,0,0'] = 'Industrials'
 T['T2,T8,0,0'] = 'Consumer Related'
 T['T2,T9,0,0'] = 'Materials'
 T['T2,T10,0,0'] = 'Energy'
+
+# International Organization 
+T['T3,T1,-1,0'] = 'International Financial Organization'
+T['T3,T1,0,0'] = 'Map'
+T['T3,T2,0,0'] = 'Financials'
+T['T3,T3,0,0'] = 'Technologies'
 
 O = {}
 O['T,T,_,_'] = None
@@ -306,6 +305,11 @@ O['T2,T7,0,0'] = US['T2,T7,0,0']
 O['T2,T8,0,0'] = US['T2,T8,0,0']
 O['T2,T9,0,0'] = US['T2,T9,0,0']
 O['T2,T10,0,0'] = US['T2,T10,0,0']
+# International Organization Objects
+O['T3,T1,-1,0'] = IO['T3,T1,-1,0']
+O['T3,T1,0,0'] = IO['T3,T1,0,0']
+O['T3,T2,0,0'] = IO['T3,T2,0,0']
+O['T3,T3,0,0'] = IO['T3,T3,0,0']
 
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 # KOREA Components
@@ -340,6 +344,11 @@ C['T2,T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T7,0,0']), dbc.CardBody(O['T2,T
 C['T2,T8,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T8,0,0']), dbc.CardBody(O['T2,T8,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T9,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T9,0,0']), dbc.CardBody(O['T2,T9,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,T10,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,T10,0,0']), dbc.CardBody(O['T2,T10,0,0'])], color='light', inverse=False, outline=True)]
+# International Organization Components
+C['T3,T1,-1,0'] = [dbc.Card([dbc.CardHeader(T['T3,T1,-1,0']), dbc.CardBody(O['T3,T1,-1,0'])], color='light', inverse=False, outline=True)]
+C['T3,T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T3,T1,0,0']), dbc.CardBody(O['T3,T1,0,0'])], color='light', inverse=False, outline=True)]
+C['T3,T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T3,T2,0,0']), dbc.CardBody(O['T3,T2,0,0'])], color='light', inverse=False, outline=True)]
+C['T3,T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T3,T3,0,0']), dbc.CardBody(O['T3,T3,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 # KOREA Tabs
@@ -392,7 +401,15 @@ contents['page']['tab2']['tab9'] = [dbc.Row([dbc.Col(C['T2,T9,0,0'], width=12)])
                                     ]
 contents['page']['tab2']['tab10'] = [dbc.Row([dbc.Col(C['T2,T10,0,0'], width=12)]), html.Br(),
                                     ]
-
+# International Organization Tabs
+contents['page']['tab3'] = {}
+contents['page']['tab3']['tab1'] = [dbc.Row([dbc.Col(C['T3,T1,-1,0'], width=12)]), html.Br(),
+                                    dbc.Row([dbc.Col(C['T3,T1,0,0'], width=12)]), html.Br(),
+                                    html.Br()]
+contents['page']['tab3']['tab2'] = [dbc.Row([dbc.Col(C['T3,T2,0,0'], width=12)]), html.Br(),
+                                    ]
+contents['page']['tab3']['tab3'] = [dbc.Row([dbc.Col(C['T3,T3,0,0'], width=12)]), html.Br(),
+                                    ]
 # TAB1 : KOREA
 contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab1'])), label="Main", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab2'])), label="Financials", disabled=False),
@@ -417,9 +434,14 @@ contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(conte
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab9'])), label="Materials", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab10'])), label="Energy", disabled=False),
                                              ])
-
+# TAB3 : International Organization 
+contents['page']['tab3']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3']['tab1'])), label="Main", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3']['tab2'])), label="Financials", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3']['tab3'])), label="Technologies", disabled=False),
+                                             ])
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tabs'])), label="Korea", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tabs'])), label="USA", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3']['tabs'])), label="International", disabled=False),
                                  ])
 
 main = dbc.Jumbotron([html.H2('analysis/Economics'),
