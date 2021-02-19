@@ -210,7 +210,6 @@ IO.places = [[48.91925760940532, 7.528769975684935, 'Bank for International Sett
              ]
 IO.places = pd.DataFrame(IO.places)
 IO.places.columns = ["latitude", "longitude", "landmark", "city", "districts"] 
-
 #df.to_csv('file.csv')
 #df = pd.read_csv("https://raw.githubusercontent.com/ailever/openapi/master/analysis/file.csv")
 Map_io = px.scatter_mapbox(IO.places, lat="latitude", lon="longitude",
@@ -222,8 +221,15 @@ Map_io = px.scatter_mapbox(IO.places, lat="latitude", lon="longitude",
 Map_io.update_layout(mapbox_style="open-street-map")
 Map_io.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 IO['T3,T1,0,0'] = dcc.Graph(figure=Map_io)
+# O[T3,T2,0,0] : Financials
 IO['T3,T2,0,0'] = html.Div([])
-IO['T3,T3,0,0'] = html.Div([])
+# O[T3,T3,0,0] : Technologies
+IO['T3,T3,0,0'] = dcc.Markdown("""
+## International Organization related technologies
+
+- [International Organization for Standardization, ISO](https://www.iso.org/home.html)
+
+""")
 
 
 
