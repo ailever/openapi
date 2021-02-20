@@ -129,8 +129,9 @@ KR['T1,T1,4,1'] = html.Div([dbc.Button("KFB", color="dark", href="https://www.kf
 
 # O[T1,T2,0,0] : Corporate finance
 KR['T1,T2,0,0'] = html.Div([dcc.Markdown("""
+[상법](https://www.law.go.kr/법령/상법) |
+[주식회사 등의 외부감사에 관한 법률](https://www.law.go.kr/법령/주식회사등의외부감사에관한법률/(17298,20200519))
 ## Commercial law
-- [Commercial law](https://www.law.go.kr/법령/상법)
 
 """), html.Br(), html.Hr(),
                             dbc.Button("NH투자증권", color="dark", href="https://www.nhqv.com/"),
@@ -146,7 +147,8 @@ ING증권 서울지점, 제이피모간증권회사서울지점, 현대차증권
 UBS증권리미티드서울지점, 부국증권, 흥국증권, 이베스트투자증권, DB금융투자, CGS-CIMB증권 한국지점, 하이투자증권, SK증권, IBK투자증권, 한양증권,
 맥쿼리증권, 한국스탠다드차타드증권, KTB 투자증권, 리딩투자증권, CLSA코리아증권, 다이와증권캐피탈마켓코리아, 초상증권(한국), 상상인증권,
 비엔피파리바증권, 코리아에셋투자증권, KIDB채권중개, KR투자증권, 케이프투자증권, DS투자증권, 홍콩상하이증권서울지점, 유진투자증권
-""")])
+"""), html.Br(), html.Hr(),
+                            ])
 
 # O[T1,T3,0,0] : Industry
 KR['T1,T3,0,0'] = html.Div([])
