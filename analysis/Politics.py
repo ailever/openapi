@@ -80,7 +80,12 @@ KR['T1,T2,0,0'] = html.Div([dbc.Button('korea', color='dark', href="https://www1
                             dbc.Button('국세청', color='dark', href="https://nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6740&cntntsId=8140"),
                             ])
 KR['T1,T2,1,0'] = html.Embed(src='https://www1.president.go.kr/about/government-organization', style={'width':'100%', 'height':'700px'})
-KR['T1,T2,2,0'] = html.Embed(src='https://www1.president.go.kr/about/organization', style={'width':'100%', 'height':'700px'})
+KR['T1,T2,2,0'] = html.Div([html.Embed(src='https://www1.president.go.kr/about/organization', style={'width':'100%', 'height':'700px'}),
+                            dcc.Markdown("""
+                            ## Office of the President
+                            - [Organization](https://www.law.go.kr/법령/대통령비서실직제)
+
+                            """),])
 KR['T1,T2,3,0'] = html.Embed(src='https://www.bai.go.kr/bai/html/intro/organ/organizationchart.do;jsessionid=4rTWGWBrnjNCl3O7iF7-Xv0b.node01?mdex=bai83', style={'width':'100%', 'height':'700px'})
 KR['T1,T2,4,0'] = html.Embed(src='http://www.fsc.go.kr/fsc040101', style={'width':'100%', 'height':'700px'})
 KR['T1,T2,5,0'] = html.Embed(src='https://www.moef.go.kr/mi/orgnzt/org.do;jsessionid=9pLke3Kf4H9EZ0mVnLFi0Llt.node30?bbsId=MOSFBBS_000000000097&menuNo=9040100', style={'width':'100%', 'height':'700px'})
