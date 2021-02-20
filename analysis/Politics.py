@@ -116,7 +116,30 @@ KR['T1,T4,1,0'] = html.Embed(src='https://finance.na.go.kr:444/finance/statute/s
 KR['T1,T5,0,0'] = html.Div([dbc.Button('법령센터', color='dark', href="https://www.law.go.kr/LSW/main.html"),
                             dbc.Button('Supreme Court of Korea', color='dark', href="https://www.scourt.go.kr/supreme/supreme.jsp"),
                             ])
-KR['T1,T5,1,0'] = html.Div([dbc.Button('Kim & Chang', color='dark', href="https://www.kimchang.com/ko/main.kc"),
+KR['T1,T5,1,0'] = html.Div([dbc.Button("Kim & Chang", color='dark', href="https://www.kimchang.com/ko/main.kc"),
+                            dbc.Button("Lee & Ko", color='dark', href="http://www.leeko.com/newmain/index.do?lang=KR"),
+                            dbc.Button("YULCHON LLC", color='dark', href="https://www.yulchon.com/ko/main/main.do"),
+                            dbc.Button("YOON & YANG", color='dark', href="http://www.hwawoo.com/kor/main.do"),
+                            dbc.Button("Bae, Kim & Lee LLC", color='dark', href="http://www.bkl.co.kr/main/ko/main.jsp#law/main.jsp"),
+                            dbc.Button("SHIN & KIM", color='dark', href="https://www.shinkim.com/kor"),
+                            dbc.Button("BARUNLAW", color='dark', href="https://www.barunlaw.com/"),
+                            dbc.Button("DONGIN", color='dark', href="http://www.donginlaw.co.kr/"),
+                            dbc.Button("JIPYONG", color='dark', href="http://www.jipyong.com/kr/main/main.php"),
+                            dbc.Button("HMP", color='dark', href="http://hmplaw.com/html/"),
+                            dbc.Button("KCL", color='dark', href="http://www.kcllaw.com/"),
+                            dcc.Markdown("""
+                            ## Kim & Chang
+                            ## Lee & Ko
+                            ## YULCHON LLC
+                            ## YOON & YANG
+                            ## Bae, Kim & Lee LLC
+                            ## SHIN & KIM
+                            ## BARUNLAW
+                            ## DONGIN
+                            ## JIPYONG
+                            ## HMP
+                            ## KCL
+                            """),
                             ])
 
 # O[T1,T6] : Korea/Elections
