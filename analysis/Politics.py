@@ -40,18 +40,30 @@ Component = type('Component', (dict,), {})
 
 # O[T1,T1] : Korea/Press
 KR = Component()
-KR['T1,T1,0,0'] = html.Div([dbc.Button('Naver', color='dark', href="https://news.naver.com/"),
-                            dbc.Button('서울신문', color='dark', href="https://www.seoul.co.kr/"),
-                            dbc.Button('조선일보', color='dark', href="https://www.chosun.com/"),
-                            dbc.Button('동아일보', color='dark', href="https://www.donga.com/"),
-                            dbc.Button('경향신문', color='dark', href="http://www.khan.co.kr/"),
-                            dbc.Button('한국일보', color='dark', href="https://www.hankookilbo.com/"),
-                            dbc.Button('중앙일보', color='dark', href="https://joongang.joins.com/"),
-                            dbc.Button('한겨례', color='dark', href="http://www.hani.co.kr/"),
-                            dbc.Button('국민일보', color='dark', href="http://www.kmib.co.kr/news/index.asp"),
-                            dbc.Button('세계일보', color='dark', href="http://www.segye.com/"),
-                            dbc.Button('문화일보', color='dark', href="http://www.munhwa.com/"),
-                            ])
+KR['T1,T1,0,0'] = html.Div([html.Div([html.P('MAIN'),
+                                      dbc.Button('Naver', color='dark', href="https://news.naver.com/"),
+                                      dbc.Button('서울신문', color='dark', href="https://www.seoul.co.kr/"),
+                                      dbc.Button('조선일보', color='dark', href="https://www.chosun.com/"),
+                                      dbc.Button('동아일보', color='dark', href="https://www.donga.com/"),
+                                      dbc.Button('경향신문', color='dark', href="http://www.khan.co.kr/"),
+                                      dbc.Button('한국일보', color='dark', href="https://www.hankookilbo.com/"),
+                                      dbc.Button('중앙일보', color='dark', href="https://joongang.joins.com/"),
+                                      dbc.Button('한겨례', color='dark', href="http://www.hani.co.kr/"),
+                                      dbc.Button('국민일보', color='dark', href="http://www.kmib.co.kr/news/index.asp"),
+                                      dbc.Button('세계일보', color='dark', href="http://www.segye.com/"),
+                                      dbc.Button('문화일보', color='dark', href="http://www.munhwa.com/")]),
+                            html.Div([html.P('Opinion'),
+                                      dbc.Button('서울신문', color='secondary', href="https://www.seoul.co.kr/news/newsList.php?section=editorial"),
+                                      dbc.Button('조선일보', color='secondary', href="https://www.chosun.com/opinion/"),
+                                      dbc.Button('동아일보', color='secondary', href="https://www.donga.com/news/Opinion"),
+                                      dbc.Button('경향신문', color='secondary', href="http://news.khan.co.kr/kh_opinion/"),
+                                      dbc.Button('한국일보', color='secondary', href="https://www.hankookilbo.com/Opinion"),
+                                      dbc.Button('중앙일보', color='secondary', href="https://news.joins.com/opinion?cloc=joongang-home-megatop"),
+                                      dbc.Button('한겨례', color='secondary', href="http://www.hani.co.kr/arti/opinion/editorial/home01.html"),
+                                      dbc.Button('국민일보', color='secondary', href="http://www.kmib.co.kr/opinion/index.asp"),
+                                      dbc.Button('세계일보', color='secondary', href="http://www.segye.com/news/opinion"),
+                                      dbc.Button('문화일보', color='secondary', href="http://www.munhwa.com/news/section.html?sec=opinion"),
+                                      ])])
 KR['T1,T1,1,0'] = html.Embed(src='https://news.naver.com/', style={'width':'100%', 'height':'700px'})
 KR['T1,T1,2,0'] = html.Embed(src='https://www.seoul.co.kr/', style={'width':'100%', 'height':'700px'})
 KR['T1,T1,3,0'] = html.Embed(src='https://www.chosun.com/', style={'width':'100%', 'height':'700px'})
@@ -65,7 +77,8 @@ KR['T1,T1,10,0'] = html.Embed(src='http://www.munhwa.com/', style={'width':'100%
 
 
 # O[T1,T2] : Korea/Adminstration
-KR['T1,T2,0,0'] = html.Div([dbc.Button('korea', color='dark', href="https://www1.president.go.kr/about/government-organization"),
+KR['T1,T2,0,0'] = html.Div([dbc.Button('Order of Precedence', color='dark', href="https://en.wikipedia.org/wiki/South_Korean_order_of_precedence"),
+                            dbc.Button('Korea', color='dark', href="https://www1.president.go.kr/about/government-organization"),
                             dbc.Button('청와대', color='dark', href="https://www1.president.go.kr/about/organization"),
                             dbc.Button('국무회의', color='dark', href="https://www1.president.go.kr/c/blue-house-stories"),
                             dbc.Button('정부인사', color='dark', href="https://namu.wiki/w/%EB%AC%B8%EC%9E%AC%EC%9D%B8%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC"),
@@ -208,7 +221,11 @@ US = Component()
 US['T2,T1,0,0'] = html.Div([dbc.Button('Cable News Network(CNN)', color='dark', href="https://edition.cnn.com/"),
                             ])
 US['T2,T1,1,0'] = html.Embed(src='https://edition.cnn.com/', style={'width':'100%', 'height':'700px'})
-US['T2,T2,0,0'] = html.Div([dbc.Button('The white house', color='dark', href="https://www.whitehouse.gov/"),
+US['T2,T2,0,0'] = html.Div([dbc.Button('Order of Precedence', color='dark', href="https://en.wikipedia.org/wiki/United_States_order_of_precedence"),
+                            dbc.Button('The United States Government', color='dark', href="https://www.usa.gov/"),
+                            dbc.Button('The white house', color='dark', href="https://www.whitehouse.gov/"),
+                            dbc.Button('Organization', color='dark', href="https://www.whitehouse.gov/about-the-white-house/our-government/"),
+                            dbc.Button('United States Department of Treasury', color='dark', href="https://home.treasury.gov/"),
                             ])
 US['T2,T3,0,0'] = html.Div([])
 US['T2,T4,0,0'] = html.Div([])
