@@ -38,56 +38,40 @@ import plotly.express as px
 import plotly.graph_objs as go
 import pandas as pd
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv')
-df
-
-#%%
-
 
 #%%
 Figures = dict()
-
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv')
-Figures['T1,0,0'] = go.Figure(data=[go.Table(header=dict(values=list(df.columns),
-                                                         fill_color='paleturquoise',
-                                                         align='left'),
-                                                         cells=dict(values=[df[column] for column in df.columns],
-                                                                    fill_color='lavender',
-                                                                    align='left'))
-])
-
-Figures['T7,0,0'] = px.treemap(
-    names = ["Eve","Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
-    parents = ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"]
-)
-
-df = px.data.tips()
-Figures['T7,1,0'] = px.treemap(df, path=['day', 'time', 'sex'], values='total_bill')
 
 ################################## CODEBLOCK ##################################
 #%%
 ################################## DASHBOARD ##################################
 T = {}
-T['T1,0,0'] = 'Table'
+T['T1,0,0'] = ''
 T['T2,0,0'] = ''
 T['T3,0,0'] = ''
 T['T4,0,0'] = ''
 T['T5,0,0'] = ''
 T['T6,0,0'] = ''
-T['T7,0,0'] = 'Tree Map'
-T['T7,1,0'] = 'Tree Map'
+T['T7,0,0'] = ''
+T['T7,1,0'] = ''
 T['T8,0,0'] = ''
+T['T9,0,0'] = ''
+T['T10,0,0'] = ''
+T['T11,0,0'] = ''
 O = {}
 O['T,_,_'] = None
-O['T1,0,0'] = dcc.Graph(figure=Figures['T1,0,0'])
+O['T1,0,0'] = dcc.Markdown("""""")
 O['T2,0,0'] = dcc.Markdown("""""")
 O['T3,0,0'] = dcc.Markdown("""""")
 O['T4,0,0'] = dcc.Markdown("""""")
 O['T5,0,0'] = dcc.Markdown("""""")
 O['T6,0,0'] = dcc.Markdown("""""")
-O['T7,0,0'] = dcc.Graph(figure=Figures['T7,0,0'])
-O['T7,1,0'] = dcc.Graph(figure=Figures['T7,1,0'])
+O['T7,0,0'] = dcc.Markdown("""""")
+O['T7,1,0'] = dcc.Markdown("""""")
 O['T8,0,0'] = dcc.Markdown("""""")
+O['T9,0,0'] = dcc.Markdown("""""")
+O['T10,0,0'] = dcc.Markdown("""""")
+O['T11,0,0'] = dcc.Markdown("""""")
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,0,0']), dbc.CardBody(O['T2,0,0'])], color='light', inverse=False, outline=True)]
@@ -98,6 +82,9 @@ C['T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T6,0,0']), dbc.CardBody(O['T6,0,0'])]
 C['T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T7,0,0']), dbc.CardBody(O['T7,0,0'])], color='light', inverse=False, outline=True)]
 C['T7,1,0'] = [dbc.Card([dbc.CardHeader(T['T7,1,0']), dbc.CardBody(O['T7,1,0'])], color='light', inverse=False, outline=True)]
 C['T8,0,0'] = [dbc.Card([dbc.CardHeader(T['T8,0,0']), dbc.CardBody(O['T8,0,0'])], color='light', inverse=False, outline=True)]
+C['T9,0,0'] = [dbc.Card([dbc.CardHeader(T['T9,0,0']), dbc.CardBody(O['T9,0,0'])], color='light', inverse=False, outline=True)]
+C['T10,0,0'] = [dbc.Card([dbc.CardHeader(T['T10,0,0']), dbc.CardBody(O['T10,0,0'])], color='light', inverse=False, outline=True)]
+C['T11,0,0'] = [dbc.Card([dbc.CardHeader(T['T11,0,0']), dbc.CardBody(O['T11,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
@@ -117,14 +104,23 @@ contents['page']['tab7'] = [dbc.Row([dbc.Col(C['T7,0,0'], width=12)]), html.Br()
                             html.Br()]
 contents['page']['tab8'] = [dbc.Row([dbc.Col(C['T8,0,0'], width=12)]), html.Br(),
                             html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Table", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Line&Scatter", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="Bar Chart", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="Matrix Plot", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="Pie/Polar Chart", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab6'])), label="Parallel/Sankey Diagram", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab7'])), label="Tree Map/Sunbrust Chart", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab8'])), label="Dendrogram/Network", disabled=False),
+contents['page']['tab9'] = [dbc.Row([dbc.Col(C['T9,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab10'] = [dbc.Row([dbc.Col(C['T10,0,0'], width=12)]), html.Br(),
+                             html.Br()]
+contents['page']['tab11'] = [dbc.Row([dbc.Col(C['T11,0,0'], width=12)]), html.Br(),
+                             html.Br()]
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Basics", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Part of Whole", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="1D Distributions", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="2D Distributions", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="Matrix Input", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab6'])), label="3-Dimensional", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab7'])), label="Multidimensional", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab8'])), label="Tile Maps", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab9'])), label="Outline Maps", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab10'])), label="Polar Charts", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab11'])), label="Ternary Charts", disabled=False),
                                  ])
 main = dbc.Jumbotron([html.H2('utils/Visualization - High Level Interface(express)'),
                       html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
