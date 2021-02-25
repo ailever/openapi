@@ -38,61 +38,71 @@ import plotly.express as px
 import plotly.graph_objs as go
 import pandas as pd
 
-# O[T,0,0] : Figure
-fig1 = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
-fig1.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
-# O[T,0,1] : Description
-
-data = {}
-data["latitude"] = [37.586786]
-data["longitude"] = [126.974736]
-data["landmark"] = ['cheongwhdae']
-data["city"] = ['seoul']
-
-df = pd.DataFrame(data)
-#df.to_csv('file.csv')
-#df = pd.read_csv("https://raw.githubusercontent.com/ailever/openapi/master/analysis/file.csv")
-fig2 = px.scatter_mapbox(df, lat="latitude", lon="longitude", hover_name="landmark", hover_data=["city"],
-                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
-fig2.update_layout(mapbox_style="open-street-map")
-fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-
-# O[T,1,0] : Description
-description2 = "Description"
-# O[T,1,1] : Description
-description3 = "Description"
 
 
 ################################## CODEBLOCK ##################################
 #%%
 ################################## DASHBOARD ##################################
 T = {}
-T['T,0,0'] = ''
-T['T,0,1'] = ''
-T['T,1,0'] = ''
-T['T,1,1'] = ''
+T['T1,0,0'] = ''
+T['T2,0,0'] = ''
+T['T3,0,0'] = ''
+T['T4,0,0'] = ''
+T['T5,0,0'] = ''
+T['T6,0,0'] = ''
+T['T7,0,0'] = ''
+T['T8,0,0'] = ''
 O = {}
 O['T,_,_'] = None
-O['T,0,0'] = dcc.Graph(figure=fig1)
-O['T,0,1'] = dcc.Graph(figure=fig2)
-O['T,1,0'] = dcc.Markdown(description2)
-O['T,1,1'] = dcc.Markdown(description3)
+O['T1,0,0'] = dcc.Markdown("""""")
+O['T2,0,0'] = dcc.Markdown("""""")
+O['T3,0,0'] = dcc.Markdown("""""")
+O['T4,0,0'] = dcc.Markdown("""""")
+O['T5,0,0'] = dcc.Markdown("""""")
+O['T6,0,0'] = dcc.Markdown("""""")
+O['T7,0,0'] = dcc.Markdown("""""")
+O['T8,0,0'] = dcc.Markdown("""""")
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
-C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
-C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
-C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
+C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,0,0']), dbc.CardBody(O['T2,0,0'])], color='light', inverse=False, outline=True)]
+C['T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T3,0,0']), dbc.CardBody(O['T3,0,0'])], color='light', inverse=False, outline=True)]
+C['T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T4,0,0']), dbc.CardBody(O['T4,0,0'])], color='light', inverse=False, outline=True)]
+C['T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T5,0,0']), dbc.CardBody(O['T5,0,0'])], color='light', inverse=False, outline=True)]
+C['T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T6,0,0']), dbc.CardBody(O['T6,0,0'])], color='light', inverse=False, outline=True)]
+C['T7,0,0'] = [dbc.Card([dbc.CardHeader(T['T7,0,0']), dbc.CardBody(O['T7,0,0'])], color='light', inverse=False, outline=True)]
+C['T8,0,0'] = [dbc.Card([dbc.CardHeader(T['T8,0,0']), dbc.CardBody(O['T8,0,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
-                           html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
-main = dbc.Jumbotron([html.H2('analysis'),
+contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T2,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab3'] = [dbc.Row([dbc.Col(C['T3,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab4'] = [dbc.Row([dbc.Col(C['T4,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T5,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab6'] = [dbc.Row([dbc.Col(C['T6,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab7'] = [dbc.Row([dbc.Col(C['T7,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab8'] = [dbc.Row([dbc.Col(C['T8,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Table", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Line&Scatter", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="Bar Chart", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="Matrix Plot", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="Pie/Polar Chart", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab6'])), label="Parallel/Sankey Diagram", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab7'])), label="Tree Map/Sunbrust Chart", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab8'])), label="Dendrogram/Network", disabled=False),
+                                 ])
+main = dbc.Jumbotron([html.H2('analysis/Visualization'),
                       html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Home", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button("GitHub", color="secondary", href='https://github.com/ailever/ailever/tree/master/ailever/analysis'),
-                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/analysis'),
+                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/analysis/Visualization.py'),
                                 dbc.Button("Wiki", color="secondary", href='https://github.com/ailever/ailever/wiki'),
                                 dbc.Button("Google Trend", color="secondary", href="https://trends.google.com/trends/explore"),
                                 dbc.Button("DataLab", color="secondary", href="https://datalab.naver.com/"),
