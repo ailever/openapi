@@ -1,7 +1,7 @@
 #%%
 # https://plotly.com/python-api-reference/
 # https://plotly.com/python-api-reference/generated/plotly.graph_objects.Bar.html
-# https://github.com/ailever/openapi/blob/master/source/lib-GO-0001.py
+# https://github.com/ailever/openapi/blob/master/source/lib-GO-0000.py
 
 import plotly.graph_objects as go
 import pandas as pd
@@ -51,6 +51,8 @@ def main(LEVELs):
                                             color='rgb(67, 67, 67)'),
                                     showarrow=False))
             _X[L] = x
+
+    fig.update_layout(title_text='TITLE')
     fig.update_layout(barmode='stack', annotations=annotations)
     fig.show()
 
