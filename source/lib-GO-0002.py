@@ -4,7 +4,6 @@
 # https://github.com/ailever/openapi/blob/master/source/lib-GO-0002.py
 
 import plotly.graph_objects as go
-from ailever.machine.NM import scaler
 import numpy as np
 
 obj = np.zeros((10,10))
@@ -15,8 +14,8 @@ obj[3,7] = 1
 obj[5,5] = 1
 obj[9,9] = 1
 x, y = np.where(obj==1)
-x = scaler.minmax(x)
-y = scaler.minmax(y)
+x = np.cumsum(x/x.sum())
+y = np.cumsum(y/y.sum())
 
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
 fig = go.Figure(go.Sankey(
