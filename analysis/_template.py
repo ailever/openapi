@@ -1,37 +1,4 @@
 #%%
-################################## CONFIG ##################################
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument('--vs', type=str, default='127.0.0.1', help='visdom server')
-parser.add_argument('--vp', type=str, default='8097', help='visdom port')
-parser.add_argument('--rs', type=str, default='127.0.0.1', help='Rstudio server')
-parser.add_argument('--rp', type=str, default='8787', help='Rstudio port')
-parser.add_argument('--ds', type=str, default='127.0.0.1', help='dash server')
-parser.add_argument('--dp', type=str, default='8050', help='dash port')
-args = parser.parse_args()
-
-import dash
-import dash_html_components as html
-import dash_core_components as dcc
-import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
-# rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
-# python -m visdom.server -p 8097 --hostname 127.0.0.1
-config = {}
-config['visdom-server'] = 'http://' + args.vs
-config['visdom-port'] = args.vp
-config['R-server'] = 'http://' + args.rs
-config['R-port'] = args.rp
-config['dash-server'] = args.ds
-config['dash-port'] = args.dp
-#import torch
-#import torch.nn as nn
-#from visdom import Visdom
-#vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
-#vis.close(env='main')
-app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
-################################## CONFIG ##################################
-#%%
 ################################## CODEBLOCK ##################################
 from plotly.subplots import make_subplots
 import plotly.express as px
@@ -64,6 +31,39 @@ description3 = "Description"
 
 
 ################################## CODEBLOCK ##################################
+#%%
+################################## CONFIG ##################################
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--vs', type=str, default='127.0.0.1', help='visdom server')
+parser.add_argument('--vp', type=str, default='8097', help='visdom port')
+parser.add_argument('--rs', type=str, default='127.0.0.1', help='Rstudio server')
+parser.add_argument('--rp', type=str, default='8787', help='Rstudio port')
+parser.add_argument('--ds', type=str, default='127.0.0.1', help='dash server')
+parser.add_argument('--dp', type=str, default='8050', help='dash port')
+args = parser.parse_args()
+
+import dash
+import dash_html_components as html
+import dash_core_components as dcc
+import dash_bootstrap_components as dbc
+from dash.dependencies import Input, Output, State
+# rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
+# python -m visdom.server -p 8097 --hostname 127.0.0.1
+config = {}
+config['visdom-server'] = 'http://' + args.vs
+config['visdom-port'] = args.vp
+config['R-server'] = 'http://' + args.rs
+config['R-port'] = args.rp
+config['dash-server'] = args.ds
+config['dash-port'] = args.dp
+#import torch
+#import torch.nn as nn
+#from visdom import Visdom
+#vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
+#vis.close(env='main')
+app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
+################################## CONFIG ##################################
 #%%
 ################################## DASHBOARD ##################################
 T = {}
