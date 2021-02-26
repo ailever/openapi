@@ -1,4 +1,22 @@
 #%%
+################################## CODEBLOCK ##################################
+from plotly.subplots import make_subplots
+import plotly.graph_objs as go
+
+
+# O[T,0,0] : Figure
+fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
+fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
+# O[T,0,1] : Description
+description1 = "Description"
+# O[T,1,0] : Description
+description2 = "Description"
+# O[T,1,1] : Description
+description3 = "Description"
+
+
+################################## CODEBLOCK ##################################
+#%%
 ################################## CONFIG ##################################
 import argparse
 parser = argparse.ArgumentParser()
@@ -31,27 +49,6 @@ config['dash-port'] = args.dp
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 ################################## CONFIG ##################################
-#%%
-################################## CODEBLOCK ##################################
-from plotly.subplots import make_subplots
-import plotly.graph_objs as go
-
-
-# O[T,0,0] : Figure
-fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
-fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
-# O[T,0,1] : Description
-description1 = "Description"
-# O[T,1,0] : Description
-description2 = "Description"
-# O[T,1,1] : Description
-description3 = "Description"
-
-
-
-
-
-################################## CODEBLOCK ##################################
 #%%
 ################################## DASHBOARD ##################################
 T = {}
