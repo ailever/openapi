@@ -503,4 +503,3 @@ sub_main = html.Div([dbc.Row(dbc.Col(SUBMAIN['0,0']))])
 app.layout = html.Div([main, sub_main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
-################################## DASHBOARD ##################################
