@@ -1,5 +1,4 @@
-#%%
-################################## CODEBLOCK ##################################
+#%% ################################## CODEBLOCK ##################################
 from plotly.subplots import make_subplots
 import plotly.express as px
 import plotly.graph_objs as go
@@ -51,9 +50,8 @@ df.columns = columns
 
 figure['T1,0,0'] = px.sunburst(df, path=path, values='Base')
 figure['T1,1,0'] = px.treemap(df, path=path, values='Base')
-################################## CODEBLOCK ##################################
-#%%
-################################## CONFIG ##################################
+
+#%% ################################## CONFIG ##################################
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--vs', type=str, default='127.0.0.1', help='visdom server')
@@ -84,9 +82,8 @@ config['dash-port'] = args.dp
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
-################################## CONFIG ##################################
-#%%
-################################## DASHBOARD ##################################
+
+#%% ################################## DASHBOARD ##################################
 T = {}
 T['T1,0,0'] = 'Sunburst Chart'
 T['T1,1,0'] = 'Tree Map'
@@ -118,4 +115,3 @@ main = dbc.Jumbotron([html.H2('analysis'),
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
-################################## DASHBOARD ##################################
