@@ -100,10 +100,10 @@ contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br()
                             dbc.Row([dbc.Col(C['T1,1,0'], width=12)]), html.Br(),
                             html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Part to Whole Charts", disabled=False)])
-main = dbc.Jumbotron([html.H2('analysis'),
+main = dbc.Jumbotron([html.H2('analysis - review'),
                       html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Home", color="secondary", href='https://ailever.github.io/'),
-                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/analysis'),
+                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/analysis/review.py'),
                                 dbc.Button("Google Trend", color="secondary", href="https://trends.google.com/trends/explore"),
                                 dbc.Button("DataLab", color="secondary", href="https://datalab.naver.com/"),
                                 dbc.Button('Kakao Map', color='secondary', href="https://map.kakao.com/"),
