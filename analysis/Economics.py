@@ -1,5 +1,4 @@
-#%%
-################################## CONFIG ##################################
+#%% ################################## CONFIG ##################################
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--vs', type=str, default='127.0.0.1', help='visdom server')
@@ -34,9 +33,8 @@ import plotly.graph_objs as go
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
-################################## CONFIG ##################################
-#%%
-################################## CODEBLOCK ##################################
+
+#%% ################################## CODEBLOCK ##################################
 import pandas as pd
 import numpy as np
 
@@ -240,10 +238,7 @@ IO['T3,T3,0,0'] = dcc.Markdown("""
 """)
 
 
-
-################################## CODEBLOCK ##################################
-#%%
-################################## DASHBOARD ##################################
+#%% ################################## DASHBOARD ##################################
 T = {}
 # KOREA Titles 
 T['T1,T1,-1,0'] = 'Korean Financial Organization(KFO)'
