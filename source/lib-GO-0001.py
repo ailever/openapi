@@ -1,3 +1,4 @@
+#%%
 # https://plotly.com/python-api-reference/
 # https://plotly.com/python-api-reference/generated/plotly.graph_objects.Bar.html
 # https://github.com/ailever/openapi/blob/master/source/lib-GO-0001.py
