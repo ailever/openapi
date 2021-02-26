@@ -7,12 +7,18 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 
+
 def main(LEVELs):
     Levels = dict()
     Texts = list()
+    
     for level, value in LEVELs.items():
         Levels[level] = value[0]
         Texts.append(value[1])
+
+    Levels_df = pd.DataFrame(Levels)
+    Levels = Levels_df.loc[:, Levels_df.columns[::-1]].to_dict()
+    Texts = Texts[::-1]
 
     df = pd.DataFrame(Levels)
     index = list()
@@ -58,6 +64,6 @@ def main(LEVELs):
 #############################################################
 LEVELs = {'L1':[[1,1,3,1,1],['T00','T01','T02','T03','T04']],
           'L2':[[3,4,5,1,0],['T10','T11','T12','T13','T14']],
-          'L3':[[3,1,3,1,3],['T20','T21','T22','T23','T24']],
+          'L3':[[3,1,3,0,0],['T20','T21','T22','T23','T24']],
           }
 main(LEVELs)
