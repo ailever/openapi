@@ -1,12 +1,10 @@
-#%%
 # https://plotly.com/python-api-reference/
 # https://plotly.com/python-api-reference/generated/plotly.graph_objects.Bar.html
-# https://github.com/ailever/openapi/blob/master/source/lib-GO-0000.py
+# https://github.com/ailever/openapi/blob/master/source/lib-GO-0001.py
 
 import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
-from ailever.machine.NM import softmax
 
 def main(LEVELs):
     Levels = dict()
@@ -22,7 +20,7 @@ def main(LEVELs):
 
     df.index = index
     for level_idx, col in enumerate(df.values.T):
-        col = softmax(col)
+        col = col/col.sum()
         df.iloc[:, level_idx] = col
 
     _df = np.cumsum(df)
