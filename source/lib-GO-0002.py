@@ -5,13 +5,14 @@
 
 import plotly.graph_objects as go
 
-Labels = ['A', 'B', 'C']
+Labels = ['A', 'B', 'C', 'D']
 labels = {}
+obj = type('obj', (), {})
+L = obj()
 for idx, label in enumerate(Labels):
-    labels[label] = idx
-L = labels
-source = [L['A'], L['C']]
-target = [L['B'], L['B']]
+    setattr(L, label, idx)
+source = [L.A, L.D]
+target = [L.B, L.A]
 
 fig = go.Figure(go.Sankey(
     arrangement = "snap",
