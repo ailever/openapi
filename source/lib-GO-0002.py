@@ -4,30 +4,20 @@
 # https://github.com/ailever/openapi/blob/master/source/lib-GO-0002.py
 
 import plotly.graph_objects as go
-import numpy as np
 
-obj = np.zeros((10,10))
-obj[0,1] = 1
-obj[1,9] = 1
-obj[5,7] = 1
-obj[3,7] = 1
-obj[5,5] = 1
-obj[9,9] = 1
-x, y = np.where(obj==1)
-x = np.cumsum(x/x.sum())
-y = np.cumsum(y/y.sum())
+Labels = ['A', 'B', 'C']
+labels = {}
+for idx, label in enumerate(Labels):
+    labels[label] = idx
+L = labels
+source = [L['A'], L['C']]
+target = [L['B'], L['B']]
 
-alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
 fig = go.Figure(go.Sankey(
     arrangement = "snap",
-    node = {
-        "label": [alphabet[i] for i in range(x.shape[0])],
-        "x": x,
-        "y": y,
-        'pad':10},
+    node=dict(label=Labels),
     link = {
-        "source": [0, 0, 1, 2, 5, 4, 3, 5],
-        "target": [5, 3, 4, 3, 0, 2, 2, 3],
-        "value": [1, 1, 1, 1, 1, 1, 1, 2]}))
-
+        "source": source,
+        "target": target,
+        "value":  [ 1 ]*len(source)}))
 fig.show()
