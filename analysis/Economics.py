@@ -149,7 +149,14 @@ UBS증권리미티드서울지점, 부국증권, 흥국증권, 이베스트투�
                             ])
 
 # O[T1,T3,0,0] : Industry
-KR['T1,T3,0,0'] = html.Div([])
+KR['T1,T3,0,0'] = html.Div([dbc.Button("MOLIT", color="dark", href="https://rt.molit.go.kr/"),
+                            dbc.Button("HOGANGNONO", color="dark", href="https://hogangnono.com/"),
+                            dbc.Button("VALUEUPMAP", color="dark", href="https://www.valueupmap.com/"),
+                            dbc.Button("LANDBOOK", color="dark", href="https://www.landbook.net/"),
+                            dbc.Button("ZIGBANG", color="dark", href="https://www.zigbang.com/home/apt/map"),
+                            dbc.Button("REALTYPRICE", color="dark", href="http://www.realtyprice.kr/notice/main/mainBody.htm"),
+                            dbc.Button("SELLYMON", color="dark", href="https://www.sellymon.com/"),
+                            ])
 KR['T1,T4,0,0'] = html.Div([])
 KR['T1,T5,0,0'] = html.Div([])
 KR['T1,T6,0,0'] = html.Div([])
