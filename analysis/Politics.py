@@ -198,9 +198,12 @@ KR['T1,T7,15,0'] = html.Div([])
 KR['T1,T7,16,0'] = html.Div([])
 KR['T1,T7,17,0'] = html.Div([])
 
-# O[T1,T8] : Korea/Figures
-KR['T1,T8,0,0'] = dcc.Markdown("""
-""")
+# O[T1,T8] : Korea/Education
+KR['T1,T8,0,0'] = html.Div([dbc.Button('SNU', color='dark', href="https://www.snu.ac.kr/index.html"),
+                            dbc.Button('YONSEI', color='dark', href="https://www.yonsei.ac.kr/sc/"),
+                            dbc.Button('KOREA', color='dark', href="http://www.korea.ac.kr/mbshome/mbs/university/index.do"),
+                            dbc.Button('SKKU', color='dark', href="https://www.skku.edu/skku/index.do"),
+                            ])
 KR['T1,T8,1,0'] = html.Embed(src='https://news.naver.com/', style={'width':'100%', 'height':'700px'})
 
 
@@ -280,7 +283,7 @@ T['T1,T7,14,0'] = 'Jeollanam-do'
 T['T1,T7,15,0'] = 'Gyeongsangbuk-do'
 T['T1,T7,16,0'] = 'Gyeongsangnam-do'
 T['T1,T7,17,0'] = 'Jeju Special Self-Governing Province'
-T['T1,T8,0,0'] = 'Figures'
+T['T1,T8,0,0'] = 'University'
 T['T1,T8,1,0'] = 'News'
 # USA Titles
 T['T2,T1,0,0'] = 'Press'
@@ -292,7 +295,7 @@ T['T2,T5,0,0'] = 'Judiciary'
 T['T2,T5,1,0'] = 'Law Firms'
 T['T2,T6,0,0'] = 'Elections'
 T['T2,T7,0,0'] = 'Local Governments'
-T['T2,T8,0,0'] = 'Figures'
+T['T2,T8,0,0'] = 'University'
 T['T2,T8,1,0'] = 'News'
 # International Titles
 T['T3,T1,0,0'] = 'Organization'
@@ -512,7 +515,7 @@ contents['page']['tab1']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(conte
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab5'])), label="Judiciary", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab6'])), label="Elections", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab7'])), label="Local Governments", disabled=False),
-                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab8'])), label="Figures", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1']['tab8'])), label="Education", disabled=False),
                                              ])
 # TAB2 : USA
 contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab1'])), label="Press", disabled=False),
@@ -522,7 +525,7 @@ contents['page']['tab2']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(conte
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab5'])), label="Judiciary", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab6'])), label="Elections", disabled=False),
                                              dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab7'])), label="Local Governments", disabled=False),
-                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab8'])), label="Figures", disabled=False),
+                                             dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2']['tab8'])), label="Education", disabled=False),
                                              ])
 # TAB3 : International                                    
 contents['page']['tab3']['tabs'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3']['tab1'])), label="Organization", disabled=False),
