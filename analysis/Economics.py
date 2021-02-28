@@ -149,7 +149,12 @@ UBS증권리미티드서울지점, 부국증권, 흥국증권, 이베스트투�
                             ])
 
 # O[T1,T3,0,0] : Industry
-KR['T1,T3,0,0'] = html.Div([dbc.Button("MOLIT", color="dark", href="https://rt.molit.go.kr/"),
+KR['T1,T3,0,0'] = html.Div([html.H2('REGULATION'),
+                            dbc.BUtton("IROS", color="dark", href="http://www.iros.go.kr/PMainJ.jsp"),
+                            dbc.BUtton("GOV24", color="dark", href="https://www.gov.kr/portal/main"),
+                            dbc.BUtton("LURIS", color="dark", href="https://luris.go.kr/web/index.jsp"),
+                            html.H2('PRICE'),
+                            dbc.Button("MOLIT", color="dark", href="https://rt.molit.go.kr/"),
                             dbc.Button("HOGANGNONO", color="dark", href="https://hogangnono.com/"),
                             dbc.Button("VALUEUPMAP", color="dark", href="https://www.valueupmap.com/"),
                             dbc.Button("LANDBOOK", color="dark", href="https://www.landbook.net/"),
