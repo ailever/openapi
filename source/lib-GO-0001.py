@@ -48,14 +48,15 @@ def main(LEVELs):
             )
         ))
         for L, x in enumerate(_S_row):
-            X = _X[L] + (x - _X[L])/2
-            annotations.append(dict(
-                                    x=X, y=L,
-                                    text=Texts[L][D],
-                                    font=dict(family='Arial', size=14,
-                                            color='rgb(67, 67, 67)'),
-                                    showarrow=False))
-            _X[L] = x
+            if S_row[L] != 0:
+                X = _X[L] + (x - _X[L])/2
+                annotations.append(dict(
+                                        x=X, y=L,
+                                        text=Texts[L][D],
+                                        font=dict(family='Arial', size=14,
+                                                color='rgb(67, 67, 67)'),
+                                        showarrow=False))
+                _X[L] = x
 
     fig.update_layout(title_text='TITLE')
     fig.update_layout(barmode='stack', annotations=annotations)
