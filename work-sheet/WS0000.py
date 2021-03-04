@@ -63,6 +63,7 @@ TAB1.RC01.values = html.Div([dbc.Button('Bash', color='dark', href="http://www.d
                              dbc.Button('C', color='dark', href="https://wikidocs.net/book/2494"),
                              dbc.Button('C', color='dark', href="https://dojang.io/course/view.php?id=2"),
                              dbc.Button('C', color='dark', href="http://www.devkuma.com/books/24"),
+                             dbc.Button('C++', color='dark', href="https://wikidocs.net/book/54"),
                              dbc.Button('C++', color='dark', href="https://wikidocs.net/book/2380"),
                              dbc.Button('C++', color='dark', href="https://wikidocs.net/book/1413"),
                              dbc.Button('Java', color='dark', href="http://www.devkuma.com/books/1"),
