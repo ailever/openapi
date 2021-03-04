@@ -21,7 +21,7 @@ from dash.dependencies import Input, Output, State
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
 config = {}
 config['DB-server'] = 'http://' + '127.0.0.1'
-config['DB-port'] = ''
+config['DB-port'] = '52631'
 config['visdom-server'] = 'http://' + '127.0.0.1'
 config['visdom-port'] = '8097'
 config['R-server'] = 'http://' + '127.0.0.1'
