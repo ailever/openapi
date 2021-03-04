@@ -81,6 +81,7 @@ TAB1.RC01.values = html.Div([dbc.Button('Bash', color='dark', href="http://www.d
                              dbc.Button('Flask', color='dark', href="https://wikidocs.net/book/4542"),
                              dbc.Button('Django', color='dark', href="https://wikidocs.net/book/837"),
                              dbc.Button('Django', color='dark', href="https://wikidocs.net/book/4223"),
+                             dbc.Button('HTML', color='dark', href="http://www.devkuma.com/books/5"),
                              dbc.Button('HTML', color='dark', href="https://www.w3schools.com/html/default.asp"),
                              dbc.Button('Sass', color='dark', href="https://www.w3schools.com/sass/default.php"),
                              dbc.Button('CSS', color='dark', href="http://www.devkuma.com/books/7"),
