@@ -17,9 +17,9 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 #from visdom import Visdom
-# service postgresql start/stop
+# service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
-# rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
+# rstudio-server start/stop/restart                       # /etc/rstudio/rserver.conf
 config = {}
 config['DB-server'] = 'http://' + '127.0.0.1'
 config['DB-port'] = '52631'
