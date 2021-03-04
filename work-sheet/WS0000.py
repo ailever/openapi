@@ -77,6 +77,7 @@ TAB1.RC01.values = html.Div([dbc.Button('Bash', color='dark', href="http://www.d
                              dbc.Button('Django', color='dark', href="https://wikidocs.net/book/837"),
                              dbc.Button('Django', color='dark', href="https://wikidocs.net/book/4223"),
                              dbc.Button('CSS', color='dark', href="http://www.devkuma.com/books/7"),
+                             dbc.Button('CSS', color='dark', href="https://www.w3schools.com/css/default.asp"),
                              dbc.Button('Node.js', color='dark', href="http://www.devkuma.com/books/25"),
                              dbc.Button('JavaScript', color='dark', href="http://www.devkuma.com/books/8"),
                              dbc.Button('React', color='dark', href="http://www.devkuma.com/books/26"),
