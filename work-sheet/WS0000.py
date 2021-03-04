@@ -45,27 +45,37 @@ Component = MetaClass('Component', (dict,), {})
 TAB1 = Component()
 TAB1.RC00 = Component()
 TAB1.RC01 = Component()
-TAB1.RC00.values = html.Div([dbc.Button('stackoverflow', color='dark', href="https://stackoverflow.com/"),
+TAB1.RC10 = Component()
+TAB1.RC11 = Component()
+TAB1.RC00.values = html.Div([dbc.Button('repl', color='dark', href="https://repl.it/languages/"),
+                             dbc.Button('stackoverflow', color='dark', href="https://stackoverflow.com/"),
                              dbc.Button('devkuma', color='dark', href="http://www.devkuma.com/books/"),
                              dbc.Button('wikidocs', color='dark', href="https://wikidocs.net/"),
                              dbc.Button('sololearn', color='dark', href="https://www.sololearn.com/"),
                              dbc.Button('w3schools', color='dark', href="https://www.w3schools.com/"),
                              ])
-
-TAB1.RC01.values = html.Div([dbc.Button('linux', color='dark', href="http://www.devkuma.com/books/11"),
+TAB1.RC01.values = html.Div([dbc.Button('Bash', color='dark', href="http://www.devkuma.com/books/11"),
+                             dbc.Button('PostgreSQL', color='dark', href="http://www.devkuma.com/books/16"),
+                             ])
+TAB1.RC10.values = html.Div([dbc.Button('', color='dark', href=""),
+                             ])
+TAB1.RC11.values = html.Div([dbc.Button('HTML - tag list', color='dark', href="https://www.w3schools.com/tags/default.asp"),
+                             dbc.Button('HTML - color code', color='dark', href="https://htmlcolorcodes.com/"),
+                             dbc.Button('CSS - properties', color='dark', href="https://www.w3schools.com/cssref/default.asp"),
+                             dbc.Button('CSS - selector', color='dark', href="https://www.w3schools.com/cssref/css_selectors.asp"),
                              ])
 ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = 'Computer Engineering : Overall'
-T['T,0,1'] = 'Operating System'
-T['T,1,0'] = 'Practical'
-T['T,1,1'] = 'Title11'
+T['T,0,1'] = 'Programming Language'
+T['T,1,0'] = 'Python Library APIs'
+T['T,1,1'] = 'Supplementary'
 O = {}
 O['T,_,_'] = None
 O['T,0,0'] = TAB1.RC00.values
 O['T,0,1'] = TAB1.RC01.values
-O['T,1,0'] = dcc.Markdown("description10")
-O['T,1,1'] = dcc.Markdown("description11")
+O['T,1,0'] = TAB1.RC10.values
+O['T,1,1'] = TAB1.RC11.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
 C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
@@ -76,7 +86,7 @@ contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="Reference", disabled=False)])
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="References", disabled=False)])
 main = dbc.Jumbotron([html.H2(html.A('WS0000', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
