@@ -79,8 +79,10 @@ TAB1.RC20.values = html.Div([dbc.Button('HTML - tag list', color='dark', href="h
                              dbc.Button('CSS - properties', color='dark', href="https://www.w3schools.com/cssref/default.asp"),
                              dbc.Button('CSS - selector', color='dark', href="https://www.w3schools.com/cssref/css_selectors.asp"),
                              ])
-TAB1.RC21.values = html.Div([dbc.Button('', color='dark', href=""),
-                             dbc.Button('', color='dark', href=""),
+TAB1.RC21.values = html.Div([dbc.Button('SQL', color='dark', href="https://userdyk-github.github.io/pl00/PL00-SQL.html"),
+                             dbc.Button('Linux', color='dark', href="https://userdyk-github.github.io/pl00/PL00-Linux.html"),
+                             dbc.Button('System Programming', color='dark', href="https://userdyk-github.github.io/pl00/PL00-System-programming.html"),
+                             dbc.Button('Windows', color='dark', href="https://userdyk-github.github.io/pl00/PL00-Windows.html"),
                              ])
 ################################## DASHBOARD ##################################
 T = {}
@@ -115,6 +117,7 @@ page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page'][
 main = dbc.Jumbotron([html.H2(html.A('WS0000', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
+                                dbc.Button('AIL CE', color='secondary', href="https://ailever.github.io/education/2020/05/30/Computer-Engineering/"),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/work-sheet/WS0000.py'),
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
