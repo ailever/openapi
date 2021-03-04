@@ -48,6 +48,8 @@ TAB1.RC01 = Component()
 TAB1.RC00.values = html.Div([dbc.Button('stackoverflow', color='dark', href="https://stackoverflow.com/"),
                              dbc.Button('devkuma', color='dark', href="http://www.devkuma.com/books/"),
                              dbc.Button('wikidocs', color='dark', href="https://wikidocs.net/"),
+                             dbc.Button('sololearn', color='dark', href="https://www.sololearn.com/"),
+                             dbc.Button('w3schools', color='dark', href="https://www.w3schools.com/"),
                              ])
 
 TAB1.RC01.values = html.Div([dbc.Button('linux', color='dark', href="http://www.devkuma.com/books/11"),
@@ -74,7 +76,7 @@ contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="Reference", disabled=False)])
 main = dbc.Jumbotron([html.H2(html.A('WS0000', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
