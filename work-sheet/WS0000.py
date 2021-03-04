@@ -35,15 +35,33 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 def real_time_analysis(click):
     return 'Real-Time Analysis is over.'
 #%% ################################## DASHBOARD ##################################
+class MetaClass(type):
+    def __new__(cls, clsname, bases, namespace):
+        namespace['__str__'] = lambda self: str(self.values)
+        namespace['values'] = None
+        return type.__new__(cls, clsname, bases, namespace)
+
+Component = MetaClass('Component', (dict,), {})
+TAB1 = Component()
+TAB1.RC00 = Component()
+TAB1.RC01 = Component()
+TAB1.RC00.values = html.Div([dbc.Button('stackoverflow', color='dark', href="https://stackoverflow.com/"),
+                             dbc.Button('devkuma', color='dark', href="http://www.devkuma.com/books/"),
+                             dbc.Button('wikidocs', color='dark', href="https://wikidocs.net/"),
+                             ])
+
+TAB1.RC01.values = html.Div([dbc.Button('linux', color='dark', href="http://www.devkuma.com/books/11"),
+                             ])
+################################## DASHBOARD ##################################
 T = {}
-T['T,0,0'] = 'Title00'
-T['T,0,1'] = 'Title01'
-T['T,1,0'] = 'Title10'
+T['T,0,0'] = 'Computer Engineering : Overall'
+T['T,0,1'] = 'Operating System'
+T['T,1,0'] = 'Practical'
 T['T,1,1'] = 'Title11'
 O = {}
 O['T,_,_'] = None
-O['T,0,0'] = dcc.Markdown("description00")
-O['T,0,1'] = dcc.Markdown("description01")
+O['T,0,0'] = TAB1.RC00.values
+O['T,0,1'] = TAB1.RC01.values
 O['T,1,0'] = dcc.Markdown("description10")
 O['T,1,1'] = dcc.Markdown("description11")
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
