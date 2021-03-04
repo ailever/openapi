@@ -1,14 +1,11 @@
-#%%
-################################## CODEBLOCK ##################################
+#%% ################################## CODEBLOCK ##################################
 from IPython import display
 from ipywidgets import interact
 import matplotlib.pyplot as plt
 import numpy as np
 
 
-################################## CODEBLOCK ##################################
-#%%
-################################## CONFIG ##################################
+#%% ################################## CONFIG ##################################
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -30,16 +27,14 @@ config['dash-port'] = '8050'
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
-################################## CONFIG ##################################
-################################## REALTIME ##################################
-# Real-Time Analysis
+
+#%% ################################## REALTIME ##################################
 @app.callback(
     Output("visdom-server", "children"),
     Input("real-time", "n_clicks"))
 def real_time_analysis(click):
     return 'Real-Time Analysis is over.'
-################################## REALTIME ##################################
-################################## DASHBOARD ##################################
+#%% ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = 'Title00'
 T['T,0,1'] = 'Title01'
@@ -73,4 +68,3 @@ main = dbc.Jumbotron([html.H2(html.A('WS0000', href="/")),
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
-################################## DASHBOARD ##################################
