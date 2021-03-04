@@ -21,8 +21,8 @@ from dash.dependencies import Input, Output, State
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
 # rstudio-server start/stop/restart                       # /etc/rstudio/rserver.conf
 config = {}
-config['DB-server'] = 'http://' + '127.0.0.1'
-config['DB-port'] = '52631'
+config['pgAdmin4-server'] = 'http://' + '127.0.0.1'
+config['pgAdmin4-port'] = '52631'
 config['visdom-server'] = 'http://' + '127.0.0.1'
 config['visdom-port'] = '8097'
 config['R-server'] = 'http://' + '127.0.0.1'
@@ -68,7 +68,7 @@ main = dbc.Jumbotron([html.H2(html.A('PROJECT TITLE', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/main.py'),
-                                dbc.Button("DB", color="secondary", href=config['DB-server']+':'+config['DB-port']),
+                                dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                       html.P(id='visdom-server')])
