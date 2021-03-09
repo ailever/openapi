@@ -1,5 +1,38 @@
-#%%
-################################## CONFIG ##################################
+#%% ################################## CODEBLOCK ##################################
+class MetaClass(type):
+    def __new__(cls, clsname, bases, namespace):
+        namespace['__str__'] = lambda self: str(self.values)
+        namespace['values'] = None
+        return type.__new__(cls, clsname, bases, namespace)
+
+Components = MetaClass('Components', (dict,), {})
+components = Components()
+
+"""
+from ailever.forecast.STOCK import krx, Ailf_KR
+from ailever.utils import korean
+korean()
+
+Df = krx.kospi('2018-01-01')
+ailf = Ailf_KR(Df, filter_period=100, regressor_criterion=0.5, seasonal_criterion=0.1, V=None)
+ailf.KRXStockReport(ailf.index[0], long_period=100, short_period=20, download=False)
+ailf.KRXStockDecompose(ailf.index[0], long_period=200, short_period=20, resid_transform=True, scb=[0.2,0.8], download=False)
+ailf.KRXIndexReport(ailf.index[0], long_period=100, short_period=20, download=False)
+ailf.KRXStockForecast(ailf.index[0], long_period=200, short_period=20, download=False)
+"""
+
+"""
+from ailever.forecast import TSA, sarima
+
+proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
+                      seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
+tsa = TSA(proc.samples)
+tsa.STL(model='ARIMA')
+tsa.ETS(steps=10, error='add', trend='add', seasonal='add', seasonal_periods=20)
+tsa.SARIMAX(steps=10, order=(2,1,0), seasonal_order=(0,1,0,20))
+"""
+
+#%% ################################## CONFIG ##################################
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--vs', type=str, default='127.0.0.1', help='visdom server')
@@ -30,39 +63,8 @@ config['dash-port'] = args.dp
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
-################################## CONFIG ##################################
-#%%
-################################## CODEBLOCK ##################################
 
-
-"""
-from ailever.forecast.STOCK import krx, Ailf_KR
-from ailever.utils import korean
-korean()
-
-Df = krx.kospi('2018-01-01')
-ailf = Ailf_KR(Df, filter_period=100, regressor_criterion=0.5, seasonal_criterion=0.1, V=None)
-ailf.KRXStockReport(ailf.index[0], long_period=100, short_period=20, download=False)
-ailf.KRXStockDecompose(ailf.index[0], long_period=200, short_period=20, resid_transform=True, scb=[0.2,0.8], download=False)
-ailf.KRXIndexReport(ailf.index[0], long_period=100, short_period=20, download=False)
-ailf.KRXStockForecast(ailf.index[0], long_period=200, short_period=20, download=False)
-"""
-
-"""
-from ailever.forecast import TSA, sarima
-
-proc = sarima.Process(trendparams=(2,1,1), trendAR=[-0.3, 0.2], trendMA=[0.1,],
-                      seasonalparams=(1,1,1,20), seasonAR=[0.3,], seasonMA=[0.2,])
-tsa = TSA(proc.samples)
-tsa.STL(model='ARIMA')
-tsa.ETS(steps=10, error='add', trend='add', seasonal='add', seasonal_periods=20)
-tsa.SARIMAX(steps=10, order=(2,1,0), seasonal_order=(0,1,0,20))
-"""
-
-
-################################## CODEBLOCK ##################################
-#%%
-################################## DASHBOARD ##################################
+#%% ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = ''
 T['T,0,1'] = ''
@@ -100,4 +102,3 @@ main = dbc.Jumbotron([html.H2('forecast'),
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
-################################## DASHBOARD ##################################
