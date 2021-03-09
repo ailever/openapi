@@ -7,20 +7,8 @@ class MetaClass(type):
 
 Components = MetaClass('Components', (dict,), {})
 components = Components()
-
-from plotly.subplots import make_subplots
-import plotly.graph_objs as go
-
-
-# O[T,0,0] : Figure
-fig = make_subplots(rows=1, cols=1, subplot_titles=['TITLE'])
-fig.add_trace(go.Scatter(x=[1,2,3], y=[3,2,1], mode='lines+markers'), row=1, col=1)
-# O[T,0,1] : Description
-description1 = "Description"
-# O[T,1,0] : Description
-description2 = "Description"
-# O[T,1,1] : Description
-description3 = "Description"
+components.t00 = ''
+components.t10 = ''
 
 #%% ################################## CONFIG ##################################
 import argparse
@@ -62,25 +50,21 @@ T['T,1,0'] = ''
 T['T,1,1'] = ''
 O = {}
 O['T,_,_'] = None
-O['T,0,0'] = dcc.Graph(figure=fig)
-O['T,0,1'] = dcc.Markdown(description1)
-O['T,1,0'] = dcc.Markdown(description2)
-O['T,1,1'] = dcc.Markdown(description3)
+O['T,0,0'] = dcc.Markdown(components.t00)
+O['T,1,0'] = dcc.Markdown(components.t10)
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
 C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
-C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
+contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
+                           dbc.Row([dbc.Col(C['T,1,0'], width=12)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
-main = dbc.Jumbotron([html.H2('language'),
+main = dbc.Jumbotron([html.H2('language - template'),
                       html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Home", color="secondary", href='https://ailever.github.io/'),
-                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/language'),
+                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/language/_template.py'),
                                 dbc.Button("Google Trend", color="secondary", href="https://trends.google.com/trends/explore"),
                                 dbc.Button("DataLab", color="secondary", href="https://datalab.naver.com/"),
                                 dbc.Button('Kakao Map', color='secondary', href="https://map.kakao.com/"),
