@@ -45,9 +45,7 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 #%% ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = ''
-T['T,0,1'] = ''
 T['T,1,0'] = ''
-T['T,1,1'] = ''
 O = {}
 O['T,_,_'] = None
 O['T,0,0'] = dcc.Markdown(components.t00)
