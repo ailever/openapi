@@ -1,9 +1,4 @@
 #%% ################################## CODEBLOCK ##################################
-from plotly.subplots import make_subplots
-import plotly.express as px
-import plotly.graph_objs as go
-import pandas as pd
-
 class MetaClass(type):
     def __new__(cls, clsname, bases, namespace):
         namespace['__str__'] = lambda self: str(self.values)
@@ -12,6 +7,12 @@ class MetaClass(type):
 
 Minutes = MetaClass('Mintues', (dict,), {})
 minutes = Minutes()
+
+from plotly.subplots import make_subplots
+import plotly.express as px
+import plotly.graph_objs as go
+import pandas as pd
+
 minutes.date = """
 
 """
