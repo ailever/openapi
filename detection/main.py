@@ -1,4 +1,13 @@
 #%% ################################## CODEBLOCK ##################################
+class MetaClass(type):
+    def __new__(cls, clsname, bases, namespace):
+        namespace['__str__'] = lambda self: str(self.values)
+        namespace['values'] = None
+        return type.__new__(cls, clsname, bases, namespace)
+
+Components = MetaClass('Components', (dict,), {})
+components = Components()
+
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
