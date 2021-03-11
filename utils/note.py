@@ -6,10 +6,18 @@ class N:
         self.contents = contents
 
 note = N()
-note.N00 = N('T1,0,0', 'title 1', """tab1 - contents block""")
-note.N01 = N('T1,1,0', 'title 2', """tab1 - contents block""")
-note.N02 = N('T2,0,0', 'title 1', """tab2 - contents block""")
-note.N03 = N('T2,1,0', 'title 2', """tab2 - contents block""")
+note.N00 = N('T1,0,0', 'title 1', """
+tab1 - contents block
+""")
+note.N01 = N('T1,1,0', 'title 2', """
+tab1 - contents block
+""")
+note.N02 = N('T2,0,0', 'title 1', """
+tab2 - contents block
+""")
+note.N03 = N('T2,1,0', 'title 2', """
+tab2 - contents block
+""")
 
 #%% ################################## CONFIG ##################################
 import argparse
@@ -71,7 +79,7 @@ page_layouts['page'] = dbc.Tabs(cards)
 main = dbc.Jumbotron([html.H2('utils - note'),
                       html.H6('Ailever : Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Home", color="secondary", href='https://ailever.github.io/'),
-                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/utils/_template.py'),
+                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/tree/master/utils/note.py'),
                                 dbc.Button("Google Trend", color="secondary", href="https://trends.google.com/trends/explore"),
                                 dbc.Button("DataLab", color="secondary", href="https://datalab.naver.com/"),
                                 dbc.Button('Kakao Map', color='secondary', href="https://map.kakao.com/"),
