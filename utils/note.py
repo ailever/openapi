@@ -60,6 +60,7 @@ tabs = set()
 for i, N in enumerate(vars(note).values()):
     if i < 3 : continue
     tabs.add(N.layout[:2])
+tab = list(tabs); tab.sort()
 for tab in tabs:
     contents['page'][tab] = list()
 
