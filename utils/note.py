@@ -60,14 +60,15 @@ tab_infos = set()
 for i, N in enumerate(vars(note).values()):
     if i < 4 : continue
     tab_infos.add((N.layout[:2], N.label))
-
+tab_infos = list(tab_infos)
+tab_infos.sort()
+    
 tabs = list()
 labels = list()
 for layout, label in tab_infos:
     tabs.append(layout)
     labels.append(label)
-tabs.sort()
-labels.sort()
+
 for tab in tabs:
     contents['page'][tab] = list()
 for i, N in enumerate(vars(note).values()):
