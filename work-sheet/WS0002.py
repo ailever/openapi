@@ -12,7 +12,55 @@ tab1 - contents block
 """)
 note.N00_00 = N(('T01,1,0', 'Work & School'), 'work on', """
 - A: I'm so **stressed out** these days.
-- B: Oh? Do you have to **work on a big project**? 
+- B: Oh? Do you have to **work on a big project**?
+---
+- A: Hey Nick, How about we **get some beer**?
+- B: I'd like to, but I have to **get back to work**.
+---
+- A: This needs to **be done** quickly.
+- B: Don't worry, I'll **get right on it**.
+---
+- A: Have you **finished cleaning up**?
+- B: **I'm on it**. I'll **be done in an hour**.
+""")
+note.N00_01 = N(('T01,2,0', 'Work & School'), 'do a good job', """
+- A: You have to **work hard**. Don't let me down.
+- B: I'll **do my best**, boss. Believe me. 
+---
+- A: This wedding cake **looks great**.
+- B: I **worked all night** baking it.
+---
+- A: 
+- B: 
+---
+- A: 
+- B: 
+""")
+note.N00_02 = N(('T01,3,0', 'Work & School'), 'work hard', """
+- A: 
+- B: 
+---
+- A: 
+- B: 
+---
+- A: 
+- B: 
+---
+- A: 
+- B: 
+""")
+note.N00_03 = N(('T01,4,0', 'Work & School'), 'have a lot of work', """
+- A: 
+- B: 
+---
+- A: 
+- B: 
+---
+- A: 
+- B: 
+---
+- A: 
+- B: 
 """)
 note.N01 = N(('T02,0,0', 'Computer & Networking'), 'title 1', """
 tab1 - contents block
