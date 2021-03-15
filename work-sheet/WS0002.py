@@ -7,10 +7,18 @@ class N:
         self.contents = contents
 
 note = N()
-note.N00 = N(('T01,0,0', 'Work & School'), 'title 1', """
-tab1 - contents block
+note.N00 = N(('T01,0,0', 'Work & School'), 'Main Board', """
+## Work & School
+work on | do a good job | work hard | have a lot of work | get started on | give it a try | keep ~ing | 
+do one's best | be devoted to | be tied up | take one's time | be tired out | get over | on one's own | 
+be good at | take care of | be finished with | keep up with | meet the deadline | make it | win the game | 
+make a mistake | have a job interview | get a job | work for | go to work | get paid | get promoted | 
+go out of town | run a business | be on a night shift | give a task | have a meeting | write a report | deal with | go on sale | 
+buy sth for ~ | be sold out | exchange A for B | invest in | save money | make money | spend moeny | get a loan |
+make ends meet | make a deposit | go to college | quit school | graduage from | take a course | sign up for | do one's homework | take the test | 
+get a good grad | 
 """)
-note.N00_00 = N(('T01,1,0', 'Work & School'), 'work on', """
+note.N00_01 = N(('T01,1,0', 'Work & School'), 'work on', """
 - A: I'm so **stressed out** these days.
 - B: Oh? Do you have to **work on a big project**?
 - _: I'm going to **work on this stuff** at home tonight.
@@ -31,15 +39,15 @@ note.N00_00 = N(('T01,1,0', 'Work & School'), 'work on', """
 - _: **Don't mention it**. I'm just **doing my job**.
 - _: Please, **get out of** my way **so I can** do my job.
 """)
-note.N00_01 = N(('T01,2,0', 'Work & School'), 'do a good job', """
-- A: You have to **work hard**. Don't let me down.
-- B: I'll **do my best**, boss. Believe me. 
-- _: You **did a good job**! It was very impressive.
-- _: 
+note.N00_02 = N(('T01,2,0', 'Work & School'), 'do a good job', """
+- A: I thought you always **did a great job** on exams.
+- B: Yeah, but actually I **cheated** all the time.
+- _: You **did a good job**! It was **very impressive**.
+- _: You **did a great job** organizing the fundraiser.
 ---
-- A: This wedding cake **looks great**.
-- B: I **worked all night** baking it.
-- _: 
+- A: 
+- B: 
+- _: My mechanic does good work on car.
 - _: 
 ---
 - A: I have to **work late tonight**, honey.
@@ -52,7 +60,28 @@ note.N00_01 = N(('T01,2,0', 'Work & School'), 'do a good job', """
 - _: 
 - _: 
 """)
-note.N00_02 = N(('T01,3,0', 'Work & School'), 'work hard', """
+note.N00_03 = N(('T01,3,0', 'Work & School'), 'work hard', """
+- A: You have to **work hard**. Don't let me down.
+- B: I'll **do my best**, boss. Believe me. 
+- _: 
+- _: 
+---
+- A: This wedding cake **looks great**.
+- B: I **worked all night** baking it.
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
+note.N00_04 = N(('T01,4,0', 'Work & School'), 'have a lot of work', """
 - A: 
 - B: 
 - _: 
@@ -73,7 +102,7 @@ note.N00_02 = N(('T01,3,0', 'Work & School'), 'work hard', """
 - _: 
 - _: 
 """)
-note.N00_03 = N(('T01,4,0', 'Work & School'), 'have a lot of work', """
+note.N00_05 = N(('T01,5,0', 'Work & School'), 'get started on', """
 - A: 
 - B: 
 - _: 
@@ -94,32 +123,174 @@ note.N00_03 = N(('T01,4,0', 'Work & School'), 'have a lot of work', """
 - _: 
 - _: 
 """)
-note.N01 = N(('T02,0,0', 'Computer & Networking'), 'title 1', """
-tab1 - contents block
+note.N00_06 = N(('T01,6,0', 'Work & School'), 'give it a try', """
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
 """)
-note.N02 = N(('T03,0,0', 'Social Life with Others'), 'title 1', """
-tab1 - contents block
+note.N00_07 = N(('T01,7,0', 'Work & School'), 'keep ~ing', """
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
 """)
-note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'title 1', """
-tab1 - contents block
+note.N00_08 = N(('T01,8,0', 'Work & School'), "do one's best", """
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
 """)
-note.N04 = N(('T05,0,0', 'Information & Understanding'), 'title 1', """
-tab1 - contents block
+note.N00_09 = N(('T01,9,0', 'Work & School'), 'be devoted to', """
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
 """)
-note.N05 = N(('T06,0,0', 'Thoughts & Attitude'), 'title 1', """
-tab1 - contents block
+note.N00_10 = N(('T01,10,0', 'Work & School'), 'be tied up', """
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
 """)
-note.N06 = N(('T07,0,0', 'Emotions & Situations'), 'title 1', """
-tab1 - contents block
+note.N01 = N(('T02,0,0', 'Computer & Networking'), 'Main Board', """
+## Computer & Networking
+fix the computer | load the file | have a virus | have access to | post one's opinion | play computer games | meet online | find sb on Facebook | have an email account | 
+check one's email | attach the file | answer one's email | drop a line | give a call | take the call | be available | be on the phone | put A through B | 
+be cut off | wait for one's call | text sb | own a Smart 3D TV | get held up | have a car accident | take a texi | run out of gas | give a ride | 
+get a ticket | park one's car | take a bus | miss the flight | get lost | go this way | be next to |  
 """)
-note.N07 = N(('T08,0,0', 'Various Actions'), 'title 1', """
-tab1 - contents block
+note.N02 = N(('T03,0,0', 'Social Life with Others'), 'Main Board', """
+## Social Life with Others
+get a minute | make time | spend time | take time | It has been | have a plan | be going to | have a schedule | be late for | 
+mean to | get together | invite sb to | would like sb to meet | come over | wait for | say hi to | have an appointment | get in touch | 
+make a reservation | make friends with | talk to | consult with | leave for | come here to | go downtown | get to | go together | 
+go back to | go home | take ~ to | move to | stay for | call A B | behave oneself | have a date | have a feeling for | 
+give a hug | break up with | get married to | get involved in | stay out of | take part in | 
 """)
-note.N08 = N(('T09,0,0', 'Time, Place & etc.'), 'title 1', """
-tab1 - contents block
+note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
+## Everyday Life Activies
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
 """)
-note.N09 = N(('T10,0,0', 'Additionals'), 'title 1', """
-tab1 - contents block
+note.N04 = N(('T05,0,0', 'Information & Understanding'), 'Main Board', """
+## Information & Understanding
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+""")
+note.N05 = N(('T06,0,0', 'Thoughts & Attitude'), 'Main Board', """
+## Thoughts & Attitude
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+""")
+note.N06 = N(('T07,0,0', 'Emotions & Situations'), 'Main Board', """
+## Emotions & Situations
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+""")
+note.N07 = N(('T08,0,0', 'Various Actions'), 'Main Board', """
+## Various Actions
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+""")
+note.N08 = N(('T09,0,0', 'Time, Place & etc.'), 'Main Board', """
+## Time, Place & etc.
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+""")
+note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
+## Additionals
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
+ |  |  |  |  |  |  |  |  | 
 """)
 
 #%% ################################## CONFIG ##################################
