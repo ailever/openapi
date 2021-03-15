@@ -13,54 +13,86 @@ tab1 - contents block
 note.N00_00 = N(('T01,1,0', 'Work & School'), 'work on', """
 - A: I'm so **stressed out** these days.
 - B: Oh? Do you have to **work on a big project**?
+- _: I'm going to **work on this stuff** at home tonight.
+- _: Did you **hand in the report** you were working on?
 ---
 - A: Hey Nick, How about we **get some beer**?
 - B: I'd like to, but I have to **get back to work**.
+- _: I've gotta **get to work**. So can I **call you back later**?
+- _: How long does it take for you to **get to work**?
 ---
 - A: This needs to **be done** quickly.
 - B: Don't worry, I'll **get right on it**.
+- _: If it's urgent, I'll **get right on it**.
+- _: I understand. I'll **get right on it**.
 ---
-- A: Have you **finished cleaning up**?
+- A: **Have you finished** cleaning up?
 - B: **I'm on it**. I'll **be done in an hour**.
+- _: **Don't mention it**. I'm just **doing my job**.
+- _: Please, **get out of** my way **so I can** do my job.
 """)
 note.N00_01 = N(('T01,2,0', 'Work & School'), 'do a good job', """
 - A: You have to **work hard**. Don't let me down.
 - B: I'll **do my best**, boss. Believe me. 
+- _: You **did a good job**! It was very impressive.
+- _: 
 ---
 - A: This wedding cake **looks great**.
 - B: I **worked all night** baking it.
+- _: 
+- _: 
+---
+- A: I have to **work late tonight**, honey.
+- B: 
+- _: 
+- _: 
 ---
 - A: 
 - B: 
----
-- A: 
-- B: 
+- _: 
+- _: 
 """)
 note.N00_02 = N(('T01,3,0', 'Work & School'), 'work hard', """
 - A: 
 - B: 
+- _: 
+- _: 
 ---
 - A: 
 - B: 
+- _: 
+- _: 
 ---
 - A: 
 - B: 
+- _: 
+- _: 
 ---
 - A: 
 - B: 
+- _: 
+- _: 
 """)
 note.N00_03 = N(('T01,4,0', 'Work & School'), 'have a lot of work', """
 - A: 
 - B: 
+- _: 
+- _: 
 ---
 - A: 
 - B: 
+- _: 
+- _: 
 ---
 - A: 
 - B: 
+- _: 
+- _: 
 ---
 - A: 
 - B: 
+- _: 
+- _: 
 """)
 note.N01 = N(('T02,0,0', 'Computer & Networking'), 'title 1', """
 tab1 - contents block
