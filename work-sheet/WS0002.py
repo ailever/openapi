@@ -10,32 +10,35 @@ note = N()
 note.N00 = N(('T01,0,0', 'Work & School'), 'title 1', """
 tab1 - contents block
 """)
-
+note.N00_00 = N(('T01,1,0', 'Work & School'), 'work on', """
+- A: I'm so **stressed out** these days.
+- B: Oh? Do you have to **work on a big project**? 
+""")
 note.N01 = N(('T02,0,0', 'Computer & Networking'), 'title 1', """
 tab1 - contents block
 """)
-note.N02 = N(('T03,0,0', ' & '), 'title 1', """
+note.N02 = N(('T03,0,0', 'Social Life with Others'), 'title 1', """
 tab1 - contents block
 """)
-note.N03 = N(('T04,0,0', ' & '), 'title 1', """
+note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'title 1', """
 tab1 - contents block
 """)
-note.N04 = N(('T05,0,0', ' & '), 'title 1', """
+note.N04 = N(('T05,0,0', 'Information & Understanding'), 'title 1', """
 tab1 - contents block
 """)
-note.N05 = N(('T06,0,0', ' & '), 'title 1', """
+note.N05 = N(('T06,0,0', 'Thoughts & Attitude'), 'title 1', """
 tab1 - contents block
 """)
-note.N06 = N(('T07,0,0', ' & '), 'title 1', """
+note.N06 = N(('T07,0,0', 'Emotions & Situations'), 'title 1', """
 tab1 - contents block
 """)
-note.N07 = N(('T08,0,0', ' & '), 'title 1', """
+note.N07 = N(('T08,0,0', 'Various Actions'), 'title 1', """
 tab1 - contents block
 """)
-note.N08 = N(('T09,0,0', ' & '), 'title 1', """
+note.N08 = N(('T09,0,0', 'Time, Place & etc.'), 'title 1', """
 tab1 - contents block
 """)
-note.N09 = N(('T10,0,0', ' & '), 'title 1', """
+note.N09 = N(('T10,0,0', 'Additionals'), 'title 1', """
 tab1 - contents block
 """)
 
@@ -72,7 +75,6 @@ config['dash-port'] = args.dp
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 #%% ################################## DASHBOARD ##################################
-################################## DASHBOARD ##################################
 T = {}; O = {}; C = {}
 contents = {}; contents['page'] = {}; page_layouts = {}
 tab_infos = set()
