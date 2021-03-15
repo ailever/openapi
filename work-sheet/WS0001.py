@@ -7,6 +7,14 @@ class N:
 
 note = N()
 note.N00 = N('T1,0,0', 'title 1', """
+- You will have to **prepare for 30 seconds** and **speak for 60 seconds**.
+- The structure **has remained the same**.
+- **A couple of small changes** are nothing too big.
+- There are less **questions there used to be 12 to 14 questions per passage**. 
+- The structure is **a little bit different about reading passage**.
+- Everything **is desgined to see you if** you're ready for a freshman year
+- This is **what you are going to know by** the end of this little lecture.
+- I don't have a lot of time, **Let's get into it right now**.
 - **This is for you to** do your homework. 
 - This is **when you arrive at a destination**.
 - I am gonna become a real American student just for a day to show you **how it all looks like housing life of American works**.
@@ -22,13 +30,14 @@ note.N00 = N('T1,0,0', 'title 1', """
 - Let them know that you want to see them again.  
 """)
 note.N01 = N('T1,1,0', 'title 2', """
-tab1 - contents block
 """)
-note.N02 = N('T2,0,0', 'title 1', """
-tab2 - contents block
+note.N02 = N('T2,0,0', 'title 2', """
 """)
 note.N03 = N('T2,1,0', 'title 2', """
-tab2 - contents block
+""")
+note.N04 = N('T2,2,0', 'title 2', """
+""")
+note.N05 = N('T2,3,0', 'title 2', """
 """)
 
 #%% ################################## CONFIG ##################################
