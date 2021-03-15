@@ -275,17 +275,20 @@ get used to | be hard to | be doing okay |
 """)
 note.N07 = N(('T08,0,0', 'Various Actions'), 'Main Board', """
 ## Various Actions
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
+choose to | chage one's mind | make a decision | get one's own way | hold on to | cause trouble | back sb up | allow sb to | credit A with B | 
+talk sb into ~ing | give some advice | warm sb about | tell sb to | ask sb to | help sb do | teach sb to | excuse sb for | wait on | 
+keep one's word | prepare for | date back | get sth from | want sth back | hand sth down | make a donation | sort out | go through | 
+report sth to | make use of | solve a problem | find fault with | make fun of | be hard on | cheat sb out of | rob A of B | have words with | 
+beat up | get even with | make up | turn against | teach a lesson | give up | keep sb from | keep away from | set ~ free | 
+take action | take a chance | register for | 
 """)
 note.N08 = N(('T09,0,0', 'Time, Place & etc.'), 'Main Board', """
 ## Time, Place & etc.
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
+be in the service | break the law | buy insurance | do damage to | make up for | belong to | deserve to | go digital | whatever you want to | 
+let alone | in the way that | be the first to | have the right to | come close to | such as | never happened | enough to | in no time | 
+to begin with | at the same time | at the moment | to date | for a while | on a daily basis | from time to time | as soon as | later this week | 
+on such short notice | in the end | in addition to | on the other hand | in other words | by the way | a bit of | as far as | over there | 
+If you like | when it comes to | 
 """)
 note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
