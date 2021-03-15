@@ -1,21 +1,22 @@
 #%% ################################## CODEBLOCK ##################################
 class N:
-    def __init__(self, layout=None, title=None, contents=None):
-        self.layout = layout
+    def __init__(self, tab_info=(None, None), title=None, contents=None):
+        self.layout = tab_info[0]
+        self.label = tab_info[1]
         self.title = title
         self.contents = contents
 
 note = N()
-note.N00 = N('T1,0,0', 'title 1', """
+note.N00 = N(('T1,0,0', 'label 1'), 'title 1', """
 tab1 - contents block
 """)
-note.N01 = N('T1,1,0', 'title 2', """
+note.N01 = N(('T1,1,0', 'label 1'), 'title 2', """
 tab1 - contents block
 """)
-note.N02 = N('T2,0,0', 'title 1', """
+note.N02 = N(('T2,0,0', 'label 2'), 'title 1', """
 tab2 - contents block
 """)
-note.N03 = N('T2,1,0', 'title 2', """
+note.N03 = N(('T2,1,0', 'label 2'), 'title 2', """
 tab2 - contents block
 """)
 
@@ -55,26 +56,30 @@ app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.the
 ################################## DASHBOARD ##################################
 T = {}; O = {}; C = {}
 contents = {}; contents['page'] = {}; page_layouts = {}
-
-tabs = set()
+tab_infos = set()
 for i, N in enumerate(vars(note).values()):
-    if i < 3 : continue
-    tabs.add(N.layout[:2])
-tabs = list(tabs); tabs.sort()
+    if i < 4 : continue
+    tab_infos.add((N.layout[:2], N.label))
+
+tabs = list()
+labels = list()
+for layout, label in tab_infos:
+    tabs.append(layout)
+    labels.append(label)
+tabs.sort()
+labels.sort()
 for tab in tabs:
     contents['page'][tab] = list()
-
 for i, N in enumerate(vars(note).values()):
-    if i < 3 : continue
+    if i < 4 : continue
     T[N.layout] = N.title
     O[N.layout] = dcc.Markdown(N.contents)
     C[N.layout] = [dbc.Card([dbc.CardHeader(T[N.layout]), dbc.CardBody(O[N.layout])], color='light', inverse=False, outline=True)]
     contents['page'][N.layout[:2]].extend([dbc.Row([dbc.Col(C[N.layout], width=12)]), html.Br()])
-
 cards = list()
-for tab in tabs:
+for tab, label in zip(tabs, labels):
     contents['page'][tab].append(html.Br())
-    cards.append(dbc.Tab(dbc.Card(dbc.CardBody(contents['page'][tab])), label=tab, disabled=False))
+    cards.append(dbc.Tab(dbc.Card(dbc.CardBody(contents['page'][tab])), label=label, disabled=False))
 page_layouts['page'] = dbc.Tabs(cards)
 ################################## DASHBOARD ##################################
 main = dbc.Jumbotron([html.H2('WS0002 : English Conversation'),
