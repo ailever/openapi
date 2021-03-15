@@ -7,7 +7,12 @@ class N:
 
 note = N()
 note.N00 = N('T1,0,0', 'title 1', """
-- How much it costs to live here
+- **This is for you to** do your homework. 
+- This is **when you arrive at a destination**.
+- I am gonna become a real American student just for a day to show you **how it all looks like housing life of American works**.
+- We use them **when we meet someone for a first time**.
+- As an example, I will show the usual **low-budget life style**.
+- How much does **it costs to live here**.
 - A lot of people that want to move to LA want to move here to **be closer to a beach**.
 - This is probably **one of the most important ones**.
 - Obviously, LA **is becomming** very **impacted**.
