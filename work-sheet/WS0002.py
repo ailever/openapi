@@ -245,10 +245,12 @@ give a hug | break up with | get married to | get involved in | stay out of | ta
 """)
 note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
 ## Everyday Life Activies
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
+get to bed | get out of bed | wash up | get one's hair cut | wear one's makeup | use the bathroom | get dressed | take a seat | blow one's nose | 
+burst into tears | smile at | shout to | take a breath | live in | rent a house | do the dishes | break down | fix the car | 
+be sunny | fall heavily | have dinner | grab a bite | take a drink | get drunk | have the same | pay for dinner | For here or to go | 
+be full | cook dinner | boil the stew | give up smoking | go on a vacation | take a break | take a trip | hang out | watch a moive | 
+have a party | keep in shape | get hurt | break one's leg | catch a cold | have a headache | have a breakdown | have a sore throat | have an upset stomach | 
+get diabets | take one's medicine | cure a disease | have a checkup | work out | go on a diet | 
 """)
 note.N04 = N(('T05,0,0', 'Information & Understanding'), 'Main Board', """
 ## Information & Understanding
