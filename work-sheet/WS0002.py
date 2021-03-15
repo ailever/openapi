@@ -7,17 +7,36 @@ class N:
         self.contents = contents
 
 note = N()
-note.N00 = N(('T1,0,0', 'label 1'), 'title 1', """
+note.N00 = N(('T01,0,0', 'Work & School'), 'title 1', """
 tab1 - contents block
 """)
-note.N01 = N(('T1,1,0', 'label 1'), 'title 2', """
+
+note.N01 = N(('T02,0,0', 'Computer & Networking'), 'title 1', """
 tab1 - contents block
 """)
-note.N02 = N(('T2,0,0', 'label 2'), 'title 1', """
-tab2 - contents block
+note.N02 = N(('T03,0,0', ' & '), 'title 1', """
+tab1 - contents block
 """)
-note.N03 = N(('T2,1,0', 'label 2'), 'title 2', """
-tab2 - contents block
+note.N03 = N(('T04,0,0', ' & '), 'title 1', """
+tab1 - contents block
+""")
+note.N04 = N(('T05,0,0', ' & '), 'title 1', """
+tab1 - contents block
+""")
+note.N05 = N(('T06,0,0', ' & '), 'title 1', """
+tab1 - contents block
+""")
+note.N06 = N(('T07,0,0', ' & '), 'title 1', """
+tab1 - contents block
+""")
+note.N07 = N(('T08,0,0', ' & '), 'title 1', """
+tab1 - contents block
+""")
+note.N08 = N(('T09,0,0', ' & '), 'title 1', """
+tab1 - contents block
+""")
+note.N09 = N(('T10,0,0', ' & '), 'title 1', """
+tab1 - contents block
 """)
 
 #%% ################################## CONFIG ##################################
@@ -59,15 +78,15 @@ contents = {}; contents['page'] = {}; page_layouts = {}
 tab_infos = set()
 for i, N in enumerate(vars(note).values()):
     if i < 4 : continue
-    tab_infos.add((N.layout[:2], N.label))
+    tab_infos.add((N.layout[:3], N.label))
+tab_infos = list(tab_infos)
+tab_infos.sort()
 
 tabs = list()
 labels = list()
 for layout, label in tab_infos:
     tabs.append(layout)
     labels.append(label)
-tabs.sort()
-labels.sort()
 for tab in tabs:
     contents['page'][tab] = list()
 for i, N in enumerate(vars(note).values()):
@@ -75,7 +94,7 @@ for i, N in enumerate(vars(note).values()):
     T[N.layout] = N.title
     O[N.layout] = dcc.Markdown(N.contents)
     C[N.layout] = [dbc.Card([dbc.CardHeader(T[N.layout]), dbc.CardBody(O[N.layout])], color='light', inverse=False, outline=True)]
-    contents['page'][N.layout[:2]].extend([dbc.Row([dbc.Col(C[N.layout], width=12)]), html.Br()])
+    contents['page'][N.layout[:3]].extend([dbc.Row([dbc.Col(C[N.layout], width=12)]), html.Br()])
 cards = list()
 for tab, label in zip(tabs, labels):
     contents['page'][tab].append(html.Br())
