@@ -53,7 +53,6 @@ config['dash-port'] = args.dp
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 #%% ################################## DASHBOARD ##################################
-################################## DASHBOARD ##################################
 T = {}; O = {}; C = {}
 contents = {}; contents['page'] = {}; page_layouts = {}
 tab_infos = set()
