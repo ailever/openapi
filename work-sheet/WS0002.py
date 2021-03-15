@@ -254,24 +254,24 @@ get diabets | take one's medicine | cure a disease | have a checkup | work out |
 """)
 note.N04 = N(('T05,0,0', 'Information & Understanding'), 'Main Board', """
 ## Information & Understanding
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
+hear sb ~ing | look at | get to know | have no idea | ask about | check out | hear a rumor | find out | get sb wrong | 
+have doubts about | tell the truth | keep a secret | tell a lie | give an excuse | have a reason | make clear | get it | stand for | 
+put A before B | leave sth in ~ | insist on | Why don't you | remind A of B | forget to | 
 """)
 note.N05 = N(('T06,0,0', 'Thoughts & Attitude'), 'Main Board', """
 ## Thoughts & Attitude
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
+think of | consider ~ing | think over | take A for B | hit on | take a guess | ~ than I thought | believe in | hope to | 
+take charge of | have a duty to | be in need of | be sure of | have the courage | be famous for | be popular with | use one's head | complain about | 
+think less of | play dirty | do a stupid thing | put up with | go against | agree with | be careful of | be likely to | be worth ~ing | 
+get interested in | would like to | be one's favorite | have a habit of | seem to | The point is that | come up with | no longer | 
 """)
 note.N06 = N(('T07,0,0', 'Emotions & Situations'), 'Main Board', """
 ## Emotions & Situations
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
+be happy with | feel sad about | get upset | worry about | regret ~ing | say thank you | be sorry for | be embarrassed | be nervous | 
+like to | be surprised at | let ~ down | take pity on | be afriad of | be sick of | be ashamed of | think highly of | be proud of | 
+be impressed by | be out of one's mind | have a lot of stress | take it easy | feel the same way | be all right | have to | can't help ~ing | get worse | 
+get caught in | get in trouble | have a problem | have luck | have a bad day | get a chance | take the chance | be different from | be similar to | 
+get used to | be hard to | be doing okay | 
 """)
 note.N07 = N(('T08,0,0', 'Various Actions'), 'Main Board', """
 ## Various Actions
