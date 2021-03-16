@@ -280,20 +280,20 @@ note.N02_02 = N(('T03,2,0', 'Social Life with Others'), 'make time', """
 - _: She **took time out to** plant a flower garden.
 - _: We will **take time out to** visit some old friends.
 ---
-- A: 
-- B: 
-- _: 
-- _: 
+- A: How long have you **been working** here?
+- B: We **put in seven hours** so far.
+- _: Workers must **put in thirty years** before retiring.
+- _: The baseball players **put a lot of energy into** playing.
 ---
-- A: 
-- B: 
-- _: 
-- _: .
+- A: I can **spare some time for** hiking.
+- B: Well, Let's **go to the mountain** weekend.
+- _: He **spared some time for** helping the old woman.
+- _: You should **spare some time for** relaxing.
 ---
-- A: 
-- B: 
-- _: 
-- _: 
+- A: I **would like to interview** that musician.
+- B: We can **arrange a time for** you to meet him.
+- _: The farmers **arranged time for** harvesting red peppers.
+- _: I need to **arrange time for** our Christmas party.
 """)
 note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
 ## Everyday Life Activies
