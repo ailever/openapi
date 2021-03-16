@@ -418,6 +418,108 @@ be impressed by | be out of one's mind | have a lot of stress | take it easy | f
 get caught in | get in trouble | have a problem | have luck | have a bad day | get a chance | take the chance | be different from | be similar to | 
 get used to | be hard to | be doing okay | 
 """)
+note.N06_01 = N(('T07,01,0', 'Emotions & Situations'), "be happy with", """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: **Why did you give** the homeless man money?
+- B: I **feel good about** helping poor people.
+- _: Kendra **felt good about** completing the marathon.
+- _: Did Sam **feel good about** finishing his work.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: I wonder if the boss **is still angry with** me.
+- B: He seems to **be in a good mood** today.
+- _: Gina **was in a good mood after** eating lunch.
+- _: They **are in a good mood because** they are together.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
+note.N06_02 = N(('T07,02,0', 'Emotions & Situations'), "feel sad about", """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N06_05 = N(('T07,05,0', 'Emotions & Situations'), "regret ~ing", """
 - A: Don't you **regret anything about your past**?
 - B: No, If I had the chance, **I'd do it all over again**.
