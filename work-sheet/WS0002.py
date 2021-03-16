@@ -384,6 +384,32 @@ take charge of | have a duty to | be in need of | be sure of | have the courage 
 think less of | play dirty | do a stupid thing | put up with | go against | agree with | be careful of | be likely to | be worth ~ing | 
 get interested in | would like to | be one's favorite | have a habit of | seem to | The point is that | come up with | no longer | 
 """)
+note.N05_03 = N(('T06,03,0', 'Thoughts & Attitude'), 'think over', """
+- A: I need to **think over** my choices.
+- B: You'll have to decide soon.
+- _: You **think it over**. Call me back.
+- _: You need **think carefully before** starting your own business.
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N05_09 = N(('T06,09,0', 'Thoughts & Attitude'), 'hope to', """
 - A: 
 - B: 
