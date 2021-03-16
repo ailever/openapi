@@ -825,6 +825,15 @@ note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
 """)
 note.N09_01 = N(('T10,1,0', 'Additionals'), 'script 1', """
+- This is **one place you can't afford to miss**.
+- You'll experience a **culinary adventure**.
+- The place **is rated in the top ten** on a site
+- **That doesn't matter** because ~
+- It's the **ultimate experience**.
+- I mean I am **speechless with that**.
+- It's currently **the beginning of November**.
+""")
+note.N09_02 = N(('T10,2,0', 'Additionals'), 'script 2', """
 - You will have to **prepare for 30 seconds** and **speak for 60 seconds**.
 - The structure **has remained the same**.
 - **A couple of small changes** are nothing too big.
