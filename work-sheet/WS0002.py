@@ -418,6 +418,32 @@ be impressed by | be out of one's mind | have a lot of stress | take it easy | f
 get caught in | get in trouble | have a problem | have luck | have a bad day | get a chance | take the chance | be different from | be similar to | 
 get used to | be hard to | be doing okay | 
 """)
+note.N06_39 = N(('T07,39,0', 'Emotions & Situations'), 'be doing okay', """
+- A: **I haven't seen your parents** in a while.
+- B: My dad and mom **are doing okay|good|great**.
+- _: I glad to see you'**re doing okay|good|great**.
+- _: You'**re doing great**.
+--- 
+- A:  
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N07 = N(('T08,0,0', 'Various Actions'), 'Main Board', """
 ## Various Actions
 choose to | chage one's mind | make a decision | get one's own way | hold on to | cause trouble | back sb up | allow sb to | credit A with B | 
