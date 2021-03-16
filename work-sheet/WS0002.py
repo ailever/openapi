@@ -418,6 +418,52 @@ be impressed by | be out of one's mind | have a lot of stress | take it easy | f
 get caught in | get in trouble | have a problem | have luck | have a bad day | get a chance | take the chance | be different from | be similar to | 
 get used to | be hard to | be doing okay | 
 """)
+note.N06_29 = N(('T07,29,0', 'Emotions & Situations'), 'get in trouble', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: I **have trouble with** studing here.  
+- B: **It's noisy**. Let's go to the library.
+- _: She **had trouble with** making a living.
+- _: They **have trouble with** playing their instruments.
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N06_39 = N(('T07,39,0', 'Emotions & Situations'), 'be doing okay', """
 - A: **I haven't seen your parents** in a while.
 - B: My dad and mom **are doing okay|good|great**.
