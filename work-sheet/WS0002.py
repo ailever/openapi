@@ -813,10 +813,29 @@ If you like | when it comes to |
 """)
 note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  |  | 
+""")
+note.N09_01 = N(('T10,1,0', 'Additionals'), 'script 1', """
+- You will have to **prepare for 30 seconds** and **speak for 60 seconds**.
+- The structure **has remained the same**.
+- **A couple of small changes** are nothing too big.
+- There are less **questions there used to be 12 to 14 questions per passage**. 
+- The structure is **a little bit different about reading passage**.
+- Everything **is desgined to see you if** you're ready for a freshman year
+- This is **what you are going to know by** the end of this little lecture.
+- I don't have a lot of time, **Let's get into it right now**.
+- **This is for you to** do your homework. 
+- This is **when you arrive at a destination**.
+- I am gonna become a real American student just for a day to show you **how it all looks like housing life of American works**.
+- We use them **when we meet someone for a first time**.
+- As an example, I will show the usual **low-budget life style**.
+- How much does **it costs to live here**.
+- A lot of people that want to move to LA want to move here to **be closer to a beach**.
+- This is probably **one of the most important ones**.
+- Obviously, LA **is becomming** very **impacted**.
+- then you **might be okay**.
+- You might think because your friend **lives five miles away**.
+- It'**s** so|super **common**.
+- Let them know that you want to see them again.  
 """)
 
 #%% ################################## CONFIG ##################################
