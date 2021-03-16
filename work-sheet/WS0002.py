@@ -243,6 +243,28 @@ make a reservation | make friends with | talk to | consult with | leave for | co
 go back to | go home | take ~ to | move to | stay for | call A B | behave oneself | have a date | have a feeling for | 
 give a hug | break up with | get married to | get involved in | stay out of | take part in | 
 """)
+note.N02_01 = N(('T03,1,0', 'Social Life with Others'), 'Main Board', """
+- A: Do you **get|have a minute**?
+- B: Well yeah, sure, what's up?
+- _: I need to **talk to you** if you have a minute.
+- _: **Hold on a second|minute**. I have a question.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: Do you **need to visit** a dentist? 
+- B: Yeah, **Who is available** now?
+- _: I am not sure **if I am available** Friday.
+- _: I'd like to speak with Mark, **if he is available**.
+---
+""")
 note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
 ## Everyday Life Activies
 get to bed | get out of bed | wash up | get one's hair cut | wear one's makeup | use the bathroom | get dressed | take a seat | blow one's nose | 
