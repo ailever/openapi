@@ -336,6 +336,32 @@ note.N02_06 = N(('T03,6,0', 'Social Life with Others'), 'have a plan', """
 - _: The plans for the new building **are under consideration**.
 - _: A new menu for the cafe **is under consideration**.
 """)
+note.N02_09 = N(('T03,9,0', 'Social Life with Others'), 'be late for', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: It **has been dark** for a few hours.
+- B: I guess it **is getting late**.
+- _: It'**s getting late** in the day.
+- _: I'd love to, but it'**s really getting late**.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
 ## Everyday Life Activies
 get to bed | get out of bed | wash up | get one's hair cut | wear one's makeup | use the bathroom | get dressed | take a seat | blow one's nose | 
@@ -357,6 +383,32 @@ think of | consider ~ing | think over | take A for B | hit on | take a guess | ~
 take charge of | have a duty to | be in need of | be sure of | have the courage | be famous for | be popular with | use one's head | complain about | 
 think less of | play dirty | do a stupid thing | put up with | go against | agree with | be careful of | be likely to | be worth ~ing | 
 get interested in | would like to | be one's favorite | have a habit of | seem to | The point is that | come up with | no longer | 
+""")
+note.N05_19 = N(('T06,19,0', 'Thoughts & Attitude'), 'think less of', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: I **think less of** Tim **since** he got his third divorce. 
+- B: Yeah, I wonder why his marriages failed.
+- _: Antonio **thinks nothing of** lending his friends money.
+- _: I am glad to do it. **Think nothing of it**.
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
 """)
 note.N06 = N(('T07,0,0', 'Emotions & Situations'), 'Main Board', """
 ## Emotions & Situations
