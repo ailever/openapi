@@ -453,6 +453,32 @@ report sth to | make use of | solve a problem | find fault with | make fun of | 
 beat up | get even with | make up | turn against | teach a lesson | give up | keep sb from | keep away from | set ~ free | 
 take action | take a chance | register for | 
 """)
+note.N07_12 = N(('T08,12,0', 'Various Actions'), 'warn sb about', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A:  
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: **Did you hear that** Brady had an accident?
+- B: I **cautioned** him **against** driving home.
+- _: The teacher **cautioned** the students **against** drug abuse.
+- _: The policeman **cautioned** her **to** slow down.
+""")
 note.N08 = N(('T09,0,0', 'Time, Place & etc.'), 'Main Board', """
 ## Time, Place & etc.
 be in the service | break the law | buy insurance | do damage to | make up for | belong to | deserve to | go digital | whatever you want to | 
