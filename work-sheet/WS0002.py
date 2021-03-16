@@ -418,6 +418,32 @@ be impressed by | be out of one's mind | have a lot of stress | take it easy | f
 get caught in | get in trouble | have a problem | have luck | have a bad day | get a chance | take the chance | be different from | be similar to | 
 get used to | be hard to | be doing okay | 
 """)
+note.N06_05 = N(('T07,05,0', 'Emotions & Situations'), "regret ~ing", """
+- A: Don't you **regret anything about your past**?
+- B: No, If I had the chance, **I'd do it all over again**.
+- _: I **regret the day I met you**.
+- _: I'm sure he dosen't **regret it that much**.
+--- 
+- A: Do you like the new clothes you bought?
+- B: I **regret spending** so much money on them.
+- _: I **regret asking** Suzie out the other day. 
+- _: I **regret spending** last night playing computer games.
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N06_17 = N(('T07,17,0', 'Emotions & Situations'), "think highly of", """
 - A: 
 - B: 
