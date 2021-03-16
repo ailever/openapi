@@ -418,6 +418,58 @@ be impressed by | be out of one's mind | have a lot of stress | take it easy | f
 get caught in | get in trouble | have a problem | have luck | have a bad day | get a chance | take the chance | be different from | be similar to | 
 get used to | be hard to | be doing okay | 
 """)
+note.N06_17 = N(('T07,17,0', 'Emotions & Situations'), "think highly of", """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: Richard **seems to be very popular** here.
+- B: Everyone **thinks highly of** him.
+- _: The chef **thinks highly of** chocolate cake.
+- _: I **think highly of** BMW motocylcles.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
+note.N06_26 = N(('T07,26,0', 'Emotions & Situations'), "can't help ~ing", """
+- A: Just **forget about** your ex-girlfriend.
+- B: I try, but I **can't help thinking** about her.
+- _: She **can't help drinking** so much alcohol.
+- _: I **can't help being** cautious.
+--- 
+- A: I **can't help but** watch TV when I'm bored.
+- B: Maybe you need to **find a hobby**.
+- _: I **can't help but think** that he's a loser.
+- _: I **can't help but think** about Jessica.
+--- 
+- A: We **have no choice but to** buy her a fur coat.
+- B: It's going to be really expensive.
+- _: I **had no choice but to** get divorced.
+- _: I **have no choice but to** do that.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N06_29 = N(('T07,29,0', 'Emotions & Situations'), 'get in trouble', """
 - A: 
 - B: 
