@@ -384,6 +384,78 @@ take charge of | have a duty to | be in need of | be sure of | have the courage 
 think less of | play dirty | do a stupid thing | put up with | go against | agree with | be careful of | be likely to | be worth ~ing | 
 get interested in | would like to | be one's favorite | have a habit of | seem to | The point is that | come up with | no longer | 
 """)
+note.N05_09 = N(('T06,09,0', 'Thoughts & Attitude'), 'hope to', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: Stanley and Jennifer **are dating now**.
+- B: She is dating him **in hopes of** getting married.
+- _: We came **in the hopes that** we'd meet your parents.
+- _: **Hopefully**, Lindy will be home soon.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
+note.N05_10 = N(('T06,10,0', 'Thoughts & Attitude'), 'take charge of', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: I'm going to take over as class president.
+- B: Did you win a student election?
+- _: Who is going to take over the company?
+- _: You can take over the meeting.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N05_19 = N(('T06,19,0', 'Thoughts & Attitude'), 'think less of', """
 - A: 
 - B: 
