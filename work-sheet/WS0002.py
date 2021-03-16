@@ -295,6 +295,47 @@ note.N02_02 = N(('T03,2,0', 'Social Life with Others'), 'make time', """
 - _: The farmers **arranged time for** harvesting red peppers.
 - _: I need to **arrange time for** our Christmas party.
 """)
+note.N02_06 = N(('T03,6,0', 'Social Life with Others'), 'have a plan', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: You look like you're up to something.
+- B: I feel like selling my stocks.
+- _: I think those teenagers are up to something.
+- _: Angelina Jolie is always up to something.
+---
+- A: Maybe we **shouldn't go** on a vacation.
+- B: Let's **keep to our plan** and just go.
+- _: Bart can never **keep to a plan**.
+- _: It was hard, but I **kept to my plan**.
+---
+- A: Will your father **allow you to go** on the trip?
+- B: He said that it **is under consideration**.
+- _: The plans for the new building **are under consideration**.
+- _: A new menu for the cafe **is under consideration**.
+""")
 note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
 ## Everyday Life Activies
 get to bed | get out of bed | wash up | get one's hair cut | wear one's makeup | use the bathroom | get dressed | take a seat | blow one's nose | 
