@@ -7,6 +7,7 @@ class N:
         self.contents = contents
 
 note = N()
+
 note.N00 = N(('T01,0,0', 'Work & School'), 'Main Board', """
 ## Work & School
 work on | do a good job | work hard | have a lot of work | get started on | give it a try | keep ~ing | 
@@ -228,6 +229,7 @@ note.N00_10 = N(('T01,10,0', 'Work & School'), 'be tied up', """
 - _: 
 - _: 
 """)
+
 note.N01 = N(('T02,0,0', 'Computer & Networking'), 'Main Board', """
 ## Computer & Networking
 fix the computer | load the file | have a virus | have access to | post one's opinion | play computer games | meet online | find sb on Facebook | have an email account | 
@@ -235,6 +237,7 @@ check one's email | attach the file | answer one's email | drop a line | give a 
 be cut off | wait for one's call | text sb | own a Smart 3D TV | get held up | have a car accident | take a texi | run out of gas | give a ride | 
 get a ticket | park one's car | take a bus | miss the flight | get lost | go this way | be next to |  
 """)
+
 note.N02 = N(('T03,0,0', 'Social Life with Others'), 'Main Board', """
 ## Social Life with Others
 get a minute | make time | spend time | take time | It has been | have a plan | be going to | have a schedule | be late for | 
@@ -362,6 +365,7 @@ note.N02_09 = N(('T03,9,0', 'Social Life with Others'), 'be late for', """
 - _: 
 - _: 
 """)
+
 note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
 ## Everyday Life Activies
 get to bed | get out of bed | wash up | get one's hair cut | wear one's makeup | use the bathroom | get dressed | take a seat | blow one's nose | 
@@ -371,12 +375,14 @@ be full | cook dinner | boil the stew | give up smoking | go on a vacation | tak
 have a party | keep in shape | get hurt | break one's leg | catch a cold | have a headache | have a breakdown | have a sore throat | have an upset stomach | 
 get diabets | take one's medicine | cure a disease | have a checkup | work out | go on a diet | 
 """)
+
 note.N04 = N(('T05,0,0', 'Information & Understanding'), 'Main Board', """
 ## Information & Understanding
 hear sb ~ing | look at | get to know | have no idea | ask about | check out | hear a rumor | find out | get sb wrong | 
 have doubts about | tell the truth | keep a secret | tell a lie | give an excuse | have a reason | make clear | get it | stand for | 
 put A before B | leave sth in ~ | insist on | Why don't you | remind A of B | forget to | 
 """)
+
 note.N05 = N(('T06,0,0', 'Thoughts & Attitude'), 'Main Board', """
 ## Thoughts & Attitude
 think of | consider ~ing | think over | take A for B | hit on | take a guess | ~ than I thought | believe in | hope to | 
@@ -508,6 +514,7 @@ note.N05_19 = N(('T06,19,0', 'Thoughts & Attitude'), 'think less of', """
 - _: 
 - _: 
 """)
+
 note.N06 = N(('T07,0,0', 'Emotions & Situations'), 'Main Board', """
 ## Emotions & Situations
 be happy with | feel sad about | get upset | worry about | regret ~ing | say thank you | be sorry for | be embarrassed | be nervous | 
@@ -768,6 +775,7 @@ note.N06_39 = N(('T07,39,0', 'Emotions & Situations'), 'be doing okay', """
 - _: 
 - _: 
 """)
+
 note.N07 = N(('T08,0,0', 'Various Actions'), 'Main Board', """
 ## Various Actions
 choose to | chage one's mind | make a decision | get one's own way | hold on to | cause trouble | back sb up | allow sb to | credit A with B | 
@@ -803,6 +811,7 @@ note.N07_12 = N(('T08,12,0', 'Various Actions'), 'warn sb about', """
 - _: The teacher **cautioned** the students **against** drug abuse.
 - _: The policeman **cautioned** her **to** slow down.
 """)
+
 note.N08 = N(('T09,0,0', 'Time, Place & etc.'), 'Main Board', """
 ## Time, Place & etc.
 be in the service | break the law | buy insurance | do damage to | make up for | belong to | deserve to | go digital | whatever you want to | 
@@ -811,6 +820,7 @@ to begin with | at the same time | at the moment | to date | for a while | on a 
 on such short notice | in the end | in addition to | on the other hand | in other words | by the way | a bit of | as far as | over there | 
 If you like | when it comes to | 
 """)
+
 note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
 """)
