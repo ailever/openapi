@@ -243,7 +243,7 @@ make a reservation | make friends with | talk to | consult with | leave for | co
 go back to | go home | take ~ to | move to | stay for | call A B | behave oneself | have a date | have a feeling for | 
 give a hug | break up with | get married to | get involved in | stay out of | take part in | 
 """)
-note.N02_01 = N(('T03,1,0', 'Social Life with Others'), 'Main Board', """
+note.N02_01 = N(('T03,1,0', 'Social Life with Others'), 'get a minute', """
 - A: Do you **get|have a minute**?
 - B: Well yeah, sure, what's up?
 - _: I need to **talk to you** if you have a minute.
@@ -264,6 +264,36 @@ note.N02_01 = N(('T03,1,0', 'Social Life with Others'), 'Main Board', """
 - _: I am not sure **if I am available** Friday.
 - _: I'd like to speak with Mark, **if he is available**.
 ---
+- A: The movie **starts at eight**.
+- B: We have **time to eat before** it begins.
+- _: We have **a couple of hours before** school ends.
+- _: I have **a few hours before** I need to go home.
+""")
+note.N02_02 = N(('T03,2,0', 'Social Life with Others'), 'make time', """
+- A: I'**m going to see** my grandmother this weekend.
+- B: It's good you **make time to** visit her.
+- _: **Make time to** pack up your suitcase.
+- _: I'll **make time to** come down and see you.
+---
+- A: I'm going to **take time out to** do some shopping.
+- B: Oh, good. Let's **go shopping** together.
+- _: She **took time out to** plant a flower garden.
+- _: We will **take time out to** visit some old friends.
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: .
+---
+- A: 
+- B: 
+- _: 
+- _: 
 """)
 note.N03 = N(('T04,0,0', 'Everyday Life Activies'), 'Main Board', """
 ## Everyday Life Activies
