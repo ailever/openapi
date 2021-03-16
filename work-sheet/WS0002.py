@@ -316,15 +316,15 @@ note.N02_06 = N(('T03,6,0', 'Social Life with Others'), 'have a plan', """
 - _: 
 - _: 
 ---
-- A: 
-- B: 
-- _: 
-- _: 
+- A: **Did you have a good time** on your date?
+- B: No, it really **didn't go as planned**.
+- _: The English class **didn't go as planned**.
+- _: **If everything goes as planned**, we're going to make a killing.
 ---
-- A: You look like you're up to something.
-- B: I feel like selling my stocks.
-- _: I think those teenagers are up to something.
-- _: Angelina Jolie is always up to something.
+- A: You look like you'**re up to something**.
+- B: I **feel like selling my stocks**.
+- _: I think those teenagers **are up to something**.
+- _: Angelina Jolie is always **up to something**.
 ---
 - A: Maybe we **shouldn't go** on a vacation.
 - B: Let's **keep to our plan** and just go.
