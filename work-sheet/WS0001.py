@@ -171,7 +171,7 @@ contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,_,_'], width=12)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="References", disabled=False)])
-main = dbc.Jumbotron([html.H2(html.A('WS0000', href="/")),
+main = dbc.Jumbotron([html.H2(html.A('WS0001', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button('AIL CE', color='secondary', href="https://ailever.github.io/education/2020/05/30/Computer-Engineering/"),
