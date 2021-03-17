@@ -775,6 +775,28 @@ note.N06_29 = N(('T07,29,0', 'Emotions & Situations'), 'get in trouble', """
 - _: 
 - _: 
 """)
+note.N06_37 = N(('T07,37,0', 'Emotions & Situations'), 'get used to', """
+- A: **Did you get used to the weather** in Canada?
+- B: Yes, but it **is awfully cold** in the winter.
+- _: You need to **get used to eating** different foods.
+- _: You'd better **get used to it**.
+- _: Did you **get used to driving** in the rain?
+--- 
+- A:  
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: **Have you learned how to** salsa dance yet?
+- B: Well, I am starting **to get the hang of** it.
+- _: Sam couldn't **get the hang of** using chopsticks.
+- _: You'll **get the hang of** using your new cell phone.
+""")
 note.N06_39 = N(('T07,39,0', 'Emotions & Situations'), 'be doing okay', """
 - A: **I haven't seen your parents** in a while.
 - B: My dad and mom **are doing okay|good|great**.
