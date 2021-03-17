@@ -382,6 +382,52 @@ hear sb ~ing | look at | get to know | have no idea | ask about | check out | he
 have doubts about | tell the truth | keep a secret | tell a lie | give an excuse | have a reason | make clear | get it | stand for | 
 put A before B | leave sth in ~ | insist on | Why don't you | remind A of B | forget to | 
 """)
+note.N04_19 = N(('T05,19,0', 'Information & Understanding'), 'put A before B', """
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: Larry **looks so handsome** today.
+- B: People are **making less|much of** his new haircut.
+- _: My boss **made less|much of the fact** that I left early.
+- _: The teacher **made less|much of the fact** that he cheated.
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 
 note.N05 = N(('T06,0,0', 'Thoughts & Attitude'), 'Main Board', """
 ## Thoughts & Attitude
