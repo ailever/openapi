@@ -730,10 +730,10 @@ note.N06_26 = N(('T07,26,0', 'Emotions & Situations'), "can't help ~ing", """
 - _: 
 """)
 note.N06_29 = N(('T07,29,0', 'Emotions & Situations'), 'get in trouble', """
-- A: 
-- B: 
-- _: 
-- _: 
+- A: You'**re in trouble**. The boss wants to see you.  
+- B: Really? **What did I do**?
+- _: You **will get in trouble if** you do that. 
+- _: I'm not here to **get you in trouble**.
 --- 
 - A: I **have trouble with** studing here.  
 - B: **It's noisy**. Let's go to the library.
