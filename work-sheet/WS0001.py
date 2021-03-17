@@ -180,9 +180,9 @@ main = dbc.Jumbotron([html.H2(html.A('WS0001', href="/")),
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
-                      html.P(id='visdom-server'), html.Hr(),
-                      dcc.Markdown(board)])
-app.layout = html.Div([main, page_layouts['page']])
+                      html.P(id='visdom-server'),
+                      ])
+app.layout = html.Div([main, dcc.Markdown(board), page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## SETUP INFO ##################################
