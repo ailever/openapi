@@ -651,6 +651,32 @@ note.N06_05 = N(('T07,05,0', 'Emotions & Situations'), "regret ~ing", """
 - _: 
 - _: 
 """)
+note.N06_12 = N(('T07,12,0', 'Emotions & Situations'), "let ~ down", """
+- A: **How would you like it if** I decided to quit?
+- B: Well, I'd **be disappointed**.
+- _: I **was disappointed in** the movie's ending.
+- _: They **were disappointed in** their honeymoon.
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+--- 
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+---
+- A: 
+- B: 
+- _: 
+- _: 
+""")
 note.N06_17 = N(('T07,17,0', 'Emotions & Situations'), "think highly of", """
 - A: 
 - B: 
@@ -825,6 +851,12 @@ note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
 """)
 note.N09_01 = N(('T10,1,0', 'Additionals'), 'script 1', """
+- They only use organic ingredients.
+- They **are known for** healthy, pretty, delicious food.
+- This is **truly number one**.
+- **Let's continue with** the story. 
+- It was amazing.
+- It has **exceptional cocktails**.
 - This is **one place you can't afford to miss**.
 - You'll experience a **culinary adventure**.
 - The place **is rated in the top ten** on a site
