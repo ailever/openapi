@@ -43,6 +43,7 @@ class MetaClass(type):
 
 Component = MetaClass('Component', (dict,), {})
 TAB1 = Component()
+TAB1.RC__ = Component()
 TAB1.RC00 = Component()
 TAB1.RC01 = Component()
 TAB1.RC10 = Component()
@@ -50,6 +51,8 @@ TAB1.RC11 = Component()
 TAB1.RC20 = Component()
 TAB1.RC21 = Component()
 
+TAB1.RC__.values = html.Div([dbc.Button('', color='dark', href=""),
+                             ])
 TAB1.RC00.values = html.Div([dbc.Button('repl', color='dark', href="https://repl.it/languages/"),
                              dbc.Button('stackoverflow', color='dark', href="https://stackoverflow.com/"),
                              dbc.Button('devkuma', color='dark', href="http://www.devkuma.com/books/"),
@@ -133,6 +136,7 @@ TAB1.RC21.values = html.Div([dbc.Button('SQL', color='dark', href="https://userd
                              ])
 ################################## DASHBOARD ##################################
 T = {}
+T['T,_,_'] = 'Temporal'
 T['T,0,0'] = 'Computer Engineering : Overall'
 T['T,0,1'] = 'Programming Language'
 T['T,1,0'] = 'Python Library APIs'
@@ -140,7 +144,7 @@ T['T,1,1'] = 'Python Library Tutorials'
 T['T,2,0'] = 'Supplementary'
 T['T,2,1'] = '_'
 O = {}
-O['T,_,_'] = None
+O['T,_,_'] = TAB1.RC__.values
 O['T,0,0'] = TAB1.RC00.values
 O['T,0,1'] = TAB1.RC01.values
 O['T,1,0'] = TAB1.RC10.values
@@ -148,6 +152,7 @@ O['T,1,1'] = TAB1.RC11.values
 O['T,2,0'] = TAB1.RC20.values
 O['T,2,1'] = TAB1.RC21.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
+C['T,_,_'] = [dbc.Card([dbc.CardHeader(T['T,_,_']), dbc.CardBody(O['T,_,_'])], color='light', inverse=False, outline=True)]
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
 C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
 C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
@@ -156,7 +161,8 @@ C['T,2,0'] = [dbc.Card([dbc.CardHeader(T['T,2,0']), dbc.CardBody(O['T,2,0'])], c
 C['T,2,1'] = [dbc.Card([dbc.CardHeader(T['T,2,1']), dbc.CardBody(O['T,2,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
+contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,_,_'], width=12)]), html.Br(),
+                           dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            html.Br()]
