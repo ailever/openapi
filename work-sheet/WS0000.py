@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+
 #%% ################################## CONFIG ##################################
 import dash
 import dash_html_components as html
@@ -171,6 +172,7 @@ main = dbc.Jumbotron([html.H2(html.A('WS0000', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button('AIL CE', color='secondary', href="https://ailever.github.io/education/2020/05/30/Computer-Engineering/"),
+                                dbc.Button('AIL wiki', color='secondary', href="https://github.com/ailever/ailever/wiki"),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/work-sheet/WS0000.py'),
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
