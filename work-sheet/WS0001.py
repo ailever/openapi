@@ -12,8 +12,8 @@ board = """
 #%% ################################## CONFIG ##################################
 import dash
 import dash_html_components as html
-import dash_core_components as dcc
 import dash_bootstrap_components as dbc
+import dash_core_components as dcc
 from dash.dependencies import Input, Output, State
 #from visdom import Visdom
 # service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
@@ -182,7 +182,7 @@ main = dbc.Jumbotron([html.H2(html.A('WS0001', href="/")),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                       html.P(id='visdom-server'),
-                      ])
+                      ], style={'background-color':'whitesmoke'})
 app.layout = html.Div([main, main_board, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
