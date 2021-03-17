@@ -171,6 +171,7 @@ contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,_,_'], width=12)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="References", disabled=False)])
+main_board = html.Div(children=dcc.Markdown(board), style={'border-left':'3px outset red'})
 main = dbc.Jumbotron([html.H2(html.A('WS0001', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
@@ -182,7 +183,7 @@ main = dbc.Jumbotron([html.H2(html.A('WS0001', href="/")),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                       html.P(id='visdom-server'),
                       ])
-app.layout = html.Div([main, dcc.Markdown(board), page_layouts['page']])
+app.layout = html.Div([main, main_board, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## SETUP INFO ##################################
