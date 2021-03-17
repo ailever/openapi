@@ -398,15 +398,15 @@ note.N04_19 = N(('T05,19,0', 'Information & Understanding'), 'put A before B', "
 - _: Work **comes first** for the older generation.
 - _: I stayed home because my children **come first**.
 ---
-- A: 
-- B: 
-- _: 
-- _: 
+- A: What is the philosophy of your company?
+- B: I always tell my employees to **put** honesty **before** benifit.
+- _: Lisa **puts** others **before** herself most of the time.
+- _: I **had to put** studying **before** relaxing.
 ---
-- A: 
-- B: 
-- _: 
-- _: 
+- A: We have to **get** this homework **done**.
+- B: You're right. We should **give it top priority**.
+- _: I'd like you to **give this top priority**.
+- _: I'd like to **make it my top priority**.
 ---
 - A: 
 - B: 
