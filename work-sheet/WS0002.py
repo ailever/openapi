@@ -919,19 +919,7 @@ note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
 """)
 note.N09_01 = N(('T10,1,0', 'Additionals'), 'script 1', """
-- They only use organic ingredients.
-- They **are known for** healthy, pretty, delicious food.
-- This is **truly number one**.
-- **Let's continue with** the story. 
-- It was amazing.
-- It has **exceptional cocktails**.
-- This is **one place you can't afford to miss**.
-- You'll experience a **culinary adventure**.
-- The place **is rated in the top ten** on a site
-- **That doesn't matter** because ~
-- It's the **ultimate experience**.
-- I mean I am **speechless with that**.
-- It's currently **the beginning of November**.
+- You're being a little bit too loud
 """)
 note.N09_02 = N(('T10,2,0', 'Additionals'), 'script 2', """
 - You will have to **prepare for 30 seconds** and **speak for 60 seconds**.
@@ -955,6 +943,21 @@ note.N09_02 = N(('T10,2,0', 'Additionals'), 'script 2', """
 - You might think because your friend **lives five miles away**.
 - It'**s** so|super **common**.
 - Let them know that you want to see them again.  
+""")
+note.N09_03 = N(('T10,3,0', 'Additionals'), 'script 3', """
+- They only use organic ingredients.
+- They **are known for** healthy, pretty, delicious food.
+- This is **truly number one**.
+- **Let's continue with** the story. 
+- It was amazing.
+- It has **exceptional cocktails**.
+- This is **one place you can't afford to miss**.
+- You'll experience a **culinary adventure**.
+- The place **is rated in the top ten** on a site
+- **That doesn't matter** because ~
+- It's the **ultimate experience**.
+- I mean I am **speechless with that**.
+- It's currently **the beginning of November**.
 """)
 
 #%% ################################## CONFIG ##################################
