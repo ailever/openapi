@@ -119,7 +119,7 @@ TAB1.RC10.values = html.Div([dbc.Button('dash-html', color='dark', href="https:/
                              dbc.Button('', color='dark', href=""),
                              ])
 TAB1.RC11.values = html.Div([dbc.Button('Jinja2', color='dark', href="https://jinja.palletsprojects.com/en/2.11.x/"),
-                             dbc.Button('', color='dark', href=""),
+                             dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
                              ])
 TAB1.RC20.values = html.Div([dbc.Button('HTML - tag list', color='dark', href="https://www.w3schools.com/tags/default.asp"),
                              dbc.Button('HTML - color code', color='dark', href="https://htmlcolorcodes.com/"),
