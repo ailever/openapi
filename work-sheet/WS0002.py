@@ -393,10 +393,10 @@ note.N04_19 = N(('T05,19,0', 'Information & Understanding'), 'put A before B', "
 - _: My boss **made less|much of the fact** that I left early.
 - _: The teacher **made less|much of the fact** that he cheated.
 --- 
-- A: 
-- B: 
-- _: 
-- _: 
+- A: When you work at this company, punctuality **comes first**.
+- B: That'**s pretty much the same** for all companies.
+- _: Work **comes first** for the older generation.
+- _: I stayed home because my children **come first**.
 ---
 - A: 
 - B: 
