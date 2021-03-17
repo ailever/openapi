@@ -185,3 +185,11 @@ main = dbc.Jumbotron([html.H2(html.A('WS0000', href="/")),
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
+################################## SETUP INFO ##################################
+"""
+[name] : -
+[version] : 0.0
+[description] : -
+[author] : anonym
+[keywords] : -
+"""    
