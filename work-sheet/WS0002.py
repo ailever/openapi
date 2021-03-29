@@ -960,6 +960,13 @@ note.N09_03 = N(('T10,3,0', 'Additionals'), 'script 3', """
 - It's currently **the beginning of November**.
 """)
 
+note.N10 = N(('T11,0,0', 'Opic'), 'Main Board', """
+## Opic
+""")
+note.N10_01 = N(('T11,1,0', 'Opic'), 'Key Sentences', """
+- You're being a little bit too loud
+""")
+
 #%% ################################## CONFIG ##################################
 import argparse
 parser = argparse.ArgumentParser()
