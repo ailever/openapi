@@ -915,55 +915,10 @@ on such short notice | in the end | in addition to | on the other hand | in othe
 If you like | when it comes to | 
 """)
 
-note.N09 = N(('T10,0,0', 'Additionals'), 'Main Board', """
-## Additionals
-""")
-note.N09_01 = N(('T10,1,0', 'Additionals'), 'script 1', """
-- You're being a little bit too loud
-""")
-note.N09_02 = N(('T10,2,0', 'Additionals'), 'script 2', """
-- You will have to **prepare for 30 seconds** and **speak for 60 seconds**.
-- The structure **has remained the same**.
-- **A couple of small changes** are nothing too big.
-- There are less **questions there used to be 12 to 14 questions per passage**. 
-- The structure is **a little bit different about reading passage**.
-- Everything **is desgined to see you if** you're ready for a freshman year
-- This is **what you are going to know by** the end of this little lecture.
-- I don't have a lot of time, **Let's get into it right now**.
-- **This is for you to** do your homework. 
-- This is **when you arrive at a destination**.
-- I am gonna become a real American student just for a day to show you **how it all looks like housing life of American works**.
-- We use them **when we meet someone for a first time**.
-- As an example, I will show the usual **low-budget life style**.
-- How much does **it costs to live here**.
-- A lot of people that want to move to LA want to move here to **be closer to a beach**.
-- This is probably **one of the most important ones**.
-- Obviously, LA **is becomming** very **impacted**.
-- then you **might be okay**.
-- You might think because your friend **lives five miles away**.
-- It'**s** so|super **common**.
-- Let them know that you want to see them again.  
-""")
-note.N09_03 = N(('T10,3,0', 'Additionals'), 'script 3', """
-- They only use organic ingredients.
-- They **are known for** healthy, pretty, delicious food.
-- This is **truly number one**.
-- **Let's continue with** the story. 
-- It was amazing.
-- It has **exceptional cocktails**.
-- This is **one place you can't afford to miss**.
-- You'll experience a **culinary adventure**.
-- The place **is rated in the top ten** on a site
-- **That doesn't matter** because ~
-- It's the **ultimate experience**.
-- I mean I am **speechless with that**.
-- It's currently **the beginning of November**.
-""")
-
-note.N10 = N(('T00,0,0', 'Opic'), 'Main Board', """
+note.N09 = N(('T10,0,0', 'Opic'), 'Main Board', """
 ## Opic
 """)
-note.N10_01 = N(('T00,1,0', 'Opic'), 'Key Sentences', """
+note.N09_01 = N(('T10,1,0', 'Opic'), 'Key Sentences', """
 - I **like watching** movies.
 - **I was busy working on** the project very important.
 - **It was such a** tiring process.
@@ -1054,6 +1009,51 @@ note.N10_01 = N(('T00,1,0', 'Opic'), 'Key Sentences', """
 - **In terms of** unemployment rate, **there have been some increases since** 2013.
 - **I am not familiar with** this topic. 
 - **I guess that was the start of my career**.
+""")
+
+note.N10 = N(('T00,0,0', 'Additionals'), 'Main Board', """
+## Additionals
+""")
+note.N10_01 = N(('T00,1,0', 'Additionals'), 'script 1', """
+- You're being a little bit too loud
+""")
+note.N10_02 = N(('T00,2,0', 'Additionals'), 'script 2', """
+- You will have to **prepare for 30 seconds** and **speak for 60 seconds**.
+- The structure **has remained the same**.
+- **A couple of small changes** are nothing too big.
+- There are less **questions there used to be 12 to 14 questions per passage**. 
+- The structure is **a little bit different about reading passage**.
+- Everything **is desgined to see you if** you're ready for a freshman year
+- This is **what you are going to know by** the end of this little lecture.
+- I don't have a lot of time, **Let's get into it right now**.
+- **This is for you to** do your homework. 
+- This is **when you arrive at a destination**.
+- I am gonna become a real American student just for a day to show you **how it all looks like housing life of American works**.
+- We use them **when we meet someone for a first time**.
+- As an example, I will show the usual **low-budget life style**.
+- How much does **it costs to live here**.
+- A lot of people that want to move to LA want to move here to **be closer to a beach**.
+- This is probably **one of the most important ones**.
+- Obviously, LA **is becomming** very **impacted**.
+- then you **might be okay**.
+- You might think because your friend **lives five miles away**.
+- It'**s** so|super **common**.
+- Let them know that you want to see them again.  
+""")
+note.N10_03 = N(('T00,3,0', 'Additionals'), 'script 3', """
+- They only use organic ingredients.
+- They **are known for** healthy, pretty, delicious food.
+- This is **truly number one**.
+- **Let's continue with** the story. 
+- It was amazing.
+- It has **exceptional cocktails**.
+- This is **one place you can't afford to miss**.
+- You'll experience a **culinary adventure**.
+- The place **is rated in the top ten** on a site
+- **That doesn't matter** because ~
+- It's the **ultimate experience**.
+- I mean I am **speechless with that**.
+- It's currently **the beginning of November**.
 """)
 
 #%% ################################## CONFIG ##################################
