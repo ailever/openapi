@@ -1011,13 +1011,41 @@ note.N09_01 = N(('T10,1,0', 'Opic'), 'Key Sentences', """
 - **I guess that was the start of my career**.
 """)
 
-note.N10 = N(('T00,0,0', 'Additionals'), 'Main Board', """
+note.N10 = N(('T11,0,0', 'Verb and Preposition'), 'Main Board', """
+## Verb and Preposition
+""")
+note.N10_01 = N(('T11,1,0', 'Verb and Preposition'), 'up', """
+""")
+note.N10_02 = N(('T11,2,0', 'Verb and Preposition'), 'down', """
+""")
+note.N10_03 = N(('T11,3,0', 'Verb and Preposition'), 'on', """
+""")
+note.N10_04 = N(('T11,4,0', 'Verb and Preposition'), 'off', """
+""")
+note.N10_05 = N(('T11,5,0', 'Verb and Preposition'), 'in/into', """
+""")
+note.N10_06 = N(('T11,6,0', 'Verb and Preposition'), 'out', """
+""")
+note.N10_07 = N(('T11,7,0', 'Verb and Preposition'), 'away/after/over', """
+""")
+note.N10_08 = N(('T11,8,0', 'Verb and Preposition'), 'for/to/at', """
+""")
+note.N10_09 = N(('T11,9,0', 'Verb and Preposition'), 'about/with/through/across', """
+""")
+
+note.N11 = N(('T00,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
 """)
-note.N10_01 = N(('T00,1,0', 'Additionals'), 'script 1', """
-- You're being a little bit too loud
+note.N11_01 = N(('T00,1,0', 'Additionals'), 'script 1', """
+- I applied myself to the job.
+- I can apply in my research and for industry applications.
+- I am going to talk about what this is about.
+- **It's just for your information in case you need more** background knowledge.
+- These are not necessary, absolutely.
+- **Familiarity with** one, two options** is strongly recommend**.
 """)
-note.N10_02 = N(('T00,2,0', 'Additionals'), 'script 2', """
+note.N11_02 = N(('T00,2,0', 'Additionals'), 'script 2', """
+- You're being a little bit too loud
 - You will have to **prepare for 30 seconds** and **speak for 60 seconds**.
 - The structure **has remained the same**.
 - **A couple of small changes** are nothing too big.
@@ -1039,8 +1067,6 @@ note.N10_02 = N(('T00,2,0', 'Additionals'), 'script 2', """
 - You might think because your friend **lives five miles away**.
 - It'**s** so|super **common**.
 - Let them know that you want to see them again.  
-""")
-note.N10_03 = N(('T00,3,0', 'Additionals'), 'script 3', """
 - They only use organic ingredients.
 - They **are known for** healthy, pretty, delicious food.
 - This is **truly number one**.
