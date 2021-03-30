@@ -965,89 +965,95 @@ note.N10 = N(('T00,0,0', 'Opic'), 'Main Board', """
 """)
 note.N10_01 = N(('T00,1,0', 'Opic'), 'Key Sentences', """
 - I **like watching** movies.
-- **I was busy working on** something very important.
-- **It was such a** boring lecture.
-- **I've been to** China.
-- **It was supposed to be done under** something that day, but it didn't.
+- **I was busy working on** the project very important.
+- **It was such a** tiring process.
+- **It was supposed to be done under** limited time, but it didn't.
 - It cost more but **it was worth it**.
-- **I must have brought** my car **to a halt**.
-- **I was looking forward to** a relaxing summer break.
-- **I used to** live in Busan **whenever I can all the time**.
+- **I shold have brought** my work **to a halt**.
+- **I am seldom getting used to getting up** early in the morning.
+- **I was looking forward to** culminating in success.
+- **I used to** keep studing my reserach-area **whenever I can all the time**.
+- **I was used to** continuing to studing my reserach-area whenever I can all the time.
+- **I got used to** keeping studing my reserach-area whenever I can all the time.
 - **Tough times** made me grow.
-- When I was in my 20s, **I was very active in** all kinds of sports.
+- I tried not to **be a bad influence on** myself. 
+- When I was in my 20s, **I was almost active in** study and research.
 - **It forced me to make** an impulsive decision.
-- It’s about 10 blocks away from my place.
+- **I should have stayed away from** my favorite things.
 - **I had a hard time** learning how to ride a bike. 
 - **I ran into** an unsolved problem.
-- **I became interested in** quantitatively analysis method when I was in my 10s.
-- I had a skeptical impression of internet surfing.
-- I tend to try not to be negative too much.
-- The best part about that is that it allows us to access esaily.
+- **I first became interested in** quantitatively analysis method when I was in my 10s.
+- **I first became interested in** singing **about 10 years ago**.
+- **On the contrary, I had a skeptical impression of** enjoying something for pleasure for self-improvement at one time.
+- **I tend to try not to** be negative too much.
+- **The best part about that** is that it allows us to access esaily.
+- **The best part of the hotel** is the inside.
 - It taught me how to learn.
-- We should try to avoid focusing on a collateral issue.
-- It's a perfect opportunity to thrive into new business.
-- I didn't want to waste my time doing nothing. 
-- I couldn't decide whether to take the risk or not.
+- We **should try to avoid** focusing on a **collateral issue**.
+- He saves money **so that** he may buy a house. 
+- I save money **so as to** buy a house.
+- It's **a perfect opportunity to thrive into** new business.
+- Spring is **the time of year that** people start spring cleaning. 
+- **I just didn't want to waste** my time doing nothing. 
+- **I didn't fully intend to** protest the decision.
+- **I didn't fully mean to** oppose to the plan.
+- **I couldn't decide whether to take** the risk or not.
 - I can't find time to work out during the week.
-- The most important thing I consider is price.
-- I've seen many people talking about it.
+- **The most important thing I consider** is price.
+- **I've seen many people** talking about it.
+- **I've heard nothing** from him yet.
+- **It was my first time** seeing a celebrity.
+- **I’ve really gotten into** playing tennis these days. 
+- **I’ve always been interested in** cooking because my mom is a great cook. 
 - Whenever I get stressed out, I usually go home and sleep.
 - My favorite childhood memory was joining the soccer club at school.
 - I take public transportation when I go to school.
-- I’ve always been interested in cooking because my mom is a great cook. 
 - It’s usually my wife who decides what to do
-- I had to go to the dental clinic recently.
-- It was great to have him as company
-- I tend to favor watching movies rather than reading books.
-- I’ve really gotten into playing tennis these days. 
-- There are a few things that I dislike about this bank.
-- I personally prefer Korean food to Japanese food.
-- Spring is the time of year that people start spring cleaning. 
-- I am used to getting up early in the morning.
+- **I had got to** go to the dental clinic recently.
+- **I like researching something to be related to studies, so it’s always great to** have him as fellow worker.
+- **It was great to** have him as fellow worker.
+- **I tend to favor watching** movies **rather than** reading books.
+- **I prefer watching** movies **to** reading books.
+- There are **few things that I dislike** about this bank.
 - You do not need to spend much money on it.
-- There are some simple tips for staying in shape. 
-- My father gave me excellent advice.
-- It was my first time seeing a celebrity.
+- There are **some simple tips** for staying in shape. 
+- He gave me excellent advices.
 - The bank I usually go to is located in Jamsil.
-- I have no preference for any particular food.
+- **I have no preference for any particular** food.
 - This is how I got into listening to music.
 - I am not too crazy about him.
 - I took an English class.
-- I first because interested in singing about 10 years ago.
 - It’s always great to ride a bike along the Han River.
-- I tried not to cry. 
-- I got used to getting up early.
 - I decided to buy it because it looked good. 
-- By the time I got home, I realized I left my wallet at home.
-- The main reason I like it is that I can just relax and enjoy my vacation at my own home.
-- I know it sounds a little weird.
-- There’s nothing better than relaxing at home.
+- **By the time I got home**, I realized I left my wallet at home.
+- **The main reason I like it** is that I can just relax and enjoy my vacation at my own home.
+- **I know it sounds a little weird.**
+- **There’s nothing better than** relaxing at home.
 - It’s famous for its beautiful scenery, coastline, and beaches.
 - I’ve been there more than 3 times since I watched it on TV. 
 - I usually go to the movies on the weekend.
-- Using online services has many benefits as well as many drawbacks.
+- Using online services has **many benefits as well as many drawbacks**.
 - I have a friend who is a huge fan of action movies.
-- I highly recommend that you watch this movie.
-- I am going to briefly talk about my apartment.
-- The most recent|significant|noticeable change was this new Starbucks, which was opened about 2 weeks ago.
-- **I think it all depends on what kind of** trip you are going on.
-- At the end of every month, our community opens a flea market.
+- I **highly recommend that** you watch this movie.
+- **I am going to briefly talk about** my apartment.
+- **The most recent|significant|noticeable change** was this new Starbucks, which **was opened about** 2 weeks ago.
+- **I think it all depends on what kind of** the direction you are going on.
+- **At the end of every** month, our community opens a flea market.
 - It was very tiring because the castle was huge and it was very hot.
-- It’s kind of hard to describe.
-- The best part of the hotel is the inside.
-- We ended up walking all the way down to the hotel.
-- I don’t remember anything unusual happening while we were there.
+- **It’s kind of hard to** describe.
+- **We ended up walking** all the way down to the hotel.
+- **I don’t remember anything unusual happening while** we were there.
 - There are many books throughout the hotel.
 - I can’t remember any other scenes. 
-- I don’t think the park has changed much physically since then. 
+- **I don’t think** the park **has changed much enormously since then**. 
+- I don’t play online games **that often**. 
 - In my childhood memories, waking up early in the morning was not easy.
-- Are there any books you would like to recommend?
-- I don’t play online games that often. 
+- **Are there probably** any books you would like to recommend?
 - We also make sure to go to the restroom before the concert.
 - I remember taking papers and newspapers to school once every month. 
-- In terms of unemployment rate, there have been some increases since 2013.
-- I am not familiar with this topic. 
-- I guess that was the start of my career.
+- **In terms of** unemployment rate, **there have been some increases since** 2013.
+- **I am not familiar with** this topic. 
+- **I guess that was the start of my career**.
 """)
 
 #%% ################################## CONFIG ##################################
