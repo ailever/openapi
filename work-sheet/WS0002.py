@@ -1037,6 +1037,7 @@ note.N11 = N(('T00,0,0', 'Additionals'), 'Main Board', """
 ## Additionals
 """)
 note.N11_01 = N(('T00,1,0', 'Additionals'), 'script 1', """
+- For thinking over about this intuitively, it is necessary to understand ~. 
 - I applied myself to the job.
 - I can apply in my research and for industry applications.
 - I am going to talk about what this is about.
