@@ -11,8 +11,8 @@ obj = type('obj', (), {})
 L = obj()
 for idx, label in enumerate(Labels):
     setattr(L, label, idx)
-source = [L.A, L.D]
-target = [L.B, L.A]
+source = [L.A, L.B]
+target = [L.C, L.D]
 
 fig = go.Figure(go.Sankey(
     arrangement = "snap",
@@ -21,4 +21,5 @@ fig = go.Figure(go.Sankey(
         "source": source,
         "target": target,
         "value":  [ 1 ]*len(source)}))
+fig.update_layout(title_text='Title')
 fig.show()
