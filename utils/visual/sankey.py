@@ -11,6 +11,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
+import plotly.graph_objs as go
 #from visdom import Visdom
 # service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
@@ -50,12 +51,22 @@ TAB1.RC11 = Component()
 TAB1.RC20 = Component()
 TAB1.RC21 = Component()
 
-TAB1.RC00.values = dcc.Markdown("""
-## Hello, Ailever!
-""")
-TAB1.RC01.values = dcc.Markdown("""
-## This is a worksheet.
-""")
+fig = go.Figure(data=[go.Sankey(
+    node = dict(
+      pad = 15,
+      thickness = 20,
+      line = dict(color = "black", width = 0.5),
+      label = ["A1", "A2", "B1", "B2", "C1", "C2"],
+      color = "blue"
+    ),
+    link = dict(
+      source = [0, 1, 0, 2, 3, 3], # indices correspond to labels, eg A1, A2, A1, B1, ...
+      target = [2, 3, 3, 4, 4, 5],
+      value = [8, 4, 2, 8, 4, 2]
+  ))])
+fig.update_layout(title_text="Basic Sankey Diagram", font_size=10)
+
+TAB1.RC00.values = dcc.Graph(figure=fig)
 TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
@@ -70,8 +81,7 @@ TAB1.RC21.values = html.Div([dbc.Button('A', color='dark', href=""),
                              ])
 ################################## DASHBOARD ##################################
 T = {}
-T['T,0,0'] = 'T__'
-T['T,0,1'] = 'T__'
+T['T,0,0'] = 'sankey'
 T['T,1,0'] = 'T__'
 T['T,1,1'] = 'T__'
 T['T,2,0'] = 'T__'
@@ -79,21 +89,19 @@ T['T,2,1'] = 'T__'
 O = {}
 O['T,_,_'] = None
 O['T,0,0'] = TAB1.RC00.values
-O['T,0,1'] = TAB1.RC01.values
 O['T,1,0'] = TAB1.RC10.values
 O['T,1,1'] = TAB1.RC11.values
 O['T,2,0'] = TAB1.RC20.values
 O['T,2,1'] = TAB1.RC21.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
 C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
 C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
 C['T,2,0'] = [dbc.Card([dbc.CardHeader(T['T,2,0']), dbc.CardBody(O['T,2,0'])], color='light', inverse=False, outline=True)]
 C['T,2,1'] = [dbc.Card([dbc.CardHeader(T['T,2,1']), dbc.CardBody(O['T,2,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
+contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            html.Br()]
