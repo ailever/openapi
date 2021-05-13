@@ -102,10 +102,15 @@ main = dbc.Jumbotron([html.H2(html.A('utils/visual', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/utils/visual/main.py'),
-                                dbc.Button("Notion", color="secondary", href="https://www.notion.so/UTILS-VISUAL-92f5f296304a4db4be3fd63135230c14"),                                
+                                dbc.Button("Notion", color="secondary", href="https://www.notion.so/UTILS-VISUAL-92f5f296304a4db4be3fd63135230c14"),
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
+                      html.Div([dbc.Button('dash-html', color='dark', href="https://dash.plotly.com/dash-html-components/"),
+                                dbc.Button('dash-core', color='dark', href="https://dash.plotly.com/dash-core-components"),
+                                dbc.Button('dash-bootstrap', color='dark', href="https://dash-bootstrap-components.opensource.faculty.ai/docs/components/alert/"),
+                                dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
+                                dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/")]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
