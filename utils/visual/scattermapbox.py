@@ -3,9 +3,7 @@ from IPython import display
 from ipywidgets import interact
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objs as go
+
 
 #%% ################################## CONFIG ##################################
 import argparse
@@ -24,6 +22,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
+import plotly.graph_objects as go
 #from visdom import Visdom
 # service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
@@ -61,39 +60,46 @@ TAB1.RC10 = Component()
 TAB1.RC11 = Component()
 TAB1.RC20 = Component()
 TAB1.RC21 = Component()
+################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
+fig = go.Figure(go.Scattermapbox(
+    mode = "markers+lines",
+    lon = [10, 20, 30],
+    lat = [10, 20,30],
+    marker = {'size': 10}))
 
+fig.add_trace(go.Scattermapbox(
+    mode = "markers+lines",
+    lon = [-50, -60,40],
+    lat = [30, 10, -20],
+    marker = {'size': 10}))
 
-TAB1.RC00.places = [[37.586786, 126.974736, '청와대(Cheong Wh Dae)', '서울(Seoul)', "종로구 세종로"],
-                    [37.563184116699055, 126.97959495769867, '한국은행(BOk, Bank of Korea)', '서울(Seoul)', '중구 북창동'],
-                   ]
-TAB1.RC00.places = pd.DataFrame(TAB1.RC00.places)
-TAB1.RC00.places.columns = ["latitude", "longitude", "landmark", "city", "districts"] 
-Map = px.scatter_mapbox(TAB1.RC00.places,
-                        lat="latitude",
-                        lon="longitude",
-                        hover_name="landmark",
-                        hover_data=["city", "districts"],
-                        color_discrete_sequence=["fuchsia"],
-                        zoom=12,
-                        height=700)
-Map.update_layout(mapbox_style="open-street-map")
-Map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-TAB1.RC00.values = dcc.Graph(figure=Map)
+fig.update_layout(
+    margin ={'l':0,'t':0,'b':0,'r':0},
+    mapbox = {
+        'center': {'lon': 10, 'lat': 10},
+        'style': "stamen-terrain",
+        'center': {'lon': -20, 'lat': -20},
+        'zoom': 1})
+TAB1.RC00.values = dcc.Graph(figure=fig)
+################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
 TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW1, COL1 ##################################
 TAB1.RC11.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW2, COL0 ##################################
 TAB1.RC20.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW2, COL1 ##################################
 TAB1.RC21.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
 ################################## DASHBOARD ##################################
 T = {}
-T['T,0,0'] = 'Map'
+T['T,0,0'] = 'T__'
 T['T,1,0'] = 'T__'
 T['T,1,1'] = 'T__'
 T['T,2,0'] = 'T__'
@@ -118,10 +124,10 @@ contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
-main = dbc.Jumbotron([html.H2(html.A('map', href="/")),
+main = dbc.Jumbotron([html.H2(html.A('scattermapbox', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
-                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/utils/visual/map.py'),
+                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/utils/visual/scattermapbox.py'),
                                 dbc.Button("Notion", color="secondary", href="https://www.notion.so/UTILS-VISUAL-92f5f296304a4db4be3fd63135230c14"),
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
@@ -130,7 +136,10 @@ main = dbc.Jumbotron([html.H2(html.A('map', href="/")),
                                 dbc.Button('dash-core', color='dark', href="https://dash.plotly.com/dash-core-components"),
                                 dbc.Button('dash-bootstrap', color='dark', href="https://dash-bootstrap-components.opensource.faculty.ai/docs/components/alert/"),
                                 dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
-                                dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/")]),                      
+                                dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/"),
+                                dbc.Button('API', color='danger', href="https://plotly.com/python-api-reference/generated/plotly.graph_objects.Scattermapbox.html"),
+                                dbc.Button('Example', color='danger', href="https://plotly.com/python/lines-on-mapbox/"),
+                                ]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
@@ -142,5 +151,5 @@ if __name__ == '__main__':
 [version] : 0.0
 [description] : -
 [author] : anonym
-[keywords] : map
+[keywords] : -
 """    
