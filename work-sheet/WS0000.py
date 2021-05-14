@@ -124,6 +124,7 @@ if __name__ == '__main__':
 ################################## SETUP INFO ##################################
 """
 [name] : -
+[structure] : -
 [version] : 0.0
 [description] : -
 [author] : anonym
