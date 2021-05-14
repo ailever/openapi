@@ -125,7 +125,7 @@ main = dbc.Jumbotron([html.H2(html.A('sunburst', href="/")),
                                 dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
                                 dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/"),
                                 dbc.Button('updating figure', color='dark',  href="https://plotly.com/python/creating-and-updating-figures/"),                                
-                                dbc.Button('API', color='danger', href="https://plotly.com/python-api-reference/generated/plotly.graph_objects.Sunburst.html"),
+                                dbc.Button('API(GO)', color='danger', href="https://plotly.com/python-api-reference/generated/plotly.graph_objects.Sunburst.html"),
                                 dbc.Button('Example', color='danger', href="https://plotly.com/python/sunburst-charts/"),
                                 ]),
                       html.P(id='visdom-server')])
