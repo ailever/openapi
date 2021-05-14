@@ -139,6 +139,7 @@ main = dbc.Jumbotron([html.H2(html.A('scattermapbox', href="/")),
                                 dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/"),
                                 dbc.Button('updating figure', color='dark',  href="https://plotly.com/python/creating-and-updating-figures/"),                                
                                 dbc.Button('API(GO)', color='danger', href="https://plotly.com/python-api-reference/generated/plotly.graph_objects.Scattermapbox.html"),
+                                dbc.Button('API(PX)', color='danger', href=""),                                
                                 dbc.Button('Example', color='danger', href="https://plotly.com/python/lines-on-mapbox/"),
                                 ]),
                       html.P(id='visdom-server')])
