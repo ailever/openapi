@@ -132,10 +132,10 @@ if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## SETUP INFO ##################################
 """
-[name] : -
+[name] : Map Analysis
 [structure] : -
 [version] : 0.0
 [description] : -
 [author] : anonym
-[keywords] : map
+[keywords] : -
 """    
