@@ -4176,32 +4176,34 @@ note.N11_02 = N(('T12,2,0', 'Additionals'), 'script 2', """
 
 #%% ################################## CONFIG ##################################
 import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument('--vs', type=str, default='127.0.0.1', help='visdom server')
-parser.add_argument('--vp', type=str, default='8097', help='visdom port')
-parser.add_argument('--rs', type=str, default='127.0.0.1', help='Rstudio server')
-parser.add_argument('--rp', type=str, default='8787', help='Rstudio port')
-parser.add_argument('--ds', type=str, default='127.0.0.1', help='dash server')
-parser.add_argument('--dp', type=str, default='8050', help='dash port')
+parser = argparse.ArgumentParser(description="set your environment")
+parser.add_argument('--HostDash', type=str, required=False, default='PassToken', help="Host : Dashboard")
+parser.add_argument('--PortDash', type=str, required=False, default='PassToken', help="Port : Dashboard")
+parser.add_argument('--HostDB', type=str, required=False, default='PassToken', help="Host : DataBase")
+parser.add_argument('--PortDB', type=str, required=False, default='PassToken', help="Port : DataBase")
+parser.add_argument('--HostRV', type=str, required=False, default='PassToken', help="Host : Real-time Visualization")
+parser.add_argument('--PortRV', type=str, required=False, default='PassToken', help="Port : Real-time Visualization")
+parser.add_argument('--HostR', type=str, required=False, default='PassToken', help="Host : language R")
+parser.add_argument('--PortR', type=str, required=False, default='PassToken', help="Port : language R")
 args = parser.parse_args()
-
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
-# rstudio-server start/stop/restart # /etc/rstudio/rserver.conf
-# python -m visdom.server -p 8097 --hostname 127.0.0.1
-config = {}
-config['visdom-server'] = 'http://' + args.vs
-config['visdom-port'] = args.vp
-config['R-server'] = 'http://' + args.rs
-config['R-port'] = args.rp
-config['dash-server'] = args.ds
-config['dash-port'] = args.dp
-#import torch
-#import torch.nn as nn
 #from visdom import Visdom
+# service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
+# python -m visdom.server -p 8097 --hostname 127.0.0.1
+# rstudio-server start/stop/restart                       # /etc/rstudio/rserver.conf
+config = {}
+config['dash-server'] = args.HostDash if args.HostDash != 'PassToken' else '127.0.0.1'
+config['dash-port'] = args.PortDash if args.PortDash != 'PassToken' else '8050'
+config['pgAdmin4-server'] = args.HostDB if args.HostDB != 'PassToken' else 'http://' + '127.0.0.1'
+config['pgAdmin4-port'] = args.PortDB if args.PortDB != 'PassToken' else '52631'
+config['visdom-server'] = args.HostRV if args.HostRV != 'PassToken' else 'http://' + '127.0.0.1'
+config['visdom-port'] = args.PortRV if args.PortRV != 'PassToken' else '8097'
+config['R-server'] = args.HostR if args.HostR != 'PassToken' else 'http://' + '127.0.0.1'
+config['R-port'] = args.PortR if args.PortR != 'PassToken' else '8787'
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
