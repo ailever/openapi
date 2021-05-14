@@ -146,7 +146,7 @@ if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## SETUP INFO ##################################
 """
-[name] : -
+[name] : scattermapbox
 [structure] : utils/visual
 [version] : 0.0
 [description] : -
