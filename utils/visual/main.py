@@ -22,6 +22,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
+import plotly.graph_objects as go
 #from visdom import Visdom
 # service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
@@ -55,34 +56,33 @@ class MetaClass(type):
 Component = MetaClass('Component', (dict,), {})
 TAB1 = Component()
 TAB1.RC00 = Component()
-TAB1.RC01 = Component()
 TAB1.RC10 = Component()
 TAB1.RC11 = Component()
 TAB1.RC20 = Component()
 TAB1.RC21 = Component()
-
-TAB1.RC00.values = dcc.Markdown("""
-## Hello, Ailever!
-""")
-TAB1.RC01.values = dcc.Markdown("""
-## This is a worksheet.
-""")
+################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
+x = np.arange(10)
+fig = go.Figure(data=go.Scatter(x=x, y=x**2))
+TAB1.RC00.values = dcc.Graph(figure=fig)
+################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
 TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW1, COL1 ##################################
 TAB1.RC11.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW2, COL0 ##################################
 TAB1.RC20.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW2, COL1 ##################################
 TAB1.RC21.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
 ################################## DASHBOARD ##################################
 T = {}
 T['T,0,0'] = 'T__'
-T['T,0,1'] = 'T__'
 T['T,1,0'] = 'T__'
 T['T,1,1'] = 'T__'
 T['T,2,0'] = 'T__'
@@ -90,21 +90,19 @@ T['T,2,1'] = 'T__'
 O = {}
 O['T,_,_'] = None
 O['T,0,0'] = TAB1.RC00.values
-O['T,0,1'] = TAB1.RC01.values
 O['T,1,0'] = TAB1.RC10.values
 O['T,1,1'] = TAB1.RC11.values
 O['T,2,0'] = TAB1.RC20.values
 O['T,2,1'] = TAB1.RC21.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
 C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
 C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
 C['T,2,0'] = [dbc.Card([dbc.CardHeader(T['T,2,0']), dbc.CardBody(O['T,2,0'])], color='light', inverse=False, outline=True)]
 C['T,2,1'] = [dbc.Card([dbc.CardHeader(T['T,2,1']), dbc.CardBody(O['T,2,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
+contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            html.Br()]
@@ -121,14 +119,17 @@ main = dbc.Jumbotron([html.H2(html.A('utils/visual', href="/")),
                                 dbc.Button('dash-core', color='dark', href="https://dash.plotly.com/dash-core-components"),
                                 dbc.Button('dash-bootstrap', color='dark', href="https://dash-bootstrap-components.opensource.faculty.ai/docs/components/alert/"),
                                 dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
-                                dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/")]),
+                                dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/"),
+                                dbc.Button('API', color='danger', href=""),
+                                dbc.Button('Example', color='danger', href=""),
+                                ]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## SETUP INFO ##################################
 """
-[name] : -
+[name] : main
 [structure] : utils/visual
 [version] : 0.0
 [description] : -
