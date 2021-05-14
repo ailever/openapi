@@ -141,6 +141,7 @@ main = dbc.Jumbotron([html.H2(html.A('sankey', href="/")),
                                 dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/"),
                                 dbc.Button('updating figure', color='dark',  href="https://plotly.com/python/creating-and-updating-figures/"),                                
                                 dbc.Button('API(GO)', color='danger', href="https://plotly.com/python-api-reference/generated/plotly.graph_objects.Sankey.html"),
+                                dbc.Button('API(PX)', color='danger', href=""),                                
                                 dbc.Button('Example', color='danger', href="https://plotly.com/python/sankey-diagram/")]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
