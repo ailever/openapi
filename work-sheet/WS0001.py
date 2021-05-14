@@ -10,24 +10,35 @@ board = """
 """
 
 #%% ################################## CONFIG ##################################
+import argparse
+parser = argparse.ArgumentParser(description="set your environment")
+parser.add_argument('--HostDash', type=str, required=False, default='PassToken', help="Host : Dashboard")
+parser.add_argument('--PortDash', type=str, required=False, default='PassToken', help="Port : Dashboard")
+parser.add_argument('--HostDB', type=str, required=False, default='PassToken', help="Host : DataBase")
+parser.add_argument('--PortDB', type=str, required=False, default='PassToken', help="Port : DataBase")
+parser.add_argument('--HostRV', type=str, required=False, default='PassToken', help="Host : Real-time Visualization")
+parser.add_argument('--PortRV', type=str, required=False, default='PassToken', help="Port : Real-time Visualization")
+parser.add_argument('--HostR', type=str, required=False, default='PassToken', help="Host : language R")
+parser.add_argument('--PortR', type=str, required=False, default='PassToken', help="Port : language R")
+args = parser.parse_args()
 import dash
 import dash_html_components as html
-import dash_bootstrap_components as dbc
 import dash_core_components as dcc
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 #from visdom import Visdom
 # service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
 # rstudio-server start/stop/restart                       # /etc/rstudio/rserver.conf
 config = {}
-config['pgAdmin4-server'] = 'http://' + '127.0.0.1'
-config['pgAdmin4-port'] = '52631'
-config['visdom-server'] = 'http://' + '127.0.0.1'
-config['visdom-port'] = '8097'
-config['R-server'] = 'http://' + '127.0.0.1'
-config['R-port'] = '8787'
-config['dash-server'] = '127.0.0.1'
-config['dash-port'] = '8050'
+config['dash-server'] = args.HostDash if args.HostDash != 'PassToken' else '127.0.0.1'
+config['dash-port'] = args.PortDash if args.PortDash != 'PassToken' else '8050'
+config['pgAdmin4-server'] = args.HostDB if args.HostDB != 'PassToken' else 'http://' + '127.0.0.1'
+config['pgAdmin4-port'] = args.PortDB if args.PortDB != 'PassToken' else '52631'
+config['visdom-server'] = args.HostRV if args.HostRV != 'PassToken' else 'http://' + '127.0.0.1'
+config['visdom-port'] = args.PortRV if args.PortRV != 'PassToken' else '8097'
+config['R-server'] = args.HostR if args.HostR != 'PassToken' else 'http://' + '127.0.0.1'
+config['R-port'] = args.PortR if args.PortR != 'PassToken' else '8787'
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
