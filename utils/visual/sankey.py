@@ -22,6 +22,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
+import plotly.graph_objects as go
 #from visdom import Visdom
 # service postgresql start/stop                           # /etc/postgresql/version/main/postgresql.conf
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
