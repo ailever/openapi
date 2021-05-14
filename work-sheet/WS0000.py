@@ -8,14 +8,14 @@ import numpy as np
 #%% ################################## CONFIG ##################################
 import argparse
 parser = argparse.ArgumentParser(description="set your environment")
-parser.add_argument('--HostSql', type=str, required=False, default=None, help="")
-parser.add_argument('--PortSql', type=str, required=False, default=None, help="")
-parser.add_argument('--HostVisdom', type=str, required=False, default=None, help="")
-parser.add_argument('--PortVisdom', type=str, required=False, default=None, help="")
-parser.add_argument('--HostR', type=str, required=False, default=None, help="")
-parser.add_argument('--PortR', type=str, required=False, default=None, help="")
-parser.add_argument('--HostDash', type=str, required=False, default=None, help="")
-parser.add_argument('--PortDash', type=str, required=False, default=None, help="")
+parser.add_argument('--HostDash', type=str, required=False, default=None, help="host : dashboard")
+parser.add_argument('--PortDash', type=str, required=False, default=None, help="port : dashboard")
+parser.add_argument('--HostDB', type=str, required=False, default=None, help="host : database")
+parser.add_argument('--PortDB', type=str, required=False, default=None, help="port : database")
+parser.add_argument('--HostRV', type=str, required=False, default=None, help="host : real-time visualization")
+parser.add_argument('--PortRV', type=str, required=False, default=None, help="port : real-time visualization")
+parser.add_argument('--HostR', type=str, required=False, default=None, help="host : language r")
+parser.add_argument('--PortR', type=str, required=False, default=None, help="port : language r")
 args = parser.parse_args()
 import dash
 import dash_html_components as html
@@ -27,10 +27,10 @@ from dash.dependencies import Input, Output, State
 # python -m visdom.server -p 8097 --hostname 127.0.0.1
 # rstudio-server start/stop/restart                       # /etc/rstudio/rserver.conf
 config = {}
-config['pgAdmin4-server'] = args.HostSql if args.HostSql else 'http://' + '127.0.0.1'
-config['pgAdmin4-port'] = args.PortSql if args.PortSql else '52631'
-config['visdom-server'] = args.HostVisdom if args.HostVisdom else 'http://' + '127.0.0.1'
-config['visdom-port'] = args.PortVisdom if args.PortVisdom else '8097'
+config['pgAdmin4-server'] = args.HostDB if args.HostDB else 'http://' + '127.0.0.1'
+config['pgAdmin4-port'] = args.PortDB if args.PortDB else '52631'
+config['visdom-server'] = args.HostRV if args.HostRV else 'http://' + '127.0.0.1'
+config['visdom-port'] = args.PortRV if args.PortRV else '8097'
 config['R-server'] = args.HostR if args.HostR else 'http://' + '127.0.0.1'
 config['R-port'] = args.PortR if args.PortR else '8787'
 config['dash-server'] = args.HostDash if args.HostDash else '127.0.0.1'
