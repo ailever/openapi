@@ -75,7 +75,13 @@ fig = go.Figure(data=[go.Sankey(
       target = [2, 3, 3, 4, 4, 5],
       value = [8, 4, 2, 8, 4, 2]
   ))])
-fig.update_layout(title_text="Basic Sankey Diagram", font_size=10)
+fig.update_layout(
+    hovermode = 'x',
+    title_text="Basic Sankey Diagram",
+    font=dict(size = 10, color = 'white'),
+    plot_bgcolor='black',
+    paper_bgcolor='black'
+)
 TAB1.RC00.values = dcc.Graph(figure=fig)
 ################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
 TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
