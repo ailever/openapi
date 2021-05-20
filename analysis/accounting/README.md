@@ -1,5 +1,5 @@
 ```python
-from ailever.analysis.accounting import dashboard
+from ailever.analysis.ACCOUNTING import dashboard
 
 dashboard.run('main')
 ```
