@@ -4,6 +4,7 @@
 - [ailever-wiki](https://github.com/ailever/ailever/wiki)
 - [ailever-notion](https://www.notion.so/WorkSheet-d64a1a09956d4318ac38b3d7f0131cfb)
 
+`https://github.com/ailever/openapi`
 ```python
 from ailever import dashboard
 dashboard.run('main')
