@@ -5,6 +5,10 @@
 - [ailever-notion](https://www.notion.so/WorkSheet-d64a1a09956d4318ac38b3d7f0131cfb)
 
 ```python
+from ailever import dashboard
+dashboard.run('main')
+```
+```python
 from ailever.analysis import dashboard
 dashboard.run('main')
 ```
@@ -22,6 +26,10 @@ dashboard.run('main')
 ```
 ```python
 from ailever.forecast import dashboard
+dashboard.run('main')
+```
+```python
+from ailever.utils import dashboard
 dashboard.run('main')
 ```
 
