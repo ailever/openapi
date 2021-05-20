@@ -1,6 +1,6 @@
 ```python
 from ailever.captioning import dashboard
 
-dashboard('main')
+dashboard.run('main')
 ```
 
