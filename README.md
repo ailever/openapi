@@ -8,26 +8,32 @@
 from ailever import dashboard
 dashboard.run('main')
 ```
+`https://github.com/ailever/openapi/tree/master/analysis`
 ```python
 from ailever.analysis import dashboard
 dashboard.run('main')
 ```
+`https://github.com/ailever/openapi/tree/master/detection`
 ```python
 from ailever.detection import dashboard
 dashboard.run('main')
 ```
+`https://github.com/ailever/openapi/tree/master/language`
 ```python
 from ailever.language import dashboard
 dashboard.run('main')
 ```
+`https://github.com/ailever/openapi/tree/master/captioning`
 ```python
 from ailever.captioning import dashboard
 dashboard.run('main')
 ```
+`https://github.com/ailever/openapi/tree/master/forecast`
 ```python
 from ailever.forecast import dashboard
 dashboard.run('main')
 ```
+`https://github.com/ailever/openapi/tree/master/utils`
 ```python
 from ailever.utils import dashboard
 dashboard.run('main')
