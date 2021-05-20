@@ -6,36 +6,43 @@
 
 `https://github.com/ailever/openapi`
 ```python
+# https://github.com/ailever/ailever/tree/master/ailever
 from ailever import dashboard
 dashboard.run('main')
 ```
 `https://github.com/ailever/openapi/tree/master/analysis`
 ```python
+# https://github.com/ailever/ailever/tree/master/ailever/analysis
 from ailever.analysis import dashboard
 dashboard.run('main')
 ```
 `https://github.com/ailever/openapi/tree/master/detection`
 ```python
+# https://github.com/ailever/ailever/tree/master/ailever/detection
 from ailever.detection import dashboard
 dashboard.run('main')
 ```
 `https://github.com/ailever/openapi/tree/master/language`
 ```python
+# https://github.com/ailever/ailever/tree/master/ailever/language
 from ailever.language import dashboard
 dashboard.run('main')
 ```
 `https://github.com/ailever/openapi/tree/master/captioning`
 ```python
+# https://github.com/ailever/ailever/tree/master/ailever/captioning
 from ailever.captioning import dashboard
 dashboard.run('main')
 ```
 `https://github.com/ailever/openapi/tree/master/forecast`
 ```python
+# https://github.com/ailever/ailever/tree/master/ailever/forecast
 from ailever.forecast import dashboard
 dashboard.run('main')
 ```
 `https://github.com/ailever/openapi/tree/master/utils`
 ```python
+# https://github.com/ailever/ailever/tree/master/ailever/utils
 from ailever.utils import dashboard
 dashboard.run('main')
 ```
