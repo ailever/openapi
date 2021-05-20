@@ -1,5 +1,6 @@
 ```python
 from ailever.forecast import dashboard
-dashboard()
+
+dashboard.run('main')
 ```
 
