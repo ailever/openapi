@@ -1,4 +1,4 @@
-# Ailever's openapi
+# Dashboard
 
 - [ailever-userguide](https://ailever.github.io/user%20guide/2021/02/25/User-Guide/)
 - [ailever-wiki](https://github.com/ailever/ailever/wiki)
@@ -6,24 +6,26 @@
 
 ```python
 from ailever.analysis import dashboard
-dashboard()
+dashboard.run('main')
 ```
 ```python
 from ailever.detection import dashboard
-dashboard()
+dashboard.run('main')
 ```
 ```python
 from ailever.language import dashboard
-dashboard()
+dashboard.run('main')
 ```
 ```python
 from ailever.captioning import dashboard
-dashboard()
+dashboard.run('main')
 ```
 ```python
 from ailever.forecast import dashboard
-dashboard()
+dashboard.run('main')
 ```
+
+# Source
 ```python
 from ailever.utils import source
 
