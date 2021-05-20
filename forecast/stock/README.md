@@ -1,4 +1,6 @@
 ```python
 from ailever.forecast.STOCK import dashboard
-dashboard('main')
+
+dashboard.run('main')
+dashboard.run('krx_index')
 ```
