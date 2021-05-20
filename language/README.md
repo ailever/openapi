@@ -1,4 +1,5 @@
 ```python
 from ailever.language import dashboard
-dashboard()
+
+dashboard.run('main')
 ```
