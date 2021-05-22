@@ -61,12 +61,12 @@ TAB1.RC11 = Component()
 TAB1.RC20 = Component()
 TAB1.RC21 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
-fig = go.Figure(go.Bar(x=[20, 14, 23],
-					   y=['giraffes', 'orangutans', 'monkeys'],
+fig = go.Figure(go.Bar(x=[3891405, 4753626, 6761949, 6802386, 8244087, 8604370, 6918145, 3693918, 1766149, 254459, 11606],
+					   y=['0 - 9', '10 - 19', '20 - 29', '30 - 39', '40 - 49', '50 - 59', '60 - 69', '70 - 79', '80 - 89', '90 - 99', 'more than 100'],
 					   orientation='h'))
-fig.update_layout(title="Plot Title",
-                  xaxis_title="X Axis Title",
-                  yaxis_title="Y Axis Title",
+fig.update_layout(title="Population by age",
+                  xaxis_title="Population",
+                  yaxis_title="Age",
                   legend_title="Legend Title",
                   font=dict(family="Courier New, monospace",
                             size=18,
@@ -116,7 +116,7 @@ contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=12)]), html.Br(),
                            dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
-main = dbc.Jumbotron([html.H2(html.A('population_kr', href="/")),
+main = dbc.Jumbotron([html.H2(html.A('Population of Korea', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/analysis/population_kr.py'),
