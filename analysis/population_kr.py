@@ -62,15 +62,15 @@ TAB1.RC20 = Component()
 TAB1.RC21 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
 fig = go.Figure(go.Bar(x=[20, 14, 23],
-					             y=['giraffes', 'orangutans', 'monkeys'],
-					             orientation='h'))
+					   y=['giraffes', 'orangutans', 'monkeys'],
+					   orientation='h'))
 fig.update_layout(title="Plot Title",
-				          xaxis_title="X Axis Title",
-							    yaxis_title="Y Axis Title",
-							    legend_title="Legend Title",
-							    font=dict(family="Courier New, monospace",
-								          size=18,
-									      color="RebeccaPurple"))
+                  xaxis_title="X Axis Title",
+                  yaxis_title="Y Axis Title",
+                  legend_title="Legend Title",
+                  font=dict(family="Courier New, monospace",
+                            size=18,
+                            color="RebeccaPurple"))
 TAB1.RC00.values = dcc.Graph(figure=fig)
 ################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
 TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
@@ -130,6 +130,8 @@ main = dbc.Jumbotron([html.H2(html.A('population_kr', href="/")),
                                 dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
                                 dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/"),
                                 dbc.Button('updating figure', color='dark',  href="https://plotly.com/python/creating-and-updating-figures/"),                                
+                                ]),
+                      html.Div([dbc.Button('Korea Population', color='secondary', href="https://jumin.mois.go.kr/"),
                                 ]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
