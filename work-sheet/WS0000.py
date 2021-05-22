@@ -60,22 +60,27 @@ TAB1.RC10 = Component()
 TAB1.RC11 = Component()
 TAB1.RC20 = Component()
 TAB1.RC21 = Component()
-
+################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
 TAB1.RC00.values = dcc.Markdown("""
 ## Hello, Ailever!
 """)
+################################## DASHBOARD : TAB1, ROW0, COL1 ##################################
 TAB1.RC01.values = dcc.Markdown("""
 ## This is a worksheet.
 """)
+################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
 TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW1, COL1 ##################################
 TAB1.RC11.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW2, COL0 ##################################
 TAB1.RC20.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB1, ROW2, COL1 ##################################
 TAB1.RC21.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
