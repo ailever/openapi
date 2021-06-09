@@ -59,6 +59,9 @@ TAB1.RC10 = Component()
 TAB1.RC11 = Component()
 TAB1.RC20 = Component()
 TAB1.RC21 = Component()
+TAB2 = Component()
+TAB2.RC00 = Component()
+TAB2.RC10 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
 TAB1.RC00.values = dcc.Markdown("""
 ## Hello, Ailever!
@@ -83,40 +86,53 @@ TAB1.RC20.values = html.Div([dbc.Button('A', color='dark', href=""),
 TAB1.RC21.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
+################################## DASHBOARD : TAB2, ROW0, COL0 ##################################
+TAB2.RC00.values = dcc.Markdown("""
+## Hello, Ailever!
+""")
+################################## DASHBOARD : TAB2, ROW1, COL0 ##################################
+TAB2.RC10.values = dcc.Markdown("""
+## Hello, Ailever!
+""")
+
 ################################## DASHBOARD ##################################
 T = {}
-T['T,0,0'] = 'T__'
-T['T,0,1'] = 'T__'
-T['T,1,0'] = 'T__'
-T['T,1,1'] = 'T__'
-T['T,2,0'] = 'T__'
-T['T,2,1'] = 'T__'
+T['T1,0,0'] = 'T__'
+T['T1,0,1'] = 'T__'
+T['T1,1,0'] = 'T__'
+T['T1,1,1'] = 'T__'
+T['T1,2,0'] = 'T__'
+T['T1,2,1'] = 'T__'
 O = {}
-O['T,_,_'] = None
-O['T,0,0'] = TAB1.RC00.values
-O['T,0,1'] = TAB1.RC01.values
-O['T,1,0'] = TAB1.RC10.values
-O['T,1,1'] = TAB1.RC11.values
-O['T,2,0'] = TAB1.RC20.values
-O['T,2,1'] = TAB1.RC21.values
+O['T1,_,_'] = None
+O['T1,0,0'] = TAB1.RC00.values
+O['T1,0,1'] = TAB1.RC01.values
+O['T1,1,0'] = TAB1.RC10.values
+O['T1,1,1'] = TAB1.RC11.values
+O['T1,2,0'] = TAB1.RC20.values
+O['T1,2,1'] = TAB1.RC21.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
-C['T,0,0'] = [dbc.Card([dbc.CardHeader(T['T,0,0']), dbc.CardBody(O['T,0,0'])], color='light', inverse=False, outline=True)]
-C['T,0,1'] = [dbc.Card([dbc.CardHeader(T['T,0,1']), dbc.CardBody(O['T,0,1'])], color='light', inverse=False, outline=True)]
-C['T,1,0'] = [dbc.Card([dbc.CardHeader(T['T,1,0']), dbc.CardBody(O['T,1,0'])], color='light', inverse=False, outline=True)]
-C['T,1,1'] = [dbc.Card([dbc.CardHeader(T['T,1,1']), dbc.CardBody(O['T,1,1'])], color='light', inverse=False, outline=True)]
-C['T,2,0'] = [dbc.Card([dbc.CardHeader(T['T,2,0']), dbc.CardBody(O['T,2,0'])], color='light', inverse=False, outline=True)]
-C['T,2,1'] = [dbc.Card([dbc.CardHeader(T['T,2,1']), dbc.CardBody(O['T,2,1'])], color='light', inverse=False, outline=True)]
+C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
+C['T1,0,1'] = [dbc.Card([dbc.CardHeader(T['T1,0,1']), dbc.CardBody(O['T1,0,1'])], color='light', inverse=False, outline=True)]
+C['T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,1,0']), dbc.CardBody(O['T1,1,0'])], color='light', inverse=False, outline=True)]
+C['T1,1,1'] = [dbc.Card([dbc.CardHeader(T['T1,1,1']), dbc.CardBody(O['T1,1,1'])], color='light', inverse=False, outline=True)]
+C['T1,2,0'] = [dbc.Card([dbc.CardHeader(T['T1,2,0']), dbc.CardBody(O['T1,2,0'])], color='light', inverse=False, outline=True)]
+C['T1,2,1'] = [dbc.Card([dbc.CardHeader(T['T1,2,1']), dbc.CardBody(O['T1,2,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab'] = [dbc.Row([dbc.Col(C['T,0,0'], width=6), dbc.Col(C['T,0,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,1,0'], width=6), dbc.Col(C['T,1,1'], width=6)]), html.Br(),
-                           dbc.Row([dbc.Col(C['T,2,0'], width=6), dbc.Col(C['T,2,1'], width=6)]), html.Br(),
-                           html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab'])), label="PAGE1", disabled=False)])
+contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=6), dbc.Col(C['T1,0,1'], width=6)]), html.Br(),
+                            dbc.Row([dbc.Col(C['T1,1,0'], width=6), dbc.Col(C['T1,1,1'], width=6)]), html.Br(),
+                            dbc.Row([dbc.Col(C['T1,2,0'], width=6), dbc.Col(C['T1,2,1'], width=6)]), html.Br(),
+                            html.Br()]
+contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="PAGE1", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="PAGE1", disabled=False),
+                                 ])
 main = dbc.Jumbotron([html.H2(html.A('analytic consulting', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
-                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/analysis/main.py'),
+                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/analysis/consulting.py'),
                                 dbc.Button("Notion", color="secondary", href="https://www.notion.so/ANALYSIS-DASHBOARD-1c1f5a01e4bd490a8c14892d0359031b"),                                
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
@@ -134,7 +150,7 @@ if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## SETUP INFO ##################################
 """
-[name] : -
+[name] : analytic consulting
 [structure] : analysis
 [version] : 0.0
 [description] : -
