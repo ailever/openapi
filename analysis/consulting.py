@@ -54,38 +54,20 @@ class MetaClass(type):
 Component = MetaClass('Component', (dict,), {})
 TAB1 = Component()
 TAB1.RC00 = Component()
-TAB1.RC01 = Component()
 TAB1.RC10 = Component()
-TAB1.RC11 = Component()
-TAB1.RC20 = Component()
-TAB1.RC21 = Component()
+
 TAB2 = Component()
 TAB2.RC00 = Component()
 TAB2.RC10 = Component()
+
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
 TAB1.RC00.values = dcc.Markdown("""
 ## Hello, Ailever!
 """)
 ################################## DASHBOARD : TAB1, ROW0, COL1 ##################################
-TAB1.RC01.values = dcc.Markdown("""
-## This is a worksheet.
+TAB1.RC10.values = dcc.Markdown("""
+## Hello, Ailever!
 """)
-################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
-TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
-################################## DASHBOARD : TAB1, ROW1, COL1 ##################################
-TAB1.RC11.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
-################################## DASHBOARD : TAB1, ROW2, COL0 ##################################
-TAB1.RC20.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
-################################## DASHBOARD : TAB1, ROW2, COL1 ##################################
-TAB1.RC21.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
 ################################## DASHBOARD : TAB2, ROW0, COL0 ##################################
 TAB2.RC00.values = dcc.Markdown("""
 ## Hello, Ailever!
@@ -94,35 +76,20 @@ TAB2.RC00.values = dcc.Markdown("""
 TAB2.RC10.values = dcc.Markdown("""
 ## Hello, Ailever!
 """)
-
 ################################## DASHBOARD ##################################
 T = {}
 T['T1,0,0'] = 'T__'
-T['T1,0,1'] = 'T__'
 T['T1,1,0'] = 'T__'
-T['T1,1,1'] = 'T__'
-T['T1,2,0'] = 'T__'
-T['T1,2,1'] = 'T__'
 O = {}
 O['T1,_,_'] = None
 O['T1,0,0'] = TAB1.RC00.values
-O['T1,0,1'] = TAB1.RC01.values
 O['T1,1,0'] = TAB1.RC10.values
-O['T1,1,1'] = TAB1.RC11.values
-O['T1,2,0'] = TAB1.RC20.values
-O['T1,2,1'] = TAB1.RC21.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
-C['T1,0,1'] = [dbc.Card([dbc.CardHeader(T['T1,0,1']), dbc.CardBody(O['T1,0,1'])], color='light', inverse=False, outline=True)]
 C['T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,1,0']), dbc.CardBody(O['T1,1,0'])], color='light', inverse=False, outline=True)]
-C['T1,1,1'] = [dbc.Card([dbc.CardHeader(T['T1,1,1']), dbc.CardBody(O['T1,1,1'])], color='light', inverse=False, outline=True)]
-C['T1,2,0'] = [dbc.Card([dbc.CardHeader(T['T1,2,0']), dbc.CardBody(O['T1,2,0'])], color='light', inverse=False, outline=True)]
-C['T1,2,1'] = [dbc.Card([dbc.CardHeader(T['T1,2,1']), dbc.CardBody(O['T1,2,1'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
-contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=6), dbc.Col(C['T1,0,1'], width=6)]), html.Br(),
-                            dbc.Row([dbc.Col(C['T1,1,0'], width=6), dbc.Col(C['T1,1,1'], width=6)]), html.Br(),
-                            dbc.Row([dbc.Col(C['T1,2,0'], width=6), dbc.Col(C['T1,2,1'], width=6)]), html.Br(),
+contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
                             html.Br()]
 contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
                             html.Br()]
