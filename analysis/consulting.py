@@ -126,10 +126,19 @@ contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=6), dbc.Col(C['T
                             html.Br()]
 contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
                             html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="PAGE1", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="PAGE1", disabled=False),
+contents['page']['tab3'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab4'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+                            html.Br()]
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Problem & Issue", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Data Collection", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="Exploratory Data Analysis", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="Statistical Inference", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="Applications", disabled=True),
                                  ])
-main = dbc.Jumbotron([html.H2(html.A('analytic consulting', href="/")),
+main = dbc.Jumbotron([html.H2(html.A('Analytic Consulting', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/analysis/consulting.py'),
