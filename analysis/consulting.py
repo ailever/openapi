@@ -54,69 +54,105 @@ class MetaClass(type):
 Component = MetaClass('Component', (dict,), {})
 TAB1 = Component()
 TAB1.RC00 = Component()
-TAB1.RC01 = Component()
 TAB1.RC10 = Component()
-TAB1.RC11 = Component()
-TAB1.RC20 = Component()
-TAB1.RC21 = Component()
 TAB2 = Component()
 TAB2.RC00 = Component()
 TAB2.RC10 = Component()
+TAB3 = Component()
+TAB3.RC00 = Component()
+TAB3.RC10 = Component()
+TAB4 = Component()
+TAB4.RC00 = Component()
+TAB4.RC10 = Component()
+TAB5 = Component()
+TAB5.RC00 = Component()
+TAB5.RC10 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
-TAB1.RC00.values = dcc.Markdown("""
-## Hello, Ailever!
-""")
-################################## DASHBOARD : TAB1, ROW0, COL1 ##################################
-TAB1.RC01.values = dcc.Markdown("""
-## This is a worksheet.
+TAB1.RC00.values = html.Code("""
+123
 """)
 ################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
-TAB1.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
-################################## DASHBOARD : TAB1, ROW1, COL1 ##################################
-TAB1.RC11.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
-################################## DASHBOARD : TAB1, ROW2, COL0 ##################################
-TAB1.RC20.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
-################################## DASHBOARD : TAB1, ROW2, COL1 ##################################
-TAB1.RC21.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
+TAB1.RC10.values = dcc.Markdown("""
+## This is a worksheet.
+""")
 ################################## DASHBOARD : TAB2, ROW0, COL0 ##################################
-TAB2.RC00.values = dcc.Markdown("""
-## Hello, Ailever!
-""")
+TAB2.RC00.values = html.Div([dbc.Button('A', color='dark', href=""),
+                             dbc.Button('B', color='dark', href=""),
+                             ])
 ################################## DASHBOARD : TAB2, ROW1, COL0 ##################################
-TAB2.RC10.values = dcc.Markdown("""
+TAB2.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
+                             dbc.Button('B', color='dark', href=""),
+                             ])
+################################## DASHBOARD : TAB3, ROW0, COL0 ##################################
+TAB3.RC00.values = html.Div([dbc.Button('A', color='dark', href=""),
+                             dbc.Button('B', color='dark', href=""),
+                             ])
+################################## DASHBOARD : TAB3, ROW1, COL0 ##################################
+TAB3.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
+                             dbc.Button('B', color='dark', href=""),
+                             ])
+################################## DASHBOARD : TAB4, ROW0, COL0 ##################################
+TAB4.RC00.values = dcc.Markdown("""
 ## Hello, Ailever!
 """)
-
+################################## DASHBOARD : TAB4, ROW1, COL0 ##################################
+TAB4.RC10.values = dcc.Markdown("""
+## Hello, Ailever!
+""")
+################################## DASHBOARD : TAB5, ROW0, COL0 ##################################
+TAB5.RC00.values = dcc.Markdown("""
+## Hello, Ailever!
+""")
+################################## DASHBOARD : TAB5, ROW1, COL0 ##################################
+TAB5.RC10.values = dcc.Markdown("""
+## Hello, Ailever!
+""")
 ################################## DASHBOARD ##################################
 T = {}
 T['T1,0,0'] = 'T__'
 T['T1,1,0'] = 'T__'
+T['T2,0,0'] = 'T__'
+T['T2,1,0'] = 'T__'
+T['T3,0,0'] = 'T__'
+T['T3,1,0'] = 'T__'
+T['T4,0,0'] = 'T__'
+T['T4,1,0'] = 'T__'
+T['T5,0,0'] = 'T__'
+T['T5,1,0'] = 'T__'
 O = {}
 O['T1,_,_'] = None
 O['T1,0,0'] = TAB1.RC00.values
 O['T1,1,0'] = TAB1.RC10.values
+O['T2,0,0'] = TAB2.RC00.values
+O['T2,1,0'] = TAB2.RC10.values
+O['T3,0,0'] = TAB3.RC00.values
+O['T3,1,0'] = TAB3.RC10.values
+O['T4,0,0'] = TAB4.RC00.values
+O['T4,1,0'] = TAB4.RC10.values
+O['T5,0,0'] = TAB5.RC00.values
+O['T5,1,0'] = TAB5.RC10.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,1,0']), dbc.CardBody(O['T1,1,0'])], color='light', inverse=False, outline=True)]
+C['T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,0,0']), dbc.CardBody(O['T2,0,0'])], color='light', inverse=False, outline=True)]
+C['T2,1,0'] = [dbc.Card([dbc.CardHeader(T['T2,1,0']), dbc.CardBody(O['T2,1,0'])], color='light', inverse=False, outline=True)]
+C['T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T3,0,0']), dbc.CardBody(O['T3,0,0'])], color='light', inverse=False, outline=True)]
+C['T3,1,0'] = [dbc.Card([dbc.CardHeader(T['T3,1,0']), dbc.CardBody(O['T3,1,0'])], color='light', inverse=False, outline=True)]
+C['T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T4,0,0']), dbc.CardBody(O['T4,0,0'])], color='light', inverse=False, outline=True)]
+C['T4,1,0'] = [dbc.Card([dbc.CardHeader(T['T4,1,0']), dbc.CardBody(O['T4,1,0'])], color='light', inverse=False, outline=True)]
+C['T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T5,0,0']), dbc.CardBody(O['T5,0,0'])], color='light', inverse=False, outline=True)]
+C['T5,1,0'] = [dbc.Card([dbc.CardHeader(T['T5,1,0']), dbc.CardBody(O['T5,1,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
                             html.Br()]
-contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+contents['page']['tab2'] = [dbc.Row([dbc.Col(C['T2,0,0'], width=12)]), html.Br(),
                             html.Br()]
-contents['page']['tab3'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+contents['page']['tab3'] = [dbc.Row([dbc.Col(C['T3,0,0'], width=12)]), html.Br(),
                             html.Br()]
-contents['page']['tab4'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+contents['page']['tab4'] = [dbc.Row([dbc.Col(C['T4,0,0'], width=12)]), html.Br(),
                             html.Br()]
-contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
+contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T5,0,0'], width=12)]), html.Br(),
                             html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Problem & Issue", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Data Collection", disabled=False),
