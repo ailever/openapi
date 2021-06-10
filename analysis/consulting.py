@@ -3,6 +3,8 @@ from IPython import display
 from ipywidgets import interact
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+import base64
 
 #%% ################################## CONFIG ##################################
 import argparse
@@ -68,16 +70,31 @@ TAB5 = Component()
 TAB5.RC00 = Component()
 TAB5.RC10 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
-TAB1.RC00.values = html.Code("""
-123
-""")
+TAB1.RC00.values = html.Div([html.Img()])
 ################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
 TAB1.RC10.values = dcc.Markdown("""
 ## This is a worksheet.
 """)
 ################################## DASHBOARD : TAB2, ROW0, COL0 ##################################
-TAB2.RC00.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
+TAB2.RC00.values = html.Div([dbc.Button('URL', color='dark', href="https://archive.ics.uci.edu/ml/datasets/Beijing+PM2.5+Data"),
+                             html.Span(' : https://archive.ics.uci.edu/ml/datasets/Beijing+PM2.5+Data'), html.Br(), html.Br(),
+                             dcc.Markdown("""
+## Attribute Information:
+
+- **No** : row number
+- **year** : year of data in this row
+- **month** : month of data in this row
+- **day** : day of data in this row
+- **hour** : hour of data in this row
+- **pm2.5** : PM2.5 concentration (ug/m^3)
+- **DEWP** : Dew Point (â„ƒ)
+- **TEMP** : Temperature (â„ƒ)
+- **PRES** : Pressure (hPa)
+- **cbwd** : Combined wind direction
+- **Iws** : Cumulated wind speed (m/s)
+- **Is** : Cumulated hours of snow
+- **Ir** : Cumulated hours of rain
+                             """),
                              ])
 ################################## DASHBOARD : TAB2, ROW1, COL0 ##################################
 TAB2.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
@@ -93,25 +110,21 @@ TAB3.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
                              ])
 ################################## DASHBOARD : TAB4, ROW0, COL0 ##################################
 TAB4.RC00.values = dcc.Markdown("""
-## Hello, Ailever!
 """)
 ################################## DASHBOARD : TAB4, ROW1, COL0 ##################################
 TAB4.RC10.values = dcc.Markdown("""
-## Hello, Ailever!
 """)
 ################################## DASHBOARD : TAB5, ROW0, COL0 ##################################
 TAB5.RC00.values = dcc.Markdown("""
-## Hello, Ailever!
 """)
 ################################## DASHBOARD : TAB5, ROW1, COL0 ##################################
 TAB5.RC10.values = dcc.Markdown("""
-## Hello, Ailever!
 """)
 ################################## DASHBOARD ##################################
 T = {}
 T['T1,0,0'] = 'T__'
 T['T1,1,0'] = 'T__'
-T['T2,0,0'] = 'T__'
+T['T2,0,0'] = 'UCI Pollution Dataset'
 T['T2,1,0'] = 'T__'
 T['T3,0,0'] = 'T__'
 T['T3,1,0'] = 'T__'
