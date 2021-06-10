@@ -20,8 +20,8 @@ parser.add_argument('--HostRV', type=str, required=False, default='PassToken', h
 parser.add_argument('--PortRV', type=str, required=False, default='PassToken', help="Port : Real-time Visualization")
 parser.add_argument('--HostR', type=str, required=False, default='PassToken', help="Host : language R")
 parser.add_argument('--PortR', type=str, required=False, default='PassToken', help="Port : language R")
-parser.add_argument('--HostJNB', type=str, required=False, default='PassToken', help="Host : language Jupyter")
-parser.add_argument('--PortJNB', type=str, required=False, default='PassToken', help="Port : language Jupyter")
+parser.add_argument('--HostJNB', type=str, required=False, default='PassToken', help="Host : Jupyter")
+parser.add_argument('--PortJNB', type=str, required=False, default='PassToken', help="Port : Jupyter")
 args = parser.parse_args()
 import dash
 import dash_html_components as html
