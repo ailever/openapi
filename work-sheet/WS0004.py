@@ -20,8 +20,8 @@ parser.add_argument('--HostRV', type=str, required=False, default='PassToken', h
 parser.add_argument('--PortRV', type=str, required=False, default='PassToken', help="Port : Real-time Visualization")
 parser.add_argument('--HostR', type=str, required=False, default='PassToken', help="Host : language R")
 parser.add_argument('--PortR', type=str, required=False, default='PassToken', help="Port : language R")
-parser.add_argument('--HostJNB', type=str, required=False, default='PassToken', help="Host : language Jupyter")
-parser.add_argument('--PortJNB', type=str, required=False, default='PassToken', help="Port : language Jupyter")
+parser.add_argument('--HostJNB', type=str, required=False, default='PassToken', help="Host : Jupyter")
+parser.add_argument('--PortJNB', type=str, required=False, default='PassToken', help="Port : Jupyter")
 args = parser.parse_args()
 import dash
 import dash_html_components as html
@@ -133,7 +133,8 @@ TAB1.RC01.values = html.Div([dbc.Button('Bash', color='dark', href="http://www.d
 TAB1.RC10.values = html.Div([dbc.Button('dash-html', color='dark', href="https://dash.plotly.com/dash-html-components/"),
                              dbc.Button('dash-core', color='dark', href="https://dash.plotly.com/dash-core-components"),
                              dbc.Button('dash-bootstrap', color='dark', href="https://dash-bootstrap-components.opensource.faculty.ai/docs/components/alert/"),
-                             dbc.Button('plotly', color='dark', href="https://plotly.com/python-api-reference/"),
+                             dbc.Button('plotly1', color='dark', href="https://plotly.com/python/"),
+                             dbc.Button('plotly2', color='dark', href="https://plotly.com/python-api-reference/"),
                              dbc.Button('scipy', color='dark', href="https://docs.scipy.org/doc/scipy/reference/"),
                              dbc.Button('sympy', color='dark', href="https://docs.sympy.org/latest/py-modindex.html"),
                              dbc.Button('numpy', color='dark', href="https://numpy.org/doc/stable/genindex.html"),
