@@ -1,9 +1,8 @@
 #%% ################################## CODEBLOCK ##################################
 from IPython import display
 from ipywidgets import interact
-import matplotlib.pyplot as plt
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 #%% ################################## BOARD ##################################
 board = """
@@ -146,6 +145,7 @@ TAB1.RC11.values = html.Div([dbc.Button('Jinja2', color='dark', href="https://ji
                              dbc.Button('matploblib', color='dark', href="https://matplotlib.org/stable/gallery/index.html"),
                              dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
                              dbc.Button('seaborn', color='dark', href="https://seaborn.pydata.org/tutorial.html"),
+                             dbc.Button('statsmodels', color='dark', href="https://www.statsmodels.org/stable/examples/index.html"),
                              ])
 TAB1.RC20.values = html.Div([dbc.Button('HTML - tag list', color='dark', href="https://www.w3schools.com/tags/default.asp"),
                              dbc.Button('HTML - color code', color='dark', href="https://htmlcolorcodes.com/"),
