@@ -139,10 +139,13 @@ TAB1.RC10.values = html.Div([dbc.Button('dash-html', color='dark', href="https:/
                              dbc.Button('numpy', color='dark', href="https://numpy.org/doc/stable/genindex.html"),
                              dbc.Button('scikit-learn', color='dark', href="https://scikit-learn.org/stable/modules/classes.html"),
                              dbc.Button('statsmodels', color='dark', href="https://www.statsmodels.org/stable/py-modindex.html"),
-                             dbc.Button('', color='dark', href=""),
+                             dbc.Button('matplotlib', color='dark', href="https://matplotlib.org/stable/py-modindex.html"),
+                             dbc.Button('seaborn', color='dark', href="https://seaborn.pydata.org/api.html"),
                              ])
 TAB1.RC11.values = html.Div([dbc.Button('Jinja2', color='dark', href="https://jinja.palletsprojects.com/en/2.11.x/"),
+                             dbc.Button('matploblib', color='dark', href="https://matplotlib.org/stable/gallery/index.html"),
                              dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
+                             dbc.Button('seaborn', color='dark', href="https://seaborn.pydata.org/tutorial.html"),
                              ])
 TAB1.RC20.values = html.Div([dbc.Button('HTML - tag list', color='dark', href="https://www.w3schools.com/tags/default.asp"),
                              dbc.Button('HTML - color code', color='dark', href="https://htmlcolorcodes.com/"),
@@ -161,7 +164,7 @@ T['T,_,_'] = 'Temporal'
 T['T,0,0'] = 'Computer Engineering : Overall'
 T['T,0,1'] = 'Programming Language'
 T['T,1,0'] = 'Python Library APIs'
-T['T,1,1'] = 'Python Library Tutorials'
+T['T,1,1'] = 'Python Library Example&Tutorials'
 T['T,2,0'] = 'Supplementary'
 T['T,2,1'] = '_'
 O = {}
