@@ -69,6 +69,9 @@ TAB4.RC10 = Component()
 TAB5 = Component()
 TAB5.RC00 = Component()
 TAB5.RC10 = Component()
+TAB6 = Component()
+TAB6.RC00 = Component()
+TAB6.RC10 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
 TAB1.RC00.values = html.Div([html.Img()])
 ################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
@@ -120,6 +123,12 @@ TAB5.RC00.values = dcc.Markdown("""
 ################################## DASHBOARD : TAB5, ROW1, COL0 ##################################
 TAB5.RC10.values = dcc.Markdown("""
 """)
+################################## DASHBOARD : TAB6, ROW0, COL0 ##################################
+TAB6.RC00.values = dcc.Markdown("""
+""")
+################################## DASHBOARD : TAB6, ROW1, COL0 ##################################
+TAB6.RC10.values = dcc.Markdown("""
+""")
 ################################## DASHBOARD ##################################
 T = {}
 T['T1,0,0'] = 'T__'
@@ -132,6 +141,8 @@ T['T4,0,0'] = 'T__'
 T['T4,1,0'] = 'T__'
 T['T5,0,0'] = 'T__'
 T['T5,1,0'] = 'T__'
+T['T6,0,0'] = 'T__'
+T['T6,1,0'] = 'T__'
 O = {}
 O['T1,_,_'] = None
 O['T1,0,0'] = TAB1.RC00.values
@@ -144,6 +155,8 @@ O['T4,0,0'] = TAB4.RC00.values
 O['T4,1,0'] = TAB4.RC10.values
 O['T5,0,0'] = TAB5.RC00.values
 O['T5,1,0'] = TAB5.RC10.values
+O['T6,0,0'] = TAB5.RC00.values
+O['T6,1,0'] = TAB5.RC10.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,1,0']), dbc.CardBody(O['T1,1,0'])], color='light', inverse=False, outline=True)]
@@ -155,6 +168,8 @@ C['T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T4,0,0']), dbc.CardBody(O['T4,0,0'])]
 C['T4,1,0'] = [dbc.Card([dbc.CardHeader(T['T4,1,0']), dbc.CardBody(O['T4,1,0'])], color='light', inverse=False, outline=True)]
 C['T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T5,0,0']), dbc.CardBody(O['T5,0,0'])], color='light', inverse=False, outline=True)]
 C['T5,1,0'] = [dbc.Card([dbc.CardHeader(T['T5,1,0']), dbc.CardBody(O['T5,1,0'])], color='light', inverse=False, outline=True)]
+C['T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T6,0,0']), dbc.CardBody(O['T6,0,0'])], color='light', inverse=False, outline=True)]
+C['T6,1,0'] = [dbc.Card([dbc.CardHeader(T['T6,1,0']), dbc.CardBody(O['T6,1,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
@@ -167,11 +182,14 @@ contents['page']['tab4'] = [dbc.Row([dbc.Col(C['T4,0,0'], width=12)]), html.Br()
                             html.Br()]
 contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T5,0,0'], width=12)]), html.Br(),
                             html.Br()]
+contents['page']['tab6'] = [dbc.Row([dbc.Col(C['T6,0,0'], width=12)]), html.Br(),
+                            html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Problem & Issue", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Data Collection", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="Exploratory Data Analysis", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="Statistical Inference", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="Applications", disabled=True),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab6'])), label="Additionals", disabled=False),
                                  ])
 main = dbc.Jumbotron([html.H2(html.A('Analytic Consulting', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
