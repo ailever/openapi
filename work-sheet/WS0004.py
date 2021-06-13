@@ -132,7 +132,7 @@ TAB1.RC01.values = html.Div([dbc.Button('Bash', color='dark', href="http://www.d
 TAB1.RC10.values = html.Div([dbc.Button('dash-html', color='dark', href="https://dash.plotly.com/dash-html-components/"),
                              dbc.Button('dash-core', color='dark', href="https://dash.plotly.com/dash-core-components"),
                              dbc.Button('dash-bootstrap', color='dark', href="https://dash-bootstrap-components.opensource.faculty.ai/docs/components/alert/"),
-                             dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
+                             dbc.Button('plotly', color='dark', href="https://plotly.com/python-api-reference/"),
                              dbc.Button('scipy', color='dark', href="https://docs.scipy.org/doc/scipy/reference/"),
                              dbc.Button('sympy', color='dark', href="https://docs.sympy.org/latest/py-modindex.html"),
                              dbc.Button('numpy', color='dark', href="https://numpy.org/doc/stable/genindex.html"),
