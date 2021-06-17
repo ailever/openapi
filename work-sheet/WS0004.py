@@ -140,12 +140,16 @@ TAB1.RC10.values = html.Div([dbc.Button('dash-html', color='dark', href="https:/
                              dbc.Button('statsmodels', color='dark', href="https://www.statsmodels.org/stable/py-modindex.html"),
                              dbc.Button('matplotlib', color='dark', href="https://matplotlib.org/stable/py-modindex.html"),
                              dbc.Button('seaborn', color='dark', href="https://seaborn.pydata.org/api.html"),
+                             dbc.Button('xgboost', color='dark', href="https://xgboost.readthedocs.io/en/latest/python/python_api.html"),
+                             dbc.Button('prophet', color='dark', href="https://github.com/facebook/prophet/tree/master/python"),
                              ])
 TAB1.RC11.values = html.Div([dbc.Button('Jinja2', color='dark', href="https://jinja.palletsprojects.com/en/2.11.x/"),
                              dbc.Button('matploblib', color='dark', href="https://matplotlib.org/stable/gallery/index.html"),
                              dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
                              dbc.Button('seaborn', color='dark', href="https://seaborn.pydata.org/tutorial.html"),
                              dbc.Button('statsmodels', color='dark', href="https://www.statsmodels.org/stable/examples/index.html"),
+                             dbc.Button('xgboost', color='dark', href="https://xgboost.readthedocs.io/en/latest/python/python_intro.html"),
+                             dbc.Button('prophet', color='dark', href="https://facebook.github.io/prophet/docs/quick_start.html#python-api"),
                              ])
 TAB1.RC20.values = html.Div([dbc.Button('HTML - tag list', color='dark', href="https://www.w3schools.com/tags/default.asp"),
                              dbc.Button('HTML - color code', color='dark', href="https://htmlcolorcodes.com/"),
