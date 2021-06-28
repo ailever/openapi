@@ -7,7 +7,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-
 ################################## CODEBLOCK ##################################
 #%%
 ################################## CONFIG ##################################
@@ -25,6 +24,8 @@ config['pgAdmin4-server'] = 'http://' + '127.0.0.1'
 config['pgAdmin4-port'] = '52631'
 config['visdom-server'] = 'http://' + '127.0.0.1'
 config['visdom-port'] = '8097'
+config['Jupyter-server'] = 'http://' + '127.0.0.1'
+config['Jupyter-port'] = '8888'
 config['R-server'] = 'http://' + '127.0.0.1'
 config['R-port'] = '8787'
 config['dash-server'] = '127.0.0.1'
@@ -69,6 +70,7 @@ main = dbc.Jumbotron([html.H2(html.A('PROJECT TITLE', href="/")),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
                                 dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/main.py'),
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
+                                dbc.Button("Jupyter", color="secondary", href=config['Jupyter-server']+':'+config['Jupyter-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                       html.P(id='visdom-server')])
@@ -76,3 +78,5 @@ app.layout = html.Div([main, page_layouts['page']])
 if __name__ == '__main__':
     app.run_server(host=config['dash-server'], port=config['dash-port'], debug=True) 
 ################################## DASHBOARD ##################################
+
+# %%
