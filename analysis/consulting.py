@@ -75,6 +75,8 @@ TAB6 = Component()
 TAB6.RC00 = Component()
 TAB6.RC10 = Component()
 TAB6.RC20 = Component()
+TAB6.RC30 = Component()
+TAB6.RC40 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
 TAB1.RC00.values = html.Div([html.Img()])
 ################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
@@ -115,6 +117,10 @@ TAB6.RC00.values = dcc.Graph()
 TAB6.RC10.values = dcc.Graph()
 ################################## DASHBOARD : TAB6, ROW2, COL0 ##################################
 TAB6.RC20.values = dcc.Graph()
+################################## DASHBOARD : TAB6, ROW3, COL0 ##################################
+TAB6.RC30.values = dcc.Graph()
+################################## DASHBOARD : TAB6, ROW4, COL0 ##################################
+TAB6.RC40.values = dcc.Graph()
 ################################## DASHBOARD ##################################
 T = {}
 T['T1,0,0'] = 'T__'
@@ -130,6 +136,8 @@ T['T5,1,0'] = 'T__'
 T['T6,0,0'] = 'Treemap'
 T['T6,1,0'] = 'Sunburst'
 T['T6,2,0'] = 'Parallel Coordinates'
+T['T6,3,0'] = 'Parallel Categories'
+T['T6,4,0'] = 'Icicle'
 O = {}
 O['T1,_,_'] = None
 O['T1,0,0'] = TAB1.RC00.values
@@ -145,6 +153,7 @@ O['T5,1,0'] = TAB5.RC10.values
 O['T6,0,0'] = TAB5.RC00.values
 O['T6,1,0'] = TAB5.RC10.values
 O['T6,2,0'] = TAB5.RC10.values
+O['T6,3,0'] = TAB5.RC10.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
 C['T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,1,0']), dbc.CardBody(O['T1,1,0'])], color='light', inverse=False, outline=True)]
@@ -159,6 +168,7 @@ C['T5,1,0'] = [dbc.Card([dbc.CardHeader(T['T5,1,0']), dbc.CardBody(O['T5,1,0'])]
 C['T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T6,0,0']), dbc.CardBody(O['T6,0,0'])], color='light', inverse=False, outline=True)]
 C['T6,1,0'] = [dbc.Card([dbc.CardHeader(T['T6,1,0']), dbc.CardBody(O['T6,1,0'])], color='light', inverse=False, outline=True)]
 C['T6,2,0'] = [dbc.Card([dbc.CardHeader(T['T6,2,0']), dbc.CardBody(O['T6,2,0'])], color='light', inverse=False, outline=True)]
+C['T6,3,0'] = [dbc.Card([dbc.CardHeader(T['T6,3,0']), dbc.CardBody(O['T6,3,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
@@ -174,6 +184,7 @@ contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T5,0,0'], width=12)]), html.Br()
 contents['page']['tab6'] = [dbc.Row([dbc.Col(C['T6,0,0'], width=12)]), html.Br(),
                             dbc.Row([dbc.Col(C['T6,1,0'], width=12)]), html.Br(),
                             dbc.Row([dbc.Col(C['T6,2,0'], width=12)]), html.Br(),
+                            dbc.Row([dbc.Col(C['T6,3,0'], width=12)]), html.Br(),
                             html.Br()]
 page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Problem & Issue", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Data Collection", disabled=False),
