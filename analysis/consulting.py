@@ -14,6 +14,8 @@ parser.add_argument('--HostDash', type=str, required=False, default='PassToken',
 parser.add_argument('--PortDash', type=str, required=False, default='PassToken', help="Port : Dashboard")
 parser.add_argument('--HostDB', type=str, required=False, default='PassToken', help="Host : DataBase")
 parser.add_argument('--PortDB', type=str, required=False, default='PassToken', help="Port : DataBase")
+parser.add_argument('--HostJupyter', type=str, required=False, default='PassToken', help="Host : Jupyter")
+parser.add_argument('--PortJupyter', type=str, required=False, default='PassToken', help="Port : Jupyter")
 parser.add_argument('--HostRV', type=str, required=False, default='PassToken', help="Host : Real-time Visualization")
 parser.add_argument('--PortRV', type=str, required=False, default='PassToken', help="Port : Real-time Visualization")
 parser.add_argument('--HostR', type=str, required=False, default='PassToken', help="Host : language R")
@@ -34,6 +36,8 @@ config['dash-server'] = args.HostDash if args.HostDash != 'PassToken' else '127.
 config['dash-port'] = args.PortDash if args.PortDash != 'PassToken' else '8050'
 config['pgAdmin4-server'] = args.HostDB if args.HostDB != 'PassToken' else 'http://' + '127.0.0.1'
 config['pgAdmin4-port'] = args.PortDB if args.PortDB != 'PassToken' else '52631'
+config['jupyter-server'] = args.HostJupyter if args.HostJupyter != 'PassToken' else 'http://' + '127.0.0.1'
+config['jupyter-port'] = args.PortJupyter if args.PortJupyter != 'PassToken' else '8888'
 config['visdom-server'] = args.HostRV if args.HostRV != 'PassToken' else 'http://' + '127.0.0.1'
 config['visdom-port'] = args.PortRV if args.PortRV != 'PassToken' else '8097'
 config['R-server'] = args.HostR if args.HostR != 'PassToken' else 'http://' + '127.0.0.1'
@@ -200,6 +204,7 @@ main = dbc.Jumbotron([html.H2(html.A('Analytic Consulting', href="/")),
                                 dbc.Button("Notion", color="secondary", href="https://www.notion.so/ANALYSIS-DASHBOARD-1c1f5a01e4bd490a8c14892d0359031b"),                                
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
+                                dbc.Button("Jupyter", color="secondary", href=config['jupyter-server']+':'+config['jupyter-port']),
                                 dbc.Button("Real-Time Analysis", id='real-time', color="secondary", href=config['visdom-server']+':'+config['visdom-port'])]),
                       html.Div([dbc.Button('dash-html', color='dark', href="https://dash.plotly.com/dash-html-components/"),
                                 dbc.Button('dash-core', color='dark', href="https://dash.plotly.com/dash-core-components"),
