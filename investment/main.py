@@ -197,10 +197,10 @@ page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page'][
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="Applications", disabled=True),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab6'])), label="Additionals", disabled=False),
                                  ])
-main = dbc.Jumbotron([html.H2(html.A('Analytic Consulting', href="/")),
+main = dbc.Jumbotron([html.H2(html.A('Investment', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
                       html.Div([dbc.Button("Ailever", color="secondary", href='https://ailever.github.io/'),
-                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/analysis/consulting.py'),
+                                dbc.Button("Source", color="secondary", href='https://github.com/ailever/openapi/blob/master/investment/main.py'),
                                 dbc.Button("Notion", color="secondary", href="https://www.notion.so/ANALYSIS-DASHBOARD-1c1f5a01e4bd490a8c14892d0359031b"),                                
                                 dbc.Button("pgAdmin4", color="secondary", href=config['pgAdmin4-server']+':'+config['pgAdmin4-port']),
                                 dbc.Button("Rstudio", color="secondary", href=config['R-server']+':'+config['R-port']),
