@@ -62,117 +62,57 @@ class MetaClass(type):
 Component = MetaClass('Component', (dict,), {})
 TAB1 = Component()
 TAB1.RC00 = Component()
-TAB1.RC10 = Component()
 TAB2 = Component()
 TAB2.RC00 = Component()
-TAB2.RC10 = Component()
 TAB3 = Component()
 TAB3.RC00 = Component()
-TAB3.RC10 = Component()
 TAB4 = Component()
 TAB4.RC00 = Component()
-TAB4.RC10 = Component()
 TAB5 = Component()
 TAB5.RC00 = Component()
-TAB5.RC10 = Component()
 TAB6 = Component()
 TAB6.RC00 = Component()
-TAB6.RC10 = Component()
-TAB6.RC20 = Component()
-TAB6.RC30 = Component()
-TAB6.RC40 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
 TAB1.RC00.values = html.Div([html.Img()])
-################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
-TAB1.RC10.values = dcc.Markdown("""
-## This is a worksheet.
-""")
 ################################## DASHBOARD : TAB2, ROW0, COL0 ##################################
 TAB2.RC00.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
-################################## DASHBOARD : TAB2, ROW1, COL0 ##################################
-TAB2.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
 ################################## DASHBOARD : TAB3, ROW0, COL0 ##################################
 TAB3.RC00.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
                              ])
-################################## DASHBOARD : TAB3, ROW1, COL0 ##################################
-TAB3.RC10.values = html.Div([dbc.Button('A', color='dark', href=""),
-                             dbc.Button('B', color='dark', href=""),
-                             ])
 ################################## DASHBOARD : TAB4, ROW0, COL0 ##################################
 TAB4.RC00.values = dcc.Markdown("""
-""")
-################################## DASHBOARD : TAB4, ROW1, COL0 ##################################
-TAB4.RC10.values = dcc.Markdown("""
 """)
 ################################## DASHBOARD : TAB5, ROW0, COL0 ##################################
 TAB5.RC00.values = dcc.Markdown("""
 """)
-################################## DASHBOARD : TAB5, ROW1, COL0 ##################################
-TAB5.RC10.values = dcc.Markdown("""
-""")
 ################################## DASHBOARD : TAB6, ROW0, COL0 ##################################
 TAB6.RC00.values = dcc.Graph()
-################################## DASHBOARD : TAB6, ROW1, COL0 ##################################
-TAB6.RC10.values = dcc.Graph()
-################################## DASHBOARD : TAB6, ROW2, COL0 ##################################
-TAB6.RC20.values = dcc.Graph()
-################################## DASHBOARD : TAB6, ROW3, COL0 ##################################
-TAB6.RC30.values = dcc.Graph()
-################################## DASHBOARD : TAB6, ROW4, COL0 ##################################
-TAB6.RC40.values = dcc.Graph()
 ################################## DASHBOARD ##################################
 T = {}
 T['T1,0,0'] = 'T__'
-T['T1,1,0'] = 'T__'
 T['T2,0,0'] = 'T__'
-T['T2,1,0'] = 'T__'
 T['T3,0,0'] = 'T__'
-T['T3,1,0'] = 'T__'
 T['T4,0,0'] = 'T__'
-T['T4,1,0'] = 'T__'
 T['T5,0,0'] = 'T__'
-T['T5,1,0'] = 'T__'
-T['T6,0,0'] = 'Treemap'
-T['T6,1,0'] = 'Sunburst'
-T['T6,2,0'] = 'Parallel Coordinates'
-T['T6,3,0'] = 'Parallel Categories'
-T['T6,4,0'] = 'Icicle'
+T['T6,0,0'] = 'T__'
 O = {}
 O['T1,_,_'] = None
 O['T1,0,0'] = TAB1.RC00.values
-O['T1,1,0'] = TAB1.RC10.values
 O['T2,0,0'] = TAB2.RC00.values
-O['T2,1,0'] = TAB2.RC10.values
 O['T3,0,0'] = TAB3.RC00.values
-O['T3,1,0'] = TAB3.RC10.values
 O['T4,0,0'] = TAB4.RC00.values
-O['T4,1,0'] = TAB4.RC10.values
 O['T5,0,0'] = TAB5.RC00.values
-O['T5,1,0'] = TAB5.RC10.values
 O['T6,0,0'] = TAB5.RC00.values
-O['T6,1,0'] = TAB5.RC10.values
-O['T6,2,0'] = TAB5.RC10.values
-O['T6,3,0'] = TAB5.RC10.values
 C = {} # color code : primary, secondary, info, success, warning, danger, light, dark
 C['T1,0,0'] = [dbc.Card([dbc.CardHeader(T['T1,0,0']), dbc.CardBody(O['T1,0,0'])], color='light', inverse=False, outline=True)]
-C['T1,1,0'] = [dbc.Card([dbc.CardHeader(T['T1,1,0']), dbc.CardBody(O['T1,1,0'])], color='light', inverse=False, outline=True)]
 C['T2,0,0'] = [dbc.Card([dbc.CardHeader(T['T2,0,0']), dbc.CardBody(O['T2,0,0'])], color='light', inverse=False, outline=True)]
-C['T2,1,0'] = [dbc.Card([dbc.CardHeader(T['T2,1,0']), dbc.CardBody(O['T2,1,0'])], color='light', inverse=False, outline=True)]
 C['T3,0,0'] = [dbc.Card([dbc.CardHeader(T['T3,0,0']), dbc.CardBody(O['T3,0,0'])], color='light', inverse=False, outline=True)]
-C['T3,1,0'] = [dbc.Card([dbc.CardHeader(T['T3,1,0']), dbc.CardBody(O['T3,1,0'])], color='light', inverse=False, outline=True)]
 C['T4,0,0'] = [dbc.Card([dbc.CardHeader(T['T4,0,0']), dbc.CardBody(O['T4,0,0'])], color='light', inverse=False, outline=True)]
-C['T4,1,0'] = [dbc.Card([dbc.CardHeader(T['T4,1,0']), dbc.CardBody(O['T4,1,0'])], color='light', inverse=False, outline=True)]
 C['T5,0,0'] = [dbc.Card([dbc.CardHeader(T['T5,0,0']), dbc.CardBody(O['T5,0,0'])], color='light', inverse=False, outline=True)]
-C['T5,1,0'] = [dbc.Card([dbc.CardHeader(T['T5,1,0']), dbc.CardBody(O['T5,1,0'])], color='light', inverse=False, outline=True)]
 C['T6,0,0'] = [dbc.Card([dbc.CardHeader(T['T6,0,0']), dbc.CardBody(O['T6,0,0'])], color='light', inverse=False, outline=True)]
-C['T6,1,0'] = [dbc.Card([dbc.CardHeader(T['T6,1,0']), dbc.CardBody(O['T6,1,0'])], color='light', inverse=False, outline=True)]
-C['T6,2,0'] = [dbc.Card([dbc.CardHeader(T['T6,2,0']), dbc.CardBody(O['T6,2,0'])], color='light', inverse=False, outline=True)]
-C['T6,3,0'] = [dbc.Card([dbc.CardHeader(T['T6,3,0']), dbc.CardBody(O['T6,3,0'])], color='light', inverse=False, outline=True)]
 ################################## DASHBOARD ##################################
 contents = {}; contents['page'] = {}; page_layouts = {}
 contents['page']['tab1'] = [dbc.Row([dbc.Col(C['T1,0,0'], width=12)]), html.Br(),
@@ -186,16 +126,13 @@ contents['page']['tab4'] = [dbc.Row([dbc.Col(C['T4,0,0'], width=12)]), html.Br()
 contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T5,0,0'], width=12)]), html.Br(),
                             html.Br()]
 contents['page']['tab6'] = [dbc.Row([dbc.Col(C['T6,0,0'], width=12)]), html.Br(),
-                            dbc.Row([dbc.Col(C['T6,1,0'], width=12)]), html.Br(),
-                            dbc.Row([dbc.Col(C['T6,2,0'], width=12)]), html.Br(),
-                            dbc.Row([dbc.Col(C['T6,3,0'], width=12)]), html.Br(),
                             html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="Problem & Issue", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="Data Collection", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="Exploratory Data Analysis", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="Statistical Inference", disabled=False),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="Applications", disabled=True),
-                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab6'])), label="Additionals", disabled=False),
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="TAB1", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="TAB2", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="TAB3", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="TAB4", disabled=False),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab5'])), label="TAB5", disabled=True),
+                                 dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab6'])), label="TAB6", disabled=False),
                                  ])
 main = dbc.Jumbotron([html.H2(html.A('Investment', href="/")),
                       html.H6('Promulgate values for a better tomorrow'), html.Hr(),
