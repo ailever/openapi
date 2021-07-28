@@ -2,10 +2,13 @@
 from IPython import display
 from ipywidgets import interact
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
 import os
 import base64
+import FinanceDataReader as fdr
+
 
 #%% ################################## CONFIG ##################################
 import argparse
@@ -62,6 +65,7 @@ class MetaClass(type):
 Component = MetaClass('Component', (dict,), {})
 TAB1 = Component()
 TAB1.RC00 = Component()
+TAB1.RC10 = Component()
 TAB2 = Component()
 TAB2.RC00 = Component()
 TAB3 = Component()
@@ -73,19 +77,38 @@ TAB5.RC00 = Component()
 TAB6 = Component()
 TAB6.RC00 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
+@app.callback(
+    Output("reits-candelstick", "figure"),
+    Input("reits-dropdown", "value"))
+def real_time_analysis(value):
+    df = fdr.DataReader(value).reset_index()
+    fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+                    open=df['Open'],
+                    high=df['High'],
+                    low=df['Low'],
+                    close=df['Close'])])
+    return fig
+
+df = fdr.DataReader('ARE').reset_index()
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+                open=df['Open'],
+                high=df['High'],
+                low=df['Low'],
+                close=df['Close'])])
+TAB1.RC00._graph01 = dcc.Graph(id='reits-candelstick', figure=fig)
+TAB1.RC00.reits_list = ['ARE', 'BXP', 'BDN', 'CMCT', 'CIO', 'CXP', 'OFC', 'CUZ', 'DEI', 'DEA', 'ESRT', 'EQC', 'FSP', 'HIW', 'HPP', 'KRC', 'NYC', 'OPI', 'PGRE', 'PDM', 'SLG', 'COLD', 'DRE', 'EGP', 'FR', 'ILPT', 'INDT', 'IIPR', 'LXP', 'MNR', 'PLYM', 'PLD', 'PSB', 'REXR', 'STAG', 'TRNO', 'AKR', 'AFIN', 'BRX', 'CDR', 'FRT', 'KIM', 'KRG', 'REG', 'ROIC', 'RPAI', 'RVI', 'RPT', 'BFS', 'SITC', 'SKT', 'UE', 'UBA', 'WRI', 'WHLR', 'WSR', 'BPYU', 'MAC', 'PEI', 'SPG', 'WPG', 'ADC', 'PINE', 'EPRT', 'FCPT', 'GTY', 'NNN', 'NTST', 'PSTL', 'O', 'SRG', 'SRC', 'STOR', 'ACC', 'AIRC', 'AIV', 'AVB', 'BRG', 'BRT', 'CPT', 'CSR', 'CLPR', 'EQR', 'ESS', 'IRT', 'MAA', 'NXRT', 'APTS', 'UDR', 'ELS', 'SUI', 'UMH', 'AMH', 'INVH', 'ALEX', 'ALX', 'AAT', 'AHH', 'BNL', 'CLNY', 'GOOD', 'GNL', 'HMG', 'JBGS', 'CLI', 'MDRR', 'OLP', 'SQFT', 'SVC', 'VER', 'VNO', 'WPC', 'WRE', 'CTRE', 'CHCT', 'DHC', 'GMRE', 'HR', 'HTA', 'PEAK', 'LTC', 'MPW', 'NHI', 'SNR', 'OHI', 'DOC', 'SBRA', 'UHT', 'VTR', 'WELL', 'APLE', 'AHT', 'BHR', 'CLDT', 'CDOR', 'CPLG', 'DRH', 'HT', 'HST', 'IHT', 'PK', 'PEB', 'RLJ', 'RHP', 'SOHO', 'INN', 'SHO', 'XHR', 'CUBE', 'EXR', 'SELF', 'LSI', 'NSA', 'PSA', 'CTT', 'PCH', 'RYN', 'WY', 'AMT', 'CORR', 'CCI', 'PW', 'SBAC', 'UNIT', 'COR', 'CONE', 'DLR', 'EQIX', 'QTS', 'EPR', 'FPI', 'GLPI', 'GEO', 'LAND', 'IRM', 'LAMR', 'OUT', 'SAFE', 'VICI', 'MITT', 'AGNC', 'NLY', 'AAIC', 'ARR', 'CMO', 'CHMI', 'CIM', 'DX', 'EFC', 'EARN', 'AJX', 'IVR', 'LFT', 'MFA', 'NRZ', 'NYMT', 'ORC', 'PMT', 'RC', 'RWT', 'TWO', 'WMC', 'ACR', 'ARI', 'ABR', 'ACRE', 'BXMT', 'BRMK', 'CLNC', 'GPMT', 'HASI', 'STAR', 'KREF', 'LADR', 'NREF', 'SACH', 'STWD', 'TRTX', 'TRMT']
+TAB1.RC00._reits_labels = [ {'label' : symbol, 'value' : symbol} for symbol in TAB1.RC00.reits_list ]
 TAB1.RC00.values = html.Div([
     dcc.Dropdown(
-        id='demo-dropdown',
-        options=[
-            {'label': 'New York City', 'value': 'NYC'},
-            {'label': 'Montreal', 'value': 'MTL'},
-            {'label': 'San Francisco', 'value': 'SF'}
-        ],
-        value='NYC'
-    ),
-    html.Div(id='dd-output-container')
-])
+        id='reits-dropdown',
+        options=TAB1.RC00._reits_labels,
+        value='ARE',
+        placeholder="Select a ticker",
 
+    ),
+    html.Div(TAB1.RC00._graph01)
+])
+################################## DASHBOARD : TAB1, ROW1, COL0 ##################################
 ################################## DASHBOARD : TAB2, ROW0, COL0 ##################################
 TAB2.RC00.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
