@@ -73,7 +73,19 @@ TAB5.RC00 = Component()
 TAB6 = Component()
 TAB6.RC00 = Component()
 ################################## DASHBOARD : TAB1, ROW0, COL0 ##################################
-TAB1.RC00.values = html.Div([html.Img()])
+TAB1.RC00.values = html.Div([
+    dcc.Dropdown(
+        id='demo-dropdown',
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': 'Montreal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value='NYC'
+    ),
+    html.Div(id='dd-output-container')
+])
+
 ################################## DASHBOARD : TAB2, ROW0, COL0 ##################################
 TAB2.RC00.values = html.Div([dbc.Button('A', color='dark', href=""),
                              dbc.Button('B', color='dark', href=""),
@@ -92,7 +104,7 @@ TAB5.RC00.values = dcc.Markdown("""
 TAB6.RC00.values = dcc.Graph()
 ################################## DASHBOARD ##################################
 T = {}
-T['T1,0,0'] = 'T__'
+T['T1,0,0'] = 'Reits'
 T['T2,0,0'] = 'T__'
 T['T3,0,0'] = 'T__'
 T['T4,0,0'] = 'T__'
@@ -127,7 +139,7 @@ contents['page']['tab5'] = [dbc.Row([dbc.Col(C['T5,0,0'], width=12)]), html.Br()
                             html.Br()]
 contents['page']['tab6'] = [dbc.Row([dbc.Col(C['T6,0,0'], width=12)]), html.Br(),
                             html.Br()]
-page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="TAB1", disabled=False),
+page_layouts['page'] = dbc.Tabs([dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab1'])), label="MARKET", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab2'])), label="TAB2", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab3'])), label="TAB3", disabled=False),
                                  dbc.Tab(dbc.Card(dbc.CardBody(contents['page']['tab4'])), label="TAB4", disabled=False),
