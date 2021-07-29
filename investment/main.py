@@ -104,7 +104,6 @@ TAB1.RC00.values = html.Div([
         options=TAB1.RC00._reits_labels,
         value='ARE',
         placeholder="Select a ticker",
-
     ),
     html.Div(TAB1.RC00._graph01)
 ])
@@ -184,6 +183,11 @@ main = dbc.Jumbotron([html.H2(html.A('Investment', href="/")),
                                 dbc.Button('plotly', color='dark', href="https://plotly.com/python/"),
                                 dbc.Button('plotly-ref', color='dark', href="https://plotly.com/python-api-reference/"),
                                 dbc.Button('updating figure', color='dark',  href="https://plotly.com/python/creating-and-updating-figures/"),                                
+                                ]),
+                      html.Div([dbc.Button('source repository', color='danger',  href="https://github.com/ailever/fmlops_unitest-source_repository"),
+                                dbc.Button('feature store', color='danger',  href="https://github.com/ailever/fmlops_unitest-feature_store"),
+                                dbc.Button('model registry', color='danger',  href="https://github.com/ailever/fmlops_unitest-model_registry"),
+                                dbc.Button('metadata stroe', color='danger',  href="https://github.com/ailever/fmlops_unitest-metadata_store"),
                                 ]),
                       html.P(id='visdom-server')])
 app.layout = html.Div([main, page_layouts['page']])
