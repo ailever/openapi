@@ -36,6 +36,8 @@ config['visdom-server'] = args.HostRV if args.HostRV != 'PassToken' else 'http:/
 config['visdom-port'] = args.PortRV if args.PortRV != 'PassToken' else '8097'
 config['R-server'] = args.HostR if args.HostR != 'PassToken' else 'http://' + '127.0.0.1'
 config['R-port'] = args.PortR if args.PortR != 'PassToken' else '8787'
+config['jupyter-server'] = args.HostJNB if args.HostJNB != 'PassToken' else 'http://' + '127.0.0.1'
+config['jupyter-port'] = args.PortJNB if args.PortJNB != 'PassToken' else '8888'
 #vis = Visdom(server=config['visdom-server'], port=config['visdom-port'], env='main') # python -m visdom.sever [-post, --hostname]
 #vis.close(env='main')
 app = dash.Dash(suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
